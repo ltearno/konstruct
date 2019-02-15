@@ -60,11 +60,38 @@ const toEnv = spec => {
 
 const deployment = (name) => defaultDeployment.addDeploymentDefaultNameAndLabels(name)
 
+const serviceAccount = name => ({
+    apiVersion: "v1",
+    kind: "ServiceAccount",
+    metadata: {
+        name: "kubernetes-demo-sa"
+    }
+})
+
+const roleBinding = (roleBindingName, serviceAccountName, roleName) => ({
+    kind: "RoleBinding",
+    apiVersion: "rbac.authorization.k8s.io/v1",
+    metadata: {
+        name: roleBindingName
+    },
+    subjects: [{
+        kind: "ServiceAccount",
+        name: serviceAccountName
+    }],
+    roleRef: {
+        kind: "Role",
+        name: roleName,
+        apiGroup: "rbac.authorization.k8s.io"
+    }
+})
+
 module.exports = {
     defaultDeployment,
     port,
     tcpContainerPorts,
     loadBalancer,
     toEnv,
-    deployment
+    deployment,
+    serviceAccount,
+    roleBinding
 }
