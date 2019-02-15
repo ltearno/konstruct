@@ -1,5 +1,6 @@
 const { execSync } = require('child_process')
 const jsYaml = require('js-yaml')
+const common = require('./common')
 
 function copyObject(o) {
     if (Array.isArray(o))
@@ -116,5 +117,6 @@ module.exports = {
     yamlparseAll: input => jsYaml.safeLoadAll(preparseYaml(input)),
     command: cmd => execSync(cmd).toString('utf8').trim(),
     run: cmd => console.log(execSync(cmd).toString('utf8').trim()),
-    env: name => process.env[name]
+    env: name => process.env[name],
+    common
 }
