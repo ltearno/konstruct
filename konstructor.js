@@ -15,14 +15,21 @@ function copyObject(o) {
 }
 
 function mergeObjects(a, b) {
-    if (Array.isArray(a) && Array.isArray(b))
-        return o.map(item => copyObject(item))
+    if (a && b && Array.isArray(a) && Array.isArray(b)) {
+        let result = []
+        for (let i = 0; i < a.length || i < b.length; i++)
+            result.push(mergeObjects(i < a.length ? a[i] : null, i < b.length ? b[i] : null))
+        return result
+    }
 
-    if (a && typeof a === 'object' && b && typeof b === 'object') {
+    if (a && b && typeof a === 'object' && typeof b === 'object') {
         let result = copyObject(a)
         Object.getOwnPropertyNames(b).forEach(name => result[name] = mergeObjects(a[name], b[name]))
         return result
     }
+
+    if (a && typeof a !== typeof b)
+        throw `error merging objects !`
 
     return b
 }
@@ -53,6 +60,17 @@ function installPlugin(func, name) {
 installPlugin(copyObject, 'copy')
 installPlugin(setObjectProperty, 'set')
 installPlugin(mergeObjects, 'merge')
+installPlugin(function (o, path, value) {
+    const init = o
+    let parts = path.split('.')
+    for (let i = 0; i < parts.length - 1; i++) {
+        if (!o[parts[i]])
+            o[parts[i]] = {}
+        o = o[parts[i]]
+    }
+    o[parts[parts.length - 1]] = mergeObjects(o[parts[parts.length - 1]], value)
+    return init
+}, 'mergeAt')
 
 installPlugin(function addDeploymentDefaultNameAndLabels(object, name) {
     return object.merge({
@@ -65,8 +83,8 @@ installPlugin(function addDeploymentDefaultNameAndLabels(object, name) {
         spec: {
             template: {
                 metadata: {
-                    name: name,
                     labels: {
+                        name: name,
                         app: name
                     }
                 },
@@ -93,9 +111,10 @@ module.exports = {
     mergeObjects,
     setObjectProperty,
     installPlugin,
-    yamlify: input => jsYaml.safeDump(input, { sortKeys: true }),
+    yamlify: input => jsYaml.safeDump(input, { sortKeys: true, noArrayIndent: true, noRefs: true }),
     yamlparse,
     yamlparseAll: input => jsYaml.safeLoadAll(preparseYaml(input)),
-    command: cmd => execSync(cmd),
+    command: cmd => execSync(cmd).toString('utf8').trim(),
+    run: cmd => console.log(execSync(cmd).toString('utf8').trim()),
     env: name => process.env[name]
 }
