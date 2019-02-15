@@ -1,3 +1,4 @@
+const { execSync } = require('child_process')
 const jsYaml = require('js-yaml')
 
 function copyObject(o) {
@@ -92,7 +93,9 @@ module.exports = {
     mergeObjects,
     setObjectProperty,
     installPlugin,
-    yamlify: input => jsYaml.safeDump(input),
+    yamlify: input => jsYaml.safeDump(input, { sortKeys: true }),
     yamlparse,
-    yamlparseAll: input => jsYaml.safeLoadAll(preparseYaml(input))
+    yamlparseAll: input => jsYaml.safeLoadAll(preparseYaml(input)),
+    command: cmd => execSync(cmd),
+    env: name => process.env[name]
 }
