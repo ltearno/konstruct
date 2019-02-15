@@ -1,0 +1,11 @@
+{
+  "name": "konstructor",
+  "version": "1.0.0",
+  "description": "k8s yaml generator",
+  "main": "konstructor.js",
+  "author": "Arnaud Tournier",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^3.12.1"
+  }
+}
