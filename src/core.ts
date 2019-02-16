@@ -15,6 +15,9 @@ export function copyObject<T>(o): T {
 }
 
 export function mergeObjects<T, U>(a: T, b: U): T | U {
+    if (!b)
+        return a.copy()
+
     if (a && b && Array.isArray(a) && Array.isArray(b)) {
         let result: any[] = []
         for (let i = 0; i < a.length || i < b.length; i++)

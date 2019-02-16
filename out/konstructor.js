@@ -9,6 +9,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var k8s = __importStar(require("./kubernetes-model"));
 exports.k8s = k8s;
+var k8sBuilder = __importStar(require("./kubernetes-builder"));
+exports.k8sBuilder = k8sBuilder;
 var common = __importStar(require("./common"));
 exports.common = common;
 var core_1 = require("./core");
@@ -18,3 +20,8 @@ exports.mergeObjects = core_1.mergeObjects;
 exports.preparseYaml = core_1.preparseYaml;
 exports.setObjectProperty = core_1.setObjectProperty;
 exports.yamlparse = core_1.yamlparse;
+exports.yamlify = core_1.yamlify;
+exports.yamlparseAll = core_1.yamlparseAll;
+exports.command = core_1.command;
+exports.env = core_1.env;
+exports.run = core_1.run;

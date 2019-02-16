@@ -127,7 +127,7 @@ export interface DeploymentAppsV1beta1 {
   /**
    * Standard object metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of the Deployment.
    */
@@ -187,7 +187,7 @@ export interface DeploymentListAppsV1beta1 {
   /**
    * Standard list metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -247,7 +247,7 @@ export interface DeploymentSpecAppsV1beta1 {
   /**
    * Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment.
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * The deployment strategy to use to replace existing pods with new ones.
    */
@@ -255,7 +255,7 @@ export interface DeploymentSpecAppsV1beta1 {
   /**
    * Template describes the pods that will be created.
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
 }
 
 /**
@@ -349,7 +349,7 @@ export interface ScaleAppsV1beta1 {
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * defines the behavior of the scale. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
@@ -429,7 +429,7 @@ export interface DeploymentExtensionsV1beta1 {
   /**
    * Standard object metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of the Deployment.
    */
@@ -489,7 +489,7 @@ export interface DeploymentListExtensionsV1beta1 {
   /**
    * Standard list metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -549,7 +549,7 @@ export interface DeploymentSpecExtensionsV1beta1 {
   /**
    * Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment.
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * The deployment strategy to use to replace existing pods with new ones.
    */
@@ -557,7 +557,7 @@ export interface DeploymentSpecExtensionsV1beta1 {
   /**
    * Template describes the pods that will be created.
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
 }
 
 /**
@@ -669,7 +669,7 @@ export interface PodSecurityPolicyExtensionsV1beta1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * spec defines the policy enforced.
    */
@@ -695,7 +695,7 @@ export interface PodSecurityPolicyListExtensionsV1beta1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -859,7 +859,7 @@ export interface SELinuxStrategyOptionsExtensionsV1beta1 {
   /**
    * seLinuxOptions required to run as; required for MustRunAs More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
    */
-  seLinuxOptions?: SELinuxOptionsV1
+  seLinuxOptions?: SELinuxOptions
 }
 
 /**
@@ -877,7 +877,7 @@ export interface ScaleExtensionsV1beta1 {
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * defines the behavior of the scale. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
@@ -1013,7 +1013,7 @@ export interface PodSecurityPolicyPolicyV1beta1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * spec defines the policy enforced.
    */
@@ -1039,7 +1039,7 @@ export interface PodSecurityPolicyListPolicyV1beta1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -1179,7 +1179,7 @@ export interface SELinuxStrategyOptionsPolicyV1beta1 {
   /**
    * seLinuxOptions required to run as; required for MustRunAs More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
    */
-  seLinuxOptions?: SELinuxOptionsV1
+  seLinuxOptions?: SELinuxOptions
 }
 
 /**
@@ -1236,7 +1236,7 @@ export interface RawExtensionRuntime {
 /**
  * APIGroup contains the name, the supported versions, and the preferred version of a group.
  */
-export interface APIGroupV1 {
+export interface APIGroup {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1252,21 +1252,21 @@ export interface APIGroupV1 {
   /**
    * preferredVersion is the version preferred by the API server, which probably is the storage version.
    */
-  preferredVersion?: GroupVersionForDiscoveryV1
+  preferredVersion?: GroupVersionForDiscovery
   /**
    * a map of client CIDR to server address that is serving this group. This is to help clients reach servers in the most network-efficient way possible. Clients can use the appropriate server address as per the CIDR that they match. In case of multiple matches, clients should use the longest matching CIDR. The server returns only those CIDRs that it thinks that the client can match. For example: the master will return an internal IP CIDR only, if the client reaches the server using an internal IP. Server looks at X-Forwarded-For header or X-Real-Ip header or request.RemoteAddr (in that order) to get the client IP.
    */
-  serverAddressByClientCIDRs?: ServerAddressByClientCIDRV1[]
+  serverAddressByClientCIDRs?: ServerAddressByClientCIDR[]
   /**
    * versions are the versions supported in this group.
    */
-  versions: GroupVersionForDiscoveryV1[]
+  versions: GroupVersionForDiscovery[]
 }
 
 /**
  * APIGroupList is a list of APIGroup, to allow clients to discover the API at /apis.
  */
-export interface APIGroupListV1 {
+export interface APIGroupList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1274,7 +1274,7 @@ export interface APIGroupListV1 {
   /**
    * groups is a list of APIGroup.
    */
-  groups: APIGroupV1[]
+  groups: APIGroup[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -1284,7 +1284,7 @@ export interface APIGroupListV1 {
 /**
  * APIResource specifies the name of a resource and whether it is namespaced.
  */
-export interface APIResourceV1 {
+export interface APIResource {
   /**
    * categories is a list of the grouped resources this resource belongs to (e.g. 'all')
    */
@@ -1326,7 +1326,7 @@ export interface APIResourceV1 {
 /**
  * APIResourceList is a list of APIResource, it is used to expose the name of the resources supported in a specific group and version, and if the resource is namespaced.
  */
-export interface APIResourceListV1 {
+export interface APIResourceList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1342,13 +1342,13 @@ export interface APIResourceListV1 {
   /**
    * resources contains the name of the resources and if they are namespaced.
    */
-  resources: APIResourceV1[]
+  resources: APIResource[]
 }
 
 /**
  * APIService represents a server for a particular GroupVersion. Name must be "version.group".
  */
-export interface APIServiceV1 {
+export interface APIService {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1357,18 +1357,18 @@ export interface APIServiceV1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "APIService"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec contains information for locating and communicating with a server
    */
-  spec?: APIServiceSpecV1
+  spec?: APIServiceSpec
   /**
    * Status contains derived information about an API server
    */
-  status?: APIServiceStatusV1
+  status?: APIServiceStatus
 }
 
-export interface APIServiceConditionV1 {
+export interface APIServiceCondition {
   /**
    * Last time the condition transitioned from one status to another.
    */
@@ -1394,23 +1394,23 @@ export interface APIServiceConditionV1 {
 /**
  * APIServiceList is a list of APIService objects.
  */
-export interface APIServiceListV1 {
+export interface APIServiceList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
   apiVersion: "v1"
-  items: APIServiceV1[]
+  items: APIService[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "APIServiceList"
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * APIServiceSpec contains information for locating and communicating with a server. Only https is supported, though you are able to disable certificate verification.
  */
-export interface APIServiceSpecV1 {
+export interface APIServiceSpec {
   /**
    * CABundle is a PEM encoded CA bundle which will be used to validate an API server's serving certificate. If unspecified, system trust roots on the apiserver are used.
    */
@@ -1430,7 +1430,7 @@ export interface APIServiceSpecV1 {
   /**
    * Service is a reference to the service for this API server.  It must communicate on port 443 If the Service is nil, that means the handling for the API groupversion is handled locally on this server. The call will simply delegate to the normal handler chain to be fulfilled.
    */
-  service: ServiceReferenceV1
+  service: ServiceReference
   /**
    * Version is the API version this server hosts.  For example, "v1"
    */
@@ -1444,17 +1444,17 @@ export interface APIServiceSpecV1 {
 /**
  * APIServiceStatus contains derived information about an API server
  */
-export interface APIServiceStatusV1 {
+export interface APIServiceStatus {
   /**
    * Current service state of apiService.
    */
-  conditions?: APIServiceConditionV1[]
+  conditions?: APIServiceCondition[]
 }
 
 /**
  * APIVersions lists the versions that are available, to allow clients to discover the API at /api, which is the root path of the legacy v1 API.
  */
-export interface APIVersionsV1 {
+export interface APIVersions {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1466,7 +1466,7 @@ export interface APIVersionsV1 {
   /**
    * a map of client CIDR to server address that is serving this group. This is to help clients reach servers in the most network-efficient way possible. Clients can use the appropriate server address as per the CIDR that they match. In case of multiple matches, clients should use the longest matching CIDR. The server returns only those CIDRs that it thinks that the client can match. For example: the master will return an internal IP CIDR only, if the client reaches the server using an internal IP. Server looks at X-Forwarded-For header or X-Real-Ip header or request.RemoteAddr (in that order) to get the client IP.
    */
-  serverAddressByClientCIDRs: ServerAddressByClientCIDRV1[]
+  serverAddressByClientCIDRs: ServerAddressByClientCIDR[]
   /**
    * versions are the api versions that are available.
    */
@@ -1478,7 +1478,7 @@ export interface APIVersionsV1 {
  * 
  * An AWS EBS disk must exist before mounting to a container. The disk must also be in the same AWS zone as the kubelet. An AWS EBS disk can only be mounted as read/write once. AWS EBS volumes support ownership management and SELinux relabeling.
  */
-export interface AWSElasticBlockStoreVolumeSourceV1 {
+export interface AWSElasticBlockStoreVolumeSource {
   /**
    * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
    */
@@ -1500,35 +1500,35 @@ export interface AWSElasticBlockStoreVolumeSourceV1 {
 /**
  * Affinity is a group of affinity scheduling rules.
  */
-export interface AffinityV1 {
+export interface Affinity {
   /**
    * Describes node affinity scheduling rules for the pod.
    */
-  nodeAffinity?: NodeAffinityV1
+  nodeAffinity?: NodeAffinity
   /**
    * Describes pod affinity scheduling rules (e.g. co-locate this pod in the same node, zone, etc. as some other pod(s)).
    */
-  podAffinity?: PodAffinityV1
+  podAffinity?: PodAffinity
   /**
    * Describes pod anti-affinity scheduling rules (e.g. avoid putting this pod in the same node, zone, etc. as some other pod(s)).
    */
-  podAntiAffinity?: PodAntiAffinityV1
+  podAntiAffinity?: PodAntiAffinity
 }
 
 /**
  * AggregationRule describes how to locate ClusterRoles to aggregate into the ClusterRole
  */
-export interface AggregationRuleV1 {
+export interface AggregationRule {
   /**
    * ClusterRoleSelectors holds a list of selectors which will be used to find ClusterRoles and create the rules. If any of the selectors match, then the ClusterRole's permissions will be added
    */
-  clusterRoleSelectors?: LabelSelectorV1[]
+  clusterRoleSelectors?: LabelSelector[]
 }
 
 /**
  * AttachedVolume describes a volume attached to a node
  */
-export interface AttachedVolumeV1 {
+export interface AttachedVolume {
   /**
    * DevicePath represents the device path where the volume should be available
    */
@@ -1542,7 +1542,7 @@ export interface AttachedVolumeV1 {
 /**
  * AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
  */
-export interface AzureDiskVolumeSourceV1 {
+export interface AzureDiskVolumeSource {
   /**
    * Host Caching mode: None, Read Only, Read Write.
    */
@@ -1572,7 +1572,7 @@ export interface AzureDiskVolumeSourceV1 {
 /**
  * AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
  */
-export interface AzureFilePersistentVolumeSourceV1 {
+export interface AzureFilePersistentVolumeSource {
   /**
    * Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
    */
@@ -1594,7 +1594,7 @@ export interface AzureFilePersistentVolumeSourceV1 {
 /**
  * AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
  */
-export interface AzureFileVolumeSourceV1 {
+export interface AzureFileVolumeSource {
   /**
    * Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
    */
@@ -1612,7 +1612,7 @@ export interface AzureFileVolumeSourceV1 {
 /**
  * Binding ties one object to another; for example, a pod is bound to a node by a scheduler. Deprecated in 1.7, please use the bindings subresource of pods instead.
  */
-export interface BindingV1 {
+export interface Binding {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1624,21 +1624,21 @@ export interface BindingV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * The target object that you want to bind to the standard object.
    */
-  target: ObjectReferenceV1
+  target: ObjectReference
 }
 
 /**
  * Represents storage that is managed by an external CSI volume driver (Beta feature)
  */
-export interface CSIPersistentVolumeSourceV1 {
+export interface CSIPersistentVolumeSource {
   /**
    * ControllerPublishSecretRef is a reference to the secret object containing sensitive information to pass to the CSI driver to complete the CSI ControllerPublishVolume and ControllerUnpublishVolume calls. This field is optional, and may be empty if no secret is required. If the secret object contains more than one secret, all secrets are passed.
    */
-  controllerPublishSecretRef?: SecretReferenceV1
+  controllerPublishSecretRef?: SecretReference
   /**
    * Driver is the name of the driver to use for this volume. Required.
    */
@@ -1650,11 +1650,11 @@ export interface CSIPersistentVolumeSourceV1 {
   /**
    * NodePublishSecretRef is a reference to the secret object containing sensitive information to pass to the CSI driver to complete the CSI NodePublishVolume and NodeUnpublishVolume calls. This field is optional, and may be empty if no secret is required. If the secret object contains more than one secret, all secrets are passed.
    */
-  nodePublishSecretRef?: SecretReferenceV1
+  nodePublishSecretRef?: SecretReference
   /**
    * NodeStageSecretRef is a reference to the secret object containing sensitive information to pass to the CSI driver to complete the CSI NodeStageVolume and NodeStageVolume and NodeUnstageVolume calls. This field is optional, and may be empty if no secret is required. If the secret object contains more than one secret, all secrets are passed.
    */
-  nodeStageSecretRef?: SecretReferenceV1
+  nodeStageSecretRef?: SecretReference
   /**
    * Optional: The value to pass to ControllerPublishVolumeRequest. Defaults to false (read/write).
    */
@@ -1672,7 +1672,7 @@ export interface CSIPersistentVolumeSourceV1 {
 /**
  * Adds and removes POSIX capabilities from running containers.
  */
-export interface CapabilitiesV1 {
+export interface Capabilities {
   /**
    * Added capabilities
    */
@@ -1686,7 +1686,7 @@ export interface CapabilitiesV1 {
 /**
  * Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
  */
-export interface CephFSPersistentVolumeSourceV1 {
+export interface CephFSPersistentVolumeSource {
   /**
    * Required: Monitors is a collection of Ceph monitors More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
    */
@@ -1706,7 +1706,7 @@ export interface CephFSPersistentVolumeSourceV1 {
   /**
    * Optional: SecretRef is reference to the authentication secret for User, default is empty. More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
    */
-  secretRef?: SecretReferenceV1
+  secretRef?: SecretReference
   /**
    * Optional: User is the rados user name, default is admin More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
    */
@@ -1716,7 +1716,7 @@ export interface CephFSPersistentVolumeSourceV1 {
 /**
  * Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
  */
-export interface CephFSVolumeSourceV1 {
+export interface CephFSVolumeSource {
   /**
    * Required: Monitors is a collection of Ceph monitors More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
    */
@@ -1736,7 +1736,7 @@ export interface CephFSVolumeSourceV1 {
   /**
    * Optional: SecretRef is reference to the authentication secret for User, default is empty. More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
    */
-  secretRef?: LocalObjectReferenceV1
+  secretRef?: LocalObjectReference
   /**
    * Optional: User is the rados user name, default is admin More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it
    */
@@ -1746,7 +1746,7 @@ export interface CephFSVolumeSourceV1 {
 /**
  * Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.
  */
-export interface CinderPersistentVolumeSourceV1 {
+export interface CinderPersistentVolumeSource {
   /**
    * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
    */
@@ -1758,7 +1758,7 @@ export interface CinderPersistentVolumeSourceV1 {
   /**
    * Optional: points to a secret object containing parameters used to connect to OpenStack.
    */
-  secretRef?: SecretReferenceV1
+  secretRef?: SecretReference
   /**
    * volume id used to identify the volume in cinder More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
    */
@@ -1768,7 +1768,7 @@ export interface CinderPersistentVolumeSourceV1 {
 /**
  * Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.
  */
-export interface CinderVolumeSourceV1 {
+export interface CinderVolumeSource {
   /**
    * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
    */
@@ -1780,7 +1780,7 @@ export interface CinderVolumeSourceV1 {
   /**
    * Optional: points to a secret object containing parameters used to connect to OpenStack.
    */
-  secretRef?: LocalObjectReferenceV1
+  secretRef?: LocalObjectReference
   /**
    * volume id used to identify the volume in cinder More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
    */
@@ -1790,7 +1790,7 @@ export interface CinderVolumeSourceV1 {
 /**
  * ClientIPConfig represents the configurations of Client IP based session affinity.
  */
-export interface ClientIPConfigV1 {
+export interface ClientIPConfig {
   /**
    * timeoutSeconds specifies the seconds of ClientIP type session sticky time. The value must be >0 && <=86400(for 1 day) if ServiceAffinity == "ClientIP". Default value is 10800(for 3 hours).
    */
@@ -1800,11 +1800,11 @@ export interface ClientIPConfigV1 {
 /**
  * ClusterRole is a cluster level, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding or ClusterRoleBinding.
  */
-export interface ClusterRoleV1 {
+export interface ClusterRole {
   /**
    * AggregationRule is an optional field that describes how to build the Rules for this ClusterRole. If AggregationRule is set, then the Rules are controller managed and direct changes to Rules will be stomped by the controller.
    */
-  aggregationRule?: AggregationRuleV1
+  aggregationRule?: AggregationRule
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1816,17 +1816,17 @@ export interface ClusterRoleV1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Rules holds all the PolicyRules for this ClusterRole
    */
-  rules: PolicyRuleV1[]
+  rules: PolicyRule[]
 }
 
 /**
  * ClusterRoleBinding references a ClusterRole, but not contain it.  It can reference a ClusterRole in the global namespace, and adds who information via Subject.
  */
-export interface ClusterRoleBindingV1 {
+export interface ClusterRoleBinding {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1838,21 +1838,21 @@ export interface ClusterRoleBindingV1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * RoleRef can only reference a ClusterRole in the global namespace. If the RoleRef cannot be resolved, the Authorizer must return an error.
    */
-  roleRef: RoleRefV1
+  roleRef: RoleRef
   /**
    * Subjects holds references to the objects the role applies to.
    */
-  subjects?: SubjectV1[]
+  subjects?: Subject[]
 }
 
 /**
  * ClusterRoleBindingList is a collection of ClusterRoleBindings
  */
-export interface ClusterRoleBindingListV1 {
+export interface ClusterRoleBindingList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1860,7 +1860,7 @@ export interface ClusterRoleBindingListV1 {
   /**
    * Items is a list of ClusterRoleBindings
    */
-  items: ClusterRoleBindingV1[]
+  items: ClusterRoleBinding[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -1868,13 +1868,13 @@ export interface ClusterRoleBindingListV1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * ClusterRoleList is a collection of ClusterRoles
  */
-export interface ClusterRoleListV1 {
+export interface ClusterRoleList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1882,7 +1882,7 @@ export interface ClusterRoleListV1 {
   /**
    * Items is a list of ClusterRoles
    */
-  items: ClusterRoleV1[]
+  items: ClusterRole[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -1890,13 +1890,13 @@ export interface ClusterRoleListV1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * Information about the condition of a component.
  */
-export interface ComponentConditionV1 {
+export interface ComponentCondition {
   /**
    * Condition error code for a component. For example, a health check error code.
    */
@@ -1918,7 +1918,7 @@ export interface ComponentConditionV1 {
 /**
  * ComponentStatus (and ComponentStatusList) holds the cluster validation info.
  */
-export interface ComponentStatusV1 {
+export interface ComponentStatus {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1926,7 +1926,7 @@ export interface ComponentStatusV1 {
   /**
    * List of component conditions observed
    */
-  conditions?: ComponentConditionV1[]
+  conditions?: ComponentCondition[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -1934,13 +1934,13 @@ export interface ComponentStatusV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
 }
 
 /**
  * Status of all the conditions for the component as a list of ComponentStatus objects.
  */
-export interface ComponentStatusListV1 {
+export interface ComponentStatusList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1948,7 +1948,7 @@ export interface ComponentStatusListV1 {
   /**
    * List of ComponentStatus objects.
    */
-  items: ComponentStatusV1[]
+  items: ComponentStatus[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -1956,13 +1956,13 @@ export interface ComponentStatusListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * ConfigMap holds configuration data for pods to consume.
  */
-export interface ConfigMapV1 {
+export interface ConfigMap {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -1982,7 +1982,7 @@ export interface ConfigMapV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
 }
 
 /**
@@ -1990,7 +1990,7 @@ export interface ConfigMapV1 {
  * 
  * The contents of the target ConfigMap's Data field will represent the key-value pairs as environment variables.
  */
-export interface ConfigMapEnvSourceV1 {
+export interface ConfigMapEnvSource {
   /**
    * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
    */
@@ -2004,7 +2004,7 @@ export interface ConfigMapEnvSourceV1 {
 /**
  * Selects a key from a ConfigMap.
  */
-export interface ConfigMapKeySelectorV1 {
+export interface ConfigMapKeySelector {
   /**
    * The key to select.
    */
@@ -2022,7 +2022,7 @@ export interface ConfigMapKeySelectorV1 {
 /**
  * ConfigMapList is a resource containing a list of ConfigMap objects.
  */
-export interface ConfigMapListV1 {
+export interface ConfigMapList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -2030,7 +2030,7 @@ export interface ConfigMapListV1 {
   /**
    * Items is the list of ConfigMaps.
    */
-  items: ConfigMapV1[]
+  items: ConfigMap[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -2038,13 +2038,13 @@ export interface ConfigMapListV1 {
   /**
    * More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * ConfigMapNodeConfigSource contains the information to reference a ConfigMap as a config source for the Node.
  */
-export interface ConfigMapNodeConfigSourceV1 {
+export interface ConfigMapNodeConfigSource {
   /**
    * KubeletConfigKey declares which key of the referenced ConfigMap corresponds to the KubeletConfiguration structure This field is required in all cases.
    */
@@ -2072,11 +2072,11 @@ export interface ConfigMapNodeConfigSourceV1 {
  * 
  * The contents of the target ConfigMap's Data field will be presented in a projected volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. Note that this is identical to a configmap volume source without the default mode.
  */
-export interface ConfigMapProjectionV1 {
+export interface ConfigMapProjection {
   /**
    * If unspecified, each key-value pair in the Data field of the referenced ConfigMap will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified which is not present in the ConfigMap, the volume setup will error unless it is marked optional. Paths must be relative and may not contain the '..' path or start with '..'.
    */
-  items?: KeyToPathV1[]
+  items?: KeyToPath[]
   /**
    * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
    */
@@ -2092,7 +2092,7 @@ export interface ConfigMapProjectionV1 {
  * 
  * The contents of the target ConfigMap's Data field will be presented in a volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. ConfigMap volumes support ownership management and SELinux relabeling.
  */
-export interface ConfigMapVolumeSourceV1 {
+export interface ConfigMapVolumeSource {
   /**
    * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
    */
@@ -2100,7 +2100,7 @@ export interface ConfigMapVolumeSourceV1 {
   /**
    * If unspecified, each key-value pair in the Data field of the referenced ConfigMap will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified which is not present in the ConfigMap, the volume setup will error unless it is marked optional. Paths must be relative and may not contain the '..' path or start with '..'.
    */
-  items?: KeyToPathV1[]
+  items?: KeyToPath[]
   /**
    * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
    */
@@ -2114,7 +2114,7 @@ export interface ConfigMapVolumeSourceV1 {
 /**
  * A single application container that you want to run within a pod.
  */
-export interface ContainerV1 {
+export interface Container {
   /**
    * Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
    */
@@ -2126,11 +2126,11 @@ export interface ContainerV1 {
   /**
    * List of environment variables to set in the container. Cannot be updated.
    */
-  env?: EnvVarV1[]
+  env?: EnvVar[]
   /**
    * List of sources to populate environment variables in the container. The keys defined within a source must be a C_IDENTIFIER. All invalid keys will be reported as an event when the container is starting. When a key exists in multiple sources, the value associated with the last source will take precedence. Values defined by an Env with a duplicate key will take precedence. Cannot be updated.
    */
-  envFrom?: EnvFromSourceV1[]
+  envFrom?: EnvFromSource[]
   /**
    * Docker image name. More info: https://kubernetes.io/docs/concepts/containers/images This field is optional to allow higher level config management to default or override container images in workload controllers like Deployments and StatefulSets.
    */
@@ -2142,11 +2142,11 @@ export interface ContainerV1 {
   /**
    * Actions that the management system should take in response to container lifecycle events. Cannot be updated.
    */
-  lifecycle?: LifecycleV1
+  lifecycle?: Lifecycle
   /**
    * Periodic probe of container liveness. Container will be restarted if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
    */
-  livenessProbe?: ProbeV1
+  livenessProbe?: Probe
   /**
    * Name of the container specified as a DNS_LABEL. Each container in a pod must have a unique name (DNS_LABEL). Cannot be updated.
    */
@@ -2154,19 +2154,19 @@ export interface ContainerV1 {
   /**
    * List of ports to expose from the container. Exposing a port here gives the system additional information about the network connections a container uses, but is primarily informational. Not specifying a port here DOES NOT prevent that port from being exposed. Any port which is listening on the default "0.0.0.0" address inside a container will be accessible from the network. Cannot be updated.
    */
-  ports?: ContainerPortV1[]
+  ports?: ContainerPort[]
   /**
    * Periodic probe of container service readiness. Container will be removed from service endpoints if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
    */
-  readinessProbe?: ProbeV1
+  readinessProbe?: Probe
   /**
    * Compute Resources required by this container. Cannot be updated. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
    */
-  resources?: ResourceRequirementsV1
+  resources?: ResourceRequirements
   /**
    * Security options the pod should run with. More info: https://kubernetes.io/docs/concepts/policy/security-context/ More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
    */
-  securityContext?: SecurityContextV1
+  securityContext?: SecurityContext
   /**
    * Whether this container should allocate a buffer for stdin in the container runtime. If this is not set, reads from stdin in the container will always result in EOF. Default is false.
    */
@@ -2190,11 +2190,11 @@ export interface ContainerV1 {
   /**
    * volumeDevices is the list of block devices to be used by the container. This is a beta feature.
    */
-  volumeDevices?: VolumeDeviceV1[]
+  volumeDevices?: VolumeDevice[]
   /**
    * Pod volumes to mount into the container's filesystem. Cannot be updated.
    */
-  volumeMounts?: VolumeMountV1[]
+  volumeMounts?: VolumeMount[]
   /**
    * Container's working directory. If not specified, the container runtime's default will be used, which might be configured in the container image. Cannot be updated.
    */
@@ -2204,7 +2204,7 @@ export interface ContainerV1 {
 /**
  * Describe a container image
  */
-export interface ContainerImageV1 {
+export interface ContainerImage {
   /**
    * Names by which this image is known. e.g. ["k8s.gcr.io/hyperkube:v1.0.7", "dockerhub.io/google_containers/hyperkube:v1.0.7"]
    */
@@ -2218,7 +2218,7 @@ export interface ContainerImageV1 {
 /**
  * ContainerPort represents a network port in a single container.
  */
-export interface ContainerPortV1 {
+export interface ContainerPort {
   /**
    * Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.
    */
@@ -2244,25 +2244,25 @@ export interface ContainerPortV1 {
 /**
  * ContainerState holds a possible state of container. Only one of its members may be specified. If none of them is specified, the default one is ContainerStateWaiting.
  */
-export interface ContainerStateV1 {
+export interface ContainerState {
   /**
    * Details about a running container
    */
-  running?: ContainerStateRunningV1
+  running?: ContainerStateRunning
   /**
    * Details about a terminated container
    */
-  terminated?: ContainerStateTerminatedV1
+  terminated?: ContainerStateTerminated
   /**
    * Details about a waiting container
    */
-  waiting?: ContainerStateWaitingV1
+  waiting?: ContainerStateWaiting
 }
 
 /**
  * ContainerStateRunning is a running state of a container.
  */
-export interface ContainerStateRunningV1 {
+export interface ContainerStateRunning {
   /**
    * Time at which the container was last (re-)started
    */
@@ -2272,7 +2272,7 @@ export interface ContainerStateRunningV1 {
 /**
  * ContainerStateTerminated is a terminated state of a container.
  */
-export interface ContainerStateTerminatedV1 {
+export interface ContainerStateTerminated {
   /**
    * Container's ID in the format 'docker://<container_id>'
    */
@@ -2306,7 +2306,7 @@ export interface ContainerStateTerminatedV1 {
 /**
  * ContainerStateWaiting is a waiting state of a container.
  */
-export interface ContainerStateWaitingV1 {
+export interface ContainerStateWaiting {
   /**
    * Message regarding why the container is not yet running.
    */
@@ -2320,7 +2320,7 @@ export interface ContainerStateWaitingV1 {
 /**
  * ContainerStatus contains details for the current status of this container.
  */
-export interface ContainerStatusV1 {
+export interface ContainerStatus {
   /**
    * Container's ID in the format 'docker://<container_id>'.
    */
@@ -2336,7 +2336,7 @@ export interface ContainerStatusV1 {
   /**
    * Details about the container's last termination condition.
    */
-  lastState?: ContainerStateV1
+  lastState?: ContainerState
   /**
    * This must be a DNS_LABEL. Each container in a pod must have a unique name. Cannot be updated.
    */
@@ -2352,13 +2352,13 @@ export interface ContainerStatusV1 {
   /**
    * Details about the container's current condition.
    */
-  state?: ContainerStateV1
+  state?: ContainerState
 }
 
 /**
  * ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this object is beta. However, it may be subject to name and representation changes in future releases, and clients should not depend on its stability. It is primarily for internal use by controllers.
  */
-export interface ControllerRevisionV1 {
+export interface ControllerRevision {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -2374,7 +2374,7 @@ export interface ControllerRevisionV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Revision indicates the revision of the state represented by Data.
    */
@@ -2384,7 +2384,7 @@ export interface ControllerRevisionV1 {
 /**
  * ControllerRevisionList is a resource containing a list of ControllerRevision objects.
  */
-export interface ControllerRevisionListV1 {
+export interface ControllerRevisionList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -2392,7 +2392,7 @@ export interface ControllerRevisionListV1 {
   /**
    * Items is the list of ControllerRevisions
    */
-  items: ControllerRevisionV1[]
+  items: ControllerRevision[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -2400,13 +2400,13 @@ export interface ControllerRevisionListV1 {
   /**
    * More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * CrossVersionObjectReference contains enough information to let you identify the referred resource.
  */
-export interface CrossVersionObjectReferenceV1 {
+export interface CrossVersionObjectReference {
   /**
    * API version of the referent
    */
@@ -2424,7 +2424,7 @@ export interface CrossVersionObjectReferenceV1 {
 /**
  * DaemonEndpoint contains information about a single Daemon endpoint.
  */
-export interface DaemonEndpointV1 {
+export interface DaemonEndpoint {
   /**
    * Port number of the given endpoint.
    */
@@ -2434,7 +2434,7 @@ export interface DaemonEndpointV1 {
 /**
  * DaemonSet represents the configuration of a daemon set.
  */
-export interface DaemonSetV1 {
+export interface DaemonSet {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -2446,21 +2446,21 @@ export interface DaemonSetV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * The desired behavior of this daemon set. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: DaemonSetSpecV1
+  spec?: DaemonSetSpec
   /**
    * The current status of this daemon set. This data may be out of date by some window of time. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: DaemonSetStatusV1
+  status?: DaemonSetStatus
 }
 
 /**
  * DaemonSetCondition describes the state of a DaemonSet at a certain point.
  */
-export interface DaemonSetConditionV1 {
+export interface DaemonSetCondition {
   /**
    * Last time the condition transitioned from one status to another.
    */
@@ -2486,7 +2486,7 @@ export interface DaemonSetConditionV1 {
 /**
  * DaemonSetList is a collection of daemon sets.
  */
-export interface DaemonSetListV1 {
+export interface DaemonSetList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -2494,7 +2494,7 @@ export interface DaemonSetListV1 {
   /**
    * A list of daemon sets.
    */
-  items: DaemonSetV1[]
+  items: DaemonSet[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -2502,13 +2502,13 @@ export interface DaemonSetListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * DaemonSetSpec is the specification of a daemon set.
  */
-export interface DaemonSetSpecV1 {
+export interface DaemonSetSpec {
   /**
    * The minimum number of seconds for which a newly created DaemonSet pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready).
    */
@@ -2520,21 +2520,21 @@ export interface DaemonSetSpecV1 {
   /**
    * A label query over pods that are managed by the daemon set. Must match in order to be controlled. It must match the pod template's labels. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: LabelSelectorV1
+  selector: LabelSelector
   /**
    * An object that describes the pod that will be created. The DaemonSet will create exactly one copy of this pod on every node that matches the template's node selector (or on every node if no node selector is specified). More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
   /**
    * An update strategy to replace existing DaemonSet pods with new pods.
    */
-  updateStrategy?: DaemonSetUpdateStrategyV1
+  updateStrategy?: DaemonSetUpdateStrategy
 }
 
 /**
  * DaemonSetStatus represents the current status of a daemon set.
  */
-export interface DaemonSetStatusV1 {
+export interface DaemonSetStatus {
   /**
    * Count of hash collisions for the DaemonSet. The DaemonSet controller uses this field as a collision avoidance mechanism when it needs to create the name for the newest ControllerRevision.
    */
@@ -2542,7 +2542,7 @@ export interface DaemonSetStatusV1 {
   /**
    * Represents the latest available observations of a DaemonSet's current state.
    */
-  conditions?: DaemonSetConditionV1[]
+  conditions?: DaemonSetCondition[]
   /**
    * The number of nodes that are running at least 1 daemon pod and are supposed to run the daemon pod. More info: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
    */
@@ -2580,11 +2580,11 @@ export interface DaemonSetStatusV1 {
 /**
  * DaemonSetUpdateStrategy is a struct used to control the update strategy for a DaemonSet.
  */
-export interface DaemonSetUpdateStrategyV1 {
+export interface DaemonSetUpdateStrategy {
   /**
    * Rolling update config params. Present only if type = "RollingUpdate".
    */
-  rollingUpdate?: RollingUpdateDaemonSetV1
+  rollingUpdate?: RollingUpdateDaemonSet
   /**
    * Type of daemon set update. Can be "RollingUpdate" or "OnDelete". Default is RollingUpdate.
    */
@@ -2594,7 +2594,7 @@ export interface DaemonSetUpdateStrategyV1 {
 /**
  * DeleteOptions may be provided when deleting an API object.
  */
-export interface DeleteOptionsV1 {
+export interface DeleteOptions {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -2618,7 +2618,7 @@ export interface DeleteOptionsV1 {
   /**
    * Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.
    */
-  preconditions?: PreconditionsV1
+  preconditions?: Preconditions
   /**
    * Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
    */
@@ -2628,7 +2628,7 @@ export interface DeleteOptionsV1 {
 /**
  * Deployment enables declarative updates for Pods and ReplicaSets.
  */
-export interface DeploymentV1 {
+export interface Deployment {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -2640,21 +2640,21 @@ export interface DeploymentV1 {
   /**
    * Standard object metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of the Deployment.
    */
-  spec?: DeploymentSpecV1
+  spec?: DeploymentSpec
   /**
    * Most recently observed status of the Deployment.
    */
-  status?: DeploymentStatusV1
+  status?: DeploymentStatus
 }
 
 /**
  * DeploymentCondition describes the state of a deployment at a certain point.
  */
-export interface DeploymentConditionV1 {
+export interface DeploymentCondition {
   /**
    * Last time the condition transitioned from one status to another.
    */
@@ -2684,7 +2684,7 @@ export interface DeploymentConditionV1 {
 /**
  * DeploymentList is a list of Deployments.
  */
-export interface DeploymentListV1 {
+export interface DeploymentList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -2692,7 +2692,7 @@ export interface DeploymentListV1 {
   /**
    * Items is the list of Deployments.
    */
-  items: DeploymentV1[]
+  items: Deployment[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -2700,13 +2700,13 @@ export interface DeploymentListV1 {
   /**
    * Standard list metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * DeploymentSpec is the specification of the desired behavior of the Deployment.
  */
-export interface DeploymentSpecV1 {
+export interface DeploymentSpec {
   /**
    * Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)
    */
@@ -2730,21 +2730,21 @@ export interface DeploymentSpecV1 {
   /**
    * Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment. It must match the pod template's labels.
    */
-  selector: LabelSelectorV1
+  selector: LabelSelector
   /**
    * The deployment strategy to use to replace existing pods with new ones.
    */
-  strategy?: DeploymentStrategyV1
+  strategy?: DeploymentStrategy
   /**
    * Template describes the pods that will be created.
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
 }
 
 /**
  * DeploymentStatus is the most recently observed status of the Deployment.
  */
-export interface DeploymentStatusV1 {
+export interface DeploymentStatus {
   /**
    * Total number of available pods (ready for at least minReadySeconds) targeted by this deployment.
    */
@@ -2756,7 +2756,7 @@ export interface DeploymentStatusV1 {
   /**
    * Represents the latest available observations of a deployment's current state.
    */
-  conditions?: DeploymentConditionV1[]
+  conditions?: DeploymentCondition[]
   /**
    * The generation observed by the deployment controller.
    */
@@ -2782,11 +2782,11 @@ export interface DeploymentStatusV1 {
 /**
  * DeploymentStrategy describes how to replace existing pods with new ones.
  */
-export interface DeploymentStrategyV1 {
+export interface DeploymentStrategy {
   /**
    * Rolling update config params. Present only if DeploymentStrategyType = RollingUpdate.
    */
-  rollingUpdate?: RollingUpdateDeploymentV1
+  rollingUpdate?: RollingUpdateDeployment
   /**
    * Type of deployment. Can be "Recreate" or "RollingUpdate". Default is RollingUpdate.
    */
@@ -2796,21 +2796,21 @@ export interface DeploymentStrategyV1 {
 /**
  * Represents downward API info for projecting into a projected volume. Note that this is identical to a downwardAPI volume source without the default mode.
  */
-export interface DownwardAPIProjectionV1 {
+export interface DownwardAPIProjection {
   /**
    * Items is a list of DownwardAPIVolume file
    */
-  items?: DownwardAPIVolumeFileV1[]
+  items?: DownwardAPIVolumeFile[]
 }
 
 /**
  * DownwardAPIVolumeFile represents information to create the file containing the pod field
  */
-export interface DownwardAPIVolumeFileV1 {
+export interface DownwardAPIVolumeFile {
   /**
    * Required: Selects a field of the pod: only annotations, labels, name and namespace are supported.
    */
-  fieldRef?: ObjectFieldSelectorV1
+  fieldRef?: ObjectFieldSelector
   /**
    * Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
    */
@@ -2822,13 +2822,13 @@ export interface DownwardAPIVolumeFileV1 {
   /**
    * Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, requests.cpu and requests.memory) are currently supported.
    */
-  resourceFieldRef?: ResourceFieldSelectorV1
+  resourceFieldRef?: ResourceFieldSelector
 }
 
 /**
  * DownwardAPIVolumeSource represents a volume containing downward API info. Downward API volumes support ownership management and SELinux relabeling.
  */
-export interface DownwardAPIVolumeSourceV1 {
+export interface DownwardAPIVolumeSource {
   /**
    * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
    */
@@ -2836,13 +2836,13 @@ export interface DownwardAPIVolumeSourceV1 {
   /**
    * Items is a list of downward API volume file
    */
-  items?: DownwardAPIVolumeFileV1[]
+  items?: DownwardAPIVolumeFile[]
 }
 
 /**
  * Represents an empty directory for a pod. Empty directory volumes support ownership management and SELinux relabeling.
  */
-export interface EmptyDirVolumeSourceV1 {
+export interface EmptyDirVolumeSource {
   /**
    * What type of storage medium should back this directory. The default is "" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: https://kubernetes.io/docs/concepts/storage/volumes#emptydir
    */
@@ -2856,7 +2856,7 @@ export interface EmptyDirVolumeSourceV1 {
 /**
  * EndpointAddress is a tuple that describes single IP address.
  */
-export interface EndpointAddressV1 {
+export interface EndpointAddress {
   /**
    * The Hostname of this endpoint
    */
@@ -2872,13 +2872,13 @@ export interface EndpointAddressV1 {
   /**
    * Reference to object providing the endpoint.
    */
-  targetRef?: ObjectReferenceV1
+  targetRef?: ObjectReference
 }
 
 /**
  * EndpointPort is a tuple that describes a single port.
  */
-export interface EndpointPortV1 {
+export interface EndpointPort {
   /**
    * The name of this port (corresponds to ServicePort.Name). Must be a DNS_LABEL. Optional only if one port is defined.
    */
@@ -2903,19 +2903,19 @@ export interface EndpointPortV1 {
  *     a: [ 10.10.1.1:8675, 10.10.2.2:8675 ],
  *     b: [ 10.10.1.1:309, 10.10.2.2:309 ]
  */
-export interface EndpointSubsetV1 {
+export interface EndpointSubset {
   /**
    * IP addresses which offer the related ports that are marked as ready. These endpoints should be considered safe for load balancers and clients to utilize.
    */
-  addresses?: EndpointAddressV1[]
+  addresses?: EndpointAddress[]
   /**
    * IP addresses which offer the related ports but are not currently marked as ready because they have not yet finished starting, have recently failed a readiness check, or have recently failed a liveness check.
    */
-  notReadyAddresses?: EndpointAddressV1[]
+  notReadyAddresses?: EndpointAddress[]
   /**
    * Port numbers available on the related IP addresses.
    */
-  ports?: EndpointPortV1[]
+  ports?: EndpointPort[]
 }
 
 /**
@@ -2932,7 +2932,7 @@ export interface EndpointSubsetV1 {
  *     },
  *  ]
  */
-export interface EndpointsV1 {
+export interface Endpoints {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -2944,17 +2944,17 @@ export interface EndpointsV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * The set of all endpoints is the union of all subsets. Addresses are placed into subsets according to the IPs they share. A single address with multiple ports, some of which are ready and some of which are not (because they come from different containers) will result in the address being displayed in different subsets for the different ports. No address will appear in both Addresses and NotReadyAddresses in the same subset. Sets of addresses and ports that comprise a service.
    */
-  subsets?: EndpointSubsetV1[]
+  subsets?: EndpointSubset[]
 }
 
 /**
  * EndpointsList is a list of endpoints.
  */
-export interface EndpointsListV1 {
+export interface EndpointsList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -2962,7 +2962,7 @@ export interface EndpointsListV1 {
   /**
    * List of endpoints.
    */
-  items: EndpointsV1[]
+  items: Endpoints[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -2970,17 +2970,17 @@ export interface EndpointsListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * EnvFromSource represents the source of a set of ConfigMaps
  */
-export interface EnvFromSourceV1 {
+export interface EnvFromSource {
   /**
    * The ConfigMap to select from
    */
-  configMapRef?: ConfigMapEnvSourceV1
+  configMapRef?: ConfigMapEnvSource
   /**
    * An optional identifier to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.
    */
@@ -2988,13 +2988,13 @@ export interface EnvFromSourceV1 {
   /**
    * The Secret to select from
    */
-  secretRef?: SecretEnvSourceV1
+  secretRef?: SecretEnvSource
 }
 
 /**
  * EnvVar represents an environment variable present in a Container.
  */
-export interface EnvVarV1 {
+export interface EnvVar {
   /**
    * Name of the environment variable. Must be a C_IDENTIFIER.
    */
@@ -3006,35 +3006,35 @@ export interface EnvVarV1 {
   /**
    * Source for the environment variable's value. Cannot be used if value is not empty.
    */
-  valueFrom?: EnvVarSourceV1
+  valueFrom?: EnvVarSource
 }
 
 /**
  * EnvVarSource represents a source for the value of an EnvVar.
  */
-export interface EnvVarSourceV1 {
+export interface EnvVarSource {
   /**
    * Selects a key of a ConfigMap.
    */
-  configMapKeyRef?: ConfigMapKeySelectorV1
+  configMapKeyRef?: ConfigMapKeySelector
   /**
    * Selects a field of the pod: supports metadata.name, metadata.namespace, metadata.labels, metadata.annotations, spec.nodeName, spec.serviceAccountName, status.hostIP, status.podIP.
    */
-  fieldRef?: ObjectFieldSelectorV1
+  fieldRef?: ObjectFieldSelector
   /**
    * Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, limits.ephemeral-storage, requests.cpu, requests.memory and requests.ephemeral-storage) are currently supported.
    */
-  resourceFieldRef?: ResourceFieldSelectorV1
+  resourceFieldRef?: ResourceFieldSelector
   /**
    * Selects a key of a secret in the pod's namespace
    */
-  secretKeyRef?: SecretKeySelectorV1
+  secretKeyRef?: SecretKeySelector
 }
 
 /**
  * Event is a report of an event somewhere in the cluster.
  */
-export interface EventV1 {
+export interface Event {
   /**
    * What action was taken/failed regarding to the Regarding object.
    */
@@ -3058,7 +3058,7 @@ export interface EventV1 {
   /**
    * The object that this event is about.
    */
-  involvedObject: ObjectReferenceV1
+  involvedObject: ObjectReference
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -3074,7 +3074,7 @@ export interface EventV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata: ObjectMetaV1
+  metadata: ObjectMeta
   /**
    * This should be a short, machine understandable string that gives the reason for the transition into the object's current status.
    */
@@ -3082,7 +3082,7 @@ export interface EventV1 {
   /**
    * Optional secondary object for more complex actions.
    */
-  related?: ObjectReferenceV1
+  related?: ObjectReference
   /**
    * Name of the controller that emitted this Event, e.g. `kubernetes.io/kubelet`.
    */
@@ -3094,11 +3094,11 @@ export interface EventV1 {
   /**
    * Data about the Event series this event represents or nil if it's a singleton Event.
    */
-  series?: EventSeriesV1
+  series?: EventSeries
   /**
    * The component reporting this event. Should be a short machine understandable string.
    */
-  source?: EventSourceV1
+  source?: EventSource
   /**
    * Type of this event (Normal, Warning), new types could be added in the future
    */
@@ -3108,7 +3108,7 @@ export interface EventV1 {
 /**
  * EventList is a list of events.
  */
-export interface EventListV1 {
+export interface EventList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -3116,7 +3116,7 @@ export interface EventListV1 {
   /**
    * List of events
    */
-  items: EventV1[]
+  items: Event[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -3124,13 +3124,13 @@ export interface EventListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * EventSeries contain information on series of events, i.e. thing that was/is happening continuously for some time.
  */
-export interface EventSeriesV1 {
+export interface EventSeries {
   /**
    * Number of occurrences in this series up to the last heartbeat time
    */
@@ -3148,7 +3148,7 @@ export interface EventSeriesV1 {
 /**
  * EventSource contains information for an event.
  */
-export interface EventSourceV1 {
+export interface EventSource {
   /**
    * Component from which the event is generated.
    */
@@ -3162,7 +3162,7 @@ export interface EventSourceV1 {
 /**
  * ExecAction describes a "run in container" action.
  */
-export interface ExecActionV1 {
+export interface ExecAction {
   /**
    * Command is the command line to execute inside the container, the working directory for the command  is root ('/') in the container's filesystem. The command is simply exec'd, it is not run inside a shell, so traditional shell instructions ('|', etc) won't work. To use a shell, you need to explicitly call out to that shell. Exit status of 0 is treated as live/healthy and non-zero is unhealthy.
    */
@@ -3172,7 +3172,7 @@ export interface ExecActionV1 {
 /**
  * Represents a Fibre Channel volume. Fibre Channel volumes can only be mounted as read/write once. Fibre Channel volumes support ownership management and SELinux relabeling.
  */
-export interface FCVolumeSourceV1 {
+export interface FCVolumeSource {
   /**
    * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
    */
@@ -3198,7 +3198,7 @@ export interface FCVolumeSourceV1 {
 /**
  * FlexPersistentVolumeSource represents a generic persistent volume resource that is provisioned/attached using an exec based plugin.
  */
-export interface FlexPersistentVolumeSourceV1 {
+export interface FlexPersistentVolumeSource {
   /**
    * Driver is the name of the driver to use for this volume.
    */
@@ -3218,13 +3218,13 @@ export interface FlexPersistentVolumeSourceV1 {
   /**
    * Optional: SecretRef is reference to the secret object containing sensitive information to pass to the plugin scripts. This may be empty if no secret object is specified. If the secret object contains more than one secret, all secrets are passed to the plugin scripts.
    */
-  secretRef?: SecretReferenceV1
+  secretRef?: SecretReference
 }
 
 /**
  * FlexVolume represents a generic volume resource that is provisioned/attached using an exec based plugin.
  */
-export interface FlexVolumeSourceV1 {
+export interface FlexVolumeSource {
   /**
    * Driver is the name of the driver to use for this volume.
    */
@@ -3244,13 +3244,13 @@ export interface FlexVolumeSourceV1 {
   /**
    * Optional: SecretRef is reference to the secret object containing sensitive information to pass to the plugin scripts. This may be empty if no secret object is specified. If the secret object contains more than one secret, all secrets are passed to the plugin scripts.
    */
-  secretRef?: LocalObjectReferenceV1
+  secretRef?: LocalObjectReference
 }
 
 /**
  * Represents a Flocker volume mounted by the Flocker agent. One and only one of datasetName and datasetUUID should be set. Flocker volumes do not support ownership management or SELinux relabeling.
  */
-export interface FlockerVolumeSourceV1 {
+export interface FlockerVolumeSource {
   /**
    * Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated
    */
@@ -3266,7 +3266,7 @@ export interface FlockerVolumeSourceV1 {
  * 
  * A GCE PD must exist before mounting to a container. The disk must also be in the same GCE project and zone as the kubelet. A GCE PD can only be mounted as read/write once or read-only many times. GCE PDs support ownership management and SELinux relabeling.
  */
-export interface GCEPersistentDiskVolumeSourceV1 {
+export interface GCEPersistentDiskVolumeSource {
   /**
    * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
    */
@@ -3290,7 +3290,7 @@ export interface GCEPersistentDiskVolumeSourceV1 {
  * 
  * DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mount an EmptyDir into an InitContainer that clones the repo using git, then mount the EmptyDir into the Pod's container.
  */
-export interface GitRepoVolumeSourceV1 {
+export interface GitRepoVolumeSource {
   /**
    * Target directory name. Must not contain or start with '..'.  If '.' is supplied, the volume directory will be the git repository.  Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.
    */
@@ -3308,7 +3308,7 @@ export interface GitRepoVolumeSourceV1 {
 /**
  * Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
  */
-export interface GlusterfsPersistentVolumeSourceV1 {
+export interface GlusterfsPersistentVolumeSource {
   /**
    * EndpointsName is the endpoint name that details Glusterfs topology. More info: https://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
    */
@@ -3330,7 +3330,7 @@ export interface GlusterfsPersistentVolumeSourceV1 {
 /**
  * Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
  */
-export interface GlusterfsVolumeSourceV1 {
+export interface GlusterfsVolumeSource {
   /**
    * EndpointsName is the endpoint name that details Glusterfs topology. More info: https://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod
    */
@@ -3348,7 +3348,7 @@ export interface GlusterfsVolumeSourceV1 {
 /**
  * GroupVersion contains the "group/version" and "version" string of a version. It is made a struct to keep extensibility.
  */
-export interface GroupVersionForDiscoveryV1 {
+export interface GroupVersionForDiscovery {
   /**
    * groupVersion specifies the API group and version in the form "group/version"
    */
@@ -3362,7 +3362,7 @@ export interface GroupVersionForDiscoveryV1 {
 /**
  * HTTPGetAction describes an action based on HTTP Get requests.
  */
-export interface HTTPGetActionV1 {
+export interface HTTPGetAction {
   /**
    * Host name to connect to, defaults to the pod IP. You probably want to set "Host" in httpHeaders instead.
    */
@@ -3370,7 +3370,7 @@ export interface HTTPGetActionV1 {
   /**
    * Custom headers to set in the request. HTTP allows repeated headers.
    */
-  httpHeaders?: HTTPHeaderV1[]
+  httpHeaders?: HTTPHeader[]
   /**
    * Path to access on the HTTP server.
    */
@@ -3388,7 +3388,7 @@ export interface HTTPGetActionV1 {
 /**
  * HTTPHeader describes a custom header to be used in HTTP probes
  */
-export interface HTTPHeaderV1 {
+export interface HTTPHeader {
   /**
    * The header field name
    */
@@ -3402,25 +3402,25 @@ export interface HTTPHeaderV1 {
 /**
  * Handler defines a specific action that should be taken
  */
-export interface HandlerV1 {
+export interface Handler {
   /**
    * One and only one of the following should be specified. Exec specifies the action to take.
    */
-  exec?: ExecActionV1
+  exec?: ExecAction
   /**
    * HTTPGet specifies the http request to perform.
    */
-  httpGet?: HTTPGetActionV1
+  httpGet?: HTTPGetAction
   /**
    * TCPSocket specifies an action involving a TCP port. TCP hooks not yet supported
    */
-  tcpSocket?: TCPSocketActionV1
+  tcpSocket?: TCPSocketAction
 }
 
 /**
  * configuration of a horizontal pod autoscaler.
  */
-export interface HorizontalPodAutoscalerV1 {
+export interface HorizontalPodAutoscaler {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -3432,21 +3432,21 @@ export interface HorizontalPodAutoscalerV1 {
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * behaviour of autoscaler. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
-  spec?: HorizontalPodAutoscalerSpecV1
+  spec?: HorizontalPodAutoscalerSpec
   /**
    * current information about the autoscaler.
    */
-  status?: HorizontalPodAutoscalerStatusV1
+  status?: HorizontalPodAutoscalerStatus
 }
 
 /**
  * list of horizontal pod autoscaler objects.
  */
-export interface HorizontalPodAutoscalerListV1 {
+export interface HorizontalPodAutoscalerList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -3454,7 +3454,7 @@ export interface HorizontalPodAutoscalerListV1 {
   /**
    * list of horizontal pod autoscaler objects.
    */
-  items: HorizontalPodAutoscalerV1[]
+  items: HorizontalPodAutoscaler[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -3462,13 +3462,13 @@ export interface HorizontalPodAutoscalerListV1 {
   /**
    * Standard list metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * specification of a horizontal pod autoscaler.
  */
-export interface HorizontalPodAutoscalerSpecV1 {
+export interface HorizontalPodAutoscalerSpec {
   /**
    * upper limit for the number of pods that can be set by the autoscaler; cannot be smaller than MinReplicas.
    */
@@ -3480,7 +3480,7 @@ export interface HorizontalPodAutoscalerSpecV1 {
   /**
    * reference to scaled resource; horizontal pod autoscaler will learn the current resource consumption and will set the desired number of pods by using its Scale subresource.
    */
-  scaleTargetRef: CrossVersionObjectReferenceV1
+  scaleTargetRef: CrossVersionObjectReference
   /**
    * target average CPU utilization (represented as a percentage of requested CPU) over all the pods; if not specified the default autoscaling policy will be used.
    */
@@ -3490,7 +3490,7 @@ export interface HorizontalPodAutoscalerSpecV1 {
 /**
  * current status of a horizontal pod autoscaler
  */
-export interface HorizontalPodAutoscalerStatusV1 {
+export interface HorizontalPodAutoscalerStatus {
   /**
    * current average CPU utilization over all pods, represented as a percentage of requested CPU, e.g. 70 means that an average pod is using now 70% of its requested CPU.
    */
@@ -3516,7 +3516,7 @@ export interface HorizontalPodAutoscalerStatusV1 {
 /**
  * HostAlias holds the mapping between IP and hostnames that will be injected as an entry in the pod's hosts file.
  */
-export interface HostAliasV1 {
+export interface HostAlias {
   /**
    * Hostnames for the above IP address.
    */
@@ -3530,7 +3530,7 @@ export interface HostAliasV1 {
 /**
  * Represents a host path mapped into a pod. Host path volumes do not support ownership management or SELinux relabeling.
  */
-export interface HostPathVolumeSourceV1 {
+export interface HostPathVolumeSource {
   /**
    * Path of the directory on the host. If the path is a symlink, it will follow the link to the real path. More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath
    */
@@ -3544,7 +3544,7 @@ export interface HostPathVolumeSourceV1 {
 /**
  * IPBlock describes a particular CIDR (Ex. "192.168.1.1/24") that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The except entry describes CIDRs that should not be included within this rule.
  */
-export interface IPBlockV1 {
+export interface IPBlock {
   /**
    * CIDR is a string representing the IP Block Valid examples are "192.168.1.1/24"
    */
@@ -3558,7 +3558,7 @@ export interface IPBlockV1 {
 /**
  * ISCSIPersistentVolumeSource represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
  */
-export interface ISCSIPersistentVolumeSourceV1 {
+export interface ISCSIPersistentVolumeSource {
   /**
    * whether support iSCSI Discovery CHAP authentication
    */
@@ -3598,7 +3598,7 @@ export interface ISCSIPersistentVolumeSourceV1 {
   /**
    * CHAP Secret for iSCSI target and initiator authentication
    */
-  secretRef?: SecretReferenceV1
+  secretRef?: SecretReference
   /**
    * iSCSI Target Portal. The Portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
    */
@@ -3608,7 +3608,7 @@ export interface ISCSIPersistentVolumeSourceV1 {
 /**
  * Represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
  */
-export interface ISCSIVolumeSourceV1 {
+export interface ISCSIVolumeSource {
   /**
    * whether support iSCSI Discovery CHAP authentication
    */
@@ -3648,7 +3648,7 @@ export interface ISCSIVolumeSourceV1 {
   /**
    * CHAP Secret for iSCSI target and initiator authentication
    */
-  secretRef?: LocalObjectReferenceV1
+  secretRef?: LocalObjectReference
   /**
    * iSCSI Target Portal. The Portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
    */
@@ -3658,7 +3658,7 @@ export interface ISCSIVolumeSourceV1 {
 /**
  * Initializer is information about an initializer that has not yet completed.
  */
-export interface InitializerV1 {
+export interface Initializer {
   /**
    * name of the process that is responsible for initializing this object.
    */
@@ -3668,21 +3668,21 @@ export interface InitializerV1 {
 /**
  * Initializers tracks the progress of initialization.
  */
-export interface InitializersV1 {
+export interface Initializers {
   /**
    * Pending is a list of initializers that must execute in order before this object is visible. When the last pending initializer is removed, and no failing result is set, the initializers struct will be set to nil and the object is considered as initialized and visible to all clients.
    */
-  pending: InitializerV1[]
+  pending: Initializer[]
   /**
    * If result is set with the Failure field, the object will be persisted to storage and then deleted, ensuring that other clients can observe the deletion.
    */
-  result?: StatusV1
+  result?: Status
 }
 
 /**
  * Job represents the configuration of a single job.
  */
-export interface JobV1 {
+export interface Job {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -3694,21 +3694,21 @@ export interface JobV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of a job. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: JobSpecV1
+  spec?: JobSpec
   /**
    * Current status of a job. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: JobStatusV1
+  status?: JobStatus
 }
 
 /**
  * JobCondition describes current state of a job.
  */
-export interface JobConditionV1 {
+export interface JobCondition {
   /**
    * Last time the condition was checked.
    */
@@ -3738,7 +3738,7 @@ export interface JobConditionV1 {
 /**
  * JobList is a collection of jobs.
  */
-export interface JobListV1 {
+export interface JobList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -3746,7 +3746,7 @@ export interface JobListV1 {
   /**
    * items is the list of Jobs.
    */
-  items: JobV1[]
+  items: Job[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -3754,13 +3754,13 @@ export interface JobListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * JobSpec describes how the job execution will look like.
  */
-export interface JobSpecV1 {
+export interface JobSpec {
   /**
    * Specifies the duration in seconds relative to the startTime that the job may be active before the system tries to terminate it; value must be positive integer
    */
@@ -3784,11 +3784,11 @@ export interface JobSpecV1 {
   /**
    * A label query over pods that should match the pod count. Normally, the system sets this field for you. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * Describes the pod that will be created when executing a job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
   /**
    * ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed). If this field is set, ttlSecondsAfterFinished after the Job finishes, it is eligible to be automatically deleted. When the Job is being deleted, its lifecycle guarantees (e.g. finalizers) will be honored. If this field is unset, the Job won't be automatically deleted. If this field is set to zero, the Job becomes eligible to be deleted immediately after it finishes. This field is alpha-level and is only honored by servers that enable the TTLAfterFinished feature.
    */
@@ -3798,7 +3798,7 @@ export interface JobSpecV1 {
 /**
  * JobStatus represents the current state of a Job.
  */
-export interface JobStatusV1 {
+export interface JobStatus {
   /**
    * The number of actively running pods.
    */
@@ -3810,7 +3810,7 @@ export interface JobStatusV1 {
   /**
    * The latest available observations of an object's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
    */
-  conditions?: JobConditionV1[]
+  conditions?: JobCondition[]
   /**
    * The number of pods which reached phase Failed.
    */
@@ -3828,7 +3828,7 @@ export interface JobStatusV1 {
 /**
  * Maps a string key to a path within a volume.
  */
-export interface KeyToPathV1 {
+export interface KeyToPath {
   /**
    * The key to project.
    */
@@ -3846,11 +3846,11 @@ export interface KeyToPathV1 {
 /**
  * A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.
  */
-export interface LabelSelectorV1 {
+export interface LabelSelector {
   /**
    * matchExpressions is a list of label selector requirements. The requirements are ANDed.
    */
-  matchExpressions?: LabelSelectorRequirementV1[]
+  matchExpressions?: LabelSelectorRequirement[]
   /**
    * matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
    */
@@ -3860,7 +3860,7 @@ export interface LabelSelectorV1 {
 /**
  * A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
  */
-export interface LabelSelectorRequirementV1 {
+export interface LabelSelectorRequirement {
   /**
    * key is the label key that the selector applies to.
    */
@@ -3878,21 +3878,21 @@ export interface LabelSelectorRequirementV1 {
 /**
  * Lifecycle describes actions that the management system should take in response to container lifecycle events. For the PostStart and PreStop lifecycle handlers, management of the container blocks until the action is complete, unless the container process fails, in which case the handler is aborted.
  */
-export interface LifecycleV1 {
+export interface Lifecycle {
   /**
    * PostStart is called immediately after a container is created. If the handler fails, the container is terminated and restarted according to its restart policy. Other management of the container blocks until the hook completes. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks
    */
-  postStart?: HandlerV1
+  postStart?: Handler
   /**
    * PreStop is called immediately before a container is terminated. The container is terminated after the handler completes. The reason for termination is passed to the handler. Regardless of the outcome of the handler, the container is eventually terminated. Other management of the container blocks until the hook completes. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks
    */
-  preStop?: HandlerV1
+  preStop?: Handler
 }
 
 /**
  * LimitRange sets resource usage limits for each kind of resource in a Namespace.
  */
-export interface LimitRangeV1 {
+export interface LimitRange {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -3904,17 +3904,17 @@ export interface LimitRangeV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the limits enforced. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: LimitRangeSpecV1
+  spec?: LimitRangeSpec
 }
 
 /**
  * LimitRangeItem defines a min/max usage limit for any resource that matches on kind.
  */
-export interface LimitRangeItemV1 {
+export interface LimitRangeItem {
   /**
    * Default resource requirement limit value by resource name if resource limit is omitted.
    */
@@ -3944,7 +3944,7 @@ export interface LimitRangeItemV1 {
 /**
  * LimitRangeList is a list of LimitRange items.
  */
-export interface LimitRangeListV1 {
+export interface LimitRangeList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -3952,7 +3952,7 @@ export interface LimitRangeListV1 {
   /**
    * Items is a list of LimitRange objects. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
    */
-  items: LimitRangeV1[]
+  items: LimitRange[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -3960,23 +3960,23 @@ export interface LimitRangeListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * LimitRangeSpec defines a min/max usage limit for resources that match on kind.
  */
-export interface LimitRangeSpecV1 {
+export interface LimitRangeSpec {
   /**
    * Limits is the list of LimitRangeItem objects that are enforced.
    */
-  limits: LimitRangeItemV1[]
+  limits: LimitRangeItem[]
 }
 
 /**
  * ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
  */
-export interface ListMetaV1 {
+export interface ListMeta {
   /**
    * continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
    */
@@ -3994,7 +3994,7 @@ export interface ListMetaV1 {
 /**
  * LoadBalancerIngress represents the status of a load-balancer ingress point: traffic intended for the service should be sent to an ingress point.
  */
-export interface LoadBalancerIngressV1 {
+export interface LoadBalancerIngress {
   /**
    * Hostname is set for load-balancer ingress points that are DNS based (typically AWS load-balancers)
    */
@@ -4008,17 +4008,17 @@ export interface LoadBalancerIngressV1 {
 /**
  * LoadBalancerStatus represents the status of a load-balancer.
  */
-export interface LoadBalancerStatusV1 {
+export interface LoadBalancerStatus {
   /**
    * Ingress is a list containing ingress points for the load-balancer. Traffic intended for the service should be sent to these ingress points.
    */
-  ingress?: LoadBalancerIngressV1[]
+  ingress?: LoadBalancerIngress[]
 }
 
 /**
  * LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
  */
-export interface LocalObjectReferenceV1 {
+export interface LocalObjectReference {
   /**
    * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
    */
@@ -4028,7 +4028,7 @@ export interface LocalObjectReferenceV1 {
 /**
  * LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.
  */
-export interface LocalSubjectAccessReviewV1 {
+export interface LocalSubjectAccessReview {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4037,21 +4037,21 @@ export interface LocalSubjectAccessReviewV1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "LocalSubjectAccessReview"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec holds information about the request being evaluated.  spec.namespace must be equal to the namespace you made the request against.  If empty, it is defaulted.
    */
-  spec: SubjectAccessReviewSpecV1
+  spec: SubjectAccessReviewSpec
   /**
    * Status is filled in by the server and indicates whether the request is allowed or not
    */
-  status?: SubjectAccessReviewStatusV1
+  status?: SubjectAccessReviewStatus
 }
 
 /**
  * Local represents directly-attached storage with node affinity (Beta feature)
  */
-export interface LocalVolumeSourceV1 {
+export interface LocalVolumeSource {
   /**
    * Filesystem type to mount. It applies only when the Path is a block device. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default value is to auto-select a fileystem if unspecified.
    */
@@ -4065,7 +4065,7 @@ export interface LocalVolumeSourceV1 {
 /**
  * Represents an NFS mount that lasts the lifetime of a pod. NFS volumes do not support ownership management or SELinux relabeling.
  */
-export interface NFSVolumeSourceV1 {
+export interface NFSVolumeSource {
   /**
    * Path that is exported by the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
    */
@@ -4083,7 +4083,7 @@ export interface NFSVolumeSourceV1 {
 /**
  * Namespace provides a scope for Names. Use of multiple namespaces is optional.
  */
-export interface NamespaceV1 {
+export interface Namespace {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4095,21 +4095,21 @@ export interface NamespaceV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the behavior of the Namespace. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: NamespaceSpecV1
+  spec?: NamespaceSpec
   /**
    * Status describes the current status of a Namespace. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: NamespaceStatusV1
+  status?: NamespaceStatus
 }
 
 /**
  * NamespaceList is a list of Namespaces.
  */
-export interface NamespaceListV1 {
+export interface NamespaceList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4117,7 +4117,7 @@ export interface NamespaceListV1 {
   /**
    * Items is the list of Namespace objects in the list. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
    */
-  items: NamespaceV1[]
+  items: Namespace[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -4125,13 +4125,13 @@ export interface NamespaceListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * NamespaceSpec describes the attributes on a Namespace.
  */
-export interface NamespaceSpecV1 {
+export interface NamespaceSpec {
   /**
    * Finalizers is an opaque list of values that must be empty to permanently remove object from storage. More info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
    */
@@ -4141,7 +4141,7 @@ export interface NamespaceSpecV1 {
 /**
  * NamespaceStatus is information about the current status of a Namespace.
  */
-export interface NamespaceStatusV1 {
+export interface NamespaceStatus {
   /**
    * Phase is the current lifecycle phase of the namespace. More info: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/
    */
@@ -4151,7 +4151,7 @@ export interface NamespaceStatusV1 {
 /**
  * NetworkPolicy describes what network traffic is allowed for a set of Pods
  */
-export interface NetworkPolicyV1 {
+export interface NetworkPolicy {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4163,45 +4163,45 @@ export interface NetworkPolicyV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior for this NetworkPolicy.
    */
-  spec?: NetworkPolicySpecV1
+  spec?: NetworkPolicySpec
 }
 
 /**
  * NetworkPolicyEgressRule describes a particular set of traffic that is allowed out of pods matched by a NetworkPolicySpec's podSelector. The traffic must match both ports and to. This type is beta-level in 1.8
  */
-export interface NetworkPolicyEgressRuleV1 {
+export interface NetworkPolicyEgressRule {
   /**
    * List of destination ports for outgoing traffic. Each item in this list is combined using a logical OR. If this field is empty or missing, this rule matches all ports (traffic not restricted by port). If this field is present and contains at least one item, then this rule allows traffic only if the traffic matches at least one port in the list.
    */
-  ports?: NetworkPolicyPortV1[]
+  ports?: NetworkPolicyPort[]
   /**
    * List of destinations for outgoing traffic of pods selected for this rule. Items in this list are combined using a logical OR operation. If this field is empty or missing, this rule matches all destinations (traffic not restricted by destination). If this field is present and contains at least one item, this rule allows traffic only if the traffic matches at least one item in the to list.
    */
-  to?: NetworkPolicyPeerV1[]
+  to?: NetworkPolicyPeer[]
 }
 
 /**
  * NetworkPolicyIngressRule describes a particular set of traffic that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The traffic must match both ports and from.
  */
-export interface NetworkPolicyIngressRuleV1 {
+export interface NetworkPolicyIngressRule {
   /**
    * List of sources which should be able to access the pods selected for this rule. Items in this list are combined using a logical OR operation. If this field is empty or missing, this rule matches all sources (traffic not restricted by source). If this field is present and contains at least on item, this rule allows traffic only if the traffic matches at least one item in the from list.
    */
-  from?: NetworkPolicyPeerV1[]
+  from?: NetworkPolicyPeer[]
   /**
    * List of ports which should be made accessible on the pods selected for this rule. Each item in this list is combined using a logical OR. If this field is empty or missing, this rule matches all ports (traffic not restricted by port). If this field is present and contains at least one item, then this rule allows traffic only if the traffic matches at least one port in the list.
    */
-  ports?: NetworkPolicyPortV1[]
+  ports?: NetworkPolicyPort[]
 }
 
 /**
  * NetworkPolicyList is a list of NetworkPolicy objects.
  */
-export interface NetworkPolicyListV1 {
+export interface NetworkPolicyList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4209,7 +4209,7 @@ export interface NetworkPolicyListV1 {
   /**
    * Items is a list of schema objects.
    */
-  items: NetworkPolicyV1[]
+  items: NetworkPolicy[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -4217,35 +4217,35 @@ export interface NetworkPolicyListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * NetworkPolicyPeer describes a peer to allow traffic from. Only certain combinations of fields are allowed
  */
-export interface NetworkPolicyPeerV1 {
+export interface NetworkPolicyPeer {
   /**
    * IPBlock defines policy on a particular IPBlock. If this field is set then neither of the other fields can be.
    */
-  ipBlock?: IPBlockV1
+  ipBlock?: IPBlock
   /**
    * Selects Namespaces using cluster-scoped labels. This field follows standard label selector semantics; if present but empty, it selects all namespaces.
    * 
    * If PodSelector is also set, then the NetworkPolicyPeer as a whole selects the Pods matching PodSelector in the Namespaces selected by NamespaceSelector. Otherwise it selects all Pods in the Namespaces selected by NamespaceSelector.
    */
-  namespaceSelector?: LabelSelectorV1
+  namespaceSelector?: LabelSelector
   /**
    * This is a label selector which selects Pods. This field follows standard label selector semantics; if present but empty, it selects all pods.
    * 
    * If NamespaceSelector is also set, then the NetworkPolicyPeer as a whole selects the Pods matching PodSelector in the Namespaces selected by NamespaceSelector. Otherwise it selects the Pods matching PodSelector in the policy's own Namespace.
    */
-  podSelector?: LabelSelectorV1
+  podSelector?: LabelSelector
 }
 
 /**
  * NetworkPolicyPort describes a port to allow traffic on
  */
-export interface NetworkPolicyPortV1 {
+export interface NetworkPolicyPort {
   /**
    * The port on the given protocol. This can either be a numerical or named port on a pod. If this field is not provided, this matches all port names and numbers.
    */
@@ -4259,19 +4259,19 @@ export interface NetworkPolicyPortV1 {
 /**
  * NetworkPolicySpec provides the specification of a NetworkPolicy
  */
-export interface NetworkPolicySpecV1 {
+export interface NetworkPolicySpec {
   /**
    * List of egress rules to be applied to the selected pods. Outgoing traffic is allowed if there are no NetworkPolicies selecting the pod (and cluster policy otherwise allows the traffic), OR if the traffic matches at least one egress rule across all of the NetworkPolicy objects whose podSelector matches the pod. If this field is empty then this NetworkPolicy limits all outgoing traffic (and serves solely to ensure that the pods it selects are isolated by default). This field is beta-level in 1.8
    */
-  egress?: NetworkPolicyEgressRuleV1[]
+  egress?: NetworkPolicyEgressRule[]
   /**
    * List of ingress rules to be applied to the selected pods. Traffic is allowed to a pod if there are no NetworkPolicies selecting the pod (and cluster policy otherwise allows the traffic), OR if the traffic source is the pod's local node, OR if the traffic matches at least one ingress rule across all of the NetworkPolicy objects whose podSelector matches the pod. If this field is empty then this NetworkPolicy does not allow any traffic (and serves solely to ensure that the pods it selects are isolated by default)
    */
-  ingress?: NetworkPolicyIngressRuleV1[]
+  ingress?: NetworkPolicyIngressRule[]
   /**
    * Selects the pods to which this NetworkPolicy object applies. The array of ingress rules is applied to any pods selected by this field. Multiple network policies can select the same set of pods. In this case, the ingress rules for each are combined additively. This field is NOT optional and follows standard label selector semantics. An empty podSelector matches all pods in this namespace.
    */
-  podSelector: LabelSelectorV1
+  podSelector: LabelSelector
   /**
    * List of rule types that the NetworkPolicy relates to. Valid options are Ingress, Egress, or Ingress,Egress. If this field is not specified, it will default based on the existence of Ingress or Egress rules; policies that contain an Egress section are assumed to affect Egress, and all policies (whether or not they contain an Ingress section) are assumed to affect Ingress. If you want to write an egress-only policy, you must explicitly specify policyTypes [ "Egress" ]. Likewise, if you want to write a policy that specifies that no egress is allowed, you must specify a policyTypes value that include "Egress" (since such a policy would not include an Egress section and would otherwise default to just [ "Ingress" ]). This field is beta-level in 1.8
    */
@@ -4281,7 +4281,7 @@ export interface NetworkPolicySpecV1 {
 /**
  * Node is a worker node in Kubernetes. Each node will have a unique identifier in the cache (i.e. in etcd).
  */
-export interface NodeV1 {
+export interface Node {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4293,21 +4293,21 @@ export interface NodeV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the behavior of a node. https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: NodeSpecV1
+  spec?: NodeSpec
   /**
    * Most recently observed status of the node. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: NodeStatusV1
+  status?: NodeStatus
 }
 
 /**
  * NodeAddress contains information for the node's address.
  */
-export interface NodeAddressV1 {
+export interface NodeAddress {
   /**
    * The node address.
    */
@@ -4321,21 +4321,21 @@ export interface NodeAddressV1 {
 /**
  * Node affinity is a group of node affinity scheduling rules.
  */
-export interface NodeAffinityV1 {
+export interface NodeAffinity {
   /**
    * The scheduler will prefer to schedule pods to nodes that satisfy the affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding "weight" to the sum if the node matches the corresponding matchExpressions; the node(s) with the highest sum are the most preferred.
    */
-  preferredDuringSchedulingIgnoredDuringExecution?: PreferredSchedulingTermV1[]
+  preferredDuringSchedulingIgnoredDuringExecution?: PreferredSchedulingTerm[]
   /**
    * If the affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node. If the affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to an update), the system may or may not try to eventually evict the pod from its node.
    */
-  requiredDuringSchedulingIgnoredDuringExecution?: NodeSelectorV1
+  requiredDuringSchedulingIgnoredDuringExecution?: NodeSelector
 }
 
 /**
  * NodeCondition contains condition information for a node.
  */
-export interface NodeConditionV1 {
+export interface NodeCondition {
   /**
    * Last time we got an update on a given condition.
    */
@@ -4365,25 +4365,25 @@ export interface NodeConditionV1 {
 /**
  * NodeConfigSource specifies a source of node configuration. Exactly one subfield (excluding metadata) must be non-nil.
  */
-export interface NodeConfigSourceV1 {
+export interface NodeConfigSource {
   /**
    * ConfigMap is a reference to a Node's ConfigMap
    */
-  configMap?: ConfigMapNodeConfigSourceV1
+  configMap?: ConfigMapNodeConfigSource
 }
 
 /**
  * NodeConfigStatus describes the status of the config assigned by Node.Spec.ConfigSource.
  */
-export interface NodeConfigStatusV1 {
+export interface NodeConfigStatus {
   /**
    * Active reports the checkpointed config the node is actively using. Active will represent either the current version of the Assigned config, or the current LastKnownGood config, depending on whether attempting to use the Assigned config results in an error.
    */
-  active?: NodeConfigSourceV1
+  active?: NodeConfigSource
   /**
    * Assigned reports the checkpointed config the node will try to use. When Node.Spec.ConfigSource is updated, the node checkpoints the associated config payload to local disk, along with a record indicating intended config. The node refers to this record to choose its config checkpoint, and reports this record in Assigned. Assigned only updates in the status after the record has been checkpointed to disk. When the Kubelet is restarted, it tries to make the Assigned config the Active config by loading and validating the checkpointed payload identified by Assigned.
    */
-  assigned?: NodeConfigSourceV1
+  assigned?: NodeConfigSource
   /**
    * Error describes any problems reconciling the Spec.ConfigSource to the Active config. Errors may occur, for example, attempting to checkpoint Spec.ConfigSource to the local Assigned record, attempting to checkpoint the payload associated with Spec.ConfigSource, attempting to load or validate the Assigned config, etc. Errors may occur at different points while syncing config. Earlier errors (e.g. download or checkpointing errors) will not result in a rollback to LastKnownGood, and may resolve across Kubelet retries. Later errors (e.g. loading or validating a checkpointed config) will result in a rollback to LastKnownGood. In the latter case, it is usually possible to resolve the error by fixing the config assigned in Spec.ConfigSource. You can find additional information for debugging by searching the error message in the Kubelet log. Error is a human-readable description of the error state; machines can check whether or not Error is empty, but should not rely on the stability of the Error text across Kubelet versions.
    */
@@ -4391,23 +4391,23 @@ export interface NodeConfigStatusV1 {
   /**
    * LastKnownGood reports the checkpointed config the node will fall back to when it encounters an error attempting to use the Assigned config. The Assigned config becomes the LastKnownGood config when the node determines that the Assigned config is stable and correct. This is currently implemented as a 10-minute soak period starting when the local record of Assigned config is updated. If the Assigned config is Active at the end of this period, it becomes the LastKnownGood. Note that if Spec.ConfigSource is reset to nil (use local defaults), the LastKnownGood is also immediately reset to nil, because the local default config is always assumed good. You should not make assumptions about the node's method of determining config stability and correctness, as this may change or become configurable in the future.
    */
-  lastKnownGood?: NodeConfigSourceV1
+  lastKnownGood?: NodeConfigSource
 }
 
 /**
  * NodeDaemonEndpoints lists ports opened by daemons running on the Node.
  */
-export interface NodeDaemonEndpointsV1 {
+export interface NodeDaemonEndpoints {
   /**
    * Endpoint on which Kubelet is listening.
    */
-  kubeletEndpoint?: DaemonEndpointV1
+  kubeletEndpoint?: DaemonEndpoint
 }
 
 /**
  * NodeList is the whole list of all Nodes which have been registered with master.
  */
-export interface NodeListV1 {
+export interface NodeList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4415,7 +4415,7 @@ export interface NodeListV1 {
   /**
    * List of nodes
    */
-  items: NodeV1[]
+  items: Node[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -4423,23 +4423,23 @@ export interface NodeListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
  */
-export interface NodeSelectorV1 {
+export interface NodeSelector {
   /**
    * Required. A list of node selector terms. The terms are ORed.
    */
-  nodeSelectorTerms: NodeSelectorTermV1[]
+  nodeSelectorTerms: NodeSelectorTerm[]
 }
 
 /**
  * A node selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
  */
-export interface NodeSelectorRequirementV1 {
+export interface NodeSelectorRequirement {
   /**
    * The label key that the selector applies to.
    */
@@ -4457,25 +4457,25 @@ export interface NodeSelectorRequirementV1 {
 /**
  * A null or empty node selector term matches no objects. The requirements of them are ANDed. The TopologySelectorTerm type implements a subset of the NodeSelectorTerm.
  */
-export interface NodeSelectorTermV1 {
+export interface NodeSelectorTerm {
   /**
    * A list of node selector requirements by node's labels.
    */
-  matchExpressions?: NodeSelectorRequirementV1[]
+  matchExpressions?: NodeSelectorRequirement[]
   /**
    * A list of node selector requirements by node's fields.
    */
-  matchFields?: NodeSelectorRequirementV1[]
+  matchFields?: NodeSelectorRequirement[]
 }
 
 /**
  * NodeSpec describes the attributes that a node is created with.
  */
-export interface NodeSpecV1 {
+export interface NodeSpec {
   /**
    * If specified, the source to get node configuration from The DynamicKubeletConfig feature gate must be enabled for the Kubelet to use this field
    */
-  configSource?: NodeConfigSourceV1
+  configSource?: NodeConfigSource
   /**
    * Deprecated. Not all kubelets will set this field. Remove field after 1.13. see: https://issues.k8s.io/61966
    */
@@ -4491,7 +4491,7 @@ export interface NodeSpecV1 {
   /**
    * If specified, the node's taints.
    */
-  taints?: TaintV1[]
+  taints?: Taint[]
   /**
    * Unschedulable controls node schedulability of new pods. By default, node is schedulable. More info: https://kubernetes.io/docs/concepts/nodes/node/#manual-node-administration
    */
@@ -4501,11 +4501,11 @@ export interface NodeSpecV1 {
 /**
  * NodeStatus is information about the current status of a node.
  */
-export interface NodeStatusV1 {
+export interface NodeStatus {
   /**
    * List of addresses reachable to the node. Queried from cloud provider, if available. More info: https://kubernetes.io/docs/concepts/nodes/node/#addresses
    */
-  addresses?: NodeAddressV1[]
+  addresses?: NodeAddress[]
   /**
    * Allocatable represents the resources of a node that are available for scheduling. Defaults to Capacity.
    */
@@ -4517,23 +4517,23 @@ export interface NodeStatusV1 {
   /**
    * Conditions is an array of current observed node conditions. More info: https://kubernetes.io/docs/concepts/nodes/node/#condition
    */
-  conditions?: NodeConditionV1[]
+  conditions?: NodeCondition[]
   /**
    * Status of the config assigned to the node via the dynamic Kubelet config feature.
    */
-  config?: NodeConfigStatusV1
+  config?: NodeConfigStatus
   /**
    * Endpoints of daemons running on the Node.
    */
-  daemonEndpoints?: NodeDaemonEndpointsV1
+  daemonEndpoints?: NodeDaemonEndpoints
   /**
    * List of container images on this node
    */
-  images?: ContainerImageV1[]
+  images?: ContainerImage[]
   /**
    * Set of ids/uuids to uniquely identify the node. More info: https://kubernetes.io/docs/concepts/nodes/node/#info
    */
-  nodeInfo?: NodeSystemInfoV1
+  nodeInfo?: NodeSystemInfo
   /**
    * NodePhase is the recently observed lifecycle phase of the node. More info: https://kubernetes.io/docs/concepts/nodes/node/#phase The field is never populated, and now is deprecated.
    */
@@ -4541,7 +4541,7 @@ export interface NodeStatusV1 {
   /**
    * List of volumes that are attached to the node.
    */
-  volumesAttached?: AttachedVolumeV1[]
+  volumesAttached?: AttachedVolume[]
   /**
    * List of attachable volumes in use (mounted) by the node.
    */
@@ -4551,7 +4551,7 @@ export interface NodeStatusV1 {
 /**
  * NodeSystemInfo is a set of ids/uuids to uniquely identify the node.
  */
-export interface NodeSystemInfoV1 {
+export interface NodeSystemInfo {
   /**
    * The Architecture reported by the node
    */
@@ -4597,7 +4597,7 @@ export interface NodeSystemInfoV1 {
 /**
  * NonResourceAttributes includes the authorization attributes available for non-resource requests to the Authorizer interface
  */
-export interface NonResourceAttributesV1 {
+export interface NonResourceAttributes {
   /**
    * Path is the URL path of the request
    */
@@ -4611,7 +4611,7 @@ export interface NonResourceAttributesV1 {
 /**
  * NonResourceRule holds information that describes a rule for the non-resource
  */
-export interface NonResourceRuleV1 {
+export interface NonResourceRule {
   /**
    * NonResourceURLs is a set of partial urls that a user should have access to.  *s are allowed, but only as the full, final step in the path.  "*" means all.
    */
@@ -4625,7 +4625,7 @@ export interface NonResourceRuleV1 {
 /**
  * ObjectFieldSelector selects an APIVersioned field of an object.
  */
-export interface ObjectFieldSelectorV1 {
+export interface ObjectFieldSelector {
   /**
    * Version of the schema the FieldPath is written in terms of, defaults to "v1".
    */
@@ -4639,7 +4639,7 @@ export interface ObjectFieldSelectorV1 {
 /**
  * ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
  */
-export interface ObjectMetaV1 {
+export interface ObjectMeta {
   /**
    * Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
    */
@@ -4685,7 +4685,7 @@ export interface ObjectMetaV1 {
    * 
    * When an object is created, the system will populate this list with the current set of initializers. Only privileged users may set or modify this list. Once it is empty, it may not be modified further by any user.
    */
-  initializers?: InitializersV1
+  initializers?: Initializers
   /**
    * Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
    */
@@ -4703,7 +4703,7 @@ export interface ObjectMetaV1 {
   /**
    * List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
    */
-  ownerReferences?: OwnerReferenceV1[]
+  ownerReferences?: OwnerReference[]
   /**
    * An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.
    * 
@@ -4725,7 +4725,7 @@ export interface ObjectMetaV1 {
 /**
  * ObjectReference contains enough information to let you inspect or modify the referred object.
  */
-export interface ObjectReferenceV1 {
+export interface ObjectReference {
   /**
    * API version of the referent.
    */
@@ -4759,7 +4759,7 @@ export interface ObjectReferenceV1 {
 /**
  * OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.
  */
-export interface OwnerReferenceV1 {
+export interface OwnerReference {
   /**
    * API version of the referent.
    */
@@ -4789,7 +4789,7 @@ export interface OwnerReferenceV1 {
 /**
  * PersistentVolume (PV) is a storage resource provisioned by an administrator. It is analogous to a node. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
  */
-export interface PersistentVolumeV1 {
+export interface PersistentVolume {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4801,21 +4801,21 @@ export interface PersistentVolumeV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines a specification of a persistent volume owned by the cluster. Provisioned by an administrator. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistent-volumes
    */
-  spec?: PersistentVolumeSpecV1
+  spec?: PersistentVolumeSpec
   /**
    * Status represents the current information/status for the persistent volume. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistent-volumes
    */
-  status?: PersistentVolumeStatusV1
+  status?: PersistentVolumeStatus
 }
 
 /**
  * PersistentVolumeClaim is a user's request for and claim to a persistent volume
  */
-export interface PersistentVolumeClaimV1 {
+export interface PersistentVolumeClaim {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4827,21 +4827,21 @@ export interface PersistentVolumeClaimV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the desired characteristics of a volume requested by a pod author. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
    */
-  spec?: PersistentVolumeClaimSpecV1
+  spec?: PersistentVolumeClaimSpec
   /**
    * Status represents the current information/status of a persistent volume claim. Read-only. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
    */
-  status?: PersistentVolumeClaimStatusV1
+  status?: PersistentVolumeClaimStatus
 }
 
 /**
  * PersistentVolumeClaimCondition contails details about state of pvc
  */
-export interface PersistentVolumeClaimConditionV1 {
+export interface PersistentVolumeClaimCondition {
   /**
    * Last time we probed the condition.
    */
@@ -4865,7 +4865,7 @@ export interface PersistentVolumeClaimConditionV1 {
 /**
  * PersistentVolumeClaimList is a list of PersistentVolumeClaim items.
  */
-export interface PersistentVolumeClaimListV1 {
+export interface PersistentVolumeClaimList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4873,7 +4873,7 @@ export interface PersistentVolumeClaimListV1 {
   /**
    * A list of persistent volume claims. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
    */
-  items: PersistentVolumeClaimV1[]
+  items: PersistentVolumeClaim[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -4881,13 +4881,13 @@ export interface PersistentVolumeClaimListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * PersistentVolumeClaimSpec describes the common attributes of storage devices and allows a Source for provider-specific attributes
  */
-export interface PersistentVolumeClaimSpecV1 {
+export interface PersistentVolumeClaimSpec {
   /**
    * AccessModes contains the desired access modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1
    */
@@ -4895,15 +4895,15 @@ export interface PersistentVolumeClaimSpecV1 {
   /**
    * This field requires the VolumeSnapshotDataSource alpha feature gate to be enabled and currently VolumeSnapshot is the only supported data source. If the provisioner can support VolumeSnapshot data source, it will create a new volume and data will be restored to the volume at the same time. If the provisioner does not support VolumeSnapshot data source, volume will not be created and the failure will be reported as an event. In the future, we plan to support more data source types and the behavior of the provisioner may change.
    */
-  dataSource?: TypedLocalObjectReferenceV1
+  dataSource?: TypedLocalObjectReference
   /**
    * Resources represents the minimum resources the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources
    */
-  resources?: ResourceRequirementsV1
+  resources?: ResourceRequirements
   /**
    * A label query over volumes to consider for binding.
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * Name of the StorageClass required by the claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#class-1
    */
@@ -4921,7 +4921,7 @@ export interface PersistentVolumeClaimSpecV1 {
 /**
  * PersistentVolumeClaimStatus is the current status of a persistent volume claim.
  */
-export interface PersistentVolumeClaimStatusV1 {
+export interface PersistentVolumeClaimStatus {
   /**
    * AccessModes contains the actual access modes the volume backing the PVC has. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1
    */
@@ -4933,7 +4933,7 @@ export interface PersistentVolumeClaimStatusV1 {
   /**
    * Current Condition of persistent volume claim. If underlying persistent volume is being resized then the Condition will be set to 'ResizeStarted'.
    */
-  conditions?: PersistentVolumeClaimConditionV1[]
+  conditions?: PersistentVolumeClaimCondition[]
   /**
    * Phase represents the current phase of PersistentVolumeClaim.
    */
@@ -4943,7 +4943,7 @@ export interface PersistentVolumeClaimStatusV1 {
 /**
  * PersistentVolumeClaimVolumeSource references the user's PVC in the same namespace. This volume finds the bound PV and mounts that volume for the pod. A PersistentVolumeClaimVolumeSource is, essentially, a wrapper around another type of volume that is owned by someone else (the system).
  */
-export interface PersistentVolumeClaimVolumeSourceV1 {
+export interface PersistentVolumeClaimVolumeSource {
   /**
    * ClaimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
    */
@@ -4957,7 +4957,7 @@ export interface PersistentVolumeClaimVolumeSourceV1 {
 /**
  * PersistentVolumeList is a list of PersistentVolume items.
  */
-export interface PersistentVolumeListV1 {
+export interface PersistentVolumeList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -4965,7 +4965,7 @@ export interface PersistentVolumeListV1 {
   /**
    * List of persistent volumes. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
    */
-  items: PersistentVolumeV1[]
+  items: PersistentVolume[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -4973,13 +4973,13 @@ export interface PersistentVolumeListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * PersistentVolumeSpec is the specification of a persistent volume.
  */
-export interface PersistentVolumeSpecV1 {
+export interface PersistentVolumeSpec {
   /**
    * AccessModes contains all ways the volume can be mounted. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes
    */
@@ -4987,15 +4987,15 @@ export interface PersistentVolumeSpecV1 {
   /**
    * AWSElasticBlockStore represents an AWS Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
    */
-  awsElasticBlockStore?: AWSElasticBlockStoreVolumeSourceV1
+  awsElasticBlockStore?: AWSElasticBlockStoreVolumeSource
   /**
    * AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
    */
-  azureDisk?: AzureDiskVolumeSourceV1
+  azureDisk?: AzureDiskVolumeSource
   /**
    * AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
    */
-  azureFile?: AzureFilePersistentVolumeSourceV1
+  azureFile?: AzureFilePersistentVolumeSource
   /**
    * A description of the persistent volume's resources and capacity. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity
    */
@@ -5003,51 +5003,51 @@ export interface PersistentVolumeSpecV1 {
   /**
    * CephFS represents a Ceph FS mount on the host that shares a pod's lifetime
    */
-  cephfs?: CephFSPersistentVolumeSourceV1
+  cephfs?: CephFSPersistentVolumeSource
   /**
    * Cinder represents a cinder volume attached and mounted on kubelets host machine More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
    */
-  cinder?: CinderPersistentVolumeSourceV1
+  cinder?: CinderPersistentVolumeSource
   /**
    * ClaimRef is part of a bi-directional binding between PersistentVolume and PersistentVolumeClaim. Expected to be non-nil when bound. claim.VolumeName is the authoritative bind between PV and PVC. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#binding
    */
-  claimRef?: ObjectReferenceV1
+  claimRef?: ObjectReference
   /**
    * CSI represents storage that handled by an external CSI driver (Beta feature).
    */
-  csi?: CSIPersistentVolumeSourceV1
+  csi?: CSIPersistentVolumeSource
   /**
    * FC represents a Fibre Channel resource that is attached to a kubelet's host machine and then exposed to the pod.
    */
-  fc?: FCVolumeSourceV1
+  fc?: FCVolumeSource
   /**
    * FlexVolume represents a generic volume resource that is provisioned/attached using an exec based plugin.
    */
-  flexVolume?: FlexPersistentVolumeSourceV1
+  flexVolume?: FlexPersistentVolumeSource
   /**
    * Flocker represents a Flocker volume attached to a kubelet's host machine and exposed to the pod for its usage. This depends on the Flocker control service being running
    */
-  flocker?: FlockerVolumeSourceV1
+  flocker?: FlockerVolumeSource
   /**
    * GCEPersistentDisk represents a GCE Disk resource that is attached to a kubelet's host machine and then exposed to the pod. Provisioned by an admin. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
    */
-  gcePersistentDisk?: GCEPersistentDiskVolumeSourceV1
+  gcePersistentDisk?: GCEPersistentDiskVolumeSource
   /**
    * Glusterfs represents a Glusterfs volume that is attached to a host and exposed to the pod. Provisioned by an admin. More info: https://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md
    */
-  glusterfs?: GlusterfsPersistentVolumeSourceV1
+  glusterfs?: GlusterfsPersistentVolumeSource
   /**
    * HostPath represents a directory on the host. Provisioned by a developer or tester. This is useful for single-node development and testing only! On-host storage is not supported in any way and WILL NOT WORK in a multi-node cluster. More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath
    */
-  hostPath?: HostPathVolumeSourceV1
+  hostPath?: HostPathVolumeSource
   /**
    * ISCSI represents an ISCSI Disk resource that is attached to a kubelet's host machine and then exposed to the pod. Provisioned by an admin.
    */
-  iscsi?: ISCSIPersistentVolumeSourceV1
+  iscsi?: ISCSIPersistentVolumeSource
   /**
    * Local represents directly-attached storage with node affinity
    */
-  local?: LocalVolumeSourceV1
+  local?: LocalVolumeSource
   /**
    * A list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#mount-options
    */
@@ -5055,11 +5055,11 @@ export interface PersistentVolumeSpecV1 {
   /**
    * NFS represents an NFS mount on the host. Provisioned by an admin. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
    */
-  nfs?: NFSVolumeSourceV1
+  nfs?: NFSVolumeSource
   /**
    * NodeAffinity defines constraints that limit what nodes this volume can be accessed from. This field influences the scheduling of pods that use this volume.
    */
-  nodeAffinity?: VolumeNodeAffinityV1
+  nodeAffinity?: VolumeNodeAffinity
   /**
    * What happens to a persistent volume when released from its claim. Valid options are Retain (default for manually created PersistentVolumes), Delete (default for dynamically provisioned PersistentVolumes), and Recycle (deprecated). Recycle must be supported by the volume plugin underlying this PersistentVolume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#reclaiming
    */
@@ -5067,23 +5067,23 @@ export interface PersistentVolumeSpecV1 {
   /**
    * PhotonPersistentDisk represents a PhotonController persistent disk attached and mounted on kubelets host machine
    */
-  photonPersistentDisk?: PhotonPersistentDiskVolumeSourceV1
+  photonPersistentDisk?: PhotonPersistentDiskVolumeSource
   /**
    * PortworxVolume represents a portworx volume attached and mounted on kubelets host machine
    */
-  portworxVolume?: PortworxVolumeSourceV1
+  portworxVolume?: PortworxVolumeSource
   /**
    * Quobyte represents a Quobyte mount on the host that shares a pod's lifetime
    */
-  quobyte?: QuobyteVolumeSourceV1
+  quobyte?: QuobyteVolumeSource
   /**
    * RBD represents a Rados Block Device mount on the host that shares a pod's lifetime. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md
    */
-  rbd?: RBDPersistentVolumeSourceV1
+  rbd?: RBDPersistentVolumeSource
   /**
    * ScaleIO represents a ScaleIO persistent volume attached and mounted on Kubernetes nodes.
    */
-  scaleIO?: ScaleIOPersistentVolumeSourceV1
+  scaleIO?: ScaleIOPersistentVolumeSource
   /**
    * Name of StorageClass to which this persistent volume belongs. Empty value means that this volume does not belong to any StorageClass.
    */
@@ -5091,7 +5091,7 @@ export interface PersistentVolumeSpecV1 {
   /**
    * StorageOS represents a StorageOS volume that is attached to the kubelet's host machine and mounted into the pod More info: https://releases.k8s.io/HEAD/examples/volumes/storageos/README.md
    */
-  storageos?: StorageOSPersistentVolumeSourceV1
+  storageos?: StorageOSPersistentVolumeSource
   /**
    * volumeMode defines if a volume is intended to be used with a formatted filesystem or to remain in raw block state. Value of Filesystem is implied when not included in spec. This is a beta feature.
    */
@@ -5099,13 +5099,13 @@ export interface PersistentVolumeSpecV1 {
   /**
    * VsphereVolume represents a vSphere volume attached and mounted on kubelets host machine
    */
-  vsphereVolume?: VsphereVirtualDiskVolumeSourceV1
+  vsphereVolume?: VsphereVirtualDiskVolumeSource
 }
 
 /**
  * PersistentVolumeStatus is the current status of a persistent volume.
  */
-export interface PersistentVolumeStatusV1 {
+export interface PersistentVolumeStatus {
   /**
    * A human-readable message indicating details about why the volume is in this state.
    */
@@ -5123,7 +5123,7 @@ export interface PersistentVolumeStatusV1 {
 /**
  * Represents a Photon Controller persistent disk resource.
  */
-export interface PhotonPersistentDiskVolumeSourceV1 {
+export interface PhotonPersistentDiskVolumeSource {
   /**
    * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
    */
@@ -5137,7 +5137,7 @@ export interface PhotonPersistentDiskVolumeSourceV1 {
 /**
  * Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.
  */
-export interface PodV1 {
+export interface Pod {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -5149,39 +5149,39 @@ export interface PodV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of the pod. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: PodSpecV1
+  spec?: PodSpec
   /**
    * Most recently observed status of the pod. This data may not be up to date. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: PodStatusV1
+  status?: PodStatus
 }
 
 /**
  * Pod affinity is a group of inter pod affinity scheduling rules.
  */
-export interface PodAffinityV1 {
+export interface PodAffinity {
   /**
    * The scheduler will prefer to schedule pods to nodes that satisfy the affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding "weight" to the sum if the node has pods which matches the corresponding podAffinityTerm; the node(s) with the highest sum are the most preferred.
    */
-  preferredDuringSchedulingIgnoredDuringExecution?: WeightedPodAffinityTermV1[]
+  preferredDuringSchedulingIgnoredDuringExecution?: WeightedPodAffinityTerm[]
   /**
    * If the affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node. If the affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to a pod label update), the system may or may not try to eventually evict the pod from its node. When there are multiple elements, the lists of nodes corresponding to each podAffinityTerm are intersected, i.e. all terms must be satisfied.
    */
-  requiredDuringSchedulingIgnoredDuringExecution?: PodAffinityTermV1[]
+  requiredDuringSchedulingIgnoredDuringExecution?: PodAffinityTerm[]
 }
 
 /**
  * Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key <topologyKey> matches that of any node on which a pod of the set of pods is running
  */
-export interface PodAffinityTermV1 {
+export interface PodAffinityTerm {
   /**
    * A label query over a set of resources, in this case pods.
    */
-  labelSelector?: LabelSelectorV1
+  labelSelector?: LabelSelector
   /**
    * namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means "this pod's namespace"
    */
@@ -5195,21 +5195,21 @@ export interface PodAffinityTermV1 {
 /**
  * Pod anti affinity is a group of inter pod anti affinity scheduling rules.
  */
-export interface PodAntiAffinityV1 {
+export interface PodAntiAffinity {
   /**
    * The scheduler will prefer to schedule pods to nodes that satisfy the anti-affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling anti-affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding "weight" to the sum if the node has pods which matches the corresponding podAffinityTerm; the node(s) with the highest sum are the most preferred.
    */
-  preferredDuringSchedulingIgnoredDuringExecution?: WeightedPodAffinityTermV1[]
+  preferredDuringSchedulingIgnoredDuringExecution?: WeightedPodAffinityTerm[]
   /**
    * If the anti-affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node. If the anti-affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to a pod label update), the system may or may not try to eventually evict the pod from its node. When there are multiple elements, the lists of nodes corresponding to each podAffinityTerm are intersected, i.e. all terms must be satisfied.
    */
-  requiredDuringSchedulingIgnoredDuringExecution?: PodAffinityTermV1[]
+  requiredDuringSchedulingIgnoredDuringExecution?: PodAffinityTerm[]
 }
 
 /**
  * PodCondition contains details for the current condition of this pod.
  */
-export interface PodConditionV1 {
+export interface PodCondition {
   /**
    * Last time we probed the condition.
    */
@@ -5239,7 +5239,7 @@ export interface PodConditionV1 {
 /**
  * PodDNSConfig defines the DNS parameters of a pod in addition to those generated from DNSPolicy.
  */
-export interface PodDNSConfigV1 {
+export interface PodDNSConfig {
   /**
    * A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
    */
@@ -5247,7 +5247,7 @@ export interface PodDNSConfigV1 {
   /**
    * A list of DNS resolver options. This will be merged with the base options generated from DNSPolicy. Duplicated entries will be removed. Resolution options given in Options will override those that appear in the base DNSPolicy.
    */
-  options?: PodDNSConfigOptionV1[]
+  options?: PodDNSConfigOption[]
   /**
    * A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
    */
@@ -5257,7 +5257,7 @@ export interface PodDNSConfigV1 {
 /**
  * PodDNSConfigOption defines DNS resolver options of a pod.
  */
-export interface PodDNSConfigOptionV1 {
+export interface PodDNSConfigOption {
   /**
    * Required.
    */
@@ -5268,7 +5268,7 @@ export interface PodDNSConfigOptionV1 {
 /**
  * PodList is a list of Pods.
  */
-export interface PodListV1 {
+export interface PodList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -5276,7 +5276,7 @@ export interface PodListV1 {
   /**
    * List of pods. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md
    */
-  items: PodV1[]
+  items: Pod[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -5284,13 +5284,13 @@ export interface PodListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * PodReadinessGate contains the reference to a pod condition
  */
-export interface PodReadinessGateV1 {
+export interface PodReadinessGate {
   /**
    * ConditionType refers to a condition in the pod's condition list with matching type.
    */
@@ -5300,7 +5300,7 @@ export interface PodReadinessGateV1 {
 /**
  * PodSecurityContext holds pod-level security attributes and common container settings. Some fields are also present in container.securityContext.  Field values of container.securityContext take precedence over field values of PodSecurityContext.
  */
-export interface PodSecurityContextV1 {
+export interface PodSecurityContext {
   /**
    * A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod:
    * 
@@ -5324,7 +5324,7 @@ export interface PodSecurityContextV1 {
   /**
    * The SELinux context to be applied to all containers. If unspecified, the container runtime will allocate a random SELinux context for each container.  May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.
    */
-  seLinuxOptions?: SELinuxOptionsV1
+  seLinuxOptions?: SELinuxOptions
   /**
    * A list of groups applied to the first process run in each container, in addition to the container's primary GID.  If unspecified, no groups will be added to any container.
    */
@@ -5332,13 +5332,13 @@ export interface PodSecurityContextV1 {
   /**
    * Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch.
    */
-  sysctls?: SysctlV1[]
+  sysctls?: Sysctl[]
 }
 
 /**
  * PodSpec is a description of a pod.
  */
-export interface PodSpecV1 {
+export interface PodSpec {
   /**
    * Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
    */
@@ -5346,7 +5346,7 @@ export interface PodSpecV1 {
   /**
    * If specified, the pod's scheduling constraints
    */
-  affinity?: AffinityV1
+  affinity?: Affinity
   /**
    * AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.
    */
@@ -5354,11 +5354,11 @@ export interface PodSpecV1 {
   /**
    * List of containers belonging to the pod. Containers cannot currently be added or removed. There must be at least one container in a Pod. Cannot be updated.
    */
-  containers: ContainerV1[]
+  containers: Container[]
   /**
    * Specifies the DNS parameters of a pod. Parameters specified here will be merged to the generated DNS configuration based on DNSPolicy.
    */
-  dnsConfig?: PodDNSConfigV1
+  dnsConfig?: PodDNSConfig
   /**
    * Set DNS policy for the pod. Defaults to "ClusterFirst". Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'.
    */
@@ -5370,7 +5370,7 @@ export interface PodSpecV1 {
   /**
    * HostAliases is an optional list of hosts and IPs that will be injected into the pod's hosts file if specified. This is only valid for non-hostNetwork pods.
    */
-  hostAliases?: HostAliasV1[]
+  hostAliases?: HostAlias[]
   /**
    * Use the host's ipc namespace. Optional: Default to false.
    */
@@ -5390,11 +5390,11 @@ export interface PodSpecV1 {
   /**
    * ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec. If specified, these secrets will be passed to individual puller implementations for them to use. For example, in the case of docker, only DockerConfig type secrets are honored. More info: https://kubernetes.io/docs/concepts/containers/images#specifying-imagepullsecrets-on-a-pod
    */
-  imagePullSecrets?: LocalObjectReferenceV1[]
+  imagePullSecrets?: LocalObjectReference[]
   /**
    * List of initialization containers belonging to the pod. Init containers are executed in order prior to containers being started. If any init container fails, the pod is considered to have failed and is handled according to its restartPolicy. The name for an init container or normal container must be unique among all containers. Init containers may not have Lifecycle actions, Readiness probes, or Liveness probes. The resourceRequirements of an init container are taken into account during scheduling by finding the highest request/limit for each resource type, and then using the max of of that value or the sum of the normal containers. Limits are applied to init containers in a similar fashion. Init containers cannot currently be added or removed. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
    */
-  initContainers?: ContainerV1[]
+  initContainers?: Container[]
   /**
    * NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements.
    */
@@ -5414,7 +5414,7 @@ export interface PodSpecV1 {
   /**
    * If specified, all readiness gates will be evaluated for pod readiness. A pod is ready when all its containers are ready AND all conditions specified in the readiness gates have status equal to "True" More info: https://github.com/kubernetes/community/blob/master/keps/sig-network/0007-pod-ready%2B%2B.md
    */
-  readinessGates?: PodReadinessGateV1[]
+  readinessGates?: PodReadinessGate[]
   /**
    * Restart policy for all containers within the pod. One of Always, OnFailure, Never. Default to Always. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy
    */
@@ -5430,7 +5430,7 @@ export interface PodSpecV1 {
   /**
    * SecurityContext holds pod-level security attributes and common container settings. Optional: Defaults to empty.  See type description for default values of each field.
    */
-  securityContext?: PodSecurityContextV1
+  securityContext?: PodSecurityContext
   /**
    * DeprecatedServiceAccount is a depreciated alias for ServiceAccountName. Deprecated: Use serviceAccountName instead.
    */
@@ -5454,25 +5454,25 @@ export interface PodSpecV1 {
   /**
    * If specified, the pod's tolerations.
    */
-  tolerations?: TolerationV1[]
+  tolerations?: Toleration[]
   /**
    * List of volumes that can be mounted by containers belonging to the pod. More info: https://kubernetes.io/docs/concepts/storage/volumes
    */
-  volumes?: VolumeV1[]
+  volumes?: Volume[]
 }
 
 /**
  * PodStatus represents information about the status of a pod. Status may trail the actual state of a system, especially if the node that hosts the pod cannot contact the control plane.
  */
-export interface PodStatusV1 {
+export interface PodStatus {
   /**
    * Current service state of pod. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-conditions
    */
-  conditions?: PodConditionV1[]
+  conditions?: PodCondition[]
   /**
    * The list has one entry per container in the manifest. Each entry is currently the output of `docker inspect`. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status
    */
-  containerStatuses?: ContainerStatusV1[]
+  containerStatuses?: ContainerStatus[]
   /**
    * IP address of the host to which the pod is assigned. Empty if not yet scheduled.
    */
@@ -5480,7 +5480,7 @@ export interface PodStatusV1 {
   /**
    * The list has one entry per init container in the manifest. The most recent successful init container will have ready = true, the most recently started container will have startTime set. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status
    */
-  initContainerStatuses?: ContainerStatusV1[]
+  initContainerStatuses?: ContainerStatus[]
   /**
    * A human readable message indicating details about why the pod is in this condition.
    */
@@ -5518,7 +5518,7 @@ export interface PodStatusV1 {
 /**
  * PodTemplate describes a template for creating copies of a predefined pod.
  */
-export interface PodTemplateV1 {
+export interface PodTemplate {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -5530,17 +5530,17 @@ export interface PodTemplateV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Template defines the pods that will be created from this pod template. https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  template?: PodTemplateSpecV1
+  template?: PodTemplateSpec
 }
 
 /**
  * PodTemplateList is a list of PodTemplates.
  */
-export interface PodTemplateListV1 {
+export interface PodTemplateList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -5548,7 +5548,7 @@ export interface PodTemplateListV1 {
   /**
    * List of pod templates
    */
-  items: PodTemplateV1[]
+  items: PodTemplate[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -5556,27 +5556,27 @@ export interface PodTemplateListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * PodTemplateSpec describes the data a pod should have when created from a template
  */
-export interface PodTemplateSpecV1 {
+export interface PodTemplateSpec {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of the pod. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: PodSpecV1
+  spec?: PodSpec
 }
 
 /**
  * PolicyRule holds information that describes a policy rule, but does not contain information about who the rule applies to or which namespace the rule applies to.
  */
-export interface PolicyRuleV1 {
+export interface PolicyRule {
   /**
    * APIGroups is the name of the APIGroup that contains the resources.  If multiple API groups are specified, any action requested against one of the enumerated resources in any API group will be allowed.
    */
@@ -5602,7 +5602,7 @@ export interface PolicyRuleV1 {
 /**
  * PortworxVolumeSource represents a Portworx volume resource.
  */
-export interface PortworxVolumeSourceV1 {
+export interface PortworxVolumeSource {
   /**
    * FSType represents the filesystem type to mount Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs". Implicitly inferred to be "ext4" if unspecified.
    */
@@ -5620,7 +5620,7 @@ export interface PortworxVolumeSourceV1 {
 /**
  * Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
  */
-export interface PreconditionsV1 {
+export interface Preconditions {
   /**
    * Specifies the target UID.
    */
@@ -5630,11 +5630,11 @@ export interface PreconditionsV1 {
 /**
  * An empty preferred scheduling term matches all objects with implicit weight 0 (i.e. it's a no-op). A null preferred scheduling term matches no objects (i.e. is also a no-op).
  */
-export interface PreferredSchedulingTermV1 {
+export interface PreferredSchedulingTerm {
   /**
    * A node selector term, associated with the corresponding weight.
    */
-  preference: NodeSelectorTermV1
+  preference: NodeSelectorTerm
   /**
    * Weight associated with matching the corresponding nodeSelectorTerm, in the range 1-100.
    */
@@ -5644,11 +5644,11 @@ export interface PreferredSchedulingTermV1 {
 /**
  * Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic.
  */
-export interface ProbeV1 {
+export interface Probe {
   /**
    * One and only one of the following should be specified. Exec specifies the action to take.
    */
-  exec?: ExecActionV1
+  exec?: ExecAction
   /**
    * Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
    */
@@ -5656,7 +5656,7 @@ export interface ProbeV1 {
   /**
    * HTTPGet specifies the http request to perform.
    */
-  httpGet?: HTTPGetActionV1
+  httpGet?: HTTPGetAction
   /**
    * Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
    */
@@ -5672,7 +5672,7 @@ export interface ProbeV1 {
   /**
    * TCPSocket specifies an action involving a TCP port. TCP hooks not yet supported
    */
-  tcpSocket?: TCPSocketActionV1
+  tcpSocket?: TCPSocketAction
   /**
    * Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
    */
@@ -5682,7 +5682,7 @@ export interface ProbeV1 {
 /**
  * Represents a projected volume source
  */
-export interface ProjectedVolumeSourceV1 {
+export interface ProjectedVolumeSource {
   /**
    * Mode bits to use on created files by default. Must be a value between 0 and 0777. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
    */
@@ -5690,13 +5690,13 @@ export interface ProjectedVolumeSourceV1 {
   /**
    * list of volume projections
    */
-  sources: VolumeProjectionV1[]
+  sources: VolumeProjection[]
 }
 
 /**
  * Represents a Quobyte mount that lasts the lifetime of a pod. Quobyte volumes do not support ownership management or SELinux relabeling.
  */
-export interface QuobyteVolumeSourceV1 {
+export interface QuobyteVolumeSource {
   /**
    * Group to map volume access to Default is no group
    */
@@ -5722,7 +5722,7 @@ export interface QuobyteVolumeSourceV1 {
 /**
  * Represents a Rados Block Device mount that lasts the lifetime of a pod. RBD volumes support ownership management and SELinux relabeling.
  */
-export interface RBDPersistentVolumeSourceV1 {
+export interface RBDPersistentVolumeSource {
   /**
    * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#rbd
    */
@@ -5750,7 +5750,7 @@ export interface RBDPersistentVolumeSourceV1 {
   /**
    * SecretRef is name of the authentication secret for RBDUser. If provided overrides keyring. Default is nil. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
    */
-  secretRef?: SecretReferenceV1
+  secretRef?: SecretReference
   /**
    * The rados user name. Default is admin. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
    */
@@ -5760,7 +5760,7 @@ export interface RBDPersistentVolumeSourceV1 {
 /**
  * Represents a Rados Block Device mount that lasts the lifetime of a pod. RBD volumes support ownership management and SELinux relabeling.
  */
-export interface RBDVolumeSourceV1 {
+export interface RBDVolumeSource {
   /**
    * Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#rbd
    */
@@ -5788,7 +5788,7 @@ export interface RBDVolumeSourceV1 {
   /**
    * SecretRef is name of the authentication secret for RBDUser. If provided overrides keyring. Default is nil. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
    */
-  secretRef?: LocalObjectReferenceV1
+  secretRef?: LocalObjectReference
   /**
    * The rados user name. Default is admin. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it
    */
@@ -5798,7 +5798,7 @@ export interface RBDVolumeSourceV1 {
 /**
  * ReplicaSet ensures that a specified number of pod replicas are running at any given time.
  */
-export interface ReplicaSetV1 {
+export interface ReplicaSet {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -5810,21 +5810,21 @@ export interface ReplicaSetV1 {
   /**
    * If the Labels of a ReplicaSet are empty, they are defaulted to be the same as the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the specification of the desired behavior of the ReplicaSet. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: ReplicaSetSpecV1
+  spec?: ReplicaSetSpec
   /**
    * Status is the most recently observed status of the ReplicaSet. This data may be out of date by some window of time. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: ReplicaSetStatusV1
+  status?: ReplicaSetStatus
 }
 
 /**
  * ReplicaSetCondition describes the state of a replica set at a certain point.
  */
-export interface ReplicaSetConditionV1 {
+export interface ReplicaSetCondition {
   /**
    * The last time the condition transitioned from one status to another.
    */
@@ -5850,7 +5850,7 @@ export interface ReplicaSetConditionV1 {
 /**
  * ReplicaSetList is a collection of ReplicaSets.
  */
-export interface ReplicaSetListV1 {
+export interface ReplicaSetList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -5858,7 +5858,7 @@ export interface ReplicaSetListV1 {
   /**
    * List of ReplicaSets. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
    */
-  items: ReplicaSetV1[]
+  items: ReplicaSet[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -5866,13 +5866,13 @@ export interface ReplicaSetListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * ReplicaSetSpec is the specification of a ReplicaSet.
  */
-export interface ReplicaSetSpecV1 {
+export interface ReplicaSetSpec {
   /**
    * Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)
    */
@@ -5884,17 +5884,17 @@ export interface ReplicaSetSpecV1 {
   /**
    * Selector is a label query over pods that should match the replica count. Label keys and values that must match in order to be controlled by this replica set. It must match the pod template's labels. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: LabelSelectorV1
+  selector: LabelSelector
   /**
    * Template is the object that describes the pod that will be created if insufficient replicas are detected. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
    */
-  template?: PodTemplateSpecV1
+  template?: PodTemplateSpec
 }
 
 /**
  * ReplicaSetStatus represents the current status of a ReplicaSet.
  */
-export interface ReplicaSetStatusV1 {
+export interface ReplicaSetStatus {
   /**
    * The number of available replicas (ready for at least minReadySeconds) for this replica set.
    */
@@ -5902,7 +5902,7 @@ export interface ReplicaSetStatusV1 {
   /**
    * Represents the latest available observations of a replica set's current state.
    */
-  conditions?: ReplicaSetConditionV1[]
+  conditions?: ReplicaSetCondition[]
   /**
    * The number of pods that have labels matching the labels of the pod template of the replicaset.
    */
@@ -5924,7 +5924,7 @@ export interface ReplicaSetStatusV1 {
 /**
  * ReplicationController represents the configuration of a replication controller.
  */
-export interface ReplicationControllerV1 {
+export interface ReplicationController {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -5936,21 +5936,21 @@ export interface ReplicationControllerV1 {
   /**
    * If the Labels of a ReplicationController are empty, they are defaulted to be the same as the Pod(s) that the replication controller manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the specification of the desired behavior of the replication controller. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: ReplicationControllerSpecV1
+  spec?: ReplicationControllerSpec
   /**
    * Status is the most recently observed status of the replication controller. This data may be out of date by some window of time. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: ReplicationControllerStatusV1
+  status?: ReplicationControllerStatus
 }
 
 /**
  * ReplicationControllerCondition describes the state of a replication controller at a certain point.
  */
-export interface ReplicationControllerConditionV1 {
+export interface ReplicationControllerCondition {
   /**
    * The last time the condition transitioned from one status to another.
    */
@@ -5976,7 +5976,7 @@ export interface ReplicationControllerConditionV1 {
 /**
  * ReplicationControllerList is a collection of replication controllers.
  */
-export interface ReplicationControllerListV1 {
+export interface ReplicationControllerList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -5984,7 +5984,7 @@ export interface ReplicationControllerListV1 {
   /**
    * List of replication controllers. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
    */
-  items: ReplicationControllerV1[]
+  items: ReplicationController[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -5992,13 +5992,13 @@ export interface ReplicationControllerListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * ReplicationControllerSpec is the specification of a replication controller.
  */
-export interface ReplicationControllerSpecV1 {
+export interface ReplicationControllerSpec {
   /**
    * Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)
    */
@@ -6014,13 +6014,13 @@ export interface ReplicationControllerSpecV1 {
   /**
    * Template is the object that describes the pod that will be created if insufficient replicas are detected. This takes precedence over a TemplateRef. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
    */
-  template?: PodTemplateSpecV1
+  template?: PodTemplateSpec
 }
 
 /**
  * ReplicationControllerStatus represents the current status of a replication controller.
  */
-export interface ReplicationControllerStatusV1 {
+export interface ReplicationControllerStatus {
   /**
    * The number of available replicas (ready for at least minReadySeconds) for this replication controller.
    */
@@ -6028,7 +6028,7 @@ export interface ReplicationControllerStatusV1 {
   /**
    * Represents the latest available observations of a replication controller's current state.
    */
-  conditions?: ReplicationControllerConditionV1[]
+  conditions?: ReplicationControllerCondition[]
   /**
    * The number of pods that have labels matching the labels of the pod template of the replication controller.
    */
@@ -6050,7 +6050,7 @@ export interface ReplicationControllerStatusV1 {
 /**
  * ResourceAttributes includes the authorization attributes available for resource requests to the Authorizer interface
  */
-export interface ResourceAttributesV1 {
+export interface ResourceAttributes {
   /**
    * Group is the API Group of the Resource.  "*" means all.
    */
@@ -6084,7 +6084,7 @@ export interface ResourceAttributesV1 {
 /**
  * ResourceFieldSelector represents container resources (cpu, memory) and their output format
  */
-export interface ResourceFieldSelectorV1 {
+export interface ResourceFieldSelector {
   /**
    * Container name: required for volumes, optional for env vars
    */
@@ -6102,7 +6102,7 @@ export interface ResourceFieldSelectorV1 {
 /**
  * ResourceQuota sets aggregate quota restrictions enforced per namespace
  */
-export interface ResourceQuotaV1 {
+export interface ResourceQuota {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6114,21 +6114,21 @@ export interface ResourceQuotaV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the desired quota. https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: ResourceQuotaSpecV1
+  spec?: ResourceQuotaSpec
   /**
    * Status defines the actual enforced quota and its current usage. https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: ResourceQuotaStatusV1
+  status?: ResourceQuotaStatus
 }
 
 /**
  * ResourceQuotaList is a list of ResourceQuota items.
  */
-export interface ResourceQuotaListV1 {
+export interface ResourceQuotaList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6136,7 +6136,7 @@ export interface ResourceQuotaListV1 {
   /**
    * Items is a list of ResourceQuota objects. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
    */
-  items: ResourceQuotaV1[]
+  items: ResourceQuota[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6144,13 +6144,13 @@ export interface ResourceQuotaListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * ResourceQuotaSpec defines the desired hard limits to enforce for Quota.
  */
-export interface ResourceQuotaSpecV1 {
+export interface ResourceQuotaSpec {
   /**
    * hard is the set of desired hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
    */
@@ -6158,7 +6158,7 @@ export interface ResourceQuotaSpecV1 {
   /**
    * scopeSelector is also a collection of filters like scopes that must match each object tracked by a quota but expressed using ScopeSelectorOperator in combination with possible values. For a resource to match, both scopes AND scopeSelector (if specified in spec), must be matched.
    */
-  scopeSelector?: ScopeSelectorV1
+  scopeSelector?: ScopeSelector
   /**
    * A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.
    */
@@ -6168,7 +6168,7 @@ export interface ResourceQuotaSpecV1 {
 /**
  * ResourceQuotaStatus defines the enforced hard limits and observed use.
  */
-export interface ResourceQuotaStatusV1 {
+export interface ResourceQuotaStatus {
   /**
    * Hard is the set of enforced hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
    */
@@ -6182,7 +6182,7 @@ export interface ResourceQuotaStatusV1 {
 /**
  * ResourceRequirements describes the compute resource requirements.
  */
-export interface ResourceRequirementsV1 {
+export interface ResourceRequirements {
   /**
    * Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
    */
@@ -6196,7 +6196,7 @@ export interface ResourceRequirementsV1 {
 /**
  * ResourceRule is the list of actions the subject is allowed to perform on resources. The list ordering isn't significant, may contain duplicates, and possibly be incomplete.
  */
-export interface ResourceRuleV1 {
+export interface ResourceRule {
   /**
    * APIGroups is the name of the APIGroup that contains the resources.  If multiple API groups are specified, any action requested against one of the enumerated resources in any API group will be allowed.  "*" means all.
    */
@@ -6219,7 +6219,7 @@ export interface ResourceRuleV1 {
 /**
  * Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding.
  */
-export interface RoleV1 {
+export interface Role {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6231,17 +6231,17 @@ export interface RoleV1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Rules holds all the PolicyRules for this Role
    */
-  rules: PolicyRuleV1[]
+  rules: PolicyRule[]
 }
 
 /**
  * RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace.
  */
-export interface RoleBindingV1 {
+export interface RoleBinding {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6253,21 +6253,21 @@ export interface RoleBindingV1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * RoleRef can reference a Role in the current namespace or a ClusterRole in the global namespace. If the RoleRef cannot be resolved, the Authorizer must return an error.
    */
-  roleRef: RoleRefV1
+  roleRef: RoleRef
   /**
    * Subjects holds references to the objects the role applies to.
    */
-  subjects?: SubjectV1[]
+  subjects?: Subject[]
 }
 
 /**
  * RoleBindingList is a collection of RoleBindings
  */
-export interface RoleBindingListV1 {
+export interface RoleBindingList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6275,7 +6275,7 @@ export interface RoleBindingListV1 {
   /**
    * Items is a list of RoleBindings
    */
-  items: RoleBindingV1[]
+  items: RoleBinding[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6283,13 +6283,13 @@ export interface RoleBindingListV1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * RoleList is a collection of Roles
  */
-export interface RoleListV1 {
+export interface RoleList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6297,7 +6297,7 @@ export interface RoleListV1 {
   /**
    * Items is a list of Roles
    */
-  items: RoleV1[]
+  items: Role[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6305,13 +6305,13 @@ export interface RoleListV1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * RoleRef contains information that points to the role being used
  */
-export interface RoleRefV1 {
+export interface RoleRef {
   /**
    * APIGroup is the group for the resource being referenced
    */
@@ -6329,7 +6329,7 @@ export interface RoleRefV1 {
 /**
  * Spec to control the desired behavior of daemon set rolling update.
  */
-export interface RollingUpdateDaemonSetV1 {
+export interface RollingUpdateDaemonSet {
   /**
    * The maximum number of DaemonSet pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of total number of DaemonSet pods at the start of the update (ex: 10%). Absolute number is calculated from percentage by rounding up. This cannot be 0. Default value is 1. Example: when this is set to 30%, at most 30% of the total number of nodes that should be running the daemon pod (i.e. status.desiredNumberScheduled) can have their pods stopped for an update at any given time. The update starts by stopping at most 30% of those DaemonSet pods and then brings up new DaemonSet pods in their place. Once the new pods are available, it then proceeds onto other DaemonSet pods, thus ensuring that at least 70% of original number of DaemonSet pods are available at all times during the update.
    */
@@ -6339,7 +6339,7 @@ export interface RollingUpdateDaemonSetV1 {
 /**
  * Spec to control the desired behavior of rolling update.
  */
-export interface RollingUpdateDeploymentV1 {
+export interface RollingUpdateDeployment {
   /**
    * The maximum number of pods that can be scheduled above the desired number of pods. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). This can not be 0 if MaxUnavailable is 0. Absolute number is calculated from percentage by rounding up. Defaults to 25%. Example: when this is set to 30%, the new ReplicaSet can be scaled up immediately when the rolling update starts, such that the total number of old and new pods do not exceed 130% of desired pods. Once old pods have been killed, new ReplicaSet can be scaled up further, ensuring that total number of pods running at any time during the update is at most 130% of desired pods.
    */
@@ -6353,7 +6353,7 @@ export interface RollingUpdateDeploymentV1 {
 /**
  * RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
  */
-export interface RollingUpdateStatefulSetStrategyV1 {
+export interface RollingUpdateStatefulSetStrategy {
   /**
    * Partition indicates the ordinal at which the StatefulSet should be partitioned. Default value is 0.
    */
@@ -6363,7 +6363,7 @@ export interface RollingUpdateStatefulSetStrategyV1 {
 /**
  * SELinuxOptions are the labels to be applied to the container
  */
-export interface SELinuxOptionsV1 {
+export interface SELinuxOptions {
   /**
    * Level is SELinux level label that applies to the container.
    */
@@ -6385,7 +6385,7 @@ export interface SELinuxOptionsV1 {
 /**
  * Scale represents a scaling request for a resource.
  */
-export interface ScaleV1 {
+export interface Scale {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6397,21 +6397,21 @@ export interface ScaleV1 {
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * defines the behavior of the scale. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
-  spec?: ScaleSpecV1
+  spec?: ScaleSpec
   /**
    * current status of the scale. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status. Read-only.
    */
-  status?: ScaleStatusV1
+  status?: ScaleStatus
 }
 
 /**
  * ScaleIOPersistentVolumeSource represents a persistent ScaleIO volume
  */
-export interface ScaleIOPersistentVolumeSourceV1 {
+export interface ScaleIOPersistentVolumeSource {
   /**
    * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Default is "xfs"
    */
@@ -6431,7 +6431,7 @@ export interface ScaleIOPersistentVolumeSourceV1 {
   /**
    * SecretRef references to the secret for ScaleIO user and other sensitive information. If this is not provided, Login operation will fail.
    */
-  secretRef: SecretReferenceV1
+  secretRef: SecretReference
   /**
    * Flag to enable/disable SSL communication with Gateway, default false
    */
@@ -6457,7 +6457,7 @@ export interface ScaleIOPersistentVolumeSourceV1 {
 /**
  * ScaleIOVolumeSource represents a persistent ScaleIO volume
  */
-export interface ScaleIOVolumeSourceV1 {
+export interface ScaleIOVolumeSource {
   /**
    * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Default is "xfs".
    */
@@ -6477,7 +6477,7 @@ export interface ScaleIOVolumeSourceV1 {
   /**
    * SecretRef references to the secret for ScaleIO user and other sensitive information. If this is not provided, Login operation will fail.
    */
-  secretRef: LocalObjectReferenceV1
+  secretRef: LocalObjectReference
   /**
    * Flag to enable/disable SSL communication with Gateway, default false
    */
@@ -6503,7 +6503,7 @@ export interface ScaleIOVolumeSourceV1 {
 /**
  * ScaleSpec describes the attributes of a scale subresource.
  */
-export interface ScaleSpecV1 {
+export interface ScaleSpec {
   /**
    * desired number of instances for the scaled object.
    */
@@ -6513,7 +6513,7 @@ export interface ScaleSpecV1 {
 /**
  * ScaleStatus represents the current status of a scale subresource.
  */
-export interface ScaleStatusV1 {
+export interface ScaleStatus {
   /**
    * actual number of observed instances of the scaled object.
    */
@@ -6527,17 +6527,17 @@ export interface ScaleStatusV1 {
 /**
  * A scope selector represents the AND of the selectors represented by the scoped-resource selector requirements.
  */
-export interface ScopeSelectorV1 {
+export interface ScopeSelector {
   /**
    * A list of scope selector requirements by scope of the resources.
    */
-  matchExpressions?: ScopedResourceSelectorRequirementV1[]
+  matchExpressions?: ScopedResourceSelectorRequirement[]
 }
 
 /**
  * A scoped-resource selector requirement is a selector that contains values, a scope name, and an operator that relates the scope name and values.
  */
-export interface ScopedResourceSelectorRequirementV1 {
+export interface ScopedResourceSelectorRequirement {
   /**
    * Represents a scope's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist.
    */
@@ -6555,7 +6555,7 @@ export interface ScopedResourceSelectorRequirementV1 {
 /**
  * Secret holds secret data of a certain type. The total bytes of the values in the Data field must be less than MaxSecretSize bytes.
  */
-export interface SecretV1 {
+export interface Secret {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6571,7 +6571,7 @@ export interface SecretV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * stringData allows specifying non-binary secret data in string form. It is provided as a write-only convenience method. All keys and values are merged into the data field on write, overwriting any existing values. It is never output when reading from the API.
    */
@@ -6587,7 +6587,7 @@ export interface SecretV1 {
  * 
  * The contents of the target Secret's Data field will represent the key-value pairs as environment variables.
  */
-export interface SecretEnvSourceV1 {
+export interface SecretEnvSource {
   /**
    * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
    */
@@ -6601,7 +6601,7 @@ export interface SecretEnvSourceV1 {
 /**
  * SecretKeySelector selects a key of a Secret.
  */
-export interface SecretKeySelectorV1 {
+export interface SecretKeySelector {
   /**
    * The key of the secret to select from.  Must be a valid secret key.
    */
@@ -6619,7 +6619,7 @@ export interface SecretKeySelectorV1 {
 /**
  * SecretList is a list of Secret.
  */
-export interface SecretListV1 {
+export interface SecretList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6627,7 +6627,7 @@ export interface SecretListV1 {
   /**
    * Items is a list of secret objects. More info: https://kubernetes.io/docs/concepts/configuration/secret
    */
-  items: SecretV1[]
+  items: Secret[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6635,7 +6635,7 @@ export interface SecretListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -6643,11 +6643,11 @@ export interface SecretListV1 {
  * 
  * The contents of the target Secret's Data field will be presented in a projected volume as files using the keys in the Data field as the file names. Note that this is identical to a secret volume source without the default mode.
  */
-export interface SecretProjectionV1 {
+export interface SecretProjection {
   /**
    * If unspecified, each key-value pair in the Data field of the referenced Secret will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified which is not present in the Secret, the volume setup will error unless it is marked optional. Paths must be relative and may not contain the '..' path or start with '..'.
    */
-  items?: KeyToPathV1[]
+  items?: KeyToPath[]
   /**
    * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
    */
@@ -6661,7 +6661,7 @@ export interface SecretProjectionV1 {
 /**
  * SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
  */
-export interface SecretReferenceV1 {
+export interface SecretReference {
   /**
    * Name is unique within a namespace to reference a secret resource.
    */
@@ -6677,7 +6677,7 @@ export interface SecretReferenceV1 {
  * 
  * The contents of the target Secret's Data field will be presented in a volume as files using the keys in the Data field as the file names. Secret volumes support ownership management and SELinux relabeling.
  */
-export interface SecretVolumeSourceV1 {
+export interface SecretVolumeSource {
   /**
    * Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
    */
@@ -6685,7 +6685,7 @@ export interface SecretVolumeSourceV1 {
   /**
    * If unspecified, each key-value pair in the Data field of the referenced Secret will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified which is not present in the Secret, the volume setup will error unless it is marked optional. Paths must be relative and may not contain the '..' path or start with '..'.
    */
-  items?: KeyToPathV1[]
+  items?: KeyToPath[]
   /**
    * Specify whether the Secret or it's keys must be defined
    */
@@ -6699,7 +6699,7 @@ export interface SecretVolumeSourceV1 {
 /**
  * SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext.  When both are set, the values in SecurityContext take precedence.
  */
-export interface SecurityContextV1 {
+export interface SecurityContext {
   /**
    * AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN
    */
@@ -6707,7 +6707,7 @@ export interface SecurityContextV1 {
   /**
    * The capabilities to add/drop when running containers. Defaults to the default set of capabilities granted by the container runtime.
    */
-  capabilities?: CapabilitiesV1
+  capabilities?: Capabilities
   /**
    * Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.
    */
@@ -6735,13 +6735,13 @@ export interface SecurityContextV1 {
   /**
    * The SELinux context to be applied to the container. If unspecified, the container runtime will allocate a random SELinux context for each container.  May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
    */
-  seLinuxOptions?: SELinuxOptionsV1
+  seLinuxOptions?: SELinuxOptions
 }
 
 /**
  * SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means "in all namespaces".  Self is a special case, because users should always be able to check whether they can perform an action
  */
-export interface SelfSubjectAccessReviewV1 {
+export interface SelfSubjectAccessReview {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6750,35 +6750,35 @@ export interface SelfSubjectAccessReviewV1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "SelfSubjectAccessReview"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec holds information about the request being evaluated.  user and groups must be empty
    */
-  spec: SelfSubjectAccessReviewSpecV1
+  spec: SelfSubjectAccessReviewSpec
   /**
    * Status is filled in by the server and indicates whether the request is allowed or not
    */
-  status?: SubjectAccessReviewStatusV1
+  status?: SubjectAccessReviewStatus
 }
 
 /**
  * SelfSubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
  */
-export interface SelfSubjectAccessReviewSpecV1 {
+export interface SelfSubjectAccessReviewSpec {
   /**
    * NonResourceAttributes describes information for a non-resource access request
    */
-  nonResourceAttributes?: NonResourceAttributesV1
+  nonResourceAttributes?: NonResourceAttributes
   /**
    * ResourceAuthorizationAttributes describes information for a resource access request
    */
-  resourceAttributes?: ResourceAttributesV1
+  resourceAttributes?: ResourceAttributes
 }
 
 /**
  * SelfSubjectRulesReview enumerates the set of actions the current user can perform within a namespace. The returned list of actions may be incomplete depending on the server's authorization mode, and any errors experienced during the evaluation. SelfSubjectRulesReview should be used by UIs to show/hide actions, or to quickly let an end user reason about their permissions. It should NOT Be used by external systems to drive authorization decisions as this raises confused deputy, cache lifetime/revocation, and correctness concerns. SubjectAccessReview, and LocalAccessReview are the correct way to defer authorization decisions to the API server.
  */
-export interface SelfSubjectRulesReviewV1 {
+export interface SelfSubjectRulesReview {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6787,18 +6787,18 @@ export interface SelfSubjectRulesReviewV1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "SelfSubjectRulesReview"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec holds information about the request being evaluated.
    */
-  spec: SelfSubjectRulesReviewSpecV1
+  spec: SelfSubjectRulesReviewSpec
   /**
    * Status is filled in by the server and indicates the set of actions a user can perform.
    */
-  status?: SubjectRulesReviewStatusV1
+  status?: SubjectRulesReviewStatus
 }
 
-export interface SelfSubjectRulesReviewSpecV1 {
+export interface SelfSubjectRulesReviewSpec {
   /**
    * Namespace to evaluate rules for. Required.
    */
@@ -6808,7 +6808,7 @@ export interface SelfSubjectRulesReviewSpecV1 {
 /**
  * ServerAddressByClientCIDR helps the client to determine the server address that they should use, depending on the clientCIDR that they match.
  */
-export interface ServerAddressByClientCIDRV1 {
+export interface ServerAddressByClientCIDR {
   /**
    * The CIDR with which clients can match their IP to figure out the server address that they should use.
    */
@@ -6822,7 +6822,7 @@ export interface ServerAddressByClientCIDRV1 {
 /**
  * Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
  */
-export interface ServiceV1 {
+export interface Service {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6834,21 +6834,21 @@ export interface ServiceV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the behavior of a service. https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: ServiceSpecV1
+  spec?: ServiceSpec
   /**
    * Most recently observed status of the service. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  status?: ServiceStatusV1
+  status?: ServiceStatus
 }
 
 /**
  * ServiceAccount binds together: * a name, understood by users, and perhaps by peripheral systems, for an identity * a principal that can be authenticated and authorized * a set of secrets
  */
-export interface ServiceAccountV1 {
+export interface ServiceAccount {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6860,7 +6860,7 @@ export interface ServiceAccountV1 {
   /**
    * ImagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images in pods that reference this ServiceAccount. ImagePullSecrets are distinct from Secrets because Secrets can be mounted in the pod, but ImagePullSecrets are only accessed by the kubelet. More info: https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
    */
-  imagePullSecrets?: LocalObjectReferenceV1[]
+  imagePullSecrets?: LocalObjectReference[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6868,17 +6868,17 @@ export interface ServiceAccountV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Secrets is the list of secrets allowed to be used by pods running using this ServiceAccount. More info: https://kubernetes.io/docs/concepts/configuration/secret
    */
-  secrets?: ObjectReferenceV1[]
+  secrets?: ObjectReference[]
 }
 
 /**
  * ServiceAccountList is a list of ServiceAccount objects
  */
-export interface ServiceAccountListV1 {
+export interface ServiceAccountList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6886,7 +6886,7 @@ export interface ServiceAccountListV1 {
   /**
    * List of ServiceAccounts. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
    */
-  items: ServiceAccountV1[]
+  items: ServiceAccount[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6894,13 +6894,13 @@ export interface ServiceAccountListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * ServiceAccountTokenProjection represents a projected service account token volume. This projection can be used to insert a service account token into the pods runtime filesystem for use against APIs (Kubernetes API Server or otherwise).
  */
-export interface ServiceAccountTokenProjectionV1 {
+export interface ServiceAccountTokenProjection {
   /**
    * Audience is the intended audience of the token. A recipient of a token must identify itself with an identifier specified in the audience of the token, and otherwise should reject the token. The audience defaults to the identifier of the apiserver.
    */
@@ -6918,7 +6918,7 @@ export interface ServiceAccountTokenProjectionV1 {
 /**
  * ServiceList holds a list of services.
  */
-export interface ServiceListV1 {
+export interface ServiceList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -6926,7 +6926,7 @@ export interface ServiceListV1 {
   /**
    * List of services
    */
-  items: ServiceV1[]
+  items: Service[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6934,13 +6934,13 @@ export interface ServiceListV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * ServicePort contains information on service's port.
  */
-export interface ServicePortV1 {
+export interface ServicePort {
   /**
    * The name of this port within the service. This must be a DNS_LABEL. All ports within a ServiceSpec must have unique names. This maps to the 'Name' field in EndpointPort objects. Optional if only one ServicePort is defined on this service.
    */
@@ -6966,7 +6966,7 @@ export interface ServicePortV1 {
 /**
  * ServiceReference holds a reference to Service.legacy.k8s.io
  */
-export interface ServiceReferenceV1 {
+export interface ServiceReference {
   /**
    * Name is the name of the service
    */
@@ -6980,7 +6980,7 @@ export interface ServiceReferenceV1 {
 /**
  * ServiceSpec describes the attributes that a user creates on a service.
  */
-export interface ServiceSpecV1 {
+export interface ServiceSpec {
   /**
    * clusterIP is the IP address of the service and is usually assigned randomly by the master. If an address is specified manually and is not in use by others, it will be allocated to the service; otherwise, creation of the service will fail. This field can not be changed through updates. Valid values are "None", empty string (""), or a valid IP address. "None" can be specified for headless services when proxying is not required. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName. More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
    */
@@ -7012,7 +7012,7 @@ export interface ServiceSpecV1 {
   /**
    * The list of ports that are exposed by this service. More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
    */
-  ports?: ServicePortV1[]
+  ports?: ServicePort[]
   /**
    * publishNotReadyAddresses, when set to true, indicates that DNS implementations must publish the notReadyAddresses of subsets for the Endpoints associated with the Service. The default value is false. The primary use case for setting this field is to use a StatefulSet's Headless Service to propagate SRV records for its Pods without respect to their readiness for purpose of peer discovery.
    */
@@ -7028,7 +7028,7 @@ export interface ServiceSpecV1 {
   /**
    * sessionAffinityConfig contains the configurations of session affinity.
    */
-  sessionAffinityConfig?: SessionAffinityConfigV1
+  sessionAffinityConfig?: SessionAffinityConfig
   /**
    * type determines how the Service is exposed. Defaults to ClusterIP. Valid options are ExternalName, ClusterIP, NodePort, and LoadBalancer. "ExternalName" maps to the specified externalName. "ClusterIP" allocates a cluster-internal IP address for load-balancing to endpoints. Endpoints are determined by the selector or if that is not specified, by manual construction of an Endpoints object. If clusterIP is "None", no virtual IP is allocated and the endpoints are published as a set of endpoints rather than a stable IP. "NodePort" builds on ClusterIP and allocates a port on every node which routes to the clusterIP. "LoadBalancer" builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the clusterIP. More info: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services---service-types
    */
@@ -7038,21 +7038,21 @@ export interface ServiceSpecV1 {
 /**
  * ServiceStatus represents the current status of a service.
  */
-export interface ServiceStatusV1 {
+export interface ServiceStatus {
   /**
    * LoadBalancer contains the current status of the load-balancer, if one is present.
    */
-  loadBalancer?: LoadBalancerStatusV1
+  loadBalancer?: LoadBalancerStatus
 }
 
 /**
  * SessionAffinityConfig represents the configurations of session affinity.
  */
-export interface SessionAffinityConfigV1 {
+export interface SessionAffinityConfig {
   /**
    * clientIP contains the configurations of Client IP based session affinity.
    */
-  clientIP?: ClientIPConfigV1
+  clientIP?: ClientIPConfig
 }
 
 /**
@@ -7061,7 +7061,7 @@ export interface SessionAffinityConfigV1 {
  *  - Storage: As many VolumeClaims as requested.
  * The StatefulSet guarantees that a given network identity will always map to the same storage identity.
  */
-export interface StatefulSetV1 {
+export interface StatefulSet {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -7070,21 +7070,21 @@ export interface StatefulSetV1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "StatefulSet"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the desired identities of pods in this set.
    */
-  spec?: StatefulSetSpecV1
+  spec?: StatefulSetSpec
   /**
    * Status is the current status of Pods in this StatefulSet. This data may be out of date by some window of time.
    */
-  status?: StatefulSetStatusV1
+  status?: StatefulSetStatus
 }
 
 /**
  * StatefulSetCondition describes the state of a statefulset at a certain point.
  */
-export interface StatefulSetConditionV1 {
+export interface StatefulSetCondition {
   /**
    * Last time the condition transitioned from one status to another.
    */
@@ -7110,23 +7110,23 @@ export interface StatefulSetConditionV1 {
 /**
  * StatefulSetList is a collection of StatefulSets.
  */
-export interface StatefulSetListV1 {
+export interface StatefulSetList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
   apiVersion: "v1"
-  items: StatefulSetV1[]
+  items: StatefulSet[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "StatefulSetList"
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * A StatefulSetSpec is the specification of a StatefulSet.
  */
-export interface StatefulSetSpecV1 {
+export interface StatefulSetSpec {
   /**
    * podManagementPolicy controls how pods are created during initial scale up, when replacing pods on nodes, or when scaling down. The default policy is `OrderedReady`, where pods are created in increasing order (pod-0, then pod-1, etc) and the controller will wait until each pod is ready before continuing. When scaling down, the pods are removed in the opposite order. The alternative policy is `Parallel` which will create pods in parallel to match the desired scale without waiting, and on scale down will delete all pods at once.
    */
@@ -7142,7 +7142,7 @@ export interface StatefulSetSpecV1 {
   /**
    * selector is a label query over pods that should match the replica count. It must match the pod template's labels. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: LabelSelectorV1
+  selector: LabelSelector
   /**
    * serviceName is the name of the service that governs this StatefulSet. This service must exist before the StatefulSet, and is responsible for the network identity of the set. Pods get DNS/hostnames that follow the pattern: pod-specific-string.serviceName.default.svc.cluster.local where "pod-specific-string" is managed by the StatefulSet controller.
    */
@@ -7150,21 +7150,21 @@ export interface StatefulSetSpecV1 {
   /**
    * template is the object that describes the pod that will be created if insufficient replicas are detected. Each pod stamped out by the StatefulSet will fulfill this Template, but have a unique identity from the rest of the StatefulSet.
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
   /**
    * updateStrategy indicates the StatefulSetUpdateStrategy that will be employed to update Pods in the StatefulSet when a revision is made to Template.
    */
-  updateStrategy?: StatefulSetUpdateStrategyV1
+  updateStrategy?: StatefulSetUpdateStrategy
   /**
    * volumeClaimTemplates is a list of claims that pods are allowed to reference. The StatefulSet controller is responsible for mapping network identities to claims in a way that maintains the identity of a pod. Every claim in this list must have at least one matching (by name) volumeMount in one container in the template. A claim in this list takes precedence over any volumes in the template, with the same name.
    */
-  volumeClaimTemplates?: PersistentVolumeClaimV1[]
+  volumeClaimTemplates?: PersistentVolumeClaim[]
 }
 
 /**
  * StatefulSetStatus represents the current state of a StatefulSet.
  */
-export interface StatefulSetStatusV1 {
+export interface StatefulSetStatus {
   /**
    * collisionCount is the count of hash collisions for the StatefulSet. The StatefulSet controller uses this field as a collision avoidance mechanism when it needs to create the name for the newest ControllerRevision.
    */
@@ -7172,7 +7172,7 @@ export interface StatefulSetStatusV1 {
   /**
    * Represents the latest available observations of a statefulset's current state.
    */
-  conditions?: StatefulSetConditionV1[]
+  conditions?: StatefulSetCondition[]
   /**
    * currentReplicas is the number of Pods created by the StatefulSet controller from the StatefulSet version indicated by currentRevision.
    */
@@ -7206,11 +7206,11 @@ export interface StatefulSetStatusV1 {
 /**
  * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.
  */
-export interface StatefulSetUpdateStrategyV1 {
+export interface StatefulSetUpdateStrategy {
   /**
    * RollingUpdate is used to communicate parameters when Type is RollingUpdateStatefulSetStrategyType.
    */
-  rollingUpdate?: RollingUpdateStatefulSetStrategyV1
+  rollingUpdate?: RollingUpdateStatefulSetStrategy
   /**
    * Type indicates the type of the StatefulSetUpdateStrategy. Default is RollingUpdate.
    */
@@ -7220,7 +7220,7 @@ export interface StatefulSetUpdateStrategyV1 {
 /**
  * Status is a return value for calls that don't return other objects.
  */
-export interface StatusV1 {
+export interface Status {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -7232,7 +7232,7 @@ export interface StatusV1 {
   /**
    * Extended data associated with the reason.  Each reason may define its own extended details. This field is optional and the data returned is not guaranteed to conform to any schema except that defined by the reason type.
    */
-  details?: StatusDetailsV1
+  details?: StatusDetails
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -7244,7 +7244,7 @@ export interface StatusV1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
   /**
    * A machine-readable description of why this operation is in the "Failure" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it.
    */
@@ -7258,7 +7258,7 @@ export interface StatusV1 {
 /**
  * StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.
  */
-export interface StatusCauseV1 {
+export interface StatusCause {
   /**
    * The field of the resource that has caused this error, as named by its JSON serialization. May include dot and postfix notation for nested attributes. Arrays are zero-indexed.  Fields may appear more than once in an array of causes due to fields having multiple errors. Optional.
    * 
@@ -7280,11 +7280,11 @@ export interface StatusCauseV1 {
 /**
  * StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined.
  */
-export interface StatusDetailsV1 {
+export interface StatusDetails {
   /**
    * The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.
    */
-  causes?: StatusCauseV1[]
+  causes?: StatusCause[]
   /**
    * The group attribute of the resource associated with the status StatusReason.
    */
@@ -7312,7 +7312,7 @@ export interface StatusDetailsV1 {
  * 
  * StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.
  */
-export interface StorageClassV1 {
+export interface StorageClass {
   /**
    * AllowVolumeExpansion shows whether the storage class allow volume expand
    */
@@ -7320,7 +7320,7 @@ export interface StorageClassV1 {
   /**
    * Restrict the node topologies where volumes can be dynamically provisioned. Each volume plugin defines its own supported topology specifications. An empty TopologySelectorTerm list means there is no topology restriction. This field is only honored by servers that enable the VolumeScheduling feature.
    */
-  allowedTopologies?: TopologySelectorTermV1[]
+  allowedTopologies?: TopologySelectorTerm[]
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -7332,7 +7332,7 @@ export interface StorageClassV1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Dynamically provisioned PersistentVolumes of this storage class are created with these mountOptions, e.g. ["ro", "soft"]. Not validated - mount of the PVs will simply fail if one is invalid.
    */
@@ -7358,7 +7358,7 @@ export interface StorageClassV1 {
 /**
  * StorageClassList is a collection of storage classes.
  */
-export interface StorageClassListV1 {
+export interface StorageClassList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -7366,7 +7366,7 @@ export interface StorageClassListV1 {
   /**
    * Items is the list of StorageClasses
    */
-  items: StorageClassV1[]
+  items: StorageClass[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -7374,13 +7374,13 @@ export interface StorageClassListV1 {
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * Represents a StorageOS persistent volume resource.
  */
-export interface StorageOSPersistentVolumeSourceV1 {
+export interface StorageOSPersistentVolumeSource {
   /**
    * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
    */
@@ -7392,7 +7392,7 @@ export interface StorageOSPersistentVolumeSourceV1 {
   /**
    * SecretRef specifies the secret to use for obtaining the StorageOS API credentials.  If not specified, default values will be attempted.
    */
-  secretRef?: ObjectReferenceV1
+  secretRef?: ObjectReference
   /**
    * VolumeName is the human-readable name of the StorageOS volume.  Volume names are only unique within a namespace.
    */
@@ -7406,7 +7406,7 @@ export interface StorageOSPersistentVolumeSourceV1 {
 /**
  * Represents a StorageOS persistent volume resource.
  */
-export interface StorageOSVolumeSourceV1 {
+export interface StorageOSVolumeSource {
   /**
    * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
    */
@@ -7418,7 +7418,7 @@ export interface StorageOSVolumeSourceV1 {
   /**
    * SecretRef specifies the secret to use for obtaining the StorageOS API credentials.  If not specified, default values will be attempted.
    */
-  secretRef?: LocalObjectReferenceV1
+  secretRef?: LocalObjectReference
   /**
    * VolumeName is the human-readable name of the StorageOS volume.  Volume names are only unique within a namespace.
    */
@@ -7432,7 +7432,7 @@ export interface StorageOSVolumeSourceV1 {
 /**
  * Subject contains a reference to the object or user identities a role binding applies to.  This can either hold a direct API object reference, or a value for non-objects such as user and group names.
  */
-export interface SubjectV1 {
+export interface Subject {
   /**
    * APIGroup holds the API group of the referenced subject. Defaults to "" for ServiceAccount subjects. Defaults to "rbac.authorization.k8s.io" for User and Group subjects.
    */
@@ -7454,7 +7454,7 @@ export interface SubjectV1 {
 /**
  * SubjectAccessReview checks whether or not a user or group can perform an action.
  */
-export interface SubjectAccessReviewV1 {
+export interface SubjectAccessReview {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -7463,21 +7463,21 @@ export interface SubjectAccessReviewV1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "SubjectAccessReview"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec holds information about the request being evaluated
    */
-  spec: SubjectAccessReviewSpecV1
+  spec: SubjectAccessReviewSpec
   /**
    * Status is filled in by the server and indicates whether the request is allowed or not
    */
-  status?: SubjectAccessReviewStatusV1
+  status?: SubjectAccessReviewStatus
 }
 
 /**
  * SubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
  */
-export interface SubjectAccessReviewSpecV1 {
+export interface SubjectAccessReviewSpec {
   /**
    * Extra corresponds to the user.Info.GetExtra() method from the authenticator.  Since that is input to the authorizer it needs a reflection here.
    */
@@ -7489,11 +7489,11 @@ export interface SubjectAccessReviewSpecV1 {
   /**
    * NonResourceAttributes describes information for a non-resource access request
    */
-  nonResourceAttributes?: NonResourceAttributesV1
+  nonResourceAttributes?: NonResourceAttributes
   /**
    * ResourceAuthorizationAttributes describes information for a resource access request
    */
-  resourceAttributes?: ResourceAttributesV1
+  resourceAttributes?: ResourceAttributes
   /**
    * UID information about the requesting user.
    */
@@ -7507,7 +7507,7 @@ export interface SubjectAccessReviewSpecV1 {
 /**
  * SubjectAccessReviewStatus
  */
-export interface SubjectAccessReviewStatusV1 {
+export interface SubjectAccessReviewStatus {
   /**
    * Allowed is required. True if the action would be allowed, false otherwise.
    */
@@ -7529,7 +7529,7 @@ export interface SubjectAccessReviewStatusV1 {
 /**
  * SubjectRulesReviewStatus contains the result of a rules check. This check can be incomplete depending on the set of authorizers the server is configured with and any errors experienced during evaluation. Because authorization rules are additive, if a rule appears in a list it's safe to assume the subject has that permission, even if that list is incomplete.
  */
-export interface SubjectRulesReviewStatusV1 {
+export interface SubjectRulesReviewStatus {
   /**
    * EvaluationError can appear in combination with Rules. It indicates an error occurred during rule evaluation, such as an authorizer that doesn't support rule evaluation, and that ResourceRules and/or NonResourceRules may be incomplete.
    */
@@ -7541,17 +7541,17 @@ export interface SubjectRulesReviewStatusV1 {
   /**
    * NonResourceRules is the list of actions the subject is allowed to perform on non-resources. The list ordering isn't significant, may contain duplicates, and possibly be incomplete.
    */
-  nonResourceRules: NonResourceRuleV1[]
+  nonResourceRules: NonResourceRule[]
   /**
    * ResourceRules is the list of actions the subject is allowed to perform on resources. The list ordering isn't significant, may contain duplicates, and possibly be incomplete.
    */
-  resourceRules: ResourceRuleV1[]
+  resourceRules: ResourceRule[]
 }
 
 /**
  * Sysctl defines a kernel parameter to be set
  */
-export interface SysctlV1 {
+export interface Sysctl {
   /**
    * Name of a property to set
    */
@@ -7565,7 +7565,7 @@ export interface SysctlV1 {
 /**
  * TCPSocketAction describes an action based on opening a socket
  */
-export interface TCPSocketActionV1 {
+export interface TCPSocketAction {
   /**
    * Optional: Host name to connect to, defaults to the pod IP.
    */
@@ -7579,7 +7579,7 @@ export interface TCPSocketActionV1 {
 /**
  * The node this Taint is attached to has the "effect" on any pod that does not tolerate the Taint.
  */
-export interface TaintV1 {
+export interface Taint {
   /**
    * Required. The effect of the taint on pods that do not tolerate the taint. Valid effects are NoSchedule, PreferNoSchedule and NoExecute.
    */
@@ -7601,7 +7601,7 @@ export interface TaintV1 {
 /**
  * TokenReview attempts to authenticate a token to a known user. Note: TokenReview requests may be cached by the webhook token authenticator plugin in the kube-apiserver.
  */
-export interface TokenReviewV1 {
+export interface TokenReview {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -7610,21 +7610,21 @@ export interface TokenReviewV1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "TokenReview"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec holds information about the request being evaluated
    */
-  spec: TokenReviewSpecV1
+  spec: TokenReviewSpec
   /**
    * Status is filled in by the server and indicates whether the request can be authenticated.
    */
-  status?: TokenReviewStatusV1
+  status?: TokenReviewStatus
 }
 
 /**
  * TokenReviewSpec is a description of the token authentication request.
  */
-export interface TokenReviewSpecV1 {
+export interface TokenReviewSpec {
   /**
    * Audiences is a list of the identifiers that the resource server presented with the token identifies as. Audience-aware token authenticators will verify that the token was intended for at least one of the audiences in this list. If no audiences are provided, the audience will default to the audience of the Kubernetes apiserver.
    */
@@ -7638,7 +7638,7 @@ export interface TokenReviewSpecV1 {
 /**
  * TokenReviewStatus is the result of the token authentication request.
  */
-export interface TokenReviewStatusV1 {
+export interface TokenReviewStatus {
   /**
    * Audiences are audience identifiers chosen by the authenticator that are compatible with both the TokenReview and token. An identifier is any identifier in the intersection of the TokenReviewSpec audiences and the token's audiences. A client of the TokenReview API that sets the spec.audiences field should validate that a compatible audience identifier is returned in the status.audiences field to ensure that the TokenReview server is audience aware. If a TokenReview returns an empty status.audience field where status.authenticated is "true", the token is valid against the audience of the Kubernetes API server.
    */
@@ -7654,13 +7654,13 @@ export interface TokenReviewStatusV1 {
   /**
    * User is the UserInfo associated with the provided token.
    */
-  user?: UserInfoV1
+  user?: UserInfo
 }
 
 /**
  * The pod this Toleration is attached to tolerates any taint that matches the triple <key,value,effect> using the matching operator <operator>.
  */
-export interface TolerationV1 {
+export interface Toleration {
   /**
    * Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.
    */
@@ -7686,7 +7686,7 @@ export interface TolerationV1 {
 /**
  * A topology selector requirement is a selector that matches given label. This is an alpha feature and may change in the future.
  */
-export interface TopologySelectorLabelRequirementV1 {
+export interface TopologySelectorLabelRequirement {
   /**
    * The label key that the selector applies to.
    */
@@ -7700,17 +7700,17 @@ export interface TopologySelectorLabelRequirementV1 {
 /**
  * A topology selector term represents the result of label queries. A null or empty topology selector term matches no objects. The requirements of them are ANDed. It provides a subset of functionality as NodeSelectorTerm. This is an alpha feature and may change in the future.
  */
-export interface TopologySelectorTermV1 {
+export interface TopologySelectorTerm {
   /**
    * A list of topology selector requirements by labels.
    */
-  matchLabelExpressions?: TopologySelectorLabelRequirementV1[]
+  matchLabelExpressions?: TopologySelectorLabelRequirement[]
 }
 
 /**
  * TypedLocalObjectReference contains enough information to let you locate the typed referenced object inside the same namespace.
  */
-export interface TypedLocalObjectReferenceV1 {
+export interface TypedLocalObjectReference {
   /**
    * APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
    */
@@ -7728,7 +7728,7 @@ export interface TypedLocalObjectReferenceV1 {
 /**
  * UserInfo holds the information about the user needed to implement the user.Info interface.
  */
-export interface UserInfoV1 {
+export interface UserInfo {
   /**
    * Any additional information provided by the authenticator.
    */
@@ -7750,71 +7750,71 @@ export interface UserInfoV1 {
 /**
  * Volume represents a named volume in a pod that may be accessed by any container in the pod.
  */
-export interface VolumeV1 {
+export interface Volume {
   /**
    * AWSElasticBlockStore represents an AWS Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
    */
-  awsElasticBlockStore?: AWSElasticBlockStoreVolumeSourceV1
+  awsElasticBlockStore?: AWSElasticBlockStoreVolumeSource
   /**
    * AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
    */
-  azureDisk?: AzureDiskVolumeSourceV1
+  azureDisk?: AzureDiskVolumeSource
   /**
    * AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
    */
-  azureFile?: AzureFileVolumeSourceV1
+  azureFile?: AzureFileVolumeSource
   /**
    * CephFS represents a Ceph FS mount on the host that shares a pod's lifetime
    */
-  cephfs?: CephFSVolumeSourceV1
+  cephfs?: CephFSVolumeSource
   /**
    * Cinder represents a cinder volume attached and mounted on kubelets host machine More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md
    */
-  cinder?: CinderVolumeSourceV1
+  cinder?: CinderVolumeSource
   /**
    * ConfigMap represents a configMap that should populate this volume
    */
-  configMap?: ConfigMapVolumeSourceV1
+  configMap?: ConfigMapVolumeSource
   /**
    * DownwardAPI represents downward API about the pod that should populate this volume
    */
-  downwardAPI?: DownwardAPIVolumeSourceV1
+  downwardAPI?: DownwardAPIVolumeSource
   /**
    * EmptyDir represents a temporary directory that shares a pod's lifetime. More info: https://kubernetes.io/docs/concepts/storage/volumes#emptydir
    */
-  emptyDir?: EmptyDirVolumeSourceV1
+  emptyDir?: EmptyDirVolumeSource
   /**
    * FC represents a Fibre Channel resource that is attached to a kubelet's host machine and then exposed to the pod.
    */
-  fc?: FCVolumeSourceV1
+  fc?: FCVolumeSource
   /**
    * FlexVolume represents a generic volume resource that is provisioned/attached using an exec based plugin.
    */
-  flexVolume?: FlexVolumeSourceV1
+  flexVolume?: FlexVolumeSource
   /**
    * Flocker represents a Flocker volume attached to a kubelet's host machine. This depends on the Flocker control service being running
    */
-  flocker?: FlockerVolumeSourceV1
+  flocker?: FlockerVolumeSource
   /**
    * GCEPersistentDisk represents a GCE Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
    */
-  gcePersistentDisk?: GCEPersistentDiskVolumeSourceV1
+  gcePersistentDisk?: GCEPersistentDiskVolumeSource
   /**
    * GitRepo represents a git repository at a particular revision. DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mount an EmptyDir into an InitContainer that clones the repo using git, then mount the EmptyDir into the Pod's container.
    */
-  gitRepo?: GitRepoVolumeSourceV1
+  gitRepo?: GitRepoVolumeSource
   /**
    * Glusterfs represents a Glusterfs mount on the host that shares a pod's lifetime. More info: https://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md
    */
-  glusterfs?: GlusterfsVolumeSourceV1
+  glusterfs?: GlusterfsVolumeSource
   /**
    * HostPath represents a pre-existing file or directory on the host machine that is directly exposed to the container. This is generally used for system agents or other privileged things that are allowed to see the host machine. Most containers will NOT need this. More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath
    */
-  hostPath?: HostPathVolumeSourceV1
+  hostPath?: HostPathVolumeSource
   /**
    * ISCSI represents an ISCSI Disk resource that is attached to a kubelet's host machine and then exposed to the pod. More info: https://releases.k8s.io/HEAD/examples/volumes/iscsi/README.md
    */
-  iscsi?: ISCSIVolumeSourceV1
+  iscsi?: ISCSIVolumeSource
   /**
    * Volume's name. Must be a DNS_LABEL and unique within the pod. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
    */
@@ -7822,47 +7822,47 @@ export interface VolumeV1 {
   /**
    * NFS represents an NFS mount on the host that shares a pod's lifetime More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
    */
-  nfs?: NFSVolumeSourceV1
+  nfs?: NFSVolumeSource
   /**
    * PersistentVolumeClaimVolumeSource represents a reference to a PersistentVolumeClaim in the same namespace. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
    */
-  persistentVolumeClaim?: PersistentVolumeClaimVolumeSourceV1
+  persistentVolumeClaim?: PersistentVolumeClaimVolumeSource
   /**
    * PhotonPersistentDisk represents a PhotonController persistent disk attached and mounted on kubelets host machine
    */
-  photonPersistentDisk?: PhotonPersistentDiskVolumeSourceV1
+  photonPersistentDisk?: PhotonPersistentDiskVolumeSource
   /**
    * PortworxVolume represents a portworx volume attached and mounted on kubelets host machine
    */
-  portworxVolume?: PortworxVolumeSourceV1
+  portworxVolume?: PortworxVolumeSource
   /**
    * Items for all in one resources secrets, configmaps, and downward API
    */
-  projected?: ProjectedVolumeSourceV1
+  projected?: ProjectedVolumeSource
   /**
    * Quobyte represents a Quobyte mount on the host that shares a pod's lifetime
    */
-  quobyte?: QuobyteVolumeSourceV1
+  quobyte?: QuobyteVolumeSource
   /**
    * RBD represents a Rados Block Device mount on the host that shares a pod's lifetime. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md
    */
-  rbd?: RBDVolumeSourceV1
+  rbd?: RBDVolumeSource
   /**
    * ScaleIO represents a ScaleIO persistent volume attached and mounted on Kubernetes nodes.
    */
-  scaleIO?: ScaleIOVolumeSourceV1
+  scaleIO?: ScaleIOVolumeSource
   /**
    * Secret represents a secret that should populate this volume. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret
    */
-  secret?: SecretVolumeSourceV1
+  secret?: SecretVolumeSource
   /**
    * StorageOS represents a StorageOS volume attached and mounted on Kubernetes nodes.
    */
-  storageos?: StorageOSVolumeSourceV1
+  storageos?: StorageOSVolumeSource
   /**
    * VsphereVolume represents a vSphere volume attached and mounted on kubelets host machine
    */
-  vsphereVolume?: VsphereVirtualDiskVolumeSourceV1
+  vsphereVolume?: VsphereVirtualDiskVolumeSource
 }
 
 /**
@@ -7870,7 +7870,7 @@ export interface VolumeV1 {
  * 
  * VolumeAttachment objects are non-namespaced.
  */
-export interface VolumeAttachmentV1 {
+export interface VolumeAttachment {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -7882,21 +7882,21 @@ export interface VolumeAttachmentV1 {
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired attach/detach volume behavior. Populated by the Kubernetes system.
    */
-  spec: VolumeAttachmentSpecV1
+  spec: VolumeAttachmentSpec
   /**
    * Status of the VolumeAttachment request. Populated by the entity completing the attach or detach operation, i.e. the external-attacher.
    */
-  status?: VolumeAttachmentStatusV1
+  status?: VolumeAttachmentStatus
 }
 
 /**
  * VolumeAttachmentList is a collection of VolumeAttachment objects.
  */
-export interface VolumeAttachmentListV1 {
+export interface VolumeAttachmentList {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -7904,7 +7904,7 @@ export interface VolumeAttachmentListV1 {
   /**
    * Items is the list of VolumeAttachments
    */
-  items: VolumeAttachmentV1[]
+  items: VolumeAttachment[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -7912,13 +7912,13 @@ export interface VolumeAttachmentListV1 {
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
  * VolumeAttachmentSource represents a volume that should be attached. Right now only PersistenVolumes can be attached via external attacher, in future we may allow also inline volumes in pods. Exactly one member can be set.
  */
-export interface VolumeAttachmentSourceV1 {
+export interface VolumeAttachmentSource {
   /**
    * Name of the persistent volume to attach.
    */
@@ -7928,7 +7928,7 @@ export interface VolumeAttachmentSourceV1 {
 /**
  * VolumeAttachmentSpec is the specification of a VolumeAttachment request.
  */
-export interface VolumeAttachmentSpecV1 {
+export interface VolumeAttachmentSpec {
   /**
    * Attacher indicates the name of the volume driver that MUST handle this request. This is the name returned by GetPluginName().
    */
@@ -7940,17 +7940,17 @@ export interface VolumeAttachmentSpecV1 {
   /**
    * Source represents the volume that should be attached.
    */
-  source: VolumeAttachmentSourceV1
+  source: VolumeAttachmentSource
 }
 
 /**
  * VolumeAttachmentStatus is the status of a VolumeAttachment request.
  */
-export interface VolumeAttachmentStatusV1 {
+export interface VolumeAttachmentStatus {
   /**
    * The last error encountered during attach operation, if any. This field must only be set by the entity completing the attach operation, i.e. the external-attacher.
    */
-  attachError?: VolumeErrorV1
+  attachError?: VolumeError
   /**
    * Indicates the volume is successfully attached. This field must only be set by the entity completing the attach operation, i.e. the external-attacher.
    */
@@ -7962,13 +7962,13 @@ export interface VolumeAttachmentStatusV1 {
   /**
    * The last error encountered during detach operation, if any. This field must only be set by the entity completing the detach operation, i.e. the external-attacher.
    */
-  detachError?: VolumeErrorV1
+  detachError?: VolumeError
 }
 
 /**
  * volumeDevice describes a mapping of a raw block device within a container.
  */
-export interface VolumeDeviceV1 {
+export interface VolumeDevice {
   /**
    * devicePath is the path inside of the container that the device will be mapped to.
    */
@@ -7982,7 +7982,7 @@ export interface VolumeDeviceV1 {
 /**
  * VolumeError captures an error encountered during a volume operation.
  */
-export interface VolumeErrorV1 {
+export interface VolumeError {
   /**
    * String detailing the error encountered during Attach or Detach operation. This string maybe logged, so it should not contain sensitive information.
    */
@@ -7996,7 +7996,7 @@ export interface VolumeErrorV1 {
 /**
  * VolumeMount describes a mounting of a Volume within a container.
  */
-export interface VolumeMountV1 {
+export interface VolumeMount {
   /**
    * Path within the container at which the volume should be mounted.  Must not contain ':'.
    */
@@ -8022,39 +8022,39 @@ export interface VolumeMountV1 {
 /**
  * VolumeNodeAffinity defines constraints that limit what nodes this volume can be accessed from.
  */
-export interface VolumeNodeAffinityV1 {
+export interface VolumeNodeAffinity {
   /**
    * Required specifies hard node constraints that must be met.
    */
-  required?: NodeSelectorV1
+  required?: NodeSelector
 }
 
 /**
  * Projection that may be projected along with other supported volume types
  */
-export interface VolumeProjectionV1 {
+export interface VolumeProjection {
   /**
    * information about the configMap data to project
    */
-  configMap?: ConfigMapProjectionV1
+  configMap?: ConfigMapProjection
   /**
    * information about the downwardAPI data to project
    */
-  downwardAPI?: DownwardAPIProjectionV1
+  downwardAPI?: DownwardAPIProjection
   /**
    * information about the secret data to project
    */
-  secret?: SecretProjectionV1
+  secret?: SecretProjection
   /**
    * information about the serviceAccountToken data to project
    */
-  serviceAccountToken?: ServiceAccountTokenProjectionV1
+  serviceAccountToken?: ServiceAccountTokenProjection
 }
 
 /**
  * Represents a vSphere volume resource.
  */
-export interface VsphereVirtualDiskVolumeSourceV1 {
+export interface VsphereVirtualDiskVolumeSource {
   /**
    * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
    */
@@ -8076,7 +8076,7 @@ export interface VsphereVirtualDiskVolumeSourceV1 {
 /**
  * Event represents a single event to a watched resource.
  */
-export interface WatchEventV1 {
+export interface WatchEvent {
   /**
    * Object is:
    *  * If Type is Added or Modified: the new state of the object.
@@ -8091,11 +8091,11 @@ export interface WatchEventV1 {
 /**
  * The weights of all of the matched WeightedPodAffinityTerm fields are added per-node to find the most preferred node(s)
  */
-export interface WeightedPodAffinityTermV1 {
+export interface WeightedPodAffinityTerm {
   /**
    * Required. A pod affinity term, associated with the corresponding weight.
    */
-  podAffinityTerm: PodAffinityTermV1
+  podAffinityTerm: PodAffinityTerm
   /**
    * weight associated with matching the corresponding podAffinityTerm, in the range 1-100.
    */
@@ -8109,7 +8109,7 @@ export interface AggregationRuleV1alpha1 {
   /**
    * ClusterRoleSelectors holds a list of selectors which will be used to find ClusterRoles and create the rules. If any of the selectors match, then the ClusterRole's permissions will be added
    */
-  clusterRoleSelectors?: LabelSelectorV1[]
+  clusterRoleSelectors?: LabelSelector[]
 }
 
 /**
@@ -8124,7 +8124,7 @@ export interface AuditSinkV1alpha1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "AuditSink"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the audit configuration spec
    */
@@ -8147,7 +8147,7 @@ export interface AuditSinkListV1alpha1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "AuditSinkList"
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -8183,7 +8183,7 @@ export interface ClusterRoleV1alpha1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Rules holds all the PolicyRules for this ClusterRole
    */
@@ -8205,7 +8205,7 @@ export interface ClusterRoleBindingV1alpha1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * RoleRef can only reference a ClusterRole in the global namespace. If the RoleRef cannot be resolved, the Authorizer must return an error.
    */
@@ -8235,7 +8235,7 @@ export interface ClusterRoleBindingListV1alpha1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -8257,7 +8257,7 @@ export interface ClusterRoleListV1alpha1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -8293,7 +8293,7 @@ export interface InitializerConfigurationV1alpha1 {
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
 }
 
 /**
@@ -8315,7 +8315,7 @@ export interface InitializerConfigurationListV1alpha1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -8330,7 +8330,7 @@ export interface PodPresetV1alpha1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "PodPreset"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   spec?: PodPresetSpecV1alpha1
 }
 
@@ -8353,7 +8353,7 @@ export interface PodPresetListV1alpha1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -8363,23 +8363,23 @@ export interface PodPresetSpecV1alpha1 {
   /**
    * Env defines the collection of EnvVar to inject into containers.
    */
-  env?: EnvVarV1[]
+  env?: EnvVar[]
   /**
    * EnvFrom defines the collection of EnvFromSource to inject into containers.
    */
-  envFrom?: EnvFromSourceV1[]
+  envFrom?: EnvFromSource[]
   /**
    * Selector is a label query over a set of resources, in this case pods. Required.
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * VolumeMounts defines the collection of VolumeMount to inject into containers.
    */
-  volumeMounts?: VolumeMountV1[]
+  volumeMounts?: VolumeMount[]
   /**
    * Volumes defines the collection of Volume to inject into the pod.
    */
-  volumes?: VolumeV1[]
+  volumes?: Volume[]
 }
 
 /**
@@ -8445,7 +8445,7 @@ export interface PriorityClassV1alpha1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec.
    */
@@ -8471,7 +8471,7 @@ export interface PriorityClassListV1alpha1 {
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -8489,7 +8489,7 @@ export interface RoleV1alpha1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Rules holds all the PolicyRules for this Role
    */
@@ -8511,7 +8511,7 @@ export interface RoleBindingV1alpha1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * RoleRef can reference a Role in the current namespace or a ClusterRole in the global namespace. If the RoleRef cannot be resolved, the Authorizer must return an error.
    */
@@ -8541,7 +8541,7 @@ export interface RoleBindingListV1alpha1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -8563,7 +8563,7 @@ export interface RoleListV1alpha1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -8665,7 +8665,7 @@ export interface VolumeAttachmentV1alpha1 {
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired attach/detach volume behavior. Populated by the Kubernetes system.
    */
@@ -8695,7 +8695,7 @@ export interface VolumeAttachmentListV1alpha1 {
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -8834,7 +8834,7 @@ export interface APIServiceV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "APIService"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec contains information for locating and communicating with a server
    */
@@ -8881,7 +8881,7 @@ export interface APIServiceListV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "APIServiceList"
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -8935,7 +8935,7 @@ export interface AggregationRuleV1beta1 {
   /**
    * ClusterRoleSelectors holds a list of selectors which will be used to find ClusterRoles and create the rules. If any of the selectors match, then the ClusterRole's permissions will be added
    */
-  clusterRoleSelectors?: LabelSelectorV1[]
+  clusterRoleSelectors?: LabelSelector[]
 }
 
 /**
@@ -8950,7 +8950,7 @@ export interface CertificateSigningRequestV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "CertificateSigningRequest"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * The certificate request itself and any additional information.
    */
@@ -8990,7 +8990,7 @@ export interface CertificateSigningRequestListV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "CertificateSigningRequestList"
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -9054,7 +9054,7 @@ export interface ClusterRoleV1beta1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Rules holds all the PolicyRules for this ClusterRole
    */
@@ -9076,7 +9076,7 @@ export interface ClusterRoleBindingV1beta1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * RoleRef can only reference a ClusterRole in the global namespace. If the RoleRef cannot be resolved, the Authorizer must return an error.
    */
@@ -9106,7 +9106,7 @@ export interface ClusterRoleBindingListV1beta1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -9128,7 +9128,7 @@ export interface ClusterRoleListV1beta1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -9150,7 +9150,7 @@ export interface ControllerRevisionV1beta1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Revision indicates the revision of the state represented by Data.
    */
@@ -9176,7 +9176,7 @@ export interface ControllerRevisionListV1beta1 {
   /**
    * More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -9194,7 +9194,7 @@ export interface CronJobV1beta1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of a cron job, including the schedule. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
@@ -9224,7 +9224,7 @@ export interface CronJobListV1beta1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -9268,7 +9268,7 @@ export interface CronJobStatusV1beta1 {
   /**
    * A list of pointers to currently running jobs.
    */
-  active?: ObjectReferenceV1[]
+  active?: ObjectReference[]
   /**
    * Information when was the last time the job was successfully scheduled.
    */
@@ -9331,7 +9331,7 @@ export interface CustomResourceDefinitionV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "CustomResourceDefinition"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec describes how the user wants the resources to appear
    */
@@ -9384,7 +9384,7 @@ export interface CustomResourceDefinitionListV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "CustomResourceDefinitionList"
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -9564,7 +9564,7 @@ export interface DaemonSetV1beta1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * The desired behavior of this daemon set. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
@@ -9620,7 +9620,7 @@ export interface DaemonSetListV1beta1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -9638,11 +9638,11 @@ export interface DaemonSetSpecV1beta1 {
   /**
    * A label query over pods that are managed by the daemon set. Must match in order to be controlled. If empty, defaulted to labels on Pod template. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * An object that describes the pod that will be created. The DaemonSet will create exactly one copy of this pod on every node that matches the template's node selector (or on every node if no node selector is specified). More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
   /**
    * DEPRECATED. A sequence number representing a specific generation of the template. Populated by the system. It can be set only during the creation.
    */
@@ -9737,7 +9737,7 @@ export interface EventV1beta1 {
   /**
    * Deprecated field assuring backward compatibility with core.v1 Event type
    */
-  deprecatedSource?: EventSourceV1
+  deprecatedSource?: EventSource
   /**
    * Required. Time when this Event was first observed.
    */
@@ -9746,7 +9746,7 @@ export interface EventV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "Event"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Optional. A human-readable description of the status of this operation. Maximal length of the note is 1kB, but libraries should be prepared to handle values up to 64kB.
    */
@@ -9758,11 +9758,11 @@ export interface EventV1beta1 {
   /**
    * The object this Event is about. In most cases it's an Object reporting controller implements. E.g. ReplicaSetController implements ReplicaSets and this event is emitted because it acts on some changes in a ReplicaSet object.
    */
-  regarding?: ObjectReferenceV1
+  regarding?: ObjectReference
   /**
    * Optional secondary object for more complex actions. E.g. when regarding object triggers a creation or deletion of related object.
    */
-  related?: ObjectReferenceV1
+  related?: ObjectReference
   /**
    * Name of the controller that emitted this Event, e.g. `kubernetes.io/kubelet`.
    */
@@ -9800,7 +9800,7 @@ export interface EventListV1beta1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -9832,7 +9832,7 @@ export interface EvictionV1beta1 {
   /**
    * DeleteOptions may be provided
    */
-  deleteOptions?: DeleteOptionsV1
+  deleteOptions?: DeleteOptions
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -9840,7 +9840,7 @@ export interface EvictionV1beta1 {
   /**
    * ObjectMeta describes the pod that is being evicted.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
 }
 
 /**
@@ -9904,7 +9904,7 @@ export interface IngressV1beta1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec is the desired state of the Ingress. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
@@ -9948,7 +9948,7 @@ export interface IngressListV1beta1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -9992,7 +9992,7 @@ export interface IngressStatusV1beta1 {
   /**
    * LoadBalancer contains the current status of the load-balancer.
    */
-  loadBalancer?: LoadBalancerStatusV1
+  loadBalancer?: LoadBalancerStatus
 }
 
 /**
@@ -10073,11 +10073,11 @@ export interface JobTemplateSpecV1beta1 {
   /**
    * Standard object's metadata of the jobs created from this template. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of the job. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: JobSpecV1
+  spec?: JobSpec
 }
 
 /**
@@ -10095,7 +10095,7 @@ export interface LeaseV1beta1 {
   /**
    * More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the Lease. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
@@ -10121,7 +10121,7 @@ export interface LeaseListV1beta1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -10162,7 +10162,7 @@ export interface LocalSubjectAccessReviewV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "LocalSubjectAccessReview"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec holds information about the request being evaluated.  spec.namespace must be equal to the namespace you made the request against.  If empty, it is defaulted.
    */
@@ -10188,7 +10188,7 @@ export interface MutatingWebhookConfigurationV1beta1 {
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Webhooks is a list of webhooks and the affected resources and operations.
    */
@@ -10214,7 +10214,7 @@ export interface MutatingWebhookConfigurationListV1beta1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -10232,7 +10232,7 @@ export interface NetworkPolicyV1beta1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior for this NetworkPolicy.
    */
@@ -10286,7 +10286,7 @@ export interface NetworkPolicyListV1beta1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -10302,13 +10302,13 @@ export interface NetworkPolicyPeerV1beta1 {
    * 
    * If PodSelector is also set, then the NetworkPolicyPeer as a whole selects the Pods matching PodSelector in the Namespaces selected by NamespaceSelector. Otherwise it selects all Pods in the Namespaces selected by NamespaceSelector.
    */
-  namespaceSelector?: LabelSelectorV1
+  namespaceSelector?: LabelSelector
   /**
    * This is a label selector which selects Pods. This field follows standard label selector semantics; if present but empty, it selects all pods.
    * 
    * If NamespaceSelector is also set, then the NetworkPolicyPeer as a whole selects the Pods matching PodSelector in the Namespaces selected by NamespaceSelector. Otherwise it selects the Pods matching PodSelector in the policy's own Namespace.
    */
-  podSelector?: LabelSelectorV1
+  podSelector?: LabelSelector
 }
 
 /**
@@ -10340,7 +10340,7 @@ export interface NetworkPolicySpecV1beta1 {
   /**
    * Selects the pods to which this NetworkPolicy object applies.  The array of ingress rules is applied to any pods selected by this field. Multiple network policies can select the same set of pods.  In this case, the ingress rules for each are combined additively. This field is NOT optional and follows standard label selector semantics. An empty podSelector matches all pods in this namespace.
    */
-  podSelector: LabelSelectorV1
+  podSelector: LabelSelector
   /**
    * List of rule types that the NetworkPolicy relates to. Valid options are Ingress, Egress, or Ingress,Egress. If this field is not specified, it will default based on the existence of Ingress or Egress rules; policies that contain an Egress section are assumed to affect Egress, and all policies (whether or not they contain an Ingress section) are assumed to affect Ingress. If you want to write an egress-only policy, you must explicitly specify policyTypes [ "Egress" ]. Likewise, if you want to write a policy that specifies that no egress is allowed, you must specify a policyTypes value that include "Egress" (since such a policy would not include an Egress section and would otherwise default to just [ "Ingress" ]). This field is beta-level in 1.8
    */
@@ -10387,7 +10387,7 @@ export interface PodDisruptionBudgetV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "PodDisruptionBudget"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of the PodDisruptionBudget.
    */
@@ -10411,7 +10411,7 @@ export interface PodDisruptionBudgetListV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "PodDisruptionBudgetList"
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -10429,7 +10429,7 @@ export interface PodDisruptionBudgetSpecV1beta1 {
   /**
    * Label query over pods whose evictions are managed by the disruption budget.
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
 }
 
 /**
@@ -10511,7 +10511,7 @@ export interface PriorityClassV1beta1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec.
    */
@@ -10537,7 +10537,7 @@ export interface PriorityClassListV1beta1 {
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -10555,7 +10555,7 @@ export interface ReplicaSetV1beta1 {
   /**
    * If the Labels of a ReplicaSet are empty, they are defaulted to be the same as the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the specification of the desired behavior of the ReplicaSet. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
@@ -10611,7 +10611,7 @@ export interface ReplicaSetListV1beta1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -10629,11 +10629,11 @@ export interface ReplicaSetSpecV1beta1 {
   /**
    * Selector is a label query over pods that should match the replica count. If the selector is empty, it is defaulted to the labels present on the pod template. Label keys and values that must match in order to be controlled by this replica set. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * Template is the object that describes the pod that will be created if insufficient replicas are detected. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
    */
-  template?: PodTemplateSpecV1
+  template?: PodTemplateSpec
 }
 
 /**
@@ -10738,7 +10738,7 @@ export interface RoleV1beta1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Rules holds all the PolicyRules for this Role
    */
@@ -10760,7 +10760,7 @@ export interface RoleBindingV1beta1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * RoleRef can reference a Role in the current namespace or a ClusterRole in the global namespace. If the RoleRef cannot be resolved, the Authorizer must return an error.
    */
@@ -10790,7 +10790,7 @@ export interface RoleBindingListV1beta1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -10812,7 +10812,7 @@ export interface RoleListV1beta1 {
   /**
    * Standard object's metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -10893,7 +10893,7 @@ export interface SelfSubjectAccessReviewV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "SelfSubjectAccessReview"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec holds information about the request being evaluated.  user and groups must be empty
    */
@@ -10930,7 +10930,7 @@ export interface SelfSubjectRulesReviewV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "SelfSubjectRulesReview"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec holds information about the request being evaluated.
    */
@@ -10963,7 +10963,7 @@ export interface StatefulSetV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "StatefulSet"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the desired identities of pods in this set.
    */
@@ -11013,7 +11013,7 @@ export interface StatefulSetListV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "StatefulSetList"
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -11035,7 +11035,7 @@ export interface StatefulSetSpecV1beta1 {
   /**
    * selector is a label query over pods that should match the replica count. If empty, defaulted to labels on the pod template. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * serviceName is the name of the service that governs this StatefulSet. This service must exist before the StatefulSet, and is responsible for the network identity of the set. Pods get DNS/hostnames that follow the pattern: pod-specific-string.serviceName.default.svc.cluster.local where "pod-specific-string" is managed by the StatefulSet controller.
    */
@@ -11043,7 +11043,7 @@ export interface StatefulSetSpecV1beta1 {
   /**
    * template is the object that describes the pod that will be created if insufficient replicas are detected. Each pod stamped out by the StatefulSet will fulfill this Template, but have a unique identity from the rest of the StatefulSet.
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
   /**
    * updateStrategy indicates the StatefulSetUpdateStrategy that will be employed to update Pods in the StatefulSet when a revision is made to Template.
    */
@@ -11051,7 +11051,7 @@ export interface StatefulSetSpecV1beta1 {
   /**
    * volumeClaimTemplates is a list of claims that pods are allowed to reference. The StatefulSet controller is responsible for mapping network identities to claims in a way that maintains the identity of a pod. Every claim in this list must have at least one matching (by name) volumeMount in one container in the template. A claim in this list takes precedence over any volumes in the template, with the same name.
    */
-  volumeClaimTemplates?: PersistentVolumeClaimV1[]
+  volumeClaimTemplates?: PersistentVolumeClaim[]
 }
 
 /**
@@ -11123,7 +11123,7 @@ export interface StorageClassV1beta1 {
   /**
    * Restrict the node topologies where volumes can be dynamically provisioned. Each volume plugin defines its own supported topology specifications. An empty TopologySelectorTerm list means there is no topology restriction. This field is only honored by servers that enable the VolumeScheduling feature.
    */
-  allowedTopologies?: TopologySelectorTermV1[]
+  allowedTopologies?: TopologySelectorTerm[]
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
@@ -11135,7 +11135,7 @@ export interface StorageClassV1beta1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Dynamically provisioned PersistentVolumes of this storage class are created with these mountOptions, e.g. ["ro", "soft"]. Not validated - mount of the PVs will simply fail if one is invalid.
    */
@@ -11177,7 +11177,7 @@ export interface StorageClassListV1beta1 {
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -11214,7 +11214,7 @@ export interface SubjectAccessReviewV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "SubjectAccessReview"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec holds information about the request being evaluated
    */
@@ -11311,7 +11311,7 @@ export interface TokenReviewV1beta1 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "TokenReview"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec holds information about the request being evaluated
    */
@@ -11395,7 +11395,7 @@ export interface ValidatingWebhookConfigurationV1beta1 {
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Webhooks is a list of webhooks and the affected resources and operations.
    */
@@ -11421,7 +11421,7 @@ export interface ValidatingWebhookConfigurationListV1beta1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -11441,7 +11441,7 @@ export interface VolumeAttachmentV1beta1 {
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired attach/detach volume behavior. Populated by the Kubernetes system.
    */
@@ -11471,7 +11471,7 @@ export interface VolumeAttachmentListV1beta1 {
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -11587,7 +11587,7 @@ export interface WebhookV1beta1 {
    * 
    * Default to the empty LabelSelector, which matches everything.
    */
-  namespaceSelector?: LabelSelectorV1
+  namespaceSelector?: LabelSelector
   /**
    * Rules describes what operations on what resources/subresources the webhook cares about. The webhook cares about an operation if it matches _any_ Rule. However, in order to prevent ValidatingAdmissionWebhooks and MutatingAdmissionWebhooks from putting the cluster in a state which cannot be recovered from without completely disabling the plugin, ValidatingAdmissionWebhooks and MutatingAdmissionWebhooks are never called on admission requests for ValidatingWebhookConfiguration and MutatingWebhookConfiguration objects.
    */
@@ -11617,7 +11617,7 @@ export interface ControllerRevisionV1beta2 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Revision indicates the revision of the state represented by Data.
    */
@@ -11643,7 +11643,7 @@ export interface ControllerRevisionListV1beta2 {
   /**
    * More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -11661,7 +11661,7 @@ export interface DaemonSetV1beta2 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * The desired behavior of this daemon set. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
@@ -11717,7 +11717,7 @@ export interface DaemonSetListV1beta2 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -11735,11 +11735,11 @@ export interface DaemonSetSpecV1beta2 {
   /**
    * A label query over pods that are managed by the daemon set. Must match in order to be controlled. It must match the pod template's labels. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: LabelSelectorV1
+  selector: LabelSelector
   /**
    * An object that describes the pod that will be created. The DaemonSet will create exactly one copy of this pod on every node that matches the template's node selector (or on every node if no node selector is specified). More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
   /**
    * An update strategy to replace existing DaemonSet pods with new pods.
    */
@@ -11821,7 +11821,7 @@ export interface DeploymentV1beta2 {
   /**
    * Standard object metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of the Deployment.
    */
@@ -11881,7 +11881,7 @@ export interface DeploymentListV1beta2 {
   /**
    * Standard list metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -11911,7 +11911,7 @@ export interface DeploymentSpecV1beta2 {
   /**
    * Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment. It must match the pod template's labels.
    */
-  selector: LabelSelectorV1
+  selector: LabelSelector
   /**
    * The deployment strategy to use to replace existing pods with new ones.
    */
@@ -11919,7 +11919,7 @@ export interface DeploymentSpecV1beta2 {
   /**
    * Template describes the pods that will be created.
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
 }
 
 /**
@@ -11989,7 +11989,7 @@ export interface ReplicaSetV1beta2 {
   /**
    * If the Labels of a ReplicaSet are empty, they are defaulted to be the same as the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the specification of the desired behavior of the ReplicaSet. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
@@ -12045,7 +12045,7 @@ export interface ReplicaSetListV1beta2 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -12063,11 +12063,11 @@ export interface ReplicaSetSpecV1beta2 {
   /**
    * Selector is a label query over pods that should match the replica count. Label keys and values that must match in order to be controlled by this replica set. It must match the pod template's labels. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: LabelSelectorV1
+  selector: LabelSelector
   /**
    * Template is the object that describes the pod that will be created if insufficient replicas are detected. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
    */
-  template?: PodTemplateSpecV1
+  template?: PodTemplateSpec
 }
 
 /**
@@ -12149,7 +12149,7 @@ export interface ScaleV1beta2 {
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * defines the behavior of the scale. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
@@ -12203,7 +12203,7 @@ export interface StatefulSetV1beta2 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "StatefulSet"
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Spec defines the desired identities of pods in this set.
    */
@@ -12253,7 +12253,7 @@ export interface StatefulSetListV1beta2 {
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
   kind: "StatefulSetList"
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -12275,7 +12275,7 @@ export interface StatefulSetSpecV1beta2 {
   /**
    * selector is a label query over pods that should match the replica count. It must match the pod template's labels. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector: LabelSelectorV1
+  selector: LabelSelector
   /**
    * serviceName is the name of the service that governs this StatefulSet. This service must exist before the StatefulSet, and is responsible for the network identity of the set. Pods get DNS/hostnames that follow the pattern: pod-specific-string.serviceName.default.svc.cluster.local where "pod-specific-string" is managed by the StatefulSet controller.
    */
@@ -12283,7 +12283,7 @@ export interface StatefulSetSpecV1beta2 {
   /**
    * template is the object that describes the pod that will be created if insufficient replicas are detected. Each pod stamped out by the StatefulSet will fulfill this Template, but have a unique identity from the rest of the StatefulSet.
    */
-  template: PodTemplateSpecV1
+  template: PodTemplateSpec
   /**
    * updateStrategy indicates the StatefulSetUpdateStrategy that will be employed to update Pods in the StatefulSet when a revision is made to Template.
    */
@@ -12291,7 +12291,7 @@ export interface StatefulSetSpecV1beta2 {
   /**
    * volumeClaimTemplates is a list of claims that pods are allowed to reference. The StatefulSet controller is responsible for mapping network identities to claims in a way that maintains the identity of a pod. Every claim in this list must have at least one matching (by name) volumeMount in one container in the template. A claim in this list takes precedence over any volumes in the template, with the same name.
    */
-  volumeClaimTemplates?: PersistentVolumeClaimV1[]
+  volumeClaimTemplates?: PersistentVolumeClaim[]
 }
 
 /**
@@ -12365,7 +12365,7 @@ export interface CronJobV2alpha1 {
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of a cron job, including the schedule. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
@@ -12395,7 +12395,7 @@ export interface CronJobListV2alpha1 {
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -12439,7 +12439,7 @@ export interface CronJobStatusV2alpha1 {
   /**
    * A list of pointers to currently running jobs.
    */
-  active?: ObjectReferenceV1[]
+  active?: ObjectReference[]
   /**
    * Information when was the last time the job was successfully scheduled.
    */
@@ -12453,11 +12453,11 @@ export interface JobTemplateSpecV2alpha1 {
   /**
    * Standard object's metadata of the jobs created from this template. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * Specification of the desired behavior of the job. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status
    */
-  spec?: JobSpecV1
+  spec?: JobSpec
 }
 
 /**
@@ -12489,7 +12489,7 @@ export interface ExternalMetricSourceV2beta1 {
   /**
    * metricSelector is used to identify a specific time series within a given metric.
    */
-  metricSelector?: LabelSelectorV1
+  metricSelector?: LabelSelector
   /**
    * targetAverageValue is the target per-pod value of global metric (as a quantity). Mutually exclusive with TargetValue.
    */
@@ -12519,7 +12519,7 @@ export interface ExternalMetricStatusV2beta1 {
   /**
    * metricSelector is used to identify a specific time series within a given metric.
    */
-  metricSelector?: LabelSelectorV1
+  metricSelector?: LabelSelector
 }
 
 /**
@@ -12537,7 +12537,7 @@ export interface HorizontalPodAutoscalerV2beta1 {
   /**
    * metadata is the standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * spec is the specification for the behaviour of the autoscaler. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
@@ -12593,7 +12593,7 @@ export interface HorizontalPodAutoscalerListV2beta1 {
   /**
    * metadata is the standard list metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -12715,7 +12715,7 @@ export interface ObjectMetricSourceV2beta1 {
   /**
    * selector is the string-encoded form of a standard kubernetes label selector for the given metric When set, it is passed as an additional parameter to the metrics server for more specific metrics scoping When unset, just the metricName will be used to gather metrics.
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * target is the described Kubernetes object.
    */
@@ -12745,7 +12745,7 @@ export interface ObjectMetricStatusV2beta1 {
   /**
    * selector is the string-encoded form of a standard kubernetes label selector for the given metric When set in the ObjectMetricSource, it is passed as an additional parameter to the metrics server for more specific metrics scoping. When unset, just the metricName will be used to gather metrics.
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * target is the described Kubernetes object.
    */
@@ -12763,7 +12763,7 @@ export interface PodsMetricSourceV2beta1 {
   /**
    * selector is the string-encoded form of a standard kubernetes label selector for the given metric When set, it is passed as an additional parameter to the metrics server for more specific metrics scoping When unset, just the metricName will be used to gather metrics.
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
   /**
    * targetAverageValue is the target value of the average of the metric across all relevant pods (as a quantity)
    */
@@ -12785,7 +12785,7 @@ export interface PodsMetricStatusV2beta1 {
   /**
    * selector is the string-encoded form of a standard kubernetes label selector for the given metric When set in the PodsMetricSource, it is passed as an additional parameter to the metrics server for more specific metrics scoping. When unset, just the metricName will be used to gather metrics.
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
 }
 
 /**
@@ -12885,7 +12885,7 @@ export interface HorizontalPodAutoscalerV2beta2 {
   /**
    * metadata is the standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
-  metadata?: ObjectMetaV1
+  metadata?: ObjectMeta
   /**
    * spec is the specification for the behaviour of the autoscaler. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status.
    */
@@ -12941,7 +12941,7 @@ export interface HorizontalPodAutoscalerListV2beta2 {
   /**
    * metadata is the standard list metadata.
    */
-  metadata?: ListMetaV1
+  metadata?: ListMeta
 }
 
 /**
@@ -13007,7 +13007,7 @@ export interface MetricIdentifierV2beta2 {
   /**
    * selector is the string-encoded form of a standard kubernetes label selector for the given metric When set, it is passed as an additional parameter to the metrics server for more specific metrics scoping. When unset, just the metricName will be used to gather metrics.
    */
-  selector?: LabelSelectorV1
+  selector?: LabelSelector
 }
 
 /**

@@ -1,9 +1,8 @@
-import * as k from './core'
-import * as k8s from './kubernetes-model'
+import * as k from './konstructor'
 
 const log = console.log.bind(console)
 
-let service: (name) => /*k8s.ServiceV1*/any = name => ({
+let service: (name) => k.k8s.Service = name => ({
     apiVersion: "v1",
     kind: "Service",
     metadata: {
@@ -25,3 +24,17 @@ let wm = s.merge({ toto: 4 })
 
 log(k.yamlify(s))
 log(k.yamlify(wm))
+
+let deploy = k.k8sBuilder.deployment({
+    spec: {
+        template: {
+            spec: {
+                containers: [{
+                    image: 'toto',
+                    name: 't'
+                }]
+            }
+        }
+    }
+})
+log(k.yamlify(deploy))

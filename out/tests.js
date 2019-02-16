@@ -7,7 +7,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var k = __importStar(require("./core"));
+var k = __importStar(require("./konstructor"));
 var log = console.log.bind(console);
 var service = function (name) { return ({
     apiVersion: "v1",
@@ -29,3 +29,16 @@ var s = service("toto");
 var wm = s.merge({ toto: 4 });
 log(k.yamlify(s));
 log(k.yamlify(wm));
+var deploy = k.k8sBuilder.deployment({
+    spec: {
+        template: {
+            spec: {
+                containers: [{
+                        image: 'toto',
+                        name: 't'
+                    }]
+            }
+        }
+    }
+});
+log(k.yamlify(deploy));

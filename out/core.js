@@ -21,6 +21,8 @@ function copyObject(o) {
 }
 exports.copyObject = copyObject;
 function mergeObjects(a, b) {
+    if (!b)
+        return a.copy();
     if (a && b && Array.isArray(a) && Array.isArray(b)) {
         var result = [];
         for (var i = 0; i < a.length || i < b.length; i++)
