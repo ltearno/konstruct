@@ -45,9 +45,27 @@ Object.getOwnPropertyNames(swagger.definitions)
     .sort()
     .forEach(name => {
         let def = swagger.definitions[name]
+        if (def.description) {
+            log(`/**`)
+            def.description.split('\n').forEach(line => {
+                while (line.includes('*/'))
+                    line = line.replace('*/', '...')
+                log(` * ${line}`)
+            })
+            log(` */`)
+        }
         log(`export interface ${getTypescriptResourceName(name)} {`)
         let required = def.required || []
         for (let propertyName of Object.getOwnPropertyNames(def.properties).sort()) {
+            if (def.properties[propertyName].description) {
+                log(`  /**`)
+                def.properties[propertyName].description.split('\n').forEach(line => {
+                    while (line.includes('*/'))
+                        line = line.replace('*/', '...')
+                    log(`   * ${line}`)
+                })
+                log(`   */`)
+            }
             log(`  ${propertyName}${!required.includes(propertyName) ? '?' : ''}: ${getTypescriptType(def.properties[propertyName])}`)
         }
         log(`}`)

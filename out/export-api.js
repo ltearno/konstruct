@@ -45,10 +45,28 @@ Object.getOwnPropertyNames(swagger.definitions)
     .sort()
     .forEach(function (name) {
     var def = swagger.definitions[name];
+    if (def.description) {
+        log("/**");
+        def.description.split('\n').forEach(function (line) {
+            while (line.includes('*/'))
+                line = line.replace('*/', '...');
+            log(" * " + line);
+        });
+        log(" */");
+    }
     log("export interface " + getTypescriptResourceName(name) + " {");
     var required = def.required || [];
     for (var _i = 0, _a = Object.getOwnPropertyNames(def.properties).sort(); _i < _a.length; _i++) {
         var propertyName = _a[_i];
+        if (def.properties[propertyName].description) {
+            log("  /**");
+            def.properties[propertyName].description.split('\n').forEach(function (line) {
+                while (line.includes('*/'))
+                    line = line.replace('*/', '...');
+                log("   * " + line);
+            });
+            log("   */");
+        }
         log("  " + propertyName + (!required.includes(propertyName) ? '?' : '') + ": " + getTypescriptType(def.properties[propertyName]));
     }
     log("}");
