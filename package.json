@@ -6,7 +6,8 @@
   "author": "Arnaud Tournier",
   "license": "MIT",
   "scripts": {
-    "install": "node_modules/.bin/tsc"
+    "install": "node_modules/.bin/tsc",
+    "exportModel": "node out/export-api.js > src/kubernetes-model.ts"
   },
   "dependencies": {
     "js-yaml": "^3.12.1"

@@ -5,7 +5,6 @@
  * There much designed to change, improve and stabilize !
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-require("./konstructor");
 exports.defaultDeployment = {
     apiVersion: "extensions/v1beta1",
     kind: "Deployment",
@@ -18,9 +17,11 @@ exports.defaultDeployment = {
                 maxUnavailable: 0
             }
         },
+        selector: {},
         template: {
             spec: {
-                terminationGracePeriodSeconds: 5
+                terminationGracePeriodSeconds: 5,
+                containers: []
             }
         }
     }

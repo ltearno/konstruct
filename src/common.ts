@@ -4,9 +4,9 @@
  * There much designed to change, improve and stabilize !
  */
 
-import './konstructor'
+import * as k from './konstructor'
 
-export const defaultDeployment = {
+export const defaultDeployment: k.k8s.DeploymentV1 = {
     apiVersion: "extensions/v1beta1",
     kind: "Deployment",
     spec: {
@@ -18,9 +18,11 @@ export const defaultDeployment = {
                 maxUnavailable: 0
             }
         },
+        selector: {},
         template: {
             spec: {
-                terminationGracePeriodSeconds: 5
+                terminationGracePeriodSeconds: 5,
+                containers: []
             }
         }
     }

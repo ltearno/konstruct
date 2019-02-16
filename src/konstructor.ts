@@ -1,8 +1,10 @@
 import { execSync } from 'child_process'
 import * as jsYaml from 'js-yaml'
 import * as common from './common'
+import * as k8s from './kubernetes-model'
 
 export { common }
+export { k8s }
 
 export function copyObject(o) {
     if (Array.isArray(o))

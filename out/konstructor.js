@@ -11,6 +11,8 @@ var child_process_1 = require("child_process");
 var jsYaml = __importStar(require("js-yaml"));
 var common = __importStar(require("./common"));
 exports.common = common;
+var k8s = __importStar(require("./kubernetes-model"));
+exports.k8s = k8s;
 function copyObject(o) {
     if (Array.isArray(o))
         return o.map(function (item) { return copyObject(item); });
