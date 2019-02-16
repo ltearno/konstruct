@@ -2,7 +2,7 @@ import * as k from './konstructor'
 
 const log = console.log.bind(console)
 
-let service = name => (k.k8sBuilder.service().merge({
+let makeDefaultService = name => (k.k8sBuilder.service().merge({
     metadata: { name },
     spec: {
         type: "ClusterIP",
@@ -18,7 +18,7 @@ let service = name => (k.k8sBuilder.service().merge({
 let docs = []
 
 docs.push(
-    service("toto")
+    makeDefaultService("toto")
         .mergeAt('metadata', { toto: 4 })
 )
 

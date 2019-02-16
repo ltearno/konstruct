@@ -9,7 +9,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var k = __importStar(require("./konstructor"));
 var log = console.log.bind(console);
-var service = function (name) { return (k.k8sBuilder.service().merge({
+var makeDefaultService = function (name) { return (k.k8sBuilder.service().merge({
     metadata: { name: name },
     spec: {
         type: "ClusterIP",
@@ -22,7 +22,7 @@ var service = function (name) { return (k.k8sBuilder.service().merge({
     }
 })); };
 var docs = [];
-docs.push(service("toto")
+docs.push(makeDefaultService("toto")
     .mergeAt('metadata', { toto: 4 }));
 docs.push(k.k8sBuilder.deployment()
     .addDeploymentDefaultNameAndLabels('toto')
