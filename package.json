@@ -1,8 +1,8 @@
 {
-  "name": "konstructor",
+  "name": "konstruct",
   "version": "0.9.0",
   "description": "k8s yaml generator",
-  "main": "out/konstructor.js",
+  "main": "out/konstruct.js",
   "author": "Arnaud Tournier",
   "license": "MIT",
   "scripts": {

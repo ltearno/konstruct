@@ -5,7 +5,7 @@
  * and output the corresponding yaml which will be sent to kubectl
  */
 
-const k = require('konstructor')
+const k = require('konstruct')
 
 /** We can extract environment variables */
 const GCP_PROJECT = k.env('GCP_PROJECT')
@@ -60,7 +60,7 @@ function expandVersion(version) {
  * Each of our two similar services is mapped to
  * a default deployment template on which we add specific informations.
  * 
- * This is done by chaining calls and calling the Konstructor provided
+ * This is done by chaining calls and calling the Konstruct provided
  * methods :
  * - merge : merge two javascript objects
  * - addDeploymentDefaultNameAndLabels : add label and name on the deployment and its template's metadata

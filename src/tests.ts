@@ -1,4 +1,4 @@
-import * as k from './konstructor'
+import * as k from './konstruct'
 
 const build = k.k8sBuilder
 const log = console.log.bind(console)
