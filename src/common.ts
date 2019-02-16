@@ -60,7 +60,7 @@ export const toEnv = spec => {
     }))
 }
 
-export const deployment = (name) => (defaultDeployment as any).addDeploymentDefaultNameAndLabels(name)
+export const deployment = (name) => defaultDeployment.addDeploymentDefaultNameAndLabels(name)
 
 export const serviceAccount = name => ({
     apiVersion: "v1",

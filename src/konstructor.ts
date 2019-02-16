@@ -60,12 +60,14 @@ export function installPlugin(func, name: string = undefined) {
     }
 }
 
-export interface Object {
-    copy(): Object
-    set(path: string, value: any): Object
-    merge(other: any): Object
-    mergeAt(path: string, value: any): Object
-    addDeploymentDefaultNameAndLabels(name: string): Object
+declare global {
+    interface Object {
+        copy(): Object
+        set(path: string, value: any): Object
+        merge(other: any): Object
+        mergeAt(path: string, value: any): Object
+        addDeploymentDefaultNameAndLabels(name: string): Object
+    }
 }
 
 installPlugin(copyObject, 'copy')
