@@ -2,10 +2,17 @@
   "name": "konstructor",
   "version": "1.0.0",
   "description": "k8s yaml generator",
-  "main": "konstructor.js",
+  "main": "out/konstructor.js",
   "author": "Arnaud Tournier",
   "license": "MIT",
+  "scripts": {
+    "install": "node_modules/.bin/tsc"
+  },
   "dependencies": {
     "js-yaml": "^3.12.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.3.3",
+    "@types/node": "^11.9.4"
   }
 }

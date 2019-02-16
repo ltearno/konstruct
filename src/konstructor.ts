@@ -1,8 +1,10 @@
-const { execSync } = require('child_process')
-const jsYaml = require('js-yaml')
-const common = require('./common')
+import { execSync } from 'child_process'
+import * as jsYaml from 'js-yaml'
+import * as common from './common'
 
-function copyObject(o) {
+export { common }
+
+export function copyObject(o) {
     if (Array.isArray(o))
         return o.map(item => copyObject(item))
 
@@ -15,9 +17,9 @@ function copyObject(o) {
     return o
 }
 
-function mergeObjects(a, b) {
+export function mergeObjects(a, b) {
     if (a && b && Array.isArray(a) && Array.isArray(b)) {
-        let result = []
+        let result: any[] = []
         for (let i = 0; i < a.length || i < b.length; i++)
             result.push(mergeObjects(i < a.length ? a[i] : null, i < b.length ? b[i] : null))
         return result
@@ -35,7 +37,7 @@ function mergeObjects(a, b) {
     return b
 }
 
-function setObjectProperty(o, path, value) {
+export function setObjectProperty(o, path, value) {
     const init = o
     let parts = path.split('.')
     for (let i = 0; i < parts.length - 1; i++) {
@@ -47,7 +49,7 @@ function setObjectProperty(o, path, value) {
     return init
 }
 
-function installPlugin(func, name) {
+export function installPlugin(func, name: string = undefined) {
     if (!name)
         name = func.name
     if (!name)
@@ -56,6 +58,14 @@ function installPlugin(func, name) {
         args.unshift(this)
         return func.call(null, ...args)
     }
+}
+
+export interface Object {
+    copy(): Object
+    set(path: string, value: any): Object
+    merge(other: any): Object
+    mergeAt(path: string, value: any): Object
+    addDeploymentDefaultNameAndLabels(name: string): Object
 }
 
 installPlugin(copyObject, 'copy')
@@ -94,7 +104,7 @@ installPlugin(function addDeploymentDefaultNameAndLabels(object, name) {
     })
 })
 
-function preparseYaml(input) {
+export function preparseYaml(input) {
     let i = 0
     while (input[i] == ' ')
         i++
@@ -103,20 +113,12 @@ function preparseYaml(input) {
     return input
 }
 
-function yamlparse(input) {
+export function yamlparse(input) {
     return jsYaml.safeLoad(preparseYaml(input))
 }
 
-module.exports = {
-    copyObject,
-    mergeObjects,
-    setObjectProperty,
-    installPlugin,
-    yamlify: input => jsYaml.safeDump(input, { sortKeys: true, noArrayIndent: true, noRefs: true }),
-    yamlparse,
-    yamlparseAll: input => jsYaml.safeLoadAll(preparseYaml(input)),
-    command: cmd => execSync(cmd).toString('utf8').trim(),
-    run: cmd => console.log(execSync(cmd).toString('utf8').trim()),
-    env: name => process.env[name],
-    common
-}
+export const yamlify = input => jsYaml.safeDump(input, { sortKeys: true, noArrayIndent: true, noRefs: true })
+export const yamlparseAll = input => jsYaml.safeLoadAll(preparseYaml(input))
+export const command = cmd => execSync(cmd).toString('utf8').trim()
+export const run = cmd => console.log(execSync(cmd).toString('utf8').trim())
+export const env = name => process.env[name]

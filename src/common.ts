@@ -4,7 +4,9 @@
  * There much designed to change, improve and stabilize !
  */
 
-const defaultDeployment = {
+import './konstructor'
+
+export const defaultDeployment = {
     apiVersion: "extensions/v1beta1",
     kind: "Deployment",
     spec: {
@@ -24,19 +26,19 @@ const defaultDeployment = {
     }
 }
 
-const port = (name, port, targetPort, protocol) => ({
+export const port = (name, port, targetPort, protocol) => ({
     name,
     port,
     targetPort,
     protocol
 })
 
-const tcpContainerPorts = (...ports) => ports.map(port => ({
+export const tcpContainerPorts = (...ports) => ports.map(port => ({
     containerPort: port,
     protocol: 'TCP'
 }))
 
-const loadBalancer = (name, ports) => ({
+export const loadBalancer = (name, ports) => ({
     apiVersion: "v1",
     kind: "Service",
     metadata: {
@@ -51,16 +53,16 @@ const loadBalancer = (name, ports) => ({
     }
 })
 
-const toEnv = spec => {
+export const toEnv = spec => {
     return Object.getOwnPropertyNames(spec).map(name => ({
         name,
         value: spec[name]
     }))
 }
 
-const deployment = (name) => defaultDeployment.addDeploymentDefaultNameAndLabels(name)
+export const deployment = (name) => (defaultDeployment as any).addDeploymentDefaultNameAndLabels(name)
 
-const serviceAccount = name => ({
+export const serviceAccount = name => ({
     apiVersion: "v1",
     kind: "ServiceAccount",
     metadata: {
@@ -68,7 +70,7 @@ const serviceAccount = name => ({
     }
 })
 
-const roleBinding = (roleBindingName, serviceAccountName, roleName) => ({
+export const roleBinding = (roleBindingName, serviceAccountName, roleName) => ({
     kind: "RoleBinding",
     apiVersion: "rbac.authorization.k8s.io/v1",
     metadata: {
@@ -84,14 +86,3 @@ const roleBinding = (roleBindingName, serviceAccountName, roleName) => ({
         apiGroup: "rbac.authorization.k8s.io"
     }
 })
-
-module.exports = {
-    defaultDeployment,
-    port,
-    tcpContainerPorts,
-    loadBalancer,
-    toEnv,
-    deployment,
-    serviceAccount,
-    roleBinding
-}
