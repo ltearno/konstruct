@@ -21,13 +21,13 @@ _You should have NodeJS installed on your environment._
 Install with Yarn :
 
 ```bash
-yarn global add konstruct
+yarn global add @ltearno/konstruct
 ```
 
 or NPM :
 
 ```bash
-npm install -g konstruct
+npm install -g @ltearno/konstruct
 ```
 
 Then you can write a file name `generate` with the following content :
@@ -35,7 +35,7 @@ Then you can write a file name `generate` with the following content :
 ```javascript
 #!/usr/bin/env node
 
-const k = require('konstruct')
+const k = require('@ltearno/konstruct')
 
 /** We can extract environment variables */
 const GCP_PROJECT = k.env('GCP_PROJECT')
