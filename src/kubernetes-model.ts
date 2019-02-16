@@ -119,11 +119,11 @@ export interface DeploymentAppsV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "apps.v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Deployment"
   /**
    * Standard object metadata.
    */
@@ -175,7 +175,7 @@ export interface DeploymentListAppsV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "apps.v1beta1"
   /**
    * Items is the list of Deployments.
    */
@@ -183,7 +183,7 @@ export interface DeploymentListAppsV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DeploymentList"
   /**
    * Standard list metadata.
    */
@@ -197,11 +197,11 @@ export interface DeploymentRollbackAppsV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "apps.v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DeploymentRollback"
   /**
    * Required: This must match the Name of a deployment.
    */
@@ -341,11 +341,11 @@ export interface ScaleAppsV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "apps.v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Scale"
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
@@ -421,11 +421,11 @@ export interface DeploymentExtensionsV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "extensions.v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Deployment"
   /**
    * Standard object metadata.
    */
@@ -477,7 +477,7 @@ export interface DeploymentListExtensionsV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "extensions.v1beta1"
   /**
    * Items is the list of Deployments.
    */
@@ -485,7 +485,7 @@ export interface DeploymentListExtensionsV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DeploymentList"
   /**
    * Standard list metadata.
    */
@@ -499,11 +499,11 @@ export interface DeploymentRollbackExtensionsV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "extensions.v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DeploymentRollback"
   /**
    * Required: This must match the Name of a deployment.
    */
@@ -661,11 +661,11 @@ export interface PodSecurityPolicyExtensionsV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "extensions.v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodSecurityPolicy"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -683,7 +683,7 @@ export interface PodSecurityPolicyListExtensionsV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "extensions.v1beta1"
   /**
    * items is a list of schema objects.
    */
@@ -691,7 +691,7 @@ export interface PodSecurityPolicyListExtensionsV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodSecurityPolicyList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -869,11 +869,11 @@ export interface ScaleExtensionsV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "extensions.v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Scale"
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
@@ -1005,11 +1005,11 @@ export interface PodSecurityPolicyPolicyV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "policy.v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodSecurityPolicy"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -1027,7 +1027,7 @@ export interface PodSecurityPolicyListPolicyV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "policy.v1beta1"
   /**
    * items is a list of schema objects.
    */
@@ -1035,7 +1035,7 @@ export interface PodSecurityPolicyListPolicyV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodSecurityPolicyList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -1240,11 +1240,11 @@ export interface APIGroupV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "APIGroup"
   /**
    * name is the name of the group.
    */
@@ -1270,7 +1270,7 @@ export interface APIGroupListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * groups is a list of APIGroup.
    */
@@ -1278,7 +1278,7 @@ export interface APIGroupListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "APIGroupList"
 }
 
 /**
@@ -1296,7 +1296,7 @@ export interface APIResourceV1 {
   /**
    * kind is the kind for the resource (e.g. 'Foo' is the kind for a resource 'foo')
    */
-  kind: string
+  kind: "APIResource"
   /**
    * name is the plural name of the resource.
    */
@@ -1330,7 +1330,7 @@ export interface APIResourceListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * groupVersion is the group and version this APIResourceList is for.
    */
@@ -1338,7 +1338,7 @@ export interface APIResourceListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "APIResourceList"
   /**
    * resources contains the name of the resources and if they are namespaced.
    */
@@ -1352,11 +1352,11 @@ export interface APIServiceV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "APIService"
   metadata?: ObjectMetaV1
   /**
    * Spec contains information for locating and communicating with a server
@@ -1398,12 +1398,12 @@ export interface APIServiceListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   items: APIServiceV1[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "APIServiceList"
   metadata?: ListMetaV1
 }
 
@@ -1458,11 +1458,11 @@ export interface APIVersionsV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "APIVersions"
   /**
    * a map of client CIDR to server address that is serving this group. This is to help clients reach servers in the most network-efficient way possible. Clients can use the appropriate server address as per the CIDR that they match. In case of multiple matches, clients should use the longest matching CIDR. The server returns only those CIDRs that it thinks that the client can match. For example: the master will return an internal IP CIDR only, if the client reaches the server using an internal IP. Server looks at X-Forwarded-For header or X-Real-Ip header or request.RemoteAddr (in that order) to get the client IP.
    */
@@ -1562,7 +1562,7 @@ export interface AzureDiskVolumeSourceV1 {
   /**
    * Expected values Shared: multiple blob disks per storage account  Dedicated: single blob disk per storage account  Managed: azure managed data disk (only in managed availability set). defaults to shared
    */
-  kind?: string
+  kind: "AzureDiskVolumeSource"
   /**
    * Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
    */
@@ -1616,11 +1616,11 @@ export interface BindingV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Binding"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -1808,11 +1808,11 @@ export interface ClusterRoleV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRole"
   /**
    * Standard object's metadata.
    */
@@ -1830,11 +1830,11 @@ export interface ClusterRoleBindingV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRoleBinding"
   /**
    * Standard object's metadata.
    */
@@ -1856,7 +1856,7 @@ export interface ClusterRoleBindingListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is a list of ClusterRoleBindings
    */
@@ -1864,7 +1864,7 @@ export interface ClusterRoleBindingListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRoleBindingList"
   /**
    * Standard object's metadata.
    */
@@ -1878,7 +1878,7 @@ export interface ClusterRoleListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is a list of ClusterRoles
    */
@@ -1886,7 +1886,7 @@ export interface ClusterRoleListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRoleList"
   /**
    * Standard object's metadata.
    */
@@ -1922,7 +1922,7 @@ export interface ComponentStatusV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of component conditions observed
    */
@@ -1930,7 +1930,7 @@ export interface ComponentStatusV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ComponentStatus"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -1944,7 +1944,7 @@ export interface ComponentStatusListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of ComponentStatus objects.
    */
@@ -1952,7 +1952,7 @@ export interface ComponentStatusListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ComponentStatusList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -1966,7 +1966,7 @@ export interface ConfigMapV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet.
    */
@@ -1978,7 +1978,7 @@ export interface ConfigMapV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ConfigMap"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -2026,7 +2026,7 @@ export interface ConfigMapListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is the list of ConfigMaps.
    */
@@ -2034,7 +2034,7 @@ export interface ConfigMapListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ConfigMapList"
   /**
    * More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -2362,7 +2362,7 @@ export interface ControllerRevisionV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Data is the serialized representation of the state.
    */
@@ -2370,7 +2370,7 @@ export interface ControllerRevisionV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ControllerRevision"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -2388,7 +2388,7 @@ export interface ControllerRevisionListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is the list of ControllerRevisions
    */
@@ -2396,7 +2396,7 @@ export interface ControllerRevisionListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ControllerRevisionList"
   /**
    * More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -2410,11 +2410,11 @@ export interface CrossVersionObjectReferenceV1 {
   /**
    * API version of the referent
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind of the referent; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
    */
-  kind: string
+  kind: "CrossVersionObjectReference"
   /**
    * Name of the referent; More info: http://kubernetes.io/docs/user-guide/identifiers#names
    */
@@ -2438,11 +2438,11 @@ export interface DaemonSetV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DaemonSet"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -2490,7 +2490,7 @@ export interface DaemonSetListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * A list of daemon sets.
    */
@@ -2498,7 +2498,7 @@ export interface DaemonSetListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DaemonSetList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -2598,7 +2598,7 @@ export interface DeleteOptionsV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed
    */
@@ -2610,7 +2610,7 @@ export interface DeleteOptionsV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DeleteOptions"
   /**
    * Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
    */
@@ -2632,11 +2632,11 @@ export interface DeploymentV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Deployment"
   /**
    * Standard object metadata.
    */
@@ -2688,7 +2688,7 @@ export interface DeploymentListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is the list of Deployments.
    */
@@ -2696,7 +2696,7 @@ export interface DeploymentListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DeploymentList"
   /**
    * Standard list metadata.
    */
@@ -2936,11 +2936,11 @@ export interface EndpointsV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Endpoints"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -2958,7 +2958,7 @@ export interface EndpointsListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of endpoints.
    */
@@ -2966,7 +2966,7 @@ export interface EndpointsListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "EndpointsList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -3042,7 +3042,7 @@ export interface EventV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * The number of times this event has occurred.
    */
@@ -3062,7 +3062,7 @@ export interface EventV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Event"
   /**
    * The time at which the most recent occurrence of this event was recorded.
    */
@@ -3112,7 +3112,7 @@ export interface EventListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of events
    */
@@ -3120,7 +3120,7 @@ export interface EventListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "EventList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -3424,11 +3424,11 @@ export interface HorizontalPodAutoscalerV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "HorizontalPodAutoscaler"
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -3450,7 +3450,7 @@ export interface HorizontalPodAutoscalerListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * list of horizontal pod autoscaler objects.
    */
@@ -3458,7 +3458,7 @@ export interface HorizontalPodAutoscalerListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "HorizontalPodAutoscalerList"
   /**
    * Standard list metadata.
    */
@@ -3686,11 +3686,11 @@ export interface JobV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Job"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -3742,7 +3742,7 @@ export interface JobListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * items is the list of Jobs.
    */
@@ -3750,7 +3750,7 @@ export interface JobListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "JobList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -3896,11 +3896,11 @@ export interface LimitRangeV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "LimitRange"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -3948,7 +3948,7 @@ export interface LimitRangeListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is a list of LimitRange objects. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
    */
@@ -3956,7 +3956,7 @@ export interface LimitRangeListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "LimitRangeList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -4032,11 +4032,11 @@ export interface LocalSubjectAccessReviewV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "LocalSubjectAccessReview"
   metadata?: ObjectMetaV1
   /**
    * Spec holds information about the request being evaluated.  spec.namespace must be equal to the namespace you made the request against.  If empty, it is defaulted.
@@ -4087,11 +4087,11 @@ export interface NamespaceV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Namespace"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -4113,7 +4113,7 @@ export interface NamespaceListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is the list of Namespace objects in the list. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
    */
@@ -4121,7 +4121,7 @@ export interface NamespaceListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "NamespaceList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -4155,11 +4155,11 @@ export interface NetworkPolicyV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "NetworkPolicy"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -4205,7 +4205,7 @@ export interface NetworkPolicyListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is a list of schema objects.
    */
@@ -4213,7 +4213,7 @@ export interface NetworkPolicyListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "NetworkPolicyList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -4285,11 +4285,11 @@ export interface NodeV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Node"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -4411,7 +4411,7 @@ export interface NodeListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of nodes
    */
@@ -4419,7 +4419,7 @@ export interface NodeListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "NodeList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -4629,7 +4629,7 @@ export interface ObjectFieldSelectorV1 {
   /**
    * Version of the schema the FieldPath is written in terms of, defaults to "v1".
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Path of the field to select in the specified API version.
    */
@@ -4729,7 +4729,7 @@ export interface ObjectReferenceV1 {
   /**
    * API version of the referent.
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.
    */
@@ -4737,7 +4737,7 @@ export interface ObjectReferenceV1 {
   /**
    * Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ObjectReference"
   /**
    * Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
    */
@@ -4763,7 +4763,7 @@ export interface OwnerReferenceV1 {
   /**
    * API version of the referent.
    */
-  apiVersion: string
+  apiVersion: "v1"
   /**
    * If true, AND if the owner has the "foregroundDeletion" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed. Defaults to false. To set this field, a user needs "delete" permission of the owner, otherwise 422 (Unprocessable Entity) will be returned.
    */
@@ -4775,7 +4775,7 @@ export interface OwnerReferenceV1 {
   /**
    * Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind: string
+  kind: "OwnerReference"
   /**
    * Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names
    */
@@ -4793,11 +4793,11 @@ export interface PersistentVolumeV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PersistentVolume"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -4819,11 +4819,11 @@ export interface PersistentVolumeClaimV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PersistentVolumeClaim"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -4869,7 +4869,7 @@ export interface PersistentVolumeClaimListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * A list of persistent volume claims. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
    */
@@ -4877,7 +4877,7 @@ export interface PersistentVolumeClaimListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PersistentVolumeClaimList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -4961,7 +4961,7 @@ export interface PersistentVolumeListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of persistent volumes. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
    */
@@ -4969,7 +4969,7 @@ export interface PersistentVolumeListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PersistentVolumeList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -5141,11 +5141,11 @@ export interface PodV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Pod"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -5272,7 +5272,7 @@ export interface PodListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of pods. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md
    */
@@ -5280,7 +5280,7 @@ export interface PodListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -5522,11 +5522,11 @@ export interface PodTemplateV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodTemplate"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -5544,7 +5544,7 @@ export interface PodTemplateListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of pod templates
    */
@@ -5552,7 +5552,7 @@ export interface PodTemplateListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodTemplateList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -5802,11 +5802,11 @@ export interface ReplicaSetV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ReplicaSet"
   /**
    * If the Labels of a ReplicaSet are empty, they are defaulted to be the same as the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -5854,7 +5854,7 @@ export interface ReplicaSetListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of ReplicaSets. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
    */
@@ -5862,7 +5862,7 @@ export interface ReplicaSetListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ReplicaSetList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -5928,11 +5928,11 @@ export interface ReplicationControllerV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ReplicationController"
   /**
    * If the Labels of a ReplicationController are empty, they are defaulted to be the same as the Pod(s) that the replication controller manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -5980,7 +5980,7 @@ export interface ReplicationControllerListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of replication controllers. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
    */
@@ -5988,7 +5988,7 @@ export interface ReplicationControllerListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ReplicationControllerList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6106,11 +6106,11 @@ export interface ResourceQuotaV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ResourceQuota"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -6132,7 +6132,7 @@ export interface ResourceQuotaListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is a list of ResourceQuota objects. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
    */
@@ -6140,7 +6140,7 @@ export interface ResourceQuotaListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ResourceQuotaList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6223,11 +6223,11 @@ export interface RoleV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Role"
   /**
    * Standard object's metadata.
    */
@@ -6245,11 +6245,11 @@ export interface RoleBindingV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "RoleBinding"
   /**
    * Standard object's metadata.
    */
@@ -6271,7 +6271,7 @@ export interface RoleBindingListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is a list of RoleBindings
    */
@@ -6279,7 +6279,7 @@ export interface RoleBindingListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "RoleBindingList"
   /**
    * Standard object's metadata.
    */
@@ -6293,7 +6293,7 @@ export interface RoleListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is a list of Roles
    */
@@ -6301,7 +6301,7 @@ export interface RoleListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "RoleList"
   /**
    * Standard object's metadata.
    */
@@ -6319,7 +6319,7 @@ export interface RoleRefV1 {
   /**
    * Kind is the type of resource being referenced
    */
-  kind: string
+  kind: "RoleRef"
   /**
    * Name is the name of resource being referenced
    */
@@ -6389,11 +6389,11 @@ export interface ScaleV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Scale"
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
@@ -6559,7 +6559,7 @@ export interface SecretV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here. Described in https://tools.ietf.org/html/rfc4648#section-4
    */
@@ -6567,7 +6567,7 @@ export interface SecretV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Secret"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -6623,7 +6623,7 @@ export interface SecretListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is a list of secret objects. More info: https://kubernetes.io/docs/concepts/configuration/secret
    */
@@ -6631,7 +6631,7 @@ export interface SecretListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "SecretList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6745,11 +6745,11 @@ export interface SelfSubjectAccessReviewV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "SelfSubjectAccessReview"
   metadata?: ObjectMetaV1
   /**
    * Spec holds information about the request being evaluated.  user and groups must be empty
@@ -6782,11 +6782,11 @@ export interface SelfSubjectRulesReviewV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "SelfSubjectRulesReview"
   metadata?: ObjectMetaV1
   /**
    * Spec holds information about the request being evaluated.
@@ -6826,11 +6826,11 @@ export interface ServiceV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Service"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -6852,7 +6852,7 @@ export interface ServiceAccountV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * AutomountServiceAccountToken indicates whether pods running as this service account should have an API token automatically mounted. Can be overridden at the pod level.
    */
@@ -6864,7 +6864,7 @@ export interface ServiceAccountV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ServiceAccount"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -6882,7 +6882,7 @@ export interface ServiceAccountListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of ServiceAccounts. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
    */
@@ -6890,7 +6890,7 @@ export interface ServiceAccountListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ServiceAccountList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6922,7 +6922,7 @@ export interface ServiceListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * List of services
    */
@@ -6930,7 +6930,7 @@ export interface ServiceListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ServiceList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -7065,11 +7065,11 @@ export interface StatefulSetV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StatefulSet"
   metadata?: ObjectMetaV1
   /**
    * Spec defines the desired identities of pods in this set.
@@ -7114,12 +7114,12 @@ export interface StatefulSetListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   items: StatefulSetV1[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StatefulSetList"
   metadata?: ListMetaV1
 }
 
@@ -7224,7 +7224,7 @@ export interface StatusV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Suggested HTTP return code for this status, 0 if not set.
    */
@@ -7236,7 +7236,7 @@ export interface StatusV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Status"
   /**
    * A human-readable description of the status of this operation.
    */
@@ -7292,7 +7292,7 @@ export interface StatusDetailsV1 {
   /**
    * The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StatusDetails"
   /**
    * The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described).
    */
@@ -7324,11 +7324,11 @@ export interface StorageClassV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StorageClass"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -7362,7 +7362,7 @@ export interface StorageClassListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is the list of StorageClasses
    */
@@ -7370,7 +7370,7 @@ export interface StorageClassListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StorageClassList"
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -7440,7 +7440,7 @@ export interface SubjectV1 {
   /**
    * Kind of object being referenced. Values defined by this API group are "User", "Group", and "ServiceAccount". If the Authorizer does not recognized the kind value, the Authorizer should report an error.
    */
-  kind: string
+  kind: "Subject"
   /**
    * Name of the object being referenced.
    */
@@ -7458,11 +7458,11 @@ export interface SubjectAccessReviewV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "SubjectAccessReview"
   metadata?: ObjectMetaV1
   /**
    * Spec holds information about the request being evaluated
@@ -7605,11 +7605,11 @@ export interface TokenReviewV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "TokenReview"
   metadata?: ObjectMetaV1
   /**
    * Spec holds information about the request being evaluated
@@ -7718,7 +7718,7 @@ export interface TypedLocalObjectReferenceV1 {
   /**
    * Kind is the type of resource being referenced
    */
-  kind: string
+  kind: "TypedLocalObjectReference"
   /**
    * Name is the name of resource being referenced
    */
@@ -7874,11 +7874,11 @@ export interface VolumeAttachmentV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "VolumeAttachment"
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -7900,7 +7900,7 @@ export interface VolumeAttachmentListV1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1"
   /**
    * Items is the list of VolumeAttachments
    */
@@ -7908,7 +7908,7 @@ export interface VolumeAttachmentListV1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "VolumeAttachmentList"
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -8119,11 +8119,11 @@ export interface AuditSinkV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "AuditSink"
   metadata?: ObjectMetaV1
   /**
    * Spec defines the audit configuration spec
@@ -8138,7 +8138,7 @@ export interface AuditSinkListV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * List of audit configurations.
    */
@@ -8146,7 +8146,7 @@ export interface AuditSinkListV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "AuditSinkList"
   metadata?: ListMetaV1
 }
 
@@ -8175,11 +8175,11 @@ export interface ClusterRoleV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRole"
   /**
    * Standard object's metadata.
    */
@@ -8197,11 +8197,11 @@ export interface ClusterRoleBindingV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRoleBinding"
   /**
    * Standard object's metadata.
    */
@@ -8223,7 +8223,7 @@ export interface ClusterRoleBindingListV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Items is a list of ClusterRoleBindings
    */
@@ -8231,7 +8231,7 @@ export interface ClusterRoleBindingListV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRoleBindingList"
   /**
    * Standard object's metadata.
    */
@@ -8245,7 +8245,7 @@ export interface ClusterRoleListV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Items is a list of ClusterRoles
    */
@@ -8253,7 +8253,7 @@ export interface ClusterRoleListV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRoleList"
   /**
    * Standard object's metadata.
    */
@@ -8281,7 +8281,7 @@ export interface InitializerConfigurationV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Initializers is a list of resources and their default initializers Order-sensitive. When merging multiple InitializerConfigurations, we sort the initializers from different InitializerConfigurations by the name of the InitializerConfigurations; the order of the initializers from the same InitializerConfiguration is preserved.
    */
@@ -8289,7 +8289,7 @@ export interface InitializerConfigurationV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "InitializerConfiguration"
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
@@ -8303,7 +8303,7 @@ export interface InitializerConfigurationListV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * List of InitializerConfiguration.
    */
@@ -8311,7 +8311,7 @@ export interface InitializerConfigurationListV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "InitializerConfigurationList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -8325,11 +8325,11 @@ export interface PodPresetV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodPreset"
   metadata?: ObjectMetaV1
   spec?: PodPresetSpecV1alpha1
 }
@@ -8341,7 +8341,7 @@ export interface PodPresetListV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Items is a list of schema objects.
    */
@@ -8349,7 +8349,7 @@ export interface PodPresetListV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodPresetList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -8429,7 +8429,7 @@ export interface PriorityClassV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * description is an arbitrary string that usually provides guidelines on when this priority class should be used.
    */
@@ -8441,7 +8441,7 @@ export interface PriorityClassV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PriorityClass"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -8459,7 +8459,7 @@ export interface PriorityClassListV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * items is the list of PriorityClasses
    */
@@ -8467,7 +8467,7 @@ export interface PriorityClassListV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PriorityClassList"
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -8481,11 +8481,11 @@ export interface RoleV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Role"
   /**
    * Standard object's metadata.
    */
@@ -8503,11 +8503,11 @@ export interface RoleBindingV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "RoleBinding"
   /**
    * Standard object's metadata.
    */
@@ -8529,7 +8529,7 @@ export interface RoleBindingListV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Items is a list of RoleBindings
    */
@@ -8537,7 +8537,7 @@ export interface RoleBindingListV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "RoleBindingList"
   /**
    * Standard object's metadata.
    */
@@ -8551,7 +8551,7 @@ export interface RoleListV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Items is a list of Roles
    */
@@ -8559,7 +8559,7 @@ export interface RoleListV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "RoleList"
   /**
    * Standard object's metadata.
    */
@@ -8577,7 +8577,7 @@ export interface RoleRefV1alpha1 {
   /**
    * Kind is the type of resource being referenced
    */
-  kind: string
+  kind: "RoleRef"
   /**
    * Name is the name of resource being referenced
    */
@@ -8633,11 +8633,11 @@ export interface SubjectV1alpha1 {
   /**
    * APIVersion holds the API group and version of the referenced subject. Defaults to "v1" for ServiceAccount subjects. Defaults to "rbac.authorization.k8s.io/v1alpha1" for User and Group subjects.
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Kind of object being referenced. Values defined by this API group are "User", "Group", and "ServiceAccount". If the Authorizer does not recognized the kind value, the Authorizer should report an error.
    */
-  kind: string
+  kind: "Subject"
   /**
    * Name of the object being referenced.
    */
@@ -8657,11 +8657,11 @@ export interface VolumeAttachmentV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "VolumeAttachment"
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -8683,7 +8683,7 @@ export interface VolumeAttachmentListV1alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1alpha1"
   /**
    * Items is the list of VolumeAttachments
    */
@@ -8691,7 +8691,7 @@ export interface VolumeAttachmentListV1alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "VolumeAttachmentList"
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -8829,11 +8829,11 @@ export interface APIServiceV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "APIService"
   metadata?: ObjectMetaV1
   /**
    * Spec contains information for locating and communicating with a server
@@ -8875,12 +8875,12 @@ export interface APIServiceListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   items: APIServiceV1beta1[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "APIServiceList"
   metadata?: ListMetaV1
 }
 
@@ -8945,11 +8945,11 @@ export interface CertificateSigningRequestV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "CertificateSigningRequest"
   metadata?: ObjectMetaV1
   /**
    * The certificate request itself and any additional information.
@@ -8984,12 +8984,12 @@ export interface CertificateSigningRequestListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   items: CertificateSigningRequestV1beta1[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "CertificateSigningRequestList"
   metadata?: ListMetaV1
 }
 
@@ -9046,11 +9046,11 @@ export interface ClusterRoleV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRole"
   /**
    * Standard object's metadata.
    */
@@ -9068,11 +9068,11 @@ export interface ClusterRoleBindingV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRoleBinding"
   /**
    * Standard object's metadata.
    */
@@ -9094,7 +9094,7 @@ export interface ClusterRoleBindingListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is a list of ClusterRoleBindings
    */
@@ -9102,7 +9102,7 @@ export interface ClusterRoleBindingListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRoleBindingList"
   /**
    * Standard object's metadata.
    */
@@ -9116,7 +9116,7 @@ export interface ClusterRoleListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is a list of ClusterRoles
    */
@@ -9124,7 +9124,7 @@ export interface ClusterRoleListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ClusterRoleList"
   /**
    * Standard object's metadata.
    */
@@ -9138,7 +9138,7 @@ export interface ControllerRevisionV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Data is the serialized representation of the state.
    */
@@ -9146,7 +9146,7 @@ export interface ControllerRevisionV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ControllerRevision"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -9164,7 +9164,7 @@ export interface ControllerRevisionListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is the list of ControllerRevisions
    */
@@ -9172,7 +9172,7 @@ export interface ControllerRevisionListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ControllerRevisionList"
   /**
    * More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -9186,11 +9186,11 @@ export interface CronJobV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "CronJob"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -9212,7 +9212,7 @@ export interface CronJobListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * items is the list of CronJobs.
    */
@@ -9220,7 +9220,7 @@ export interface CronJobListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "CronJobList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -9326,11 +9326,11 @@ export interface CustomResourceDefinitionV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "CustomResourceDefinition"
   metadata?: ObjectMetaV1
   /**
    * Spec describes how the user wants the resources to appear
@@ -9375,7 +9375,7 @@ export interface CustomResourceDefinitionListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items individual CustomResourceDefinitions
    */
@@ -9383,7 +9383,7 @@ export interface CustomResourceDefinitionListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "CustomResourceDefinitionList"
   metadata?: ListMetaV1
 }
 
@@ -9398,7 +9398,7 @@ export interface CustomResourceDefinitionNamesV1beta1 {
   /**
    * Kind is the serialized kind of the resource.  It is normally CamelCase and singular.
    */
-  kind: string
+  kind: "CustomResourceDefinitionNames"
   /**
    * ListKind is the serialized kind of the list for this resource.  Defaults to <kind>List.
    */
@@ -9556,11 +9556,11 @@ export interface DaemonSetV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DaemonSet"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -9608,7 +9608,7 @@ export interface DaemonSetListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * A list of daemon sets.
    */
@@ -9616,7 +9616,7 @@ export interface DaemonSetListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DaemonSetList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -9721,7 +9721,7 @@ export interface EventV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Deprecated field assuring backward compatibility with core.v1 Event type
    */
@@ -9745,7 +9745,7 @@ export interface EventV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Event"
   metadata?: ObjectMetaV1
   /**
    * Optional. A human-readable description of the status of this operation. Maximal length of the note is 1kB, but libraries should be prepared to handle values up to 64kB.
@@ -9788,7 +9788,7 @@ export interface EventListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is a list of schema objects.
    */
@@ -9796,7 +9796,7 @@ export interface EventListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "EventList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -9828,7 +9828,7 @@ export interface EvictionV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * DeleteOptions may be provided
    */
@@ -9836,7 +9836,7 @@ export interface EvictionV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Eviction"
   /**
    * ObjectMeta describes the pod that is being evicted.
    */
@@ -9896,11 +9896,11 @@ export interface IngressV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Ingress"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -9936,7 +9936,7 @@ export interface IngressListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is the list of Ingress.
    */
@@ -9944,7 +9944,7 @@ export interface IngressListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "IngressList"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -10087,11 +10087,11 @@ export interface LeaseV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Lease"
   /**
    * More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -10109,7 +10109,7 @@ export interface LeaseListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is a list of schema objects.
    */
@@ -10117,7 +10117,7 @@ export interface LeaseListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "LeaseList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -10157,11 +10157,11 @@ export interface LocalSubjectAccessReviewV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "LocalSubjectAccessReview"
   metadata?: ObjectMetaV1
   /**
    * Spec holds information about the request being evaluated.  spec.namespace must be equal to the namespace you made the request against.  If empty, it is defaulted.
@@ -10180,11 +10180,11 @@ export interface MutatingWebhookConfigurationV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "MutatingWebhookConfiguration"
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
@@ -10202,7 +10202,7 @@ export interface MutatingWebhookConfigurationListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * List of MutatingWebhookConfiguration.
    */
@@ -10210,7 +10210,7 @@ export interface MutatingWebhookConfigurationListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "MutatingWebhookConfigurationList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -10224,11 +10224,11 @@ export interface NetworkPolicyV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "NetworkPolicy"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -10274,7 +10274,7 @@ export interface NetworkPolicyListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is a list of schema objects.
    */
@@ -10282,7 +10282,7 @@ export interface NetworkPolicyListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "NetworkPolicyList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -10382,11 +10382,11 @@ export interface PodDisruptionBudgetV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodDisruptionBudget"
   metadata?: ObjectMetaV1
   /**
    * Specification of the desired behavior of the PodDisruptionBudget.
@@ -10405,12 +10405,12 @@ export interface PodDisruptionBudgetListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   items: PodDisruptionBudgetV1beta1[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PodDisruptionBudgetList"
   metadata?: ListMetaV1
 }
 
@@ -10495,7 +10495,7 @@ export interface PriorityClassV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * description is an arbitrary string that usually provides guidelines on when this priority class should be used.
    */
@@ -10507,7 +10507,7 @@ export interface PriorityClassV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PriorityClass"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -10525,7 +10525,7 @@ export interface PriorityClassListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * items is the list of PriorityClasses
    */
@@ -10533,7 +10533,7 @@ export interface PriorityClassListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "PriorityClassList"
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -10547,11 +10547,11 @@ export interface ReplicaSetV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ReplicaSet"
   /**
    * If the Labels of a ReplicaSet are empty, they are defaulted to be the same as the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -10599,7 +10599,7 @@ export interface ReplicaSetListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * List of ReplicaSets. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
    */
@@ -10607,7 +10607,7 @@ export interface ReplicaSetListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ReplicaSetList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -10730,11 +10730,11 @@ export interface RoleV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Role"
   /**
    * Standard object's metadata.
    */
@@ -10752,11 +10752,11 @@ export interface RoleBindingV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "RoleBinding"
   /**
    * Standard object's metadata.
    */
@@ -10778,7 +10778,7 @@ export interface RoleBindingListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is a list of RoleBindings
    */
@@ -10786,7 +10786,7 @@ export interface RoleBindingListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "RoleBindingList"
   /**
    * Standard object's metadata.
    */
@@ -10800,7 +10800,7 @@ export interface RoleListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is a list of Roles
    */
@@ -10808,7 +10808,7 @@ export interface RoleListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "RoleList"
   /**
    * Standard object's metadata.
    */
@@ -10826,7 +10826,7 @@ export interface RoleRefV1beta1 {
   /**
    * Kind is the type of resource being referenced
    */
-  kind: string
+  kind: "RoleRef"
   /**
    * Name is the name of resource being referenced
    */
@@ -10888,11 +10888,11 @@ export interface SelfSubjectAccessReviewV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "SelfSubjectAccessReview"
   metadata?: ObjectMetaV1
   /**
    * Spec holds information about the request being evaluated.  user and groups must be empty
@@ -10925,11 +10925,11 @@ export interface SelfSubjectRulesReviewV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "SelfSubjectRulesReview"
   metadata?: ObjectMetaV1
   /**
    * Spec holds information about the request being evaluated.
@@ -10958,11 +10958,11 @@ export interface StatefulSetV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StatefulSet"
   metadata?: ObjectMetaV1
   /**
    * Spec defines the desired identities of pods in this set.
@@ -11007,12 +11007,12 @@ export interface StatefulSetListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   items: StatefulSetV1beta1[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StatefulSetList"
   metadata?: ListMetaV1
 }
 
@@ -11127,11 +11127,11 @@ export interface StorageClassV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StorageClass"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -11165,7 +11165,7 @@ export interface StorageClassListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is the list of StorageClasses
    */
@@ -11173,7 +11173,7 @@ export interface StorageClassListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StorageClassList"
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -11191,7 +11191,7 @@ export interface SubjectV1beta1 {
   /**
    * Kind of object being referenced. Values defined by this API group are "User", "Group", and "ServiceAccount". If the Authorizer does not recognized the kind value, the Authorizer should report an error.
    */
-  kind: string
+  kind: "Subject"
   /**
    * Name of the object being referenced.
    */
@@ -11209,11 +11209,11 @@ export interface SubjectAccessReviewV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "SubjectAccessReview"
   metadata?: ObjectMetaV1
   /**
    * Spec holds information about the request being evaluated
@@ -11306,11 +11306,11 @@ export interface TokenReviewV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "TokenReview"
   metadata?: ObjectMetaV1
   /**
    * Spec holds information about the request being evaluated
@@ -11387,11 +11387,11 @@ export interface ValidatingWebhookConfigurationV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ValidatingWebhookConfiguration"
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
@@ -11409,7 +11409,7 @@ export interface ValidatingWebhookConfigurationListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * List of ValidatingWebhookConfiguration.
    */
@@ -11417,7 +11417,7 @@ export interface ValidatingWebhookConfigurationListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ValidatingWebhookConfigurationList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -11433,11 +11433,11 @@ export interface VolumeAttachmentV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "VolumeAttachment"
   /**
    * Standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -11459,7 +11459,7 @@ export interface VolumeAttachmentListV1beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta1"
   /**
    * Items is the list of VolumeAttachments
    */
@@ -11467,7 +11467,7 @@ export interface VolumeAttachmentListV1beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "VolumeAttachmentList"
   /**
    * Standard list metadata More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -11605,7 +11605,7 @@ export interface ControllerRevisionV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   /**
    * Data is the serialized representation of the state.
    */
@@ -11613,7 +11613,7 @@ export interface ControllerRevisionV1beta2 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ControllerRevision"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -11631,7 +11631,7 @@ export interface ControllerRevisionListV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   /**
    * Items is the list of ControllerRevisions
    */
@@ -11639,7 +11639,7 @@ export interface ControllerRevisionListV1beta2 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ControllerRevisionList"
   /**
    * More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -11653,11 +11653,11 @@ export interface DaemonSetV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DaemonSet"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -11705,7 +11705,7 @@ export interface DaemonSetListV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   /**
    * A list of daemon sets.
    */
@@ -11713,7 +11713,7 @@ export interface DaemonSetListV1beta2 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DaemonSetList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -11813,11 +11813,11 @@ export interface DeploymentV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Deployment"
   /**
    * Standard object metadata.
    */
@@ -11869,7 +11869,7 @@ export interface DeploymentListV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   /**
    * Items is the list of Deployments.
    */
@@ -11877,7 +11877,7 @@ export interface DeploymentListV1beta2 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "DeploymentList"
   /**
    * Standard list metadata.
    */
@@ -11981,11 +11981,11 @@ export interface ReplicaSetV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ReplicaSet"
   /**
    * If the Labels of a ReplicaSet are empty, they are defaulted to be the same as the Pod(s) that the ReplicaSet manages. Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -12033,7 +12033,7 @@ export interface ReplicaSetListV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   /**
    * List of ReplicaSets. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller
    */
@@ -12041,7 +12041,7 @@ export interface ReplicaSetListV1beta2 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "ReplicaSetList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -12141,11 +12141,11 @@ export interface ScaleV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "Scale"
   /**
    * Standard object metadata; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata.
    */
@@ -12198,11 +12198,11 @@ export interface StatefulSetV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StatefulSet"
   metadata?: ObjectMetaV1
   /**
    * Spec defines the desired identities of pods in this set.
@@ -12247,12 +12247,12 @@ export interface StatefulSetListV1beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v1beta2"
   items: StatefulSetV1beta2[]
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "StatefulSetList"
   metadata?: ListMetaV1
 }
 
@@ -12357,11 +12357,11 @@ export interface CronJobV2alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v2alpha1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "CronJob"
   /**
    * Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -12383,7 +12383,7 @@ export interface CronJobListV2alpha1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v2alpha1"
   /**
    * items is the list of CronJobs.
    */
@@ -12391,7 +12391,7 @@ export interface CronJobListV2alpha1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "CronJobList"
   /**
    * Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -12467,11 +12467,11 @@ export interface CrossVersionObjectReferenceV2beta1 {
   /**
    * API version of the referent
    */
-  apiVersion?: string
+  apiVersion: "v2beta1"
   /**
    * Kind of the referent; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
    */
-  kind: string
+  kind: "CrossVersionObjectReference"
   /**
    * Name of the referent; More info: http://kubernetes.io/docs/user-guide/identifiers#names
    */
@@ -12529,11 +12529,11 @@ export interface HorizontalPodAutoscalerV2beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v2beta1"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "HorizontalPodAutoscaler"
   /**
    * metadata is the standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -12581,7 +12581,7 @@ export interface HorizontalPodAutoscalerListV2beta1 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v2beta1"
   /**
    * items is the list of horizontal pod autoscaler objects.
    */
@@ -12589,7 +12589,7 @@ export interface HorizontalPodAutoscalerListV2beta1 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "HorizontalPodAutoscalerList"
   /**
    * metadata is the standard list metadata.
    */
@@ -12831,11 +12831,11 @@ export interface CrossVersionObjectReferenceV2beta2 {
   /**
    * API version of the referent
    */
-  apiVersion?: string
+  apiVersion: "v2beta2"
   /**
    * Kind of the referent; More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds"
    */
-  kind: string
+  kind: "CrossVersionObjectReference"
   /**
    * Name of the referent; More info: http://kubernetes.io/docs/user-guide/identifiers#names
    */
@@ -12877,11 +12877,11 @@ export interface HorizontalPodAutoscalerV2beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v2beta2"
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "HorizontalPodAutoscaler"
   /**
    * metadata is the standard object metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata
    */
@@ -12929,7 +12929,7 @@ export interface HorizontalPodAutoscalerListV2beta2 {
   /**
    * APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources
    */
-  apiVersion?: string
+  apiVersion: "v2beta2"
   /**
    * items is the list of horizontal pod autoscaler objects.
    */
@@ -12937,7 +12937,7 @@ export interface HorizontalPodAutoscalerListV2beta2 {
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
-  kind?: string
+  kind: "HorizontalPodAutoscalerList"
   /**
    * metadata is the standard list metadata.
    */

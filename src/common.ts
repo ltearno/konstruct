@@ -4,10 +4,10 @@
  * There much designed to change, improve and stabilize !
  */
 
-import * as k from './konstructor'
+ // should import k8s model when available
 
-export const defaultDeployment: k.k8s.DeploymentV1 = {
-    apiVersion: "extensions/v1beta1",
+export const defaultDeployment: /*k8s.DeploymentV1*/any = {
+    apiVersion: "v1",
     kind: "Deployment",
     spec: {
         replicas: 3,
@@ -40,20 +40,22 @@ export const tcpContainerPorts = (...ports) => ports.map(port => ({
     protocol: 'TCP'
 }))
 
-export const loadBalancer = (name, ports) => ({
-    apiVersion: "v1",
-    kind: "Service",
-    metadata: {
-        name
-    },
-    spec: {
-        type: "LoadBalancer",
-        ports,
-        selector: {
-            app: name
+export function loadBalancer(name, ports): /*k8s.ServiceV1*/any {
+    return {
+        apiVersion: "v1",
+        kind: "Service",
+        metadata: {
+            name
+        },
+        spec: {
+            type: "LoadBalancer",
+            ports,
+            selector: {
+                app: name
+            }
         }
     }
-})
+}
 
 export const toEnv = spec => {
     return Object.getOwnPropertyNames(spec).map(name => ({

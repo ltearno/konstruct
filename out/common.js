@@ -5,8 +5,9 @@
  * There much designed to change, improve and stabilize !
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+// should import k8s model when available
 exports.defaultDeployment = {
-    apiVersion: "extensions/v1beta1",
+    apiVersion: "v1",
     kind: "Deployment",
     spec: {
         replicas: 3,
@@ -42,20 +43,23 @@ exports.tcpContainerPorts = function () {
         protocol: 'TCP'
     }); });
 };
-exports.loadBalancer = function (name, ports) { return ({
-    apiVersion: "v1",
-    kind: "Service",
-    metadata: {
-        name: name
-    },
-    spec: {
-        type: "LoadBalancer",
-        ports: ports,
-        selector: {
-            app: name
+function loadBalancer(name, ports) {
+    return {
+        apiVersion: "v1",
+        kind: "Service",
+        metadata: {
+            name: name
+        },
+        spec: {
+            type: "LoadBalancer",
+            ports: ports,
+            selector: {
+                app: name
+            }
         }
-    }
-}); };
+    };
+}
+exports.loadBalancer = loadBalancer;
 exports.toEnv = function (spec) {
     return Object.getOwnPropertyNames(spec).map(function (name) { return ({
         name: name,
