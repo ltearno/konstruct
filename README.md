@@ -2,6 +2,18 @@
 
 A tool to help generate Kubernetes object descriptions (for those who'd prefer not to write too much YAML).
 
+## Features
+
+- Very light.
+- Gives you the power back on your Yaml templates.
+- Easy syntax (fluent, readable, ...).
+- You use it instead of the other way around (it's a library, not a framework).
+- All the Kubernetes objects API is available (with type information for IDE assistance and auto-completion).
+- Common tools to parse/dump yaml.
+- Uses NodeJS environment so a lot of tools are available.
+- Written in Typescript so you can use it with pure javascript or inside a Typescript project.
+- You literally write programs that output YAML manifests !
+
 ## Quick start
 
 _You should have NodeJS installed on your environment._
