@@ -1,8 +1,9 @@
 import * as k from './konstructor'
 
+const build = k.k8sBuilder
 const log = console.log.bind(console)
 
-let makeDefaultService = name => (k.k8sBuilder.service().merge({
+let makeDefaultService = name => (build.service().merge({
     metadata: { name },
     spec: {
         type: "ClusterIP",
@@ -15,28 +16,39 @@ let makeDefaultService = name => (k.k8sBuilder.service().merge({
     }
 }))
 
+k.installPlugin(function timestamp(o) {
+    return o.set('metadata.date', `${Date.now()}`)
+})
+declare global {
+    interface Object {
+        timestamp<T>(this: T): T
+    }
+}
+
+const NAME = 'my-first-konstruction'
 let docs = []
 
 docs.push(
-    makeDefaultService("toto")
-        .mergeAt('metadata', { toto: 4 })
+    makeDefaultService(NAME)
+        .timestamp()
 )
 
 docs.push(
-    k.k8sBuilder.deployment()
-        .addDeploymentDefaultNameAndLabels('toto')
+    build.deployment()
+        .addDeploymentDefaultNameAndLabels(NAME)
         .merge({
             spec: {
                 template: {
                     spec: {
                         containers: [{
-                            image: 'toto',
-                            name: 't'
+                            image: 'nginx',
+                            name: NAME
                         }]
                     }
                 }
             }
         })
+        .timestamp()
 )
 
 log(k.yamlifyAll(docs))
