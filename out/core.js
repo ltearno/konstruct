@@ -115,6 +115,7 @@ function yamlparse(input) {
 }
 exports.yamlparse = yamlparse;
 exports.yamlify = function (input) { return jsYaml.safeDump(input, { sortKeys: true, noArrayIndent: true, noRefs: true }); };
+exports.yamlifyAll = function (docs) { return docs.map(function (input) { return jsYaml.safeDump(input, { sortKeys: true, noArrayIndent: true, noRefs: true }); }).join("\n---\n\n"); };
 exports.yamlparseAll = function (input) { return jsYaml.safeLoadAll(preparseYaml(input)); };
 exports.command = function (cmd) { return child_process_1.execSync(cmd).toString('utf8').trim(); };
 exports.run = function (cmd) { return console.log(child_process_1.execSync(cmd).toString('utf8').trim()); };

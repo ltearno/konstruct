@@ -9,12 +9,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var k = __importStar(require("./konstructor"));
 var log = console.log.bind(console);
-var service = function (name) { return ({
-    apiVersion: "v1",
-    kind: "Service",
-    metadata: {
-        name: name
-    },
+var service = function (name) { return (k.k8sBuilder.service().merge({
+    metadata: { name: name },
     spec: {
         type: "ClusterIP",
         ports: [{
@@ -24,12 +20,13 @@ var service = function (name) { return ({
                 protocol: "TCP"
             }]
     }
-}); };
-var s = service("toto");
-var wm = s.merge({ toto: 4 });
-log(k.yamlify(s));
-log(k.yamlify(wm));
-var deploy = k.k8sBuilder.deployment({
+})); };
+var docs = [];
+docs.push(service("toto")
+    .mergeAt('metadata', { toto: 4 }));
+docs.push(k.k8sBuilder.deployment()
+    .addDeploymentDefaultNameAndLabels('toto')
+    .merge({
     spec: {
         template: {
             spec: {
@@ -40,5 +37,5 @@ var deploy = k.k8sBuilder.deployment({
             }
         }
     }
-});
-log(k.yamlify(deploy));
+}));
+log(k.yamlifyAll(docs));

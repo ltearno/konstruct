@@ -21,6 +21,7 @@ exports.preparseYaml = core_1.preparseYaml;
 exports.setObjectProperty = core_1.setObjectProperty;
 exports.yamlparse = core_1.yamlparse;
 exports.yamlify = core_1.yamlify;
+exports.yamlifyAll = core_1.yamlifyAll;
 exports.yamlparseAll = core_1.yamlparseAll;
 exports.command = core_1.command;
 exports.env = core_1.env;

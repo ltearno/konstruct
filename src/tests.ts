@@ -2,12 +2,8 @@ import * as k from './konstructor'
 
 const log = console.log.bind(console)
 
-let service: (name) => k.k8s.Service = name => ({
-    apiVersion: "v1",
-    kind: "Service",
-    metadata: {
-        name
-    },
+let service = name => (k.k8sBuilder.service().merge({
+    metadata: { name },
     spec: {
         type: "ClusterIP",
         ports: [{
@@ -17,24 +13,30 @@ let service: (name) => k.k8s.Service = name => ({
             protocol: "TCP"
         }]
     }
-})
+}))
 
-let s = service("toto")
-let wm = s.merge({ toto: 4 })
+let docs = []
 
-log(k.yamlify(s))
-log(k.yamlify(wm))
+docs.push(
+    service("toto")
+        .mergeAt('metadata', { toto: 4 })
+)
 
-let deploy = k.k8sBuilder.deployment({
-    spec: {
-        template: {
+docs.push(
+    k.k8sBuilder.deployment()
+        .addDeploymentDefaultNameAndLabels('toto')
+        .merge({
             spec: {
-                containers: [{
-                    image: 'toto',
-                    name: 't'
-                }]
+                template: {
+                    spec: {
+                        containers: [{
+                            image: 'toto',
+                            name: 't'
+                        }]
+                    }
+                }
             }
-        }
-    }
-})
-log(k.yamlify(deploy))
+        })
+)
+
+log(k.yamlifyAll(docs))

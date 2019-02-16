@@ -15,6 +15,7 @@ export {
     setObjectProperty,
     yamlparse,
     yamlify,
+    yamlifyAll,
     yamlparseAll,
     command,
     env,
