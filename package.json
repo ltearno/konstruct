@@ -1,5 +1,5 @@
 {
-  "name": "konstruct",
+  "name": "@ltearno/konstruct",
   "version": "0.9.0",
   "description": "k8s yaml generator",
   "main": "out/konstruct.js",
@@ -8,6 +8,10 @@
   "scripts": {
     "install": "node_modules/.bin/tsc",
     "exportModel": "node out/export-api.js > src/kubernetes-model.ts"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/ltearno/konstruct"
   },
   "dependencies": {
     "js-yaml": "^3.12.1"
