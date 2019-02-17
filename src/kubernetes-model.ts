@@ -213,7 +213,7 @@ export interface DeploymentRollbackAppsV1beta1 {
   /**
    * The annotations to be updated to a deployment
    */
-  updatedAnnotations?: Object
+  updatedAnnotations?: object
 }
 
 /**
@@ -327,11 +327,11 @@ export interface RollingUpdateDeploymentAppsV1beta1 {
   /**
    * The maximum number of pods that can be scheduled above the desired number of pods. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). This can not be 0 if MaxUnavailable is 0. Absolute number is calculated from percentage by rounding up. Defaults to 25%. Example: when this is set to 30%, the new ReplicaSet can be scaled up immediately when the rolling update starts, such that the total number of old and new pods do not exceed 130% of desired pods. Once old pods have been killed, new ReplicaSet can be scaled up further, ensuring that total number of pods running at any time during the update is atmost 130% of desired pods.
    */
-  maxSurge?: Object
+  maxSurge?: object
   /**
    * The maximum number of pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). Absolute number is calculated from percentage by rounding down. This can not be 0 if MaxSurge is 0. Defaults to 25%. Example: when this is set to 30%, the old ReplicaSet can be scaled down to 70% of desired pods immediately when the rolling update starts. Once new pods are ready, old ReplicaSet can be scaled down further, followed by scaling up the new ReplicaSet, ensuring that the total number of pods available at all times during the update is at least 70% of desired pods.
    */
-  maxUnavailable?: Object
+  maxUnavailable?: object
 }
 
 /**
@@ -381,7 +381,7 @@ export interface ScaleStatusAppsV1beta1 {
   /**
    * label query over pods that should match the replicas count. More info: http://kubernetes.io/docs/user-guide/labels#label-selectors
    */
-  selector?: Object
+  selector?: object
   /**
    * label selector for pods that should match the replicas count. This is a serializated version of both map-based and more expressive set-based selectors. This is done to avoid introspection in the clients. The string will be in the same format as the query-param syntax. If the target type only supports map-based selectors, both this field and map-based selector field are populated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
@@ -515,7 +515,7 @@ export interface DeploymentRollbackExtensionsV1beta1 {
   /**
    * The annotations to be updated to a deployment
    */
-  updatedAnnotations?: Object
+  updatedAnnotations?: object
 }
 
 /**
@@ -813,11 +813,11 @@ export interface RollingUpdateDeploymentExtensionsV1beta1 {
   /**
    * The maximum number of pods that can be scheduled above the desired number of pods. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). This can not be 0 if MaxUnavailable is 0. Absolute number is calculated from percentage by rounding up. By default, a value of 1 is used. Example: when this is set to 30%, the new RC can be scaled up immediately when the rolling update starts, such that the total number of old and new pods do not exceed 130% of desired pods. Once old pods have been killed, new RC can be scaled up further, ensuring that total number of pods running at any time during the update is atmost 130% of desired pods.
    */
-  maxSurge?: Object
+  maxSurge?: object
   /**
    * The maximum number of pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). Absolute number is calculated from percentage by rounding down. This can not be 0 if MaxSurge is 0. By default, a fixed value of 1 is used. Example: when this is set to 30%, the old RC can be scaled down to 70% of desired pods immediately when the rolling update starts. Once new pods are ready, old RC can be scaled down further, followed by scaling up the new RC, ensuring that the total number of pods available at all times during the update is at least 70% of desired pods.
    */
-  maxUnavailable?: Object
+  maxUnavailable?: object
 }
 
 /**
@@ -909,7 +909,7 @@ export interface ScaleStatusExtensionsV1beta1 {
   /**
    * label query over pods that should match the replicas count. More info: http://kubernetes.io/docs/user-guide/labels#label-selectors
    */
-  selector?: Object
+  selector?: object
   /**
    * label selector for pods that should match the replicas count. This is a serializated version of both map-based and more expressive set-based selectors. This is done to avoid introspection in the clients. The string will be in the same format as the query-param syntax. If the target type only supports map-based selectors, both this field and map-based selector field are populated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
@@ -1662,7 +1662,7 @@ export interface CSIPersistentVolumeSource {
   /**
    * Attributes of the volume to publish.
    */
-  volumeAttributes?: Object
+  volumeAttributes?: object
   /**
    * VolumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to refer to the volume on all subsequent calls. Required.
    */
@@ -1970,7 +1970,7 @@ export interface ConfigMap {
   /**
    * BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet.
    */
-  binaryData?: Object
+  binaryData?: object
   /**
    * Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process.
    */
@@ -3210,7 +3210,7 @@ export interface FlexPersistentVolumeSource {
   /**
    * Optional: Extra command options if any.
    */
-  options?: Object
+  options?: object
   /**
    * Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
    */
@@ -3236,7 +3236,7 @@ export interface FlexVolumeSource {
   /**
    * Optional: Extra command options if any.
    */
-  options?: Object
+  options?: object
   /**
    * Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
    */
@@ -3378,7 +3378,7 @@ export interface HTTPGetAction {
   /**
    * Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
    */
-  port: Object
+  port: object
   /**
    * Scheme to use for connecting to the host. Defaults to HTTP.
    */
@@ -3854,7 +3854,7 @@ export interface LabelSelector {
   /**
    * matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
    */
-  matchLabels?: Object
+  matchLabels?: object
 }
 
 /**
@@ -3918,23 +3918,23 @@ export interface LimitRangeItem {
   /**
    * Default resource requirement limit value by resource name if resource limit is omitted.
    */
-  default?: Object
+  default?: object
   /**
    * DefaultRequest is the default resource requirement request value by resource name if resource request is omitted.
    */
-  defaultRequest?: Object
+  defaultRequest?: object
   /**
    * Max usage constraints on this kind by resource name.
    */
-  max?: Object
+  max?: object
   /**
    * MaxLimitRequestRatio if specified, the named resource must have a request and limit that are both non-zero where limit divided by request is less than or equal to the enumerated value; this represents the max burst for the named resource.
    */
-  maxLimitRequestRatio?: Object
+  maxLimitRequestRatio?: object
   /**
    * Min usage constraints on this kind by resource name.
    */
-  min?: Object
+  min?: object
   /**
    * Type of resource that this limit applies to.
    */
@@ -4249,7 +4249,7 @@ export interface NetworkPolicyPort {
   /**
    * The port on the given protocol. This can either be a numerical or named port on a pod. If this field is not provided, this matches all port names and numbers.
    */
-  port?: Object
+  port?: object
   /**
    * The protocol (TCP, UDP, or SCTP) which traffic must match. If not specified, this field defaults to TCP.
    */
@@ -4509,11 +4509,11 @@ export interface NodeStatus {
   /**
    * Allocatable represents the resources of a node that are available for scheduling. Defaults to Capacity.
    */
-  allocatable?: Object
+  allocatable?: object
   /**
    * Capacity represents the total resources of a node. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity
    */
-  capacity?: Object
+  capacity?: object
   /**
    * Conditions is an array of current observed node conditions. More info: https://kubernetes.io/docs/concepts/nodes/node/#condition
    */
@@ -4643,7 +4643,7 @@ export interface ObjectMeta {
   /**
    * Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
    */
-  annotations?: Object
+  annotations?: object
   /**
    * The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request.
    */
@@ -4689,7 +4689,7 @@ export interface ObjectMeta {
   /**
    * Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
    */
-  labels?: Object
+  labels?: object
   /**
    * Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
    */
@@ -4929,7 +4929,7 @@ export interface PersistentVolumeClaimStatus {
   /**
    * Represents the actual resources of the underlying volume.
    */
-  capacity?: Object
+  capacity?: object
   /**
    * Current Condition of persistent volume claim. If underlying persistent volume is being resized then the Condition will be set to 'ResizeStarted'.
    */
@@ -4999,7 +4999,7 @@ export interface PersistentVolumeSpec {
   /**
    * A description of the persistent volume's resources and capacity. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity
    */
-  capacity?: Object
+  capacity?: object
   /**
    * CephFS represents a Ceph FS mount on the host that shares a pod's lifetime
    */
@@ -5402,7 +5402,7 @@ export interface PodSpec {
   /**
    * NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
    */
-  nodeSelector?: Object
+  nodeSelector?: object
   /**
    * The priority value. Various system components use this field to find the priority of the pod. When Priority Admission Controller is enabled, it prevents users from setting this field. The admission controller populates this field from PriorityClassName. The higher the value, the higher the priority.
    */
@@ -6010,7 +6010,7 @@ export interface ReplicationControllerSpec {
   /**
    * Selector is a label query over pods that should match the Replicas count. If Selector is empty, it is defaulted to the labels present on the Pod template. Label keys and values that must match in order to be controlled by this replication controller, if empty defaulted to labels on Pod template. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
-  selector?: Object
+  selector?: object
   /**
    * Template is the object that describes the pod that will be created if insufficient replicas are detected. This takes precedence over a TemplateRef. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#pod-template
    */
@@ -6154,7 +6154,7 @@ export interface ResourceQuotaSpec {
   /**
    * hard is the set of desired hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
    */
-  hard?: Object
+  hard?: object
   /**
    * scopeSelector is also a collection of filters like scopes that must match each object tracked by a quota but expressed using ScopeSelectorOperator in combination with possible values. For a resource to match, both scopes AND scopeSelector (if specified in spec), must be matched.
    */
@@ -6172,11 +6172,11 @@ export interface ResourceQuotaStatus {
   /**
    * Hard is the set of enforced hard limits for each named resource. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
    */
-  hard?: Object
+  hard?: object
   /**
    * Used is the current observed total usage of the resource in the namespace.
    */
-  used?: Object
+  used?: object
 }
 
 /**
@@ -6186,11 +6186,11 @@ export interface ResourceRequirements {
   /**
    * Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
    */
-  limits?: Object
+  limits?: object
   /**
    * Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
    */
-  requests?: Object
+  requests?: object
 }
 
 /**
@@ -6333,7 +6333,7 @@ export interface RollingUpdateDaemonSet {
   /**
    * The maximum number of DaemonSet pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of total number of DaemonSet pods at the start of the update (ex: 10%). Absolute number is calculated from percentage by rounding up. This cannot be 0. Default value is 1. Example: when this is set to 30%, at most 30% of the total number of nodes that should be running the daemon pod (i.e. status.desiredNumberScheduled) can have their pods stopped for an update at any given time. The update starts by stopping at most 30% of those DaemonSet pods and then brings up new DaemonSet pods in their place. Once the new pods are available, it then proceeds onto other DaemonSet pods, thus ensuring that at least 70% of original number of DaemonSet pods are available at all times during the update.
    */
-  maxUnavailable?: Object
+  maxUnavailable?: object
 }
 
 /**
@@ -6343,11 +6343,11 @@ export interface RollingUpdateDeployment {
   /**
    * The maximum number of pods that can be scheduled above the desired number of pods. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). This can not be 0 if MaxUnavailable is 0. Absolute number is calculated from percentage by rounding up. Defaults to 25%. Example: when this is set to 30%, the new ReplicaSet can be scaled up immediately when the rolling update starts, such that the total number of old and new pods do not exceed 130% of desired pods. Once old pods have been killed, new ReplicaSet can be scaled up further, ensuring that total number of pods running at any time during the update is at most 130% of desired pods.
    */
-  maxSurge?: Object
+  maxSurge?: object
   /**
    * The maximum number of pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). Absolute number is calculated from percentage by rounding down. This can not be 0 if MaxSurge is 0. Defaults to 25%. Example: when this is set to 30%, the old ReplicaSet can be scaled down to 70% of desired pods immediately when the rolling update starts. Once new pods are ready, old ReplicaSet can be scaled down further, followed by scaling up the new ReplicaSet, ensuring that the total number of pods available at all times during the update is at least 70% of desired pods.
    */
-  maxUnavailable?: Object
+  maxUnavailable?: object
 }
 
 /**
@@ -6563,7 +6563,7 @@ export interface Secret {
   /**
    * Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here. Described in https://tools.ietf.org/html/rfc4648#section-4
    */
-  data?: Object
+  data?: object
   /**
    * Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
    */
@@ -6575,7 +6575,7 @@ export interface Secret {
   /**
    * stringData allows specifying non-binary secret data in string form. It is provided as a write-only convenience method. All keys and values are merged into the data field on write, overwriting any existing values. It is never output when reading from the API.
    */
-  stringData?: Object
+  stringData?: object
   /**
    * Used to facilitate programmatic handling of secret data.
    */
@@ -6960,7 +6960,7 @@ export interface ServicePort {
   /**
    * Number or name of the port to access on the pods targeted by the service. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. If this is a string, it will be looked up as a named port in the target Pod's container ports. If this is not specified, the value of the 'port' field is used (an identity map). This field is ignored for services with clusterIP=None, and should be omitted or set equal to the 'port' field. More info: https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
    */
-  targetPort?: Object
+  targetPort?: object
 }
 
 /**
@@ -7020,7 +7020,7 @@ export interface ServiceSpec {
   /**
    * Route service traffic to pods with label keys and values matching this selector. If empty or not present, the service is assumed to have an external process managing its endpoints, which Kubernetes will not modify. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName. More info: https://kubernetes.io/docs/concepts/services-networking/service/
    */
-  selector?: Object
+  selector?: object
   /**
    * Supports "ClientIP" and "None". Used to maintain session affinity. Enable client IP based session affinity. Must be ClientIP or None. Defaults to None. More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
    */
@@ -7340,7 +7340,7 @@ export interface StorageClass {
   /**
    * Parameters holds the parameters for the provisioner that should create volumes of this storage class.
    */
-  parameters?: Object
+  parameters?: object
   /**
    * Provisioner indicates the type of the provisioner.
    */
@@ -7481,7 +7481,7 @@ export interface SubjectAccessReviewSpec {
   /**
    * Extra corresponds to the user.Info.GetExtra() method from the authenticator.  Since that is input to the authorizer it needs a reflection here.
    */
-  extra?: Object
+  extra?: object
   /**
    * Groups is the groups you're testing for.
    */
@@ -7573,7 +7573,7 @@ export interface TCPSocketAction {
   /**
    * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.
    */
-  port: Object
+  port: object
 }
 
 /**
@@ -7732,7 +7732,7 @@ export interface UserInfo {
   /**
    * Any additional information provided by the authenticator.
    */
-  extra?: Object
+  extra?: object
   /**
    * The names of groups this user is a part of.
    */
@@ -7958,7 +7958,7 @@ export interface VolumeAttachmentStatus {
   /**
    * Upon successful attach, this field is populated with any information returned by the attach operation that must be passed into subsequent WaitForAttach or Mount calls. This field must only be set by the entity completing the attach operation, i.e. the external-attacher.
    */
-  attachmentMetadata?: Object
+  attachmentMetadata?: object
   /**
    * The last error encountered during detach operation, if any. This field must only be set by the entity completing the detach operation, i.e. the external-attacher.
    */
@@ -8741,7 +8741,7 @@ export interface VolumeAttachmentStatusV1alpha1 {
   /**
    * Upon successful attach, this field is populated with any information returned by the attach operation that must be passed into subsequent WaitForAttach or Mount calls. This field must only be set by the entity completing the attach operation, i.e. the external-attacher.
    */
-  attachmentMetadata?: Object
+  attachmentMetadata?: object
   /**
    * The last error encountered during detach operation, if any. This field must only be set by the entity completing the detach operation, i.e. the external-attacher.
    */
@@ -9000,7 +9000,7 @@ export interface CertificateSigningRequestSpecV1beta1 {
   /**
    * Extra information about the requesting user. See user.Info interface for details.
    */
-  extra?: Object
+  extra?: object
   /**
    * Group information about the requesting user. See user.Info interface for details.
    */
@@ -9536,7 +9536,7 @@ export interface CustomResourceSubresourcesV1beta1 {
   /**
    * Status denotes the status subresource for CustomResources
    */
-  status?: Object
+  status?: object
 }
 
 /**
@@ -9926,7 +9926,7 @@ export interface IngressBackendV1beta1 {
   /**
    * Specifies the port of the referenced service.
    */
-  servicePort: Object
+  servicePort: object
 }
 
 /**
@@ -10018,25 +10018,25 @@ export interface JSONSchemaPropsV1beta1 {
   /**
    * JSONSchemaPropsOrBool represents JSONSchemaProps or a boolean value. Defaults to true for the boolean property.
    */
-  additionalItems?: Object
+  additionalItems?: object
   /**
    * JSONSchemaPropsOrBool represents JSONSchemaProps or a boolean value. Defaults to true for the boolean property.
    */
-  additionalProperties?: Object
+  additionalProperties?: object
   allOf?: JSONSchemaPropsV1beta1[]
   anyOf?: JSONSchemaPropsV1beta1[]
   /**
    * JSON represents any valid JSON value. These types are supported: bool, int64, float64, string, []interface{}, map[string]interface{} and nil.
    */
-  default?: Object
-  definitions?: Object
-  dependencies?: Object
+  default?: object
+  definitions?: object
+  dependencies?: object
   description?: string
-  enum?: Object[]
+  enum?: object[]
   /**
    * JSON represents any valid JSON value. These types are supported: bool, int64, float64, string, []interface{}, map[string]interface{} and nil.
    */
-  example?: Object
+  example?: object
   exclusiveMaximum?: boolean
   exclusiveMinimum?: boolean
   externalDocs?: ExternalDocumentationV1beta1
@@ -10045,7 +10045,7 @@ export interface JSONSchemaPropsV1beta1 {
   /**
    * JSONSchemaPropsOrArray represents a value that can either be a JSONSchemaProps or an array of JSONSchemaProps. Mainly here for serialization purposes.
    */
-  items?: Object
+  items?: object
   maxItems?: number
   maxLength?: number
   maxProperties?: number
@@ -10058,8 +10058,8 @@ export interface JSONSchemaPropsV1beta1 {
   not?: JSONSchemaPropsV1beta1
   oneOf?: JSONSchemaPropsV1beta1[]
   pattern?: string
-  patternProperties?: Object
-  properties?: Object
+  patternProperties?: object
+  properties?: object
   required?: string[]
   title?: string
   type?: string
@@ -10318,7 +10318,7 @@ export interface NetworkPolicyPortV1beta1 {
   /**
    * If specified, the port on the given protocol.  This can either be a numerical or named port on a pod.  If this field is not provided, this matches all port names and numbers. If present, only traffic on the specified protocol AND port will be matched.
    */
-  port?: Object
+  port?: object
   /**
    * Optional.  The protocol (TCP, UDP, or SCTP) which traffic must match. If not specified, this field defaults to TCP.
    */
@@ -10421,11 +10421,11 @@ export interface PodDisruptionBudgetSpecV1beta1 {
   /**
    * An eviction is allowed if at most "maxUnavailable" pods selected by "selector" are unavailable after the eviction, i.e. even in absence of the evicted pod. For example, one can prevent all voluntary evictions by specifying 0. This is a mutually exclusive setting with "minAvailable".
    */
-  maxUnavailable?: Object
+  maxUnavailable?: object
   /**
    * An eviction is allowed if at least "minAvailable" pods selected by "selector" will still be available after the eviction, i.e. even in the absence of the evicted pod.  So for example you can prevent all voluntary evictions by specifying "100%".
    */
-  minAvailable?: Object
+  minAvailable?: object
   /**
    * Label query over pods whose evictions are managed by the disruption budget.
    */
@@ -10447,7 +10447,7 @@ export interface PodDisruptionBudgetStatusV1beta1 {
   /**
    * DisruptedPods contains information about pods whose eviction was processed by the API server eviction subresource handler but has not yet been observed by the PodDisruptionBudget controller. A pod will be in this map from the time when the API server processed the eviction request to the time when the pod is seen by PDB controller as having been marked for deletion (or after a timeout). The key in the map is the name of the pod and the value is the time when the API server processed the eviction request. If the deletion didn't occur and a pod is still there it will be removed from the list automatically by PodDisruptionBudget controller after some time. If everything goes smooth this map should be empty for the most of the time. Large number of entries in the map may indicate problems with pod deletions.
    */
-  disruptedPods?: Object
+  disruptedPods?: object
   /**
    * Number of pod disruptions that are currently allowed.
    */
@@ -10840,7 +10840,7 @@ export interface RollingUpdateDaemonSetV1beta1 {
   /**
    * The maximum number of DaemonSet pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of total number of DaemonSet pods at the start of the update (ex: 10%). Absolute number is calculated from percentage by rounding up. This cannot be 0. Default value is 1. Example: when this is set to 30%, at most 30% of the total number of nodes that should be running the daemon pod (i.e. status.desiredNumberScheduled) can have their pods stopped for an update at any given time. The update starts by stopping at most 30% of those DaemonSet pods and then brings up new DaemonSet pods in their place. Once the new pods are available, it then proceeds onto other DaemonSet pods, thus ensuring that at least 70% of original number of DaemonSet pods are available at all times during the update.
    */
-  maxUnavailable?: Object
+  maxUnavailable?: object
 }
 
 /**
@@ -11143,7 +11143,7 @@ export interface StorageClassV1beta1 {
   /**
    * Parameters holds the parameters for the provisioner that should create volumes of this storage class.
    */
-  parameters?: Object
+  parameters?: object
   /**
    * Provisioner indicates the type of the provisioner.
    */
@@ -11232,7 +11232,7 @@ export interface SubjectAccessReviewSpecV1beta1 {
   /**
    * Extra corresponds to the user.Info.GetExtra() method from the authenticator.  Since that is input to the authorizer it needs a reflection here.
    */
-  extra?: Object
+  extra?: object
   /**
    * Groups is the groups you're testing for.
    */
@@ -11365,7 +11365,7 @@ export interface UserInfoV1beta1 {
   /**
    * Any additional information provided by the authenticator.
    */
-  extra?: Object
+  extra?: object
   /**
    * The names of groups this user is a part of.
    */
@@ -11517,7 +11517,7 @@ export interface VolumeAttachmentStatusV1beta1 {
   /**
    * Upon successful attach, this field is populated with any information returned by the attach operation that must be passed into subsequent WaitForAttach or Mount calls. This field must only be set by the entity completing the attach operation, i.e. the external-attacher.
    */
-  attachmentMetadata?: Object
+  attachmentMetadata?: object
   /**
    * The last error encountered during detach operation, if any. This field must only be set by the entity completing the detach operation, i.e. the external-attacher.
    */
@@ -12107,7 +12107,7 @@ export interface RollingUpdateDaemonSetV1beta2 {
   /**
    * The maximum number of DaemonSet pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of total number of DaemonSet pods at the start of the update (ex: 10%). Absolute number is calculated from percentage by rounding up. This cannot be 0. Default value is 1. Example: when this is set to 30%, at most 30% of the total number of nodes that should be running the daemon pod (i.e. status.desiredNumberScheduled) can have their pods stopped for an update at any given time. The update starts by stopping at most 30% of those DaemonSet pods and then brings up new DaemonSet pods in their place. Once the new pods are available, it then proceeds onto other DaemonSet pods, thus ensuring that at least 70% of original number of DaemonSet pods are available at all times during the update.
    */
-  maxUnavailable?: Object
+  maxUnavailable?: object
 }
 
 /**
@@ -12117,11 +12117,11 @@ export interface RollingUpdateDeploymentV1beta2 {
   /**
    * The maximum number of pods that can be scheduled above the desired number of pods. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). This can not be 0 if MaxUnavailable is 0. Absolute number is calculated from percentage by rounding up. Defaults to 25%. Example: when this is set to 30%, the new ReplicaSet can be scaled up immediately when the rolling update starts, such that the total number of old and new pods do not exceed 130% of desired pods. Once old pods have been killed, new ReplicaSet can be scaled up further, ensuring that total number of pods running at any time during the update is atmost 130% of desired pods.
    */
-  maxSurge?: Object
+  maxSurge?: object
   /**
    * The maximum number of pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). Absolute number is calculated from percentage by rounding down. This can not be 0 if MaxSurge is 0. Defaults to 25%. Example: when this is set to 30%, the old ReplicaSet can be scaled down to 70% of desired pods immediately when the rolling update starts. Once new pods are ready, old ReplicaSet can be scaled down further, followed by scaling up the new ReplicaSet, ensuring that the total number of pods available at all times during the update is at least 70% of desired pods.
    */
-  maxUnavailable?: Object
+  maxUnavailable?: object
 }
 
 /**
@@ -12181,7 +12181,7 @@ export interface ScaleStatusV1beta2 {
   /**
    * label query over pods that should match the replicas count. More info: http://kubernetes.io/docs/user-guide/labels#label-selectors
    */
-  selector?: Object
+  selector?: object
   /**
    * label selector for pods that should match the replicas count. This is a serializated version of both map-based and more expressive set-based selectors. This is done to avoid introspection in the clients. The string will be in the same format as the query-param syntax. If the target type only supports map-based selectors, both this field and map-based selector field are populated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors
    */
