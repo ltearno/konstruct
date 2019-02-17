@@ -7,7 +7,7 @@ A tool to help generate Kubernetes object descriptions (for those who'd prefer n
 - Very light.
 - Gives you the power back on your Yaml templates.
 - Easy syntax (fluent, readable, ...).
-- You use it instead of the other way around (it's a library, not a framework).
+- You use it instead of the other way around (it's a library, not a framework - in fact it's an environment because it patches the Object's prototype).
 - All the Kubernetes objects API is available (with type information for IDE assistance and auto-completion).
 - Common tools to parse/dump yaml.
 - Uses NodeJS environment so a lot of tools are available.
