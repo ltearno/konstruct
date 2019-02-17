@@ -7,7 +7,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 // should import k8s model when available
 exports.defaultDeployment = {
-    apiVersion: "v1",
+    apiVersion: "extensions/v1beta1",
     kind: "Deployment",
     spec: {
         replicas: 3,

@@ -7,7 +7,7 @@
  // should import k8s model when available
 
 export const defaultDeployment: /*k8s.DeploymentV1*/any = {
-    apiVersion: "v1",
+    apiVersion: "extensions/v1beta1",
     kind: "Deployment",
     spec: {
         replicas: 3,
