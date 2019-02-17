@@ -1,6 +1,5 @@
 import { execSync } from 'child_process'
 import * as jsYaml from 'js-yaml'
-import * as k from './konstruct'
 
 export function copyObject<T>(o): T {
     if (Array.isArray(o))
@@ -17,7 +16,7 @@ export function copyObject<T>(o): T {
 
 export function mergeObjects<T, U>(a: T, b: U): T | U {
     if (!b)
-        return a.copy()
+        return a && a.copy()
 
     if (a && b && Array.isArray(a) && Array.isArray(b)) {
         let result: any[] = []
