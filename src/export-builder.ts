@@ -9,8 +9,8 @@ function getBuilderName(name: string) {
     return ApiTools.camelCase(ApiTools.getTypescriptResourceName(name))
 }
 
-log(`import * as k8s from './kubernetes-model'`)
-log(`import * as core from './core'`)
+log(`import * as k8s from './kubernetes-api'`)
+log(`import './core'`)
 log('')
 log(`
 export type Optional<T> = {

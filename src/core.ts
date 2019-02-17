@@ -116,13 +116,13 @@ export function preparseYaml(input) {
     return input
 }
 
-export function yamlparse(input) {
+export function yamlParse(input) {
     return jsYaml.safeLoad(preparseYaml(input))
 }
 
 export const yamlify = input => jsYaml.safeDump(input, { sortKeys: true, noArrayIndent: true, noRefs: true })
 export const yamlifyAll = (docs: any[]) => docs.map(input => jsYaml.safeDump(input, { sortKeys: true, noArrayIndent: true, noRefs: true })).join(`\n---\n\n`)
-export const yamlparseAll = input => jsYaml.safeLoadAll(preparseYaml(input))
+export const yamlParseAll = input => jsYaml.safeLoadAll(preparseYaml(input))
 export const command = cmd => execSync(cmd).toString('utf8').trim()
 export const run = cmd => console.log(execSync(cmd).toString('utf8').trim())
 export const env = name => process.env[name]

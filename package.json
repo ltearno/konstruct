@@ -6,9 +6,7 @@
   "author": "Arnaud Tournier",
   "license": "MIT",
   "scripts": {
-    "compile": "node_modules/.bin/tsc",
-    "exportModel": "node out/export-api.js > src/kubernetes-model.ts",
-    "exportBuilder": "node out/export-builder.js > src/kubernetes-builder.ts"
+    "compile": "node_modules/.bin/tsc"
   },
   "repository": {
     "type": "github",

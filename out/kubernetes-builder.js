@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require("./core");
 /**
  * ServiceReference holds a reference to Service.legacy.k8s.io
  */

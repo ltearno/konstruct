@@ -1,5 +1,5 @@
-import * as k8s from './kubernetes-model'
-import * as core from './core'
+import * as k8s from './kubernetes-api'
+import './core'
 
 
 export type Optional<T> = {

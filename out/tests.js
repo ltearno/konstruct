@@ -8,7 +8,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var k = __importStar(require("./konstruct"));
-var build = k.k8sBuilder;
+var build = k.build;
 var log = console.log.bind(console);
 var makeDefaultService = function (name) { return (build.service().merge({
     metadata: { name: name },

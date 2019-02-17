@@ -64,11 +64,11 @@ function expandVersion(version) {
  * methods :
  * - merge : merge two javascript objects
  * - addDeploymentDefaultNameAndLabels : add label and name on the deployment and its template's metadata
- * - yamlparse : parse a yaml payload and return the corresponding javascript object
+ * - yamlParse : parse a yaml payload and return the corresponding javascript object
  */
 let deployments = [['a', 'v1.0'], ['b', 'v1.5']].map(([name, version]) => defaultDeployment()
     // we use a yaml string, but we could also use javascript plain object (in fact I prefer to do that, but that is just to show)
-    .merge(k.yamlparse(`
+    .merge(k.yamlParse(`
       spec:
         template:
           spec:

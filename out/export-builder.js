@@ -14,8 +14,8 @@ var swagger = JSON.parse(fs.readFileSync('kubernetes-swagger.json', { encoding: 
 function getBuilderName(name) {
     return ApiTools.camelCase(ApiTools.getTypescriptResourceName(name));
 }
-log("import * as k8s from './kubernetes-model'");
-log("import * as core from './core'");
+log("import * as k8s from './kubernetes-api'");
+log("import './core'");
 log('');
 log("\nexport type Optional<T> = {\n    [P in keyof T]?: Optional<T[P]>;\n}\n");
 function getTypescriptBuilder(property) {

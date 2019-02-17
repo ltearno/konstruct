@@ -16,10 +16,10 @@ var out = {};
 var files = fs.readdirSync(base);
 for (var _i = 0, files_1 = files; _i < files_1.length; _i++) {
     var file = files_1[_i];
-    out[file] = k.yamlparseAll(fs.readFileSync(path.join(base, file)));
+    out[file] = k.yamlParseAll(fs.readFileSync(path.join(base, file)));
 }
 //log(JSON.stringify(out, null, 2))
-var cm = k.k8sBuilder.configMap({
+var cm = k.build.configMap({
     data: {
         'ngnix.conf': k.interpolateFile('nginx.conf', {
             authenticate: {

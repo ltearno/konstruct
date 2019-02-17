@@ -1,16 +1,18 @@
-import * as k8s from './kubernetes-model'
+import * as k8s from './kubernetes-api'
 export { k8s }
 
-import * as k8sBuilder from './kubernetes-builder'
-export { k8sBuilder }
-
-import * as common from './common'
-export { common }
+import * as beta from './beta'
+export const lib = {
+    beta
+}
 
 export {
     interpolate,
     interpolateFile
 } from './misc-tools'
+
+import * as build from './kubernetes-builder'
+export { build }
 
 export {
     copyObject,
@@ -18,10 +20,10 @@ export {
     mergeObjects,
     preparseYaml,
     setObjectProperty,
-    yamlparse,
+    yamlParse,
+    yamlParseAll,
     yamlify,
     yamlifyAll,
-    yamlparseAll,
     command,
     env,
     run

@@ -1,6 +1,6 @@
 import * as k from './konstruct'
 
-const build = k.k8sBuilder
+const build = k.build
 const log = console.log.bind(console)
 
 let makeDefaultService = name => (build.service().merge({
