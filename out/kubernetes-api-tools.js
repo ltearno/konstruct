@@ -24,7 +24,7 @@ function getTypescriptType(property) {
             case 'array':
                 return getTypescriptType(property.items) + '[]';
             case 'object':
-                return 'Object';
+                return '{}'; //'Object'
         }
         return property.type;
     }

@@ -1,5 +1,6 @@
 import { execSync } from 'child_process'
 import * as jsYaml from 'js-yaml'
+import * as k from './konstruct'
 
 export function copyObject<T>(o): T {
     if (Array.isArray(o))
@@ -49,6 +50,16 @@ export function setObjectProperty<T>(o: T, path, value): T {
     return init
 }
 
+declare global {
+    interface Object {
+        copy<T>(this: T): T
+        set<T>(this: T, path: string, value: any): T
+        merge<T, U>(this: T, other: U): T
+        mergeAt<T>(this: T, path: string, value: any): T
+        addDeploymentDefaultNameAndLabels<T>(this: T, name: string): T
+    }
+}
+
 export function installPlugin(func, name: string = undefined): void {
     if (!name)
         name = func.name
@@ -57,16 +68,6 @@ export function installPlugin(func, name: string = undefined): void {
     Object.prototype[name] = function (...args) {
         args.unshift(this)
         return func.call(null, ...args)
-    }
-}
-
-declare global {
-    interface Object {
-        copy<T>(this: T): T
-        set<T>(this: T, path: string, value: any): T
-        merge<T, U>(this: T, other: U): T
-        mergeAt<T>(this: T, path: string, value: any): T
-        addDeploymentDefaultNameAndLabels<T>(this: T, name: string): T
     }
 }
 

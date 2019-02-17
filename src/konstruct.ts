@@ -8,6 +8,11 @@ import * as common from './common'
 export { common }
 
 export {
+    interpolate,
+    interpolateFile
+} from './misc-tools'
+
+export {
     copyObject,
     installPlugin,
     mergeObjects,
