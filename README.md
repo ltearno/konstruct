@@ -13,6 +13,7 @@ A tool to help generate Kubernetes object descriptions (for those who'd prefer n
 - Uses NodeJS environment so a lot of tools are available.
 - Written in Typescript so you can use it with pure javascript or inside a Typescript project.
 - You literally write programs that output YAML manifests !
+- You don't have to care about indentation and other formatting concerns when you build your object graph
 
 ## Quick start
 

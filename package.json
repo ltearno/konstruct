@@ -3,6 +3,7 @@
   "version": "0.9.1",
   "description": "k8s yaml generator",
   "main": "out/konstruct.js",
+  "types": "out/konstruct.d.ts",
   "author": "Arnaud Tournier",
   "license": "MIT",
   "scripts": {
