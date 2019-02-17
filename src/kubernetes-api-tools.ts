@@ -24,6 +24,8 @@ export function getTypescriptType(property) {
             case 'array':
                 return getTypescriptType(property.items) + '[]'
             case 'object':
+                if (property.format == 'int-or-string')
+                    return 'number | string'
                 return 'object'
         }
 

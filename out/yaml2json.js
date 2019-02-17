@@ -32,7 +32,14 @@ var deploy = k.build.deployment({
             spec: {
                 containers: [{
                         name: "toto",
-                        image: "eu.gcr.io/" + GCP_PROJECT + "/toto"
+                        image: "eu.gcr.io/" + GCP_PROJECT + "/toto",
+                        readinessProbe: {
+                            httpGet: {
+                                path: '/health',
+                                port: 8080,
+                                scheme: 'http'
+                            }
+                        }
                     }]
             }
         }

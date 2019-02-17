@@ -1,5 +1,5 @@
-import * as k8s from './kubernetes-api'
-export { k8s }
+import * as api from './kubernetes-api'
+export { api }
 
 import * as beta from './beta'
 export const lib = {

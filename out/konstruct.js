@@ -7,8 +7,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var k8s = __importStar(require("./kubernetes-api"));
-exports.k8s = k8s;
+var api = __importStar(require("./kubernetes-api"));
+exports.api = api;
 var beta = __importStar(require("./beta"));
 exports.lib = {
     beta: beta
