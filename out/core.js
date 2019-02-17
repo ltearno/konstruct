@@ -39,13 +39,33 @@ function mergeObjects(a, b) {
     return b;
 }
 exports.mergeObjects = mergeObjects;
+function joinPath(parts) {
+    return parts.map(function (p) { return p.replace('.', '\\.'); }).join('.');
+}
 function setObjectProperty(o, path, value) {
     var init = o;
     var parts = path.split('.');
+    // join parts when previous part finished with '\'
     for (var i = 0; i < parts.length - 1; i++) {
+        if (parts[i].charAt(parts[i].length - 1) == '\\') {
+            parts[i] = parts[i].substr(0, parts[i].length - 1) + '.' + parts[i + 1];
+            console.log("PART " + i + " " + parts[i]);
+            parts.splice(i + 1, 1);
+            i--;
+            continue;
+        }
+    }
+    console.log("PARTS " + JSON.stringify(parts));
+    var _loop_1 = function (i) {
         if (!o[parts[i]])
             o[parts[i]] = {};
         o = o[parts[i]];
+        if (typeof o !== 'object') {
+            throw "wrong receiver type in setObjectProperty(\"" + joinPath(parts) + "\") (field at path \"" + joinPath(parts.filter(function (v, index) { return index <= i; })) + "\" already exists with type \"" + typeof o + "\"; it should be object or null)";
+        }
+    };
+    for (var i = 0; i < parts.length - 1; i++) {
+        _loop_1(i);
     }
     o[parts[parts.length - 1]] = value;
     return init;

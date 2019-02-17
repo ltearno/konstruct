@@ -14,7 +14,7 @@ log(`import './core'`)
 log('')
 log(`
 export type Optional<T> = {
-    [P in keyof T]?: Optional<T[P]>;
+    [P in keyof T]?: T[P] extends boolean ? boolean : T[P] extends string ? string : T[P] extends number ? number : T[P] extends (infer I)[] ? Optional<I>[] : Optional<T[P]>;
 }
 `)
 
@@ -47,7 +47,7 @@ Object.getOwnPropertyNames(swagger.definitions)
         let def = swagger.definitions[name]
         ApiTools.dumpComment(def.description, '', log)
         log(`export function ${getBuilderName(name)}(options?: Optional<k8s.${ApiTools.getTypescriptResourceName(name)}>) : k8s.${ApiTools.getTypescriptResourceName(name)} {`)
-        log(`  return (<k8s.${ApiTools.getTypescriptResourceName(name)}>{`)
+        log(`  return <k8s.${ApiTools.getTypescriptResourceName(name)}>({`)
         let required = def.required || []
         if (Object.getOwnPropertyNames(def.properties).includes('apiVersion'))
             log(`    apiVersion: "${name.substr(0, name.lastIndexOf('.'))}",`)

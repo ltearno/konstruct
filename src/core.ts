@@ -38,15 +38,39 @@ export function mergeObjects<T, U>(a: T, b: U): T | U {
     return b
 }
 
-export function setObjectProperty<T>(o: T, path, value): T {
+function joinPath(parts: string[]) {
+    return parts.map(p => p.replace('.', '\\.')).join('.')
+}
+
+export function setObjectProperty<T>(o: T, path: string, value): T {
     const init = o
     let parts = path.split('.')
+    // join parts when previous part finished with '\'
+    for (let i = 0; i < parts.length - 1; i++) {
+        if (parts[i].charAt(parts[i].length - 1) == '\\') {
+            parts[i] = parts[i].substr(0, parts[i].length - 1) + '.' + parts[i + 1]
+            console.log(`PART ${i} ${parts[i]}`)
+            parts.splice(i + 1, 1)
+            i--
+            continue
+        }
+    }
+
+    console.log(`PARTS ${JSON.stringify(parts)}`)
+
     for (let i = 0; i < parts.length - 1; i++) {
         if (!o[parts[i]])
             o[parts[i]] = {}
+
         o = o[parts[i]]
+
+        if (typeof o !== 'object') {
+            throw `wrong receiver type in setObjectProperty("${joinPath(parts)}") (field at path "${joinPath(parts.filter((v, index) => index <= i))}" already exists with type "${typeof o}"; it should be object or null)`
+        }
     }
+
     o[parts[parts.length - 1]] = value
+
     return init
 }
 
@@ -54,7 +78,7 @@ declare global {
     interface Object {
         copy<T>(this: T): T
         set<T>(this: T, path: string, value: any): T
-        merge<T, U>(this: T, other: U): T
+        merge<T, U>(this: T, other: U): T | U
         mergeAt<T>(this: T, path: string, value: any): T
         addDeploymentDefaultNameAndLabels<T>(this: T, name: string): T
     }
