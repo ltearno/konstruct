@@ -139,3 +139,13 @@ And execute your script, which will output documents that you can pipe to `kubec
 ```bash
 ./generate
 ```
+
+## How to get the Kubernetes Swagger API
+
+See https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/ and https://kubernetes.io/docs/concepts/overview/kubernetes-api/
+
+TLDR:
+
+run `kubectl proxy --port 8080`
+
+then run `curl http://localhost:8080/openapi/v2 -o kubernetes-swagger.json`
