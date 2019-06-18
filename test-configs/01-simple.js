@@ -5,7 +5,7 @@
  * and output the corresponding yaml which will be sent to kubectl
  */
 
-const k = require('konstruct')
+const k = require("./konstruct")
 
 /** We can extract environment variables */
 const GCP_PROJECT = k.env('GCP_PROJECT')

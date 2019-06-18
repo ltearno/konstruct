@@ -49,13 +49,15 @@ Object.getOwnPropertyNames(swagger.definitions)
         log(`export function ${getBuilderName(name)}(options?: Optional<k8s.${ApiTools.getTypescriptResourceName(name)}>) : k8s.${ApiTools.getTypescriptResourceName(name)} {`)
         log(`  return <k8s.${ApiTools.getTypescriptResourceName(name)}>({`)
         let required = def.required || []
-        if (Object.getOwnPropertyNames(def.properties).includes('apiVersion'))
-            log(`    apiVersion: "${name.substr(0, name.lastIndexOf('.'))}",`)
-        if (Object.getOwnPropertyNames(def.properties).includes('kind'))
-            log(`    kind: "${name.substr(name.lastIndexOf('.') + 1)}",`)
-        for (let propertyName of Object.getOwnPropertyNames(def.properties).sort()) {
-            if (propertyName != "apiVersion" && propertyName != "kind" && required.includes(propertyName)) {
-                log(`    ${propertyName}: (options && options.${propertyName}) || ${getTypescriptBuilder(def.properties[propertyName])},`)
+        if (def.properties) {
+            if (Object.getOwnPropertyNames(def.properties).includes('apiVersion'))
+                log(`    apiVersion: "${name.substr(0, name.lastIndexOf('.'))}",`)
+            if (Object.getOwnPropertyNames(def.properties).includes('kind'))
+                log(`    kind: "${name.substr(name.lastIndexOf('.') + 1)}",`)
+            for (let propertyName of Object.getOwnPropertyNames(def.properties).sort()) {
+                if (propertyName != "apiVersion" && propertyName != "kind" && required.includes(propertyName)) {
+                    log(`    ${propertyName}: (options && options.${propertyName}) || ${getTypescriptBuilder(def.properties[propertyName])},`)
+                }
             }
         }
         log(`  }).merge(options)`)

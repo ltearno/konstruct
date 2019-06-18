@@ -18,17 +18,19 @@ Object.getOwnPropertyNames(swagger.definitions)
     ApiTools.dumpComment(def.description, '', log);
     log("export interface " + ApiTools.getTypescriptResourceName(name) + " {");
     var required = def.required || [];
-    for (var _i = 0, _a = Object.getOwnPropertyNames(def.properties).sort(); _i < _a.length; _i++) {
-        var propertyName = _a[_i];
-        ApiTools.dumpComment(def.properties[propertyName].description, '  ', log);
-        if (propertyName == "apiVersion") {
-            log("  " + propertyName + ": \"" + name.substr(0, name.lastIndexOf('.')) + "\"");
-        }
-        else if (propertyName == "kind") {
-            log("  " + propertyName + ": \"" + name.substr(name.lastIndexOf('.') + 1) + "\"");
-        }
-        else {
-            log("  " + propertyName + (!required.includes(propertyName) ? '?' : '') + ": " + ApiTools.getTypescriptType(def.properties[propertyName]));
+    if (def.properties) {
+        for (var _i = 0, _a = Object.getOwnPropertyNames(def.properties).sort(); _i < _a.length; _i++) {
+            var propertyName = _a[_i];
+            ApiTools.dumpComment(def.properties[propertyName].description, '  ', log);
+            if (propertyName == "apiVersion") {
+                log("  " + propertyName + ": \"" + name.substr(0, name.lastIndexOf('.')) + "\"");
+            }
+            else if (propertyName == "kind") {
+                log("  " + propertyName + ": \"" + name.substr(name.lastIndexOf('.') + 1) + "\"");
+            }
+            else {
+                log("  " + propertyName + (!required.includes(propertyName) ? '?' : '') + ": " + ApiTools.getTypescriptType(def.properties[propertyName]));
+            }
         }
     }
     log("}");

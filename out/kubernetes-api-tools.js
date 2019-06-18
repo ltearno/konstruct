@@ -2,12 +2,25 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 function getTypescriptResourceName(name) {
     var i = 0;
+    name = name.replace('-', '');
+    if (name.startsWith('io.k8s.api.apps.v1.'))
+        name = name.substr('io.k8s.api.apps.v1'.length);
+    if (name.startsWith('io.k8s.api.core.v1.'))
+        name = name.substr('io.k8s.api.core.v1'.length);
     while (name.indexOf('.') >= 0) {
         var prefix = name.substr(name.indexOf('.') + 1);
         var suffix = name.substr(0, name.indexOf('.'));
         suffix = suffix.substr(0, 1).toLocaleUpperCase() + suffix.substr(1);
         i++;
         if (i == 1 && suffix == 'V1') {
+            name = prefix;
+            continue;
+        }
+        else if (i == 1 && suffix == 'Io.k8s.api.core.v1') {
+            name = prefix;
+            continue;
+        }
+        else if (i == 1 && suffix == 'Io.k8s.api.apps.v1') {
             name = prefix;
             continue;
         }

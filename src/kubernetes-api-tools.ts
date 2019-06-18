@@ -1,5 +1,13 @@
 export function getTypescriptResourceName(name: string) {
     let i = 0
+
+    name = name.replace('-', '')
+
+    if (name.startsWith('io.k8s.api.apps.v1.'))
+        name = name.substr('io.k8s.api.apps.v1'.length)
+    if (name.startsWith('io.k8s.api.core.v1.'))
+        name = name.substr('io.k8s.api.core.v1'.length)
+
     while (name.indexOf('.') >= 0) {
         let prefix = name.substr(name.indexOf('.') + 1)
         let suffix = name.substr(0, name.indexOf('.'))
@@ -7,6 +15,14 @@ export function getTypescriptResourceName(name: string) {
 
         i++
         if (i == 1 && suffix == 'V1') {
+            name = prefix
+            continue
+        }
+        else if (i == 1 && suffix == 'Io.k8s.api.core.v1') {
+            name = prefix
+            continue
+        }
+        else if (i == 1 && suffix == 'Io.k8s.api.apps.v1') {
             name = prefix
             continue
         }

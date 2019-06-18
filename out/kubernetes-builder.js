@@ -2,620 +2,1540 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 require("./core");
 /**
+ * MutatingWebhookConfiguration describes the configuration of and admission webhook that accept or reject and may change the object.
+ */
+function mutatingWebhookConfigurationIoK8sApiAdmissionregistrationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.admissionregistration.v1beta1",
+        kind: "MutatingWebhookConfiguration",
+    }).merge(options);
+}
+exports.mutatingWebhookConfigurationIoK8sApiAdmissionregistrationV1beta1 = mutatingWebhookConfigurationIoK8sApiAdmissionregistrationV1beta1;
+/**
+ * MutatingWebhookConfigurationList is a list of MutatingWebhookConfiguration.
+ */
+function mutatingWebhookConfigurationListIoK8sApiAdmissionregistrationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.admissionregistration.v1beta1",
+        kind: "MutatingWebhookConfigurationList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.mutatingWebhookConfigurationListIoK8sApiAdmissionregistrationV1beta1 = mutatingWebhookConfigurationListIoK8sApiAdmissionregistrationV1beta1;
+/**
+ * RuleWithOperations is a tuple of Operations and Resources. It is recommended to make sure that all the tuple expansions are valid.
+ */
+function ruleWithOperationsIoK8sApiAdmissionregistrationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.ruleWithOperationsIoK8sApiAdmissionregistrationV1beta1 = ruleWithOperationsIoK8sApiAdmissionregistrationV1beta1;
+/**
  * ServiceReference holds a reference to Service.legacy.k8s.io
  */
-function serviceReferenceAdmissionregistrationV1beta1(options) {
+function serviceReferenceIoK8sApiAdmissionregistrationV1beta1(options) {
     return ({
         name: (options && options.name) || null,
         namespace: (options && options.namespace) || null,
     }).merge(options);
 }
-exports.serviceReferenceAdmissionregistrationV1beta1 = serviceReferenceAdmissionregistrationV1beta1;
+exports.serviceReferenceIoK8sApiAdmissionregistrationV1beta1 = serviceReferenceIoK8sApiAdmissionregistrationV1beta1;
+/**
+ * ValidatingWebhookConfiguration describes the configuration of and admission webhook that accept or reject and object without changing it.
+ */
+function validatingWebhookConfigurationIoK8sApiAdmissionregistrationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.admissionregistration.v1beta1",
+        kind: "ValidatingWebhookConfiguration",
+    }).merge(options);
+}
+exports.validatingWebhookConfigurationIoK8sApiAdmissionregistrationV1beta1 = validatingWebhookConfigurationIoK8sApiAdmissionregistrationV1beta1;
+/**
+ * ValidatingWebhookConfigurationList is a list of ValidatingWebhookConfiguration.
+ */
+function validatingWebhookConfigurationListIoK8sApiAdmissionregistrationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.admissionregistration.v1beta1",
+        kind: "ValidatingWebhookConfigurationList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.validatingWebhookConfigurationListIoK8sApiAdmissionregistrationV1beta1 = validatingWebhookConfigurationListIoK8sApiAdmissionregistrationV1beta1;
+/**
+ * Webhook describes an admission webhook and the resources and operations it applies to.
+ */
+function webhookIoK8sApiAdmissionregistrationV1beta1(options) {
+    return ({
+        clientConfig: (options && options.clientConfig) || webhookClientConfigIoK8sApiAdmissionregistrationV1beta1(),
+        name: (options && options.name) || null,
+    }).merge(options);
+}
+exports.webhookIoK8sApiAdmissionregistrationV1beta1 = webhookIoK8sApiAdmissionregistrationV1beta1;
 /**
  * WebhookClientConfig contains the information to make a TLS connection with the webhook
  */
-function webhookClientConfigAdmissionregistrationV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.webhookClientConfigAdmissionregistrationV1beta1 = webhookClientConfigAdmissionregistrationV1beta1;
-/**
- * ServiceReference holds a reference to Service.legacy.k8s.io
- */
-function serviceReferenceApiextensionsV1beta1(options) {
+function webhookClientConfigIoK8sApiAdmissionregistrationV1beta1(options) {
     return ({
-        name: (options && options.name) || null,
-        namespace: (options && options.namespace) || null,
+        caBundle: (options && options.caBundle) || null,
     }).merge(options);
 }
-exports.serviceReferenceApiextensionsV1beta1 = serviceReferenceApiextensionsV1beta1;
+exports.webhookClientConfigIoK8sApiAdmissionregistrationV1beta1 = webhookClientConfigIoK8sApiAdmissionregistrationV1beta1;
 /**
- * WebhookClientConfig contains the information to make a TLS connection with the webhook. It has the same field as admissionregistration.v1beta1.WebhookClientConfig.
+ * ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this object is beta. However, it may be subject to name and representation changes in future releases, and clients should not depend on its stability. It is primarily for internal use by controllers.
  */
-function webhookClientConfigApiextensionsV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.webhookClientConfigApiextensionsV1beta1 = webhookClientConfigApiextensionsV1beta1;
-/**
- * ServiceReference holds a reference to Service.legacy.k8s.io
- */
-function serviceReferenceApiregistrationV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.serviceReferenceApiregistrationV1beta1 = serviceReferenceApiregistrationV1beta1;
-/**
- * DEPRECATED - This group version of Deployment is deprecated by apps/v1beta2/Deployment. See the release notes for more information. Deployment enables declarative updates for Pods and ReplicaSets.
- */
-function deploymentAppsV1beta1(options) {
+function controllerRevision(options) {
     return ({
-        apiVersion: "apps.v1beta1",
-        kind: "Deployment",
+        apiVersion: "io.k8s.api.apps.v1",
+        kind: "ControllerRevision",
+        revision: (options && options.revision) || 0,
     }).merge(options);
 }
-exports.deploymentAppsV1beta1 = deploymentAppsV1beta1;
+exports.controllerRevision = controllerRevision;
 /**
- * DeploymentCondition describes the state of a deployment at a certain point.
+ * ControllerRevisionList is a resource containing a list of ControllerRevision objects.
  */
-function deploymentConditionAppsV1beta1(options) {
+function controllerRevisionList(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1",
+        kind: "ControllerRevisionList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.controllerRevisionList = controllerRevisionList;
+/**
+ * DaemonSet represents the configuration of a daemon set.
+ */
+function daemonSet(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1",
+        kind: "DaemonSet",
+    }).merge(options);
+}
+exports.daemonSet = daemonSet;
+/**
+ * DaemonSetCondition describes the state of a DaemonSet at a certain point.
+ */
+function daemonSetCondition(options) {
     return ({
         status: (options && options.status) || null,
         type: (options && options.type) || null,
     }).merge(options);
 }
-exports.deploymentConditionAppsV1beta1 = deploymentConditionAppsV1beta1;
+exports.daemonSetCondition = daemonSetCondition;
+/**
+ * DaemonSetList is a collection of daemon sets.
+ */
+function daemonSetList(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1",
+        kind: "DaemonSetList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.daemonSetList = daemonSetList;
+/**
+ * DaemonSetSpec is the specification of a daemon set.
+ */
+function daemonSetSpec(options) {
+    return ({
+        selector: (options && options.selector) || labelSelectorIoK8sApimachineryPkgApisMetaV1(),
+        template: (options && options.template) || podTemplateSpec(),
+    }).merge(options);
+}
+exports.daemonSetSpec = daemonSetSpec;
+/**
+ * DaemonSetStatus represents the current status of a daemon set.
+ */
+function daemonSetStatus(options) {
+    return ({
+        currentNumberScheduled: (options && options.currentNumberScheduled) || 0,
+        desiredNumberScheduled: (options && options.desiredNumberScheduled) || 0,
+        numberMisscheduled: (options && options.numberMisscheduled) || 0,
+        numberReady: (options && options.numberReady) || 0,
+    }).merge(options);
+}
+exports.daemonSetStatus = daemonSetStatus;
+/**
+ * DaemonSetUpdateStrategy is a struct used to control the update strategy for a DaemonSet.
+ */
+function daemonSetUpdateStrategy(options) {
+    return ({}).merge(options);
+}
+exports.daemonSetUpdateStrategy = daemonSetUpdateStrategy;
+/**
+ * Deployment enables declarative updates for Pods and ReplicaSets.
+ */
+function deployment(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1",
+        kind: "Deployment",
+    }).merge(options);
+}
+exports.deployment = deployment;
+/**
+ * DeploymentCondition describes the state of a deployment at a certain point.
+ */
+function deploymentCondition(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.deploymentCondition = deploymentCondition;
 /**
  * DeploymentList is a list of Deployments.
  */
-function deploymentListAppsV1beta1(options) {
+function deploymentList(options) {
     return ({
-        apiVersion: "apps.v1beta1",
+        apiVersion: "io.k8s.api.apps.v1",
         kind: "DeploymentList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.deploymentListAppsV1beta1 = deploymentListAppsV1beta1;
-/**
- * DEPRECATED. DeploymentRollback stores the information required to rollback a deployment.
- */
-function deploymentRollbackAppsV1beta1(options) {
-    return ({
-        apiVersion: "apps.v1beta1",
-        kind: "DeploymentRollback",
-        name: (options && options.name) || null,
-        rollbackTo: (options && options.rollbackTo) || rollbackConfigAppsV1beta1(),
-    }).merge(options);
-}
-exports.deploymentRollbackAppsV1beta1 = deploymentRollbackAppsV1beta1;
+exports.deploymentList = deploymentList;
 /**
  * DeploymentSpec is the specification of the desired behavior of the Deployment.
  */
-function deploymentSpecAppsV1beta1(options) {
+function deploymentSpec(options) {
+    return ({
+        selector: (options && options.selector) || labelSelectorIoK8sApimachineryPkgApisMetaV1(),
+        template: (options && options.template) || podTemplateSpec(),
+    }).merge(options);
+}
+exports.deploymentSpec = deploymentSpec;
+/**
+ * DeploymentStatus is the most recently observed status of the Deployment.
+ */
+function deploymentStatus(options) {
+    return ({}).merge(options);
+}
+exports.deploymentStatus = deploymentStatus;
+/**
+ * DeploymentStrategy describes how to replace existing pods with new ones.
+ */
+function deploymentStrategy(options) {
+    return ({}).merge(options);
+}
+exports.deploymentStrategy = deploymentStrategy;
+/**
+ * ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+ */
+function replicaSet(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1",
+        kind: "ReplicaSet",
+    }).merge(options);
+}
+exports.replicaSet = replicaSet;
+/**
+ * ReplicaSetCondition describes the state of a replica set at a certain point.
+ */
+function replicaSetCondition(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.replicaSetCondition = replicaSetCondition;
+/**
+ * ReplicaSetList is a collection of ReplicaSets.
+ */
+function replicaSetList(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1",
+        kind: "ReplicaSetList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.replicaSetList = replicaSetList;
+/**
+ * ReplicaSetSpec is the specification of a ReplicaSet.
+ */
+function replicaSetSpec(options) {
+    return ({
+        selector: (options && options.selector) || labelSelectorIoK8sApimachineryPkgApisMetaV1(),
+    }).merge(options);
+}
+exports.replicaSetSpec = replicaSetSpec;
+/**
+ * ReplicaSetStatus represents the current status of a ReplicaSet.
+ */
+function replicaSetStatus(options) {
+    return ({
+        replicas: (options && options.replicas) || 0,
+    }).merge(options);
+}
+exports.replicaSetStatus = replicaSetStatus;
+/**
+ * Spec to control the desired behavior of daemon set rolling update.
+ */
+function rollingUpdateDaemonSet(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateDaemonSet = rollingUpdateDaemonSet;
+/**
+ * Spec to control the desired behavior of rolling update.
+ */
+function rollingUpdateDeployment(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateDeployment = rollingUpdateDeployment;
+/**
+ * RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
+ */
+function rollingUpdateStatefulSetStrategy(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateStatefulSetStrategy = rollingUpdateStatefulSetStrategy;
+/**
+ * StatefulSet represents a set of pods with consistent identities. Identities are defined as:
+ *  - Network: A single stable DNS and hostname.
+ *  - Storage: As many VolumeClaims as requested.
+ * The StatefulSet guarantees that a given network identity will always map to the same storage identity.
+ */
+function statefulSet(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1",
+        kind: "StatefulSet",
+    }).merge(options);
+}
+exports.statefulSet = statefulSet;
+/**
+ * StatefulSetCondition describes the state of a statefulset at a certain point.
+ */
+function statefulSetCondition(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.statefulSetCondition = statefulSetCondition;
+/**
+ * StatefulSetList is a collection of StatefulSets.
+ */
+function statefulSetList(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1",
+        kind: "StatefulSetList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.statefulSetList = statefulSetList;
+/**
+ * A StatefulSetSpec is the specification of a StatefulSet.
+ */
+function statefulSetSpec(options) {
+    return ({
+        selector: (options && options.selector) || labelSelectorIoK8sApimachineryPkgApisMetaV1(),
+        serviceName: (options && options.serviceName) || null,
+        template: (options && options.template) || podTemplateSpec(),
+    }).merge(options);
+}
+exports.statefulSetSpec = statefulSetSpec;
+/**
+ * StatefulSetStatus represents the current state of a StatefulSet.
+ */
+function statefulSetStatus(options) {
+    return ({
+        replicas: (options && options.replicas) || 0,
+    }).merge(options);
+}
+exports.statefulSetStatus = statefulSetStatus;
+/**
+ * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.
+ */
+function statefulSetUpdateStrategy(options) {
+    return ({}).merge(options);
+}
+exports.statefulSetUpdateStrategy = statefulSetUpdateStrategy;
+/**
+ * DEPRECATED - This group version of ControllerRevision is deprecated by apps/v1beta2/ControllerRevision. See the release notes for more information. ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this object is beta. However, it may be subject to name and representation changes in future releases, and clients should not depend on its stability. It is primarily for internal use by controllers.
+ */
+function controllerRevisionIoK8sApiAppsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta1",
+        kind: "ControllerRevision",
+        revision: (options && options.revision) || 0,
+    }).merge(options);
+}
+exports.controllerRevisionIoK8sApiAppsV1beta1 = controllerRevisionIoK8sApiAppsV1beta1;
+/**
+ * ControllerRevisionList is a resource containing a list of ControllerRevision objects.
+ */
+function controllerRevisionListIoK8sApiAppsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta1",
+        kind: "ControllerRevisionList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.controllerRevisionListIoK8sApiAppsV1beta1 = controllerRevisionListIoK8sApiAppsV1beta1;
+/**
+ * DEPRECATED - This group version of Deployment is deprecated by apps/v1beta2/Deployment. See the release notes for more information. Deployment enables declarative updates for Pods and ReplicaSets.
+ */
+function deploymentIoK8sApiAppsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta1",
+        kind: "Deployment",
+    }).merge(options);
+}
+exports.deploymentIoK8sApiAppsV1beta1 = deploymentIoK8sApiAppsV1beta1;
+/**
+ * DeploymentCondition describes the state of a deployment at a certain point.
+ */
+function deploymentConditionIoK8sApiAppsV1beta1(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.deploymentConditionIoK8sApiAppsV1beta1 = deploymentConditionIoK8sApiAppsV1beta1;
+/**
+ * DeploymentList is a list of Deployments.
+ */
+function deploymentListIoK8sApiAppsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta1",
+        kind: "DeploymentList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.deploymentListIoK8sApiAppsV1beta1 = deploymentListIoK8sApiAppsV1beta1;
+/**
+ * DEPRECATED. DeploymentRollback stores the information required to rollback a deployment.
+ */
+function deploymentRollbackIoK8sApiAppsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta1",
+        kind: "DeploymentRollback",
+        name: (options && options.name) || null,
+        rollbackTo: (options && options.rollbackTo) || rollbackConfigIoK8sApiAppsV1beta1(),
+    }).merge(options);
+}
+exports.deploymentRollbackIoK8sApiAppsV1beta1 = deploymentRollbackIoK8sApiAppsV1beta1;
+/**
+ * DeploymentSpec is the specification of the desired behavior of the Deployment.
+ */
+function deploymentSpecIoK8sApiAppsV1beta1(options) {
     return ({
         template: (options && options.template) || podTemplateSpec(),
     }).merge(options);
 }
-exports.deploymentSpecAppsV1beta1 = deploymentSpecAppsV1beta1;
+exports.deploymentSpecIoK8sApiAppsV1beta1 = deploymentSpecIoK8sApiAppsV1beta1;
 /**
  * DeploymentStatus is the most recently observed status of the Deployment.
  */
-function deploymentStatusAppsV1beta1(options) {
+function deploymentStatusIoK8sApiAppsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.deploymentStatusAppsV1beta1 = deploymentStatusAppsV1beta1;
+exports.deploymentStatusIoK8sApiAppsV1beta1 = deploymentStatusIoK8sApiAppsV1beta1;
 /**
  * DeploymentStrategy describes how to replace existing pods with new ones.
  */
-function deploymentStrategyAppsV1beta1(options) {
+function deploymentStrategyIoK8sApiAppsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.deploymentStrategyAppsV1beta1 = deploymentStrategyAppsV1beta1;
+exports.deploymentStrategyIoK8sApiAppsV1beta1 = deploymentStrategyIoK8sApiAppsV1beta1;
 /**
  * DEPRECATED.
  */
-function rollbackConfigAppsV1beta1(options) {
+function rollbackConfigIoK8sApiAppsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.rollbackConfigAppsV1beta1 = rollbackConfigAppsV1beta1;
+exports.rollbackConfigIoK8sApiAppsV1beta1 = rollbackConfigIoK8sApiAppsV1beta1;
 /**
  * Spec to control the desired behavior of rolling update.
  */
-function rollingUpdateDeploymentAppsV1beta1(options) {
+function rollingUpdateDeploymentIoK8sApiAppsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.rollingUpdateDeploymentAppsV1beta1 = rollingUpdateDeploymentAppsV1beta1;
+exports.rollingUpdateDeploymentIoK8sApiAppsV1beta1 = rollingUpdateDeploymentIoK8sApiAppsV1beta1;
+/**
+ * RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
+ */
+function rollingUpdateStatefulSetStrategyIoK8sApiAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateStatefulSetStrategyIoK8sApiAppsV1beta1 = rollingUpdateStatefulSetStrategyIoK8sApiAppsV1beta1;
 /**
  * Scale represents a scaling request for a resource.
  */
-function scaleAppsV1beta1(options) {
+function scaleIoK8sApiAppsV1beta1(options) {
     return ({
-        apiVersion: "apps.v1beta1",
+        apiVersion: "io.k8s.api.apps.v1beta1",
         kind: "Scale",
     }).merge(options);
 }
-exports.scaleAppsV1beta1 = scaleAppsV1beta1;
+exports.scaleIoK8sApiAppsV1beta1 = scaleIoK8sApiAppsV1beta1;
 /**
  * ScaleSpec describes the attributes of a scale subresource
  */
-function scaleSpecAppsV1beta1(options) {
+function scaleSpecIoK8sApiAppsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.scaleSpecAppsV1beta1 = scaleSpecAppsV1beta1;
+exports.scaleSpecIoK8sApiAppsV1beta1 = scaleSpecIoK8sApiAppsV1beta1;
 /**
  * ScaleStatus represents the current status of a scale subresource.
  */
-function scaleStatusAppsV1beta1(options) {
+function scaleStatusIoK8sApiAppsV1beta1(options) {
     return ({
         replicas: (options && options.replicas) || 0,
     }).merge(options);
 }
-exports.scaleStatusAppsV1beta1 = scaleStatusAppsV1beta1;
+exports.scaleStatusIoK8sApiAppsV1beta1 = scaleStatusIoK8sApiAppsV1beta1;
 /**
- * AllowedFlexVolume represents a single Flexvolume that is allowed to be used. Deprecated: use AllowedFlexVolume from policy API Group instead.
+ * DEPRECATED - This group version of StatefulSet is deprecated by apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:
+ *  - Network: A single stable DNS and hostname.
+ *  - Storage: As many VolumeClaims as requested.
+ * The StatefulSet guarantees that a given network identity will always map to the same storage identity.
  */
-function allowedFlexVolumeExtensionsV1beta1(options) {
+function statefulSetIoK8sApiAppsV1beta1(options) {
     return ({
-        driver: (options && options.driver) || null,
+        apiVersion: "io.k8s.api.apps.v1beta1",
+        kind: "StatefulSet",
     }).merge(options);
 }
-exports.allowedFlexVolumeExtensionsV1beta1 = allowedFlexVolumeExtensionsV1beta1;
+exports.statefulSetIoK8sApiAppsV1beta1 = statefulSetIoK8sApiAppsV1beta1;
 /**
- * AllowedHostPath defines the host volume conditions that will be enabled by a policy for pods to use. It requires the path prefix to be defined. Deprecated: use AllowedHostPath from policy API Group instead.
+ * StatefulSetCondition describes the state of a statefulset at a certain point.
  */
-function allowedHostPathExtensionsV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.allowedHostPathExtensionsV1beta1 = allowedHostPathExtensionsV1beta1;
-/**
- * DEPRECATED - This group version of Deployment is deprecated by apps/v1beta2/Deployment. See the release notes for more information. Deployment enables declarative updates for Pods and ReplicaSets.
- */
-function deploymentExtensionsV1beta1(options) {
-    return ({
-        apiVersion: "extensions.v1beta1",
-        kind: "Deployment",
-    }).merge(options);
-}
-exports.deploymentExtensionsV1beta1 = deploymentExtensionsV1beta1;
-/**
- * DeploymentCondition describes the state of a deployment at a certain point.
- */
-function deploymentConditionExtensionsV1beta1(options) {
+function statefulSetConditionIoK8sApiAppsV1beta1(options) {
     return ({
         status: (options && options.status) || null,
         type: (options && options.type) || null,
     }).merge(options);
 }
-exports.deploymentConditionExtensionsV1beta1 = deploymentConditionExtensionsV1beta1;
+exports.statefulSetConditionIoK8sApiAppsV1beta1 = statefulSetConditionIoK8sApiAppsV1beta1;
+/**
+ * StatefulSetList is a collection of StatefulSets.
+ */
+function statefulSetListIoK8sApiAppsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta1",
+        kind: "StatefulSetList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.statefulSetListIoK8sApiAppsV1beta1 = statefulSetListIoK8sApiAppsV1beta1;
+/**
+ * A StatefulSetSpec is the specification of a StatefulSet.
+ */
+function statefulSetSpecIoK8sApiAppsV1beta1(options) {
+    return ({
+        serviceName: (options && options.serviceName) || null,
+        template: (options && options.template) || podTemplateSpec(),
+    }).merge(options);
+}
+exports.statefulSetSpecIoK8sApiAppsV1beta1 = statefulSetSpecIoK8sApiAppsV1beta1;
+/**
+ * StatefulSetStatus represents the current state of a StatefulSet.
+ */
+function statefulSetStatusIoK8sApiAppsV1beta1(options) {
+    return ({
+        replicas: (options && options.replicas) || 0,
+    }).merge(options);
+}
+exports.statefulSetStatusIoK8sApiAppsV1beta1 = statefulSetStatusIoK8sApiAppsV1beta1;
+/**
+ * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.
+ */
+function statefulSetUpdateStrategyIoK8sApiAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.statefulSetUpdateStrategyIoK8sApiAppsV1beta1 = statefulSetUpdateStrategyIoK8sApiAppsV1beta1;
+/**
+ * DEPRECATED - This group version of ControllerRevision is deprecated by apps/v1/ControllerRevision. See the release notes for more information. ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this object is beta. However, it may be subject to name and representation changes in future releases, and clients should not depend on its stability. It is primarily for internal use by controllers.
+ */
+function controllerRevisionIoK8sApiAppsV1beta2(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta2",
+        kind: "ControllerRevision",
+        revision: (options && options.revision) || 0,
+    }).merge(options);
+}
+exports.controllerRevisionIoK8sApiAppsV1beta2 = controllerRevisionIoK8sApiAppsV1beta2;
+/**
+ * ControllerRevisionList is a resource containing a list of ControllerRevision objects.
+ */
+function controllerRevisionListIoK8sApiAppsV1beta2(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta2",
+        kind: "ControllerRevisionList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.controllerRevisionListIoK8sApiAppsV1beta2 = controllerRevisionListIoK8sApiAppsV1beta2;
+/**
+ * DEPRECATED - This group version of DaemonSet is deprecated by apps/v1/DaemonSet. See the release notes for more information. DaemonSet represents the configuration of a daemon set.
+ */
+function daemonSetIoK8sApiAppsV1beta2(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta2",
+        kind: "DaemonSet",
+    }).merge(options);
+}
+exports.daemonSetIoK8sApiAppsV1beta2 = daemonSetIoK8sApiAppsV1beta2;
+/**
+ * DaemonSetCondition describes the state of a DaemonSet at a certain point.
+ */
+function daemonSetConditionIoK8sApiAppsV1beta2(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.daemonSetConditionIoK8sApiAppsV1beta2 = daemonSetConditionIoK8sApiAppsV1beta2;
+/**
+ * DaemonSetList is a collection of daemon sets.
+ */
+function daemonSetListIoK8sApiAppsV1beta2(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta2",
+        kind: "DaemonSetList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.daemonSetListIoK8sApiAppsV1beta2 = daemonSetListIoK8sApiAppsV1beta2;
+/**
+ * DaemonSetSpec is the specification of a daemon set.
+ */
+function daemonSetSpecIoK8sApiAppsV1beta2(options) {
+    return ({
+        selector: (options && options.selector) || labelSelectorIoK8sApimachineryPkgApisMetaV1(),
+        template: (options && options.template) || podTemplateSpec(),
+    }).merge(options);
+}
+exports.daemonSetSpecIoK8sApiAppsV1beta2 = daemonSetSpecIoK8sApiAppsV1beta2;
+/**
+ * DaemonSetStatus represents the current status of a daemon set.
+ */
+function daemonSetStatusIoK8sApiAppsV1beta2(options) {
+    return ({
+        currentNumberScheduled: (options && options.currentNumberScheduled) || 0,
+        desiredNumberScheduled: (options && options.desiredNumberScheduled) || 0,
+        numberMisscheduled: (options && options.numberMisscheduled) || 0,
+        numberReady: (options && options.numberReady) || 0,
+    }).merge(options);
+}
+exports.daemonSetStatusIoK8sApiAppsV1beta2 = daemonSetStatusIoK8sApiAppsV1beta2;
+/**
+ * DaemonSetUpdateStrategy is a struct used to control the update strategy for a DaemonSet.
+ */
+function daemonSetUpdateStrategyIoK8sApiAppsV1beta2(options) {
+    return ({}).merge(options);
+}
+exports.daemonSetUpdateStrategyIoK8sApiAppsV1beta2 = daemonSetUpdateStrategyIoK8sApiAppsV1beta2;
+/**
+ * DEPRECATED - This group version of Deployment is deprecated by apps/v1/Deployment. See the release notes for more information. Deployment enables declarative updates for Pods and ReplicaSets.
+ */
+function deploymentIoK8sApiAppsV1beta2(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta2",
+        kind: "Deployment",
+    }).merge(options);
+}
+exports.deploymentIoK8sApiAppsV1beta2 = deploymentIoK8sApiAppsV1beta2;
+/**
+ * DeploymentCondition describes the state of a deployment at a certain point.
+ */
+function deploymentConditionIoK8sApiAppsV1beta2(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.deploymentConditionIoK8sApiAppsV1beta2 = deploymentConditionIoK8sApiAppsV1beta2;
 /**
  * DeploymentList is a list of Deployments.
  */
-function deploymentListExtensionsV1beta1(options) {
+function deploymentListIoK8sApiAppsV1beta2(options) {
     return ({
-        apiVersion: "extensions.v1beta1",
+        apiVersion: "io.k8s.api.apps.v1beta2",
         kind: "DeploymentList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.deploymentListExtensionsV1beta1 = deploymentListExtensionsV1beta1;
-/**
- * DEPRECATED. DeploymentRollback stores the information required to rollback a deployment.
- */
-function deploymentRollbackExtensionsV1beta1(options) {
-    return ({
-        apiVersion: "extensions.v1beta1",
-        kind: "DeploymentRollback",
-        name: (options && options.name) || null,
-        rollbackTo: (options && options.rollbackTo) || rollbackConfigExtensionsV1beta1(),
-    }).merge(options);
-}
-exports.deploymentRollbackExtensionsV1beta1 = deploymentRollbackExtensionsV1beta1;
+exports.deploymentListIoK8sApiAppsV1beta2 = deploymentListIoK8sApiAppsV1beta2;
 /**
  * DeploymentSpec is the specification of the desired behavior of the Deployment.
  */
-function deploymentSpecExtensionsV1beta1(options) {
+function deploymentSpecIoK8sApiAppsV1beta2(options) {
     return ({
+        selector: (options && options.selector) || labelSelectorIoK8sApimachineryPkgApisMetaV1(),
         template: (options && options.template) || podTemplateSpec(),
     }).merge(options);
 }
-exports.deploymentSpecExtensionsV1beta1 = deploymentSpecExtensionsV1beta1;
+exports.deploymentSpecIoK8sApiAppsV1beta2 = deploymentSpecIoK8sApiAppsV1beta2;
 /**
  * DeploymentStatus is the most recently observed status of the Deployment.
  */
-function deploymentStatusExtensionsV1beta1(options) {
+function deploymentStatusIoK8sApiAppsV1beta2(options) {
     return ({}).merge(options);
 }
-exports.deploymentStatusExtensionsV1beta1 = deploymentStatusExtensionsV1beta1;
+exports.deploymentStatusIoK8sApiAppsV1beta2 = deploymentStatusIoK8sApiAppsV1beta2;
 /**
  * DeploymentStrategy describes how to replace existing pods with new ones.
  */
-function deploymentStrategyExtensionsV1beta1(options) {
+function deploymentStrategyIoK8sApiAppsV1beta2(options) {
     return ({}).merge(options);
 }
-exports.deploymentStrategyExtensionsV1beta1 = deploymentStrategyExtensionsV1beta1;
+exports.deploymentStrategyIoK8sApiAppsV1beta2 = deploymentStrategyIoK8sApiAppsV1beta2;
 /**
- * FSGroupStrategyOptions defines the strategy type and options used to create the strategy. Deprecated: use FSGroupStrategyOptions from policy API Group instead.
+ * DEPRECATED - This group version of ReplicaSet is deprecated by apps/v1/ReplicaSet. See the release notes for more information. ReplicaSet ensures that a specified number of pod replicas are running at any given time.
  */
-function fSGroupStrategyOptionsExtensionsV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.fSGroupStrategyOptionsExtensionsV1beta1 = fSGroupStrategyOptionsExtensionsV1beta1;
-/**
- * HostPortRange defines a range of host ports that will be enabled by a policy for pods to use.  It requires both the start and end to be defined. Deprecated: use HostPortRange from policy API Group instead.
- */
-function hostPortRangeExtensionsV1beta1(options) {
+function replicaSetIoK8sApiAppsV1beta2(options) {
     return ({
-        max: (options && options.max) || 0,
-        min: (options && options.min) || 0,
+        apiVersion: "io.k8s.api.apps.v1beta2",
+        kind: "ReplicaSet",
     }).merge(options);
 }
-exports.hostPortRangeExtensionsV1beta1 = hostPortRangeExtensionsV1beta1;
+exports.replicaSetIoK8sApiAppsV1beta2 = replicaSetIoK8sApiAppsV1beta2;
 /**
- * IDRange provides a min/max of an allowed range of IDs. Deprecated: use IDRange from policy API Group instead.
+ * ReplicaSetCondition describes the state of a replica set at a certain point.
  */
-function iDRangeExtensionsV1beta1(options) {
-    return ({
-        max: (options && options.max) || 0,
-        min: (options && options.min) || 0,
-    }).merge(options);
-}
-exports.iDRangeExtensionsV1beta1 = iDRangeExtensionsV1beta1;
-/**
- * PodSecurityPolicy governs the ability to make requests that affect the Security Context that will be applied to a pod and container. Deprecated: use PodSecurityPolicy from policy API Group instead.
- */
-function podSecurityPolicyExtensionsV1beta1(options) {
-    return ({
-        apiVersion: "extensions.v1beta1",
-        kind: "PodSecurityPolicy",
-    }).merge(options);
-}
-exports.podSecurityPolicyExtensionsV1beta1 = podSecurityPolicyExtensionsV1beta1;
-/**
- * PodSecurityPolicyList is a list of PodSecurityPolicy objects. Deprecated: use PodSecurityPolicyList from policy API Group instead.
- */
-function podSecurityPolicyListExtensionsV1beta1(options) {
-    return ({
-        apiVersion: "extensions.v1beta1",
-        kind: "PodSecurityPolicyList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.podSecurityPolicyListExtensionsV1beta1 = podSecurityPolicyListExtensionsV1beta1;
-/**
- * PodSecurityPolicySpec defines the policy enforced. Deprecated: use PodSecurityPolicySpec from policy API Group instead.
- */
-function podSecurityPolicySpecExtensionsV1beta1(options) {
-    return ({
-        fsGroup: (options && options.fsGroup) || fSGroupStrategyOptionsExtensionsV1beta1(),
-        runAsUser: (options && options.runAsUser) || runAsUserStrategyOptionsExtensionsV1beta1(),
-        seLinux: (options && options.seLinux) || sELinuxStrategyOptionsExtensionsV1beta1(),
-        supplementalGroups: (options && options.supplementalGroups) || supplementalGroupsStrategyOptionsExtensionsV1beta1(),
-    }).merge(options);
-}
-exports.podSecurityPolicySpecExtensionsV1beta1 = podSecurityPolicySpecExtensionsV1beta1;
-/**
- * DEPRECATED.
- */
-function rollbackConfigExtensionsV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.rollbackConfigExtensionsV1beta1 = rollbackConfigExtensionsV1beta1;
-/**
- * Spec to control the desired behavior of rolling update.
- */
-function rollingUpdateDeploymentExtensionsV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.rollingUpdateDeploymentExtensionsV1beta1 = rollingUpdateDeploymentExtensionsV1beta1;
-/**
- * RunAsGroupStrategyOptions defines the strategy type and any options used to create the strategy. Deprecated: use RunAsGroupStrategyOptions from policy API Group instead.
- */
-function runAsGroupStrategyOptionsExtensionsV1beta1(options) {
-    return ({
-        rule: (options && options.rule) || null,
-    }).merge(options);
-}
-exports.runAsGroupStrategyOptionsExtensionsV1beta1 = runAsGroupStrategyOptionsExtensionsV1beta1;
-/**
- * RunAsUserStrategyOptions defines the strategy type and any options used to create the strategy. Deprecated: use RunAsUserStrategyOptions from policy API Group instead.
- */
-function runAsUserStrategyOptionsExtensionsV1beta1(options) {
-    return ({
-        rule: (options && options.rule) || null,
-    }).merge(options);
-}
-exports.runAsUserStrategyOptionsExtensionsV1beta1 = runAsUserStrategyOptionsExtensionsV1beta1;
-/**
- * SELinuxStrategyOptions defines the strategy type and any options used to create the strategy. Deprecated: use SELinuxStrategyOptions from policy API Group instead.
- */
-function sELinuxStrategyOptionsExtensionsV1beta1(options) {
-    return ({
-        rule: (options && options.rule) || null,
-    }).merge(options);
-}
-exports.sELinuxStrategyOptionsExtensionsV1beta1 = sELinuxStrategyOptionsExtensionsV1beta1;
-/**
- * represents a scaling request for a resource.
- */
-function scaleExtensionsV1beta1(options) {
-    return ({
-        apiVersion: "extensions.v1beta1",
-        kind: "Scale",
-    }).merge(options);
-}
-exports.scaleExtensionsV1beta1 = scaleExtensionsV1beta1;
-/**
- * describes the attributes of a scale subresource
- */
-function scaleSpecExtensionsV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.scaleSpecExtensionsV1beta1 = scaleSpecExtensionsV1beta1;
-/**
- * represents the current status of a scale subresource.
- */
-function scaleStatusExtensionsV1beta1(options) {
-    return ({
-        replicas: (options && options.replicas) || 0,
-    }).merge(options);
-}
-exports.scaleStatusExtensionsV1beta1 = scaleStatusExtensionsV1beta1;
-/**
- * SupplementalGroupsStrategyOptions defines the strategy type and options used to create the strategy. Deprecated: use SupplementalGroupsStrategyOptions from policy API Group instead.
- */
-function supplementalGroupsStrategyOptionsExtensionsV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.supplementalGroupsStrategyOptionsExtensionsV1beta1 = supplementalGroupsStrategyOptionsExtensionsV1beta1;
-/**
- * AllowedFlexVolume represents a single Flexvolume that is allowed to be used.
- */
-function allowedFlexVolumePolicyV1beta1(options) {
-    return ({
-        driver: (options && options.driver) || null,
-    }).merge(options);
-}
-exports.allowedFlexVolumePolicyV1beta1 = allowedFlexVolumePolicyV1beta1;
-/**
- * AllowedHostPath defines the host volume conditions that will be enabled by a policy for pods to use. It requires the path prefix to be defined.
- */
-function allowedHostPathPolicyV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.allowedHostPathPolicyV1beta1 = allowedHostPathPolicyV1beta1;
-/**
- * FSGroupStrategyOptions defines the strategy type and options used to create the strategy.
- */
-function fSGroupStrategyOptionsPolicyV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.fSGroupStrategyOptionsPolicyV1beta1 = fSGroupStrategyOptionsPolicyV1beta1;
-/**
- * HostPortRange defines a range of host ports that will be enabled by a policy for pods to use.  It requires both the start and end to be defined.
- */
-function hostPortRangePolicyV1beta1(options) {
-    return ({
-        max: (options && options.max) || 0,
-        min: (options && options.min) || 0,
-    }).merge(options);
-}
-exports.hostPortRangePolicyV1beta1 = hostPortRangePolicyV1beta1;
-/**
- * IDRange provides a min/max of an allowed range of IDs.
- */
-function iDRangePolicyV1beta1(options) {
-    return ({
-        max: (options && options.max) || 0,
-        min: (options && options.min) || 0,
-    }).merge(options);
-}
-exports.iDRangePolicyV1beta1 = iDRangePolicyV1beta1;
-/**
- * PodSecurityPolicy governs the ability to make requests that affect the Security Context that will be applied to a pod and container.
- */
-function podSecurityPolicyPolicyV1beta1(options) {
-    return ({
-        apiVersion: "policy.v1beta1",
-        kind: "PodSecurityPolicy",
-    }).merge(options);
-}
-exports.podSecurityPolicyPolicyV1beta1 = podSecurityPolicyPolicyV1beta1;
-/**
- * PodSecurityPolicyList is a list of PodSecurityPolicy objects.
- */
-function podSecurityPolicyListPolicyV1beta1(options) {
-    return ({
-        apiVersion: "policy.v1beta1",
-        kind: "PodSecurityPolicyList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.podSecurityPolicyListPolicyV1beta1 = podSecurityPolicyListPolicyV1beta1;
-/**
- * PodSecurityPolicySpec defines the policy enforced.
- */
-function podSecurityPolicySpecPolicyV1beta1(options) {
-    return ({
-        fsGroup: (options && options.fsGroup) || fSGroupStrategyOptionsPolicyV1beta1(),
-        runAsUser: (options && options.runAsUser) || runAsUserStrategyOptionsPolicyV1beta1(),
-        seLinux: (options && options.seLinux) || sELinuxStrategyOptionsPolicyV1beta1(),
-        supplementalGroups: (options && options.supplementalGroups) || supplementalGroupsStrategyOptionsPolicyV1beta1(),
-    }).merge(options);
-}
-exports.podSecurityPolicySpecPolicyV1beta1 = podSecurityPolicySpecPolicyV1beta1;
-/**
- * RunAsGroupStrategyOptions defines the strategy type and any options used to create the strategy.
- */
-function runAsGroupStrategyOptionsPolicyV1beta1(options) {
-    return ({
-        rule: (options && options.rule) || null,
-    }).merge(options);
-}
-exports.runAsGroupStrategyOptionsPolicyV1beta1 = runAsGroupStrategyOptionsPolicyV1beta1;
-/**
- * RunAsUserStrategyOptions defines the strategy type and any options used to create the strategy.
- */
-function runAsUserStrategyOptionsPolicyV1beta1(options) {
-    return ({
-        rule: (options && options.rule) || null,
-    }).merge(options);
-}
-exports.runAsUserStrategyOptionsPolicyV1beta1 = runAsUserStrategyOptionsPolicyV1beta1;
-/**
- * SELinuxStrategyOptions defines the strategy type and any options used to create the strategy.
- */
-function sELinuxStrategyOptionsPolicyV1beta1(options) {
-    return ({
-        rule: (options && options.rule) || null,
-    }).merge(options);
-}
-exports.sELinuxStrategyOptionsPolicyV1beta1 = sELinuxStrategyOptionsPolicyV1beta1;
-/**
- * SupplementalGroupsStrategyOptions defines the strategy type and options used to create the strategy.
- */
-function supplementalGroupsStrategyOptionsPolicyV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.supplementalGroupsStrategyOptionsPolicyV1beta1 = supplementalGroupsStrategyOptionsPolicyV1beta1;
-/**
- * RawExtension is used to hold extensions in external versions.
- *
- * To use this, make a field which has RawExtension as its type in your external, versioned struct, and Object in your internal struct. You also need to register your various plugin types.
- *
- * // Internal package: type MyAPIObject struct {
- * 	runtime.TypeMeta `json:",inline"`
- * 	MyPlugin runtime.Object `json:"myPlugin"`
- * } type PluginA struct {
- * 	AOption string `json:"aOption"`
- * }
- *
- * // External package: type MyAPIObject struct {
- * 	runtime.TypeMeta `json:",inline"`
- * 	MyPlugin runtime.RawExtension `json:"myPlugin"`
- * } type PluginA struct {
- * 	AOption string `json:"aOption"`
- * }
- *
- * // On the wire, the JSON will look something like this: {
- * 	"kind":"MyAPIObject",
- * 	"apiVersion":"v1",
- * 	"myPlugin": {
- * 		"kind":"PluginA",
- * 		"aOption":"foo",
- * 	},
- * }
- *
- * So what happens? Decode first uses json or yaml to unmarshal the serialized data into your external MyAPIObject. That causes the raw JSON to be stored, but not unpacked. The next step is to copy (using pkg/conversion) into the internal struct. The runtime package's DefaultScheme has conversion functions installed which will unpack the JSON stored in RawExtension, turning it into the correct object type, and storing it in the Object. (TODO: In the case where the object is of an unknown type, a runtime.Unknown object will be created and stored.)
- */
-function rawExtensionRuntime(options) {
-    return ({
-        Raw: (options && options.Raw) || null,
-    }).merge(options);
-}
-exports.rawExtensionRuntime = rawExtensionRuntime;
-/**
- * APIGroup contains the name, the supported versions, and the preferred version of a group.
- */
-function aPIGroup(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "APIGroup",
-        name: (options && options.name) || null,
-        versions: (options && options.versions) || [],
-    }).merge(options);
-}
-exports.aPIGroup = aPIGroup;
-/**
- * APIGroupList is a list of APIGroup, to allow clients to discover the API at /apis.
- */
-function aPIGroupList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "APIGroupList",
-        groups: (options && options.groups) || [],
-    }).merge(options);
-}
-exports.aPIGroupList = aPIGroupList;
-/**
- * APIResource specifies the name of a resource and whether it is namespaced.
- */
-function aPIResource(options) {
-    return ({
-        kind: "APIResource",
-        name: (options && options.name) || null,
-        namespaced: (options && options.namespaced) || false,
-        singularName: (options && options.singularName) || null,
-        verbs: (options && options.verbs) || [],
-    }).merge(options);
-}
-exports.aPIResource = aPIResource;
-/**
- * APIResourceList is a list of APIResource, it is used to expose the name of the resources supported in a specific group and version, and if the resource is namespaced.
- */
-function aPIResourceList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "APIResourceList",
-        groupVersion: (options && options.groupVersion) || null,
-        resources: (options && options.resources) || [],
-    }).merge(options);
-}
-exports.aPIResourceList = aPIResourceList;
-/**
- * APIService represents a server for a particular GroupVersion. Name must be "version.group".
- */
-function aPIService(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "APIService",
-    }).merge(options);
-}
-exports.aPIService = aPIService;
-function aPIServiceCondition(options) {
+function replicaSetConditionIoK8sApiAppsV1beta2(options) {
     return ({
         status: (options && options.status) || null,
         type: (options && options.type) || null,
     }).merge(options);
 }
-exports.aPIServiceCondition = aPIServiceCondition;
+exports.replicaSetConditionIoK8sApiAppsV1beta2 = replicaSetConditionIoK8sApiAppsV1beta2;
 /**
- * APIServiceList is a list of APIService objects.
+ * ReplicaSetList is a collection of ReplicaSets.
  */
-function aPIServiceList(options) {
+function replicaSetListIoK8sApiAppsV1beta2(options) {
     return ({
-        apiVersion: "v1",
-        kind: "APIServiceList",
+        apiVersion: "io.k8s.api.apps.v1beta2",
+        kind: "ReplicaSetList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.aPIServiceList = aPIServiceList;
+exports.replicaSetListIoK8sApiAppsV1beta2 = replicaSetListIoK8sApiAppsV1beta2;
 /**
- * APIServiceSpec contains information for locating and communicating with a server. Only https is supported, though you are able to disable certificate verification.
+ * ReplicaSetSpec is the specification of a ReplicaSet.
  */
-function aPIServiceSpec(options) {
+function replicaSetSpecIoK8sApiAppsV1beta2(options) {
     return ({
-        groupPriorityMinimum: (options && options.groupPriorityMinimum) || 0,
-        service: (options && options.service) || serviceReference(),
-        versionPriority: (options && options.versionPriority) || 0,
+        selector: (options && options.selector) || labelSelectorIoK8sApimachineryPkgApisMetaV1(),
     }).merge(options);
 }
-exports.aPIServiceSpec = aPIServiceSpec;
+exports.replicaSetSpecIoK8sApiAppsV1beta2 = replicaSetSpecIoK8sApiAppsV1beta2;
 /**
- * APIServiceStatus contains derived information about an API server
+ * ReplicaSetStatus represents the current status of a ReplicaSet.
  */
-function aPIServiceStatus(options) {
+function replicaSetStatusIoK8sApiAppsV1beta2(options) {
+    return ({
+        replicas: (options && options.replicas) || 0,
+    }).merge(options);
+}
+exports.replicaSetStatusIoK8sApiAppsV1beta2 = replicaSetStatusIoK8sApiAppsV1beta2;
+/**
+ * Spec to control the desired behavior of daemon set rolling update.
+ */
+function rollingUpdateDaemonSetIoK8sApiAppsV1beta2(options) {
     return ({}).merge(options);
 }
-exports.aPIServiceStatus = aPIServiceStatus;
+exports.rollingUpdateDaemonSetIoK8sApiAppsV1beta2 = rollingUpdateDaemonSetIoK8sApiAppsV1beta2;
 /**
- * APIVersions lists the versions that are available, to allow clients to discover the API at /api, which is the root path of the legacy v1 API.
+ * Spec to control the desired behavior of rolling update.
  */
-function aPIVersions(options) {
+function rollingUpdateDeploymentIoK8sApiAppsV1beta2(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateDeploymentIoK8sApiAppsV1beta2 = rollingUpdateDeploymentIoK8sApiAppsV1beta2;
+/**
+ * RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
+ */
+function rollingUpdateStatefulSetStrategyIoK8sApiAppsV1beta2(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateStatefulSetStrategyIoK8sApiAppsV1beta2 = rollingUpdateStatefulSetStrategyIoK8sApiAppsV1beta2;
+/**
+ * Scale represents a scaling request for a resource.
+ */
+function scaleIoK8sApiAppsV1beta2(options) {
     return ({
-        apiVersion: "v1",
-        kind: "APIVersions",
-        serverAddressByClientCIDRs: (options && options.serverAddressByClientCIDRs) || [],
-        versions: (options && options.versions) || [],
+        apiVersion: "io.k8s.api.apps.v1beta2",
+        kind: "Scale",
     }).merge(options);
 }
-exports.aPIVersions = aPIVersions;
+exports.scaleIoK8sApiAppsV1beta2 = scaleIoK8sApiAppsV1beta2;
+/**
+ * ScaleSpec describes the attributes of a scale subresource
+ */
+function scaleSpecIoK8sApiAppsV1beta2(options) {
+    return ({}).merge(options);
+}
+exports.scaleSpecIoK8sApiAppsV1beta2 = scaleSpecIoK8sApiAppsV1beta2;
+/**
+ * ScaleStatus represents the current status of a scale subresource.
+ */
+function scaleStatusIoK8sApiAppsV1beta2(options) {
+    return ({
+        replicas: (options && options.replicas) || 0,
+    }).merge(options);
+}
+exports.scaleStatusIoK8sApiAppsV1beta2 = scaleStatusIoK8sApiAppsV1beta2;
+/**
+ * DEPRECATED - This group version of StatefulSet is deprecated by apps/v1/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:
+ *  - Network: A single stable DNS and hostname.
+ *  - Storage: As many VolumeClaims as requested.
+ * The StatefulSet guarantees that a given network identity will always map to the same storage identity.
+ */
+function statefulSetIoK8sApiAppsV1beta2(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta2",
+        kind: "StatefulSet",
+    }).merge(options);
+}
+exports.statefulSetIoK8sApiAppsV1beta2 = statefulSetIoK8sApiAppsV1beta2;
+/**
+ * StatefulSetCondition describes the state of a statefulset at a certain point.
+ */
+function statefulSetConditionIoK8sApiAppsV1beta2(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.statefulSetConditionIoK8sApiAppsV1beta2 = statefulSetConditionIoK8sApiAppsV1beta2;
+/**
+ * StatefulSetList is a collection of StatefulSets.
+ */
+function statefulSetListIoK8sApiAppsV1beta2(options) {
+    return ({
+        apiVersion: "io.k8s.api.apps.v1beta2",
+        kind: "StatefulSetList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.statefulSetListIoK8sApiAppsV1beta2 = statefulSetListIoK8sApiAppsV1beta2;
+/**
+ * A StatefulSetSpec is the specification of a StatefulSet.
+ */
+function statefulSetSpecIoK8sApiAppsV1beta2(options) {
+    return ({
+        selector: (options && options.selector) || labelSelectorIoK8sApimachineryPkgApisMetaV1(),
+        serviceName: (options && options.serviceName) || null,
+        template: (options && options.template) || podTemplateSpec(),
+    }).merge(options);
+}
+exports.statefulSetSpecIoK8sApiAppsV1beta2 = statefulSetSpecIoK8sApiAppsV1beta2;
+/**
+ * StatefulSetStatus represents the current state of a StatefulSet.
+ */
+function statefulSetStatusIoK8sApiAppsV1beta2(options) {
+    return ({
+        replicas: (options && options.replicas) || 0,
+    }).merge(options);
+}
+exports.statefulSetStatusIoK8sApiAppsV1beta2 = statefulSetStatusIoK8sApiAppsV1beta2;
+/**
+ * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.
+ */
+function statefulSetUpdateStrategyIoK8sApiAppsV1beta2(options) {
+    return ({}).merge(options);
+}
+exports.statefulSetUpdateStrategyIoK8sApiAppsV1beta2 = statefulSetUpdateStrategyIoK8sApiAppsV1beta2;
+/**
+ * BoundObjectReference is a reference to an object that a token is bound to.
+ */
+function boundObjectReferenceIoK8sApiAuthenticationV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authentication.v1",
+        kind: "BoundObjectReference",
+    }).merge(options);
+}
+exports.boundObjectReferenceIoK8sApiAuthenticationV1 = boundObjectReferenceIoK8sApiAuthenticationV1;
+/**
+ * TokenRequest requests a token for a given service account.
+ */
+function tokenRequestIoK8sApiAuthenticationV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authentication.v1",
+        kind: "TokenRequest",
+        spec: (options && options.spec) || tokenRequestSpecIoK8sApiAuthenticationV1(),
+    }).merge(options);
+}
+exports.tokenRequestIoK8sApiAuthenticationV1 = tokenRequestIoK8sApiAuthenticationV1;
+/**
+ * TokenRequestSpec contains client provided parameters of a token request.
+ */
+function tokenRequestSpecIoK8sApiAuthenticationV1(options) {
+    return ({
+        audiences: (options && options.audiences) || [],
+    }).merge(options);
+}
+exports.tokenRequestSpecIoK8sApiAuthenticationV1 = tokenRequestSpecIoK8sApiAuthenticationV1;
+/**
+ * TokenRequestStatus is the result of a token request.
+ */
+function tokenRequestStatusIoK8sApiAuthenticationV1(options) {
+    return ({
+        expirationTimestamp: (options && options.expirationTimestamp) || timeIoK8sApimachineryPkgApisMetaV1(),
+        token: (options && options.token) || null,
+    }).merge(options);
+}
+exports.tokenRequestStatusIoK8sApiAuthenticationV1 = tokenRequestStatusIoK8sApiAuthenticationV1;
+/**
+ * TokenReview attempts to authenticate a token to a known user. Note: TokenReview requests may be cached by the webhook token authenticator plugin in the kube-apiserver.
+ */
+function tokenReviewIoK8sApiAuthenticationV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authentication.v1",
+        kind: "TokenReview",
+        spec: (options && options.spec) || tokenReviewSpecIoK8sApiAuthenticationV1(),
+    }).merge(options);
+}
+exports.tokenReviewIoK8sApiAuthenticationV1 = tokenReviewIoK8sApiAuthenticationV1;
+/**
+ * TokenReviewSpec is a description of the token authentication request.
+ */
+function tokenReviewSpecIoK8sApiAuthenticationV1(options) {
+    return ({}).merge(options);
+}
+exports.tokenReviewSpecIoK8sApiAuthenticationV1 = tokenReviewSpecIoK8sApiAuthenticationV1;
+/**
+ * TokenReviewStatus is the result of the token authentication request.
+ */
+function tokenReviewStatusIoK8sApiAuthenticationV1(options) {
+    return ({}).merge(options);
+}
+exports.tokenReviewStatusIoK8sApiAuthenticationV1 = tokenReviewStatusIoK8sApiAuthenticationV1;
+/**
+ * UserInfo holds the information about the user needed to implement the user.Info interface.
+ */
+function userInfoIoK8sApiAuthenticationV1(options) {
+    return ({}).merge(options);
+}
+exports.userInfoIoK8sApiAuthenticationV1 = userInfoIoK8sApiAuthenticationV1;
+/**
+ * TokenReview attempts to authenticate a token to a known user. Note: TokenReview requests may be cached by the webhook token authenticator plugin in the kube-apiserver.
+ */
+function tokenReviewIoK8sApiAuthenticationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authentication.v1beta1",
+        kind: "TokenReview",
+        spec: (options && options.spec) || tokenReviewSpecIoK8sApiAuthenticationV1beta1(),
+    }).merge(options);
+}
+exports.tokenReviewIoK8sApiAuthenticationV1beta1 = tokenReviewIoK8sApiAuthenticationV1beta1;
+/**
+ * TokenReviewSpec is a description of the token authentication request.
+ */
+function tokenReviewSpecIoK8sApiAuthenticationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.tokenReviewSpecIoK8sApiAuthenticationV1beta1 = tokenReviewSpecIoK8sApiAuthenticationV1beta1;
+/**
+ * TokenReviewStatus is the result of the token authentication request.
+ */
+function tokenReviewStatusIoK8sApiAuthenticationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.tokenReviewStatusIoK8sApiAuthenticationV1beta1 = tokenReviewStatusIoK8sApiAuthenticationV1beta1;
+/**
+ * UserInfo holds the information about the user needed to implement the user.Info interface.
+ */
+function userInfoIoK8sApiAuthenticationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.userInfoIoK8sApiAuthenticationV1beta1 = userInfoIoK8sApiAuthenticationV1beta1;
+/**
+ * LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.
+ */
+function localSubjectAccessReviewIoK8sApiAuthorizationV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authorization.v1",
+        kind: "LocalSubjectAccessReview",
+        spec: (options && options.spec) || subjectAccessReviewSpecIoK8sApiAuthorizationV1(),
+    }).merge(options);
+}
+exports.localSubjectAccessReviewIoK8sApiAuthorizationV1 = localSubjectAccessReviewIoK8sApiAuthorizationV1;
+/**
+ * NonResourceAttributes includes the authorization attributes available for non-resource requests to the Authorizer interface
+ */
+function nonResourceAttributesIoK8sApiAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.nonResourceAttributesIoK8sApiAuthorizationV1 = nonResourceAttributesIoK8sApiAuthorizationV1;
+/**
+ * NonResourceRule holds information that describes a rule for the non-resource
+ */
+function nonResourceRuleIoK8sApiAuthorizationV1(options) {
+    return ({
+        verbs: (options && options.verbs) || [],
+    }).merge(options);
+}
+exports.nonResourceRuleIoK8sApiAuthorizationV1 = nonResourceRuleIoK8sApiAuthorizationV1;
+/**
+ * ResourceAttributes includes the authorization attributes available for resource requests to the Authorizer interface
+ */
+function resourceAttributesIoK8sApiAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.resourceAttributesIoK8sApiAuthorizationV1 = resourceAttributesIoK8sApiAuthorizationV1;
+/**
+ * ResourceRule is the list of actions the subject is allowed to perform on resources. The list ordering isn't significant, may contain duplicates, and possibly be incomplete.
+ */
+function resourceRuleIoK8sApiAuthorizationV1(options) {
+    return ({
+        verbs: (options && options.verbs) || [],
+    }).merge(options);
+}
+exports.resourceRuleIoK8sApiAuthorizationV1 = resourceRuleIoK8sApiAuthorizationV1;
+/**
+ * SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means "in all namespaces".  Self is a special case, because users should always be able to check whether they can perform an action
+ */
+function selfSubjectAccessReviewIoK8sApiAuthorizationV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authorization.v1",
+        kind: "SelfSubjectAccessReview",
+        spec: (options && options.spec) || selfSubjectAccessReviewSpecIoK8sApiAuthorizationV1(),
+    }).merge(options);
+}
+exports.selfSubjectAccessReviewIoK8sApiAuthorizationV1 = selfSubjectAccessReviewIoK8sApiAuthorizationV1;
+/**
+ * SelfSubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
+ */
+function selfSubjectAccessReviewSpecIoK8sApiAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.selfSubjectAccessReviewSpecIoK8sApiAuthorizationV1 = selfSubjectAccessReviewSpecIoK8sApiAuthorizationV1;
+/**
+ * SelfSubjectRulesReview enumerates the set of actions the current user can perform within a namespace. The returned list of actions may be incomplete depending on the server's authorization mode, and any errors experienced during the evaluation. SelfSubjectRulesReview should be used by UIs to show/hide actions, or to quickly let an end user reason about their permissions. It should NOT Be used by external systems to drive authorization decisions as this raises confused deputy, cache lifetime/revocation, and correctness concerns. SubjectAccessReview, and LocalAccessReview are the correct way to defer authorization decisions to the API server.
+ */
+function selfSubjectRulesReviewIoK8sApiAuthorizationV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authorization.v1",
+        kind: "SelfSubjectRulesReview",
+        spec: (options && options.spec) || selfSubjectRulesReviewSpecIoK8sApiAuthorizationV1(),
+    }).merge(options);
+}
+exports.selfSubjectRulesReviewIoK8sApiAuthorizationV1 = selfSubjectRulesReviewIoK8sApiAuthorizationV1;
+function selfSubjectRulesReviewSpecIoK8sApiAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.selfSubjectRulesReviewSpecIoK8sApiAuthorizationV1 = selfSubjectRulesReviewSpecIoK8sApiAuthorizationV1;
+/**
+ * SubjectAccessReview checks whether or not a user or group can perform an action.
+ */
+function subjectAccessReviewIoK8sApiAuthorizationV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authorization.v1",
+        kind: "SubjectAccessReview",
+        spec: (options && options.spec) || subjectAccessReviewSpecIoK8sApiAuthorizationV1(),
+    }).merge(options);
+}
+exports.subjectAccessReviewIoK8sApiAuthorizationV1 = subjectAccessReviewIoK8sApiAuthorizationV1;
+/**
+ * SubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
+ */
+function subjectAccessReviewSpecIoK8sApiAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.subjectAccessReviewSpecIoK8sApiAuthorizationV1 = subjectAccessReviewSpecIoK8sApiAuthorizationV1;
+/**
+ * SubjectAccessReviewStatus
+ */
+function subjectAccessReviewStatusIoK8sApiAuthorizationV1(options) {
+    return ({
+        allowed: (options && options.allowed) || false,
+    }).merge(options);
+}
+exports.subjectAccessReviewStatusIoK8sApiAuthorizationV1 = subjectAccessReviewStatusIoK8sApiAuthorizationV1;
+/**
+ * SubjectRulesReviewStatus contains the result of a rules check. This check can be incomplete depending on the set of authorizers the server is configured with and any errors experienced during evaluation. Because authorization rules are additive, if a rule appears in a list it's safe to assume the subject has that permission, even if that list is incomplete.
+ */
+function subjectRulesReviewStatusIoK8sApiAuthorizationV1(options) {
+    return ({
+        incomplete: (options && options.incomplete) || false,
+        nonResourceRules: (options && options.nonResourceRules) || [],
+        resourceRules: (options && options.resourceRules) || [],
+    }).merge(options);
+}
+exports.subjectRulesReviewStatusIoK8sApiAuthorizationV1 = subjectRulesReviewStatusIoK8sApiAuthorizationV1;
+/**
+ * LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.
+ */
+function localSubjectAccessReviewIoK8sApiAuthorizationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authorization.v1beta1",
+        kind: "LocalSubjectAccessReview",
+        spec: (options && options.spec) || subjectAccessReviewSpecIoK8sApiAuthorizationV1beta1(),
+    }).merge(options);
+}
+exports.localSubjectAccessReviewIoK8sApiAuthorizationV1beta1 = localSubjectAccessReviewIoK8sApiAuthorizationV1beta1;
+/**
+ * NonResourceAttributes includes the authorization attributes available for non-resource requests to the Authorizer interface
+ */
+function nonResourceAttributesIoK8sApiAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.nonResourceAttributesIoK8sApiAuthorizationV1beta1 = nonResourceAttributesIoK8sApiAuthorizationV1beta1;
+/**
+ * NonResourceRule holds information that describes a rule for the non-resource
+ */
+function nonResourceRuleIoK8sApiAuthorizationV1beta1(options) {
+    return ({
+        verbs: (options && options.verbs) || [],
+    }).merge(options);
+}
+exports.nonResourceRuleIoK8sApiAuthorizationV1beta1 = nonResourceRuleIoK8sApiAuthorizationV1beta1;
+/**
+ * ResourceAttributes includes the authorization attributes available for resource requests to the Authorizer interface
+ */
+function resourceAttributesIoK8sApiAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.resourceAttributesIoK8sApiAuthorizationV1beta1 = resourceAttributesIoK8sApiAuthorizationV1beta1;
+/**
+ * ResourceRule is the list of actions the subject is allowed to perform on resources. The list ordering isn't significant, may contain duplicates, and possibly be incomplete.
+ */
+function resourceRuleIoK8sApiAuthorizationV1beta1(options) {
+    return ({
+        verbs: (options && options.verbs) || [],
+    }).merge(options);
+}
+exports.resourceRuleIoK8sApiAuthorizationV1beta1 = resourceRuleIoK8sApiAuthorizationV1beta1;
+/**
+ * SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means "in all namespaces".  Self is a special case, because users should always be able to check whether they can perform an action
+ */
+function selfSubjectAccessReviewIoK8sApiAuthorizationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authorization.v1beta1",
+        kind: "SelfSubjectAccessReview",
+        spec: (options && options.spec) || selfSubjectAccessReviewSpecIoK8sApiAuthorizationV1beta1(),
+    }).merge(options);
+}
+exports.selfSubjectAccessReviewIoK8sApiAuthorizationV1beta1 = selfSubjectAccessReviewIoK8sApiAuthorizationV1beta1;
+/**
+ * SelfSubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
+ */
+function selfSubjectAccessReviewSpecIoK8sApiAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.selfSubjectAccessReviewSpecIoK8sApiAuthorizationV1beta1 = selfSubjectAccessReviewSpecIoK8sApiAuthorizationV1beta1;
+/**
+ * SelfSubjectRulesReview enumerates the set of actions the current user can perform within a namespace. The returned list of actions may be incomplete depending on the server's authorization mode, and any errors experienced during the evaluation. SelfSubjectRulesReview should be used by UIs to show/hide actions, or to quickly let an end user reason about their permissions. It should NOT Be used by external systems to drive authorization decisions as this raises confused deputy, cache lifetime/revocation, and correctness concerns. SubjectAccessReview, and LocalAccessReview are the correct way to defer authorization decisions to the API server.
+ */
+function selfSubjectRulesReviewIoK8sApiAuthorizationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authorization.v1beta1",
+        kind: "SelfSubjectRulesReview",
+        spec: (options && options.spec) || selfSubjectRulesReviewSpecIoK8sApiAuthorizationV1beta1(),
+    }).merge(options);
+}
+exports.selfSubjectRulesReviewIoK8sApiAuthorizationV1beta1 = selfSubjectRulesReviewIoK8sApiAuthorizationV1beta1;
+function selfSubjectRulesReviewSpecIoK8sApiAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.selfSubjectRulesReviewSpecIoK8sApiAuthorizationV1beta1 = selfSubjectRulesReviewSpecIoK8sApiAuthorizationV1beta1;
+/**
+ * SubjectAccessReview checks whether or not a user or group can perform an action.
+ */
+function subjectAccessReviewIoK8sApiAuthorizationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.authorization.v1beta1",
+        kind: "SubjectAccessReview",
+        spec: (options && options.spec) || subjectAccessReviewSpecIoK8sApiAuthorizationV1beta1(),
+    }).merge(options);
+}
+exports.subjectAccessReviewIoK8sApiAuthorizationV1beta1 = subjectAccessReviewIoK8sApiAuthorizationV1beta1;
+/**
+ * SubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
+ */
+function subjectAccessReviewSpecIoK8sApiAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.subjectAccessReviewSpecIoK8sApiAuthorizationV1beta1 = subjectAccessReviewSpecIoK8sApiAuthorizationV1beta1;
+/**
+ * SubjectAccessReviewStatus
+ */
+function subjectAccessReviewStatusIoK8sApiAuthorizationV1beta1(options) {
+    return ({
+        allowed: (options && options.allowed) || false,
+    }).merge(options);
+}
+exports.subjectAccessReviewStatusIoK8sApiAuthorizationV1beta1 = subjectAccessReviewStatusIoK8sApiAuthorizationV1beta1;
+/**
+ * SubjectRulesReviewStatus contains the result of a rules check. This check can be incomplete depending on the set of authorizers the server is configured with and any errors experienced during evaluation. Because authorization rules are additive, if a rule appears in a list it's safe to assume the subject has that permission, even if that list is incomplete.
+ */
+function subjectRulesReviewStatusIoK8sApiAuthorizationV1beta1(options) {
+    return ({
+        incomplete: (options && options.incomplete) || false,
+        nonResourceRules: (options && options.nonResourceRules) || [],
+        resourceRules: (options && options.resourceRules) || [],
+    }).merge(options);
+}
+exports.subjectRulesReviewStatusIoK8sApiAuthorizationV1beta1 = subjectRulesReviewStatusIoK8sApiAuthorizationV1beta1;
+/**
+ * CrossVersionObjectReference contains enough information to let you identify the referred resource.
+ */
+function crossVersionObjectReferenceIoK8sApiAutoscalingV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.autoscaling.v1",
+        kind: "CrossVersionObjectReference",
+        name: (options && options.name) || null,
+    }).merge(options);
+}
+exports.crossVersionObjectReferenceIoK8sApiAutoscalingV1 = crossVersionObjectReferenceIoK8sApiAutoscalingV1;
+/**
+ * configuration of a horizontal pod autoscaler.
+ */
+function horizontalPodAutoscalerIoK8sApiAutoscalingV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.autoscaling.v1",
+        kind: "HorizontalPodAutoscaler",
+    }).merge(options);
+}
+exports.horizontalPodAutoscalerIoK8sApiAutoscalingV1 = horizontalPodAutoscalerIoK8sApiAutoscalingV1;
+/**
+ * list of horizontal pod autoscaler objects.
+ */
+function horizontalPodAutoscalerListIoK8sApiAutoscalingV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.autoscaling.v1",
+        kind: "HorizontalPodAutoscalerList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.horizontalPodAutoscalerListIoK8sApiAutoscalingV1 = horizontalPodAutoscalerListIoK8sApiAutoscalingV1;
+/**
+ * specification of a horizontal pod autoscaler.
+ */
+function horizontalPodAutoscalerSpecIoK8sApiAutoscalingV1(options) {
+    return ({
+        maxReplicas: (options && options.maxReplicas) || 0,
+        scaleTargetRef: (options && options.scaleTargetRef) || crossVersionObjectReferenceIoK8sApiAutoscalingV1(),
+    }).merge(options);
+}
+exports.horizontalPodAutoscalerSpecIoK8sApiAutoscalingV1 = horizontalPodAutoscalerSpecIoK8sApiAutoscalingV1;
+/**
+ * current status of a horizontal pod autoscaler
+ */
+function horizontalPodAutoscalerStatusIoK8sApiAutoscalingV1(options) {
+    return ({
+        currentReplicas: (options && options.currentReplicas) || 0,
+        desiredReplicas: (options && options.desiredReplicas) || 0,
+    }).merge(options);
+}
+exports.horizontalPodAutoscalerStatusIoK8sApiAutoscalingV1 = horizontalPodAutoscalerStatusIoK8sApiAutoscalingV1;
+/**
+ * Scale represents a scaling request for a resource.
+ */
+function scaleIoK8sApiAutoscalingV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.autoscaling.v1",
+        kind: "Scale",
+    }).merge(options);
+}
+exports.scaleIoK8sApiAutoscalingV1 = scaleIoK8sApiAutoscalingV1;
+/**
+ * ScaleSpec describes the attributes of a scale subresource.
+ */
+function scaleSpecIoK8sApiAutoscalingV1(options) {
+    return ({}).merge(options);
+}
+exports.scaleSpecIoK8sApiAutoscalingV1 = scaleSpecIoK8sApiAutoscalingV1;
+/**
+ * ScaleStatus represents the current status of a scale subresource.
+ */
+function scaleStatusIoK8sApiAutoscalingV1(options) {
+    return ({
+        replicas: (options && options.replicas) || 0,
+    }).merge(options);
+}
+exports.scaleStatusIoK8sApiAutoscalingV1 = scaleStatusIoK8sApiAutoscalingV1;
+/**
+ * CrossVersionObjectReference contains enough information to let you identify the referred resource.
+ */
+function crossVersionObjectReferenceIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.autoscaling.v2beta1",
+        kind: "CrossVersionObjectReference",
+        name: (options && options.name) || null,
+    }).merge(options);
+}
+exports.crossVersionObjectReferenceIoK8sApiAutoscalingV2beta1 = crossVersionObjectReferenceIoK8sApiAutoscalingV2beta1;
+/**
+ * ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster). Exactly one "target" type should be set.
+ */
+function externalMetricSourceIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        metricName: (options && options.metricName) || null,
+    }).merge(options);
+}
+exports.externalMetricSourceIoK8sApiAutoscalingV2beta1 = externalMetricSourceIoK8sApiAutoscalingV2beta1;
+/**
+ * ExternalMetricStatus indicates the current value of a global metric not associated with any Kubernetes object.
+ */
+function externalMetricStatusIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        currentValue: (options && options.currentValue) || quantityIoK8sApimachineryPkgApiResource(),
+        metricName: (options && options.metricName) || null,
+    }).merge(options);
+}
+exports.externalMetricStatusIoK8sApiAutoscalingV2beta1 = externalMetricStatusIoK8sApiAutoscalingV2beta1;
+/**
+ * HorizontalPodAutoscaler is the configuration for a horizontal pod autoscaler, which automatically manages the replica count of any resource implementing the scale subresource based on the metrics specified.
+ */
+function horizontalPodAutoscalerIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.autoscaling.v2beta1",
+        kind: "HorizontalPodAutoscaler",
+    }).merge(options);
+}
+exports.horizontalPodAutoscalerIoK8sApiAutoscalingV2beta1 = horizontalPodAutoscalerIoK8sApiAutoscalingV2beta1;
+/**
+ * HorizontalPodAutoscalerCondition describes the state of a HorizontalPodAutoscaler at a certain point.
+ */
+function horizontalPodAutoscalerConditionIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.horizontalPodAutoscalerConditionIoK8sApiAutoscalingV2beta1 = horizontalPodAutoscalerConditionIoK8sApiAutoscalingV2beta1;
+/**
+ * HorizontalPodAutoscaler is a list of horizontal pod autoscaler objects.
+ */
+function horizontalPodAutoscalerListIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.autoscaling.v2beta1",
+        kind: "HorizontalPodAutoscalerList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.horizontalPodAutoscalerListIoK8sApiAutoscalingV2beta1 = horizontalPodAutoscalerListIoK8sApiAutoscalingV2beta1;
+/**
+ * HorizontalPodAutoscalerSpec describes the desired functionality of the HorizontalPodAutoscaler.
+ */
+function horizontalPodAutoscalerSpecIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        maxReplicas: (options && options.maxReplicas) || 0,
+        scaleTargetRef: (options && options.scaleTargetRef) || crossVersionObjectReferenceIoK8sApiAutoscalingV2beta1(),
+    }).merge(options);
+}
+exports.horizontalPodAutoscalerSpecIoK8sApiAutoscalingV2beta1 = horizontalPodAutoscalerSpecIoK8sApiAutoscalingV2beta1;
+/**
+ * HorizontalPodAutoscalerStatus describes the current status of a horizontal pod autoscaler.
+ */
+function horizontalPodAutoscalerStatusIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        conditions: (options && options.conditions) || [],
+        currentReplicas: (options && options.currentReplicas) || 0,
+        desiredReplicas: (options && options.desiredReplicas) || 0,
+    }).merge(options);
+}
+exports.horizontalPodAutoscalerStatusIoK8sApiAutoscalingV2beta1 = horizontalPodAutoscalerStatusIoK8sApiAutoscalingV2beta1;
+/**
+ * MetricSpec specifies how to scale based on a single metric (only `type` and one other matching field should be set at once).
+ */
+function metricSpecIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.metricSpecIoK8sApiAutoscalingV2beta1 = metricSpecIoK8sApiAutoscalingV2beta1;
+/**
+ * MetricStatus describes the last-read state of a single metric.
+ */
+function metricStatusIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.metricStatusIoK8sApiAutoscalingV2beta1 = metricStatusIoK8sApiAutoscalingV2beta1;
+/**
+ * ObjectMetricSource indicates how to scale on a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
+ */
+function objectMetricSourceIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        metricName: (options && options.metricName) || null,
+        target: (options && options.target) || crossVersionObjectReferenceIoK8sApiAutoscalingV2beta1(),
+        targetValue: (options && options.targetValue) || quantityIoK8sApimachineryPkgApiResource(),
+    }).merge(options);
+}
+exports.objectMetricSourceIoK8sApiAutoscalingV2beta1 = objectMetricSourceIoK8sApiAutoscalingV2beta1;
+/**
+ * ObjectMetricStatus indicates the current value of a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
+ */
+function objectMetricStatusIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        currentValue: (options && options.currentValue) || quantityIoK8sApimachineryPkgApiResource(),
+        metricName: (options && options.metricName) || null,
+        target: (options && options.target) || crossVersionObjectReferenceIoK8sApiAutoscalingV2beta1(),
+    }).merge(options);
+}
+exports.objectMetricStatusIoK8sApiAutoscalingV2beta1 = objectMetricStatusIoK8sApiAutoscalingV2beta1;
+/**
+ * PodsMetricSource indicates how to scale on a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value.
+ */
+function podsMetricSourceIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        metricName: (options && options.metricName) || null,
+        targetAverageValue: (options && options.targetAverageValue) || quantityIoK8sApimachineryPkgApiResource(),
+    }).merge(options);
+}
+exports.podsMetricSourceIoK8sApiAutoscalingV2beta1 = podsMetricSourceIoK8sApiAutoscalingV2beta1;
+/**
+ * PodsMetricStatus indicates the current value of a metric describing each pod in the current scale target (for example, transactions-processed-per-second).
+ */
+function podsMetricStatusIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        currentAverageValue: (options && options.currentAverageValue) || quantityIoK8sApimachineryPkgApiResource(),
+        metricName: (options && options.metricName) || null,
+    }).merge(options);
+}
+exports.podsMetricStatusIoK8sApiAutoscalingV2beta1 = podsMetricStatusIoK8sApiAutoscalingV2beta1;
+/**
+ * ResourceMetricSource indicates how to scale on a resource metric known to Kubernetes, as specified in requests and limits, describing each pod in the current scale target (e.g. CPU or memory).  The values will be averaged together before being compared to the target.  Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.  Only one "target" type should be set.
+ */
+function resourceMetricSourceIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        name: (options && options.name) || null,
+    }).merge(options);
+}
+exports.resourceMetricSourceIoK8sApiAutoscalingV2beta1 = resourceMetricSourceIoK8sApiAutoscalingV2beta1;
+/**
+ * ResourceMetricStatus indicates the current value of a resource metric known to Kubernetes, as specified in requests and limits, describing each pod in the current scale target (e.g. CPU or memory).  Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.
+ */
+function resourceMetricStatusIoK8sApiAutoscalingV2beta1(options) {
+    return ({
+        currentAverageValue: (options && options.currentAverageValue) || quantityIoK8sApimachineryPkgApiResource(),
+        name: (options && options.name) || null,
+    }).merge(options);
+}
+exports.resourceMetricStatusIoK8sApiAutoscalingV2beta1 = resourceMetricStatusIoK8sApiAutoscalingV2beta1;
+/**
+ * Job represents the configuration of a single job.
+ */
+function jobIoK8sApiBatchV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.batch.v1",
+        kind: "Job",
+    }).merge(options);
+}
+exports.jobIoK8sApiBatchV1 = jobIoK8sApiBatchV1;
+/**
+ * JobCondition describes current state of a job.
+ */
+function jobConditionIoK8sApiBatchV1(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.jobConditionIoK8sApiBatchV1 = jobConditionIoK8sApiBatchV1;
+/**
+ * JobList is a collection of jobs.
+ */
+function jobListIoK8sApiBatchV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.batch.v1",
+        kind: "JobList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.jobListIoK8sApiBatchV1 = jobListIoK8sApiBatchV1;
+/**
+ * JobSpec describes how the job execution will look like.
+ */
+function jobSpecIoK8sApiBatchV1(options) {
+    return ({
+        template: (options && options.template) || podTemplateSpec(),
+    }).merge(options);
+}
+exports.jobSpecIoK8sApiBatchV1 = jobSpecIoK8sApiBatchV1;
+/**
+ * JobStatus represents the current state of a Job.
+ */
+function jobStatusIoK8sApiBatchV1(options) {
+    return ({}).merge(options);
+}
+exports.jobStatusIoK8sApiBatchV1 = jobStatusIoK8sApiBatchV1;
+/**
+ * CronJob represents the configuration of a single cron job.
+ */
+function cronJobIoK8sApiBatchV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.batch.v1beta1",
+        kind: "CronJob",
+    }).merge(options);
+}
+exports.cronJobIoK8sApiBatchV1beta1 = cronJobIoK8sApiBatchV1beta1;
+/**
+ * CronJobList is a collection of cron jobs.
+ */
+function cronJobListIoK8sApiBatchV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.batch.v1beta1",
+        kind: "CronJobList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.cronJobListIoK8sApiBatchV1beta1 = cronJobListIoK8sApiBatchV1beta1;
+/**
+ * CronJobSpec describes how the job execution will look like and when it will actually run.
+ */
+function cronJobSpecIoK8sApiBatchV1beta1(options) {
+    return ({
+        jobTemplate: (options && options.jobTemplate) || jobTemplateSpecIoK8sApiBatchV1beta1(),
+        schedule: (options && options.schedule) || null,
+    }).merge(options);
+}
+exports.cronJobSpecIoK8sApiBatchV1beta1 = cronJobSpecIoK8sApiBatchV1beta1;
+/**
+ * CronJobStatus represents the current state of a cron job.
+ */
+function cronJobStatusIoK8sApiBatchV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.cronJobStatusIoK8sApiBatchV1beta1 = cronJobStatusIoK8sApiBatchV1beta1;
+/**
+ * JobTemplateSpec describes the data a Job should have when created from a template
+ */
+function jobTemplateSpecIoK8sApiBatchV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.jobTemplateSpecIoK8sApiBatchV1beta1 = jobTemplateSpecIoK8sApiBatchV1beta1;
+/**
+ * Describes a certificate signing request
+ */
+function certificateSigningRequestIoK8sApiCertificatesV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.certificates.v1beta1",
+        kind: "CertificateSigningRequest",
+    }).merge(options);
+}
+exports.certificateSigningRequestIoK8sApiCertificatesV1beta1 = certificateSigningRequestIoK8sApiCertificatesV1beta1;
+function certificateSigningRequestConditionIoK8sApiCertificatesV1beta1(options) {
+    return ({
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.certificateSigningRequestConditionIoK8sApiCertificatesV1beta1 = certificateSigningRequestConditionIoK8sApiCertificatesV1beta1;
+function certificateSigningRequestListIoK8sApiCertificatesV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.certificates.v1beta1",
+        kind: "CertificateSigningRequestList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.certificateSigningRequestListIoK8sApiCertificatesV1beta1 = certificateSigningRequestListIoK8sApiCertificatesV1beta1;
+/**
+ * This information is immutable after the request is created. Only the Request and Usages fields can be set on creation, other fields are derived by Kubernetes and cannot be modified by users.
+ */
+function certificateSigningRequestSpecIoK8sApiCertificatesV1beta1(options) {
+    return ({
+        request: (options && options.request) || null,
+    }).merge(options);
+}
+exports.certificateSigningRequestSpecIoK8sApiCertificatesV1beta1 = certificateSigningRequestSpecIoK8sApiCertificatesV1beta1;
+function certificateSigningRequestStatusIoK8sApiCertificatesV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.certificateSigningRequestStatusIoK8sApiCertificatesV1beta1 = certificateSigningRequestStatusIoK8sApiCertificatesV1beta1;
 /**
  * Represents a Persistent Disk resource in AWS.
  *
@@ -634,13 +1554,6 @@ function affinity(options) {
     return ({}).merge(options);
 }
 exports.affinity = affinity;
-/**
- * AggregationRule describes how to locate ClusterRoles to aggregate into the ClusterRole
- */
-function aggregationRule(options) {
-    return ({}).merge(options);
-}
-exports.aggregationRule = aggregationRule;
 /**
  * AttachedVolume describes a volume attached to a node
  */
@@ -687,7 +1600,7 @@ exports.azureFileVolumeSource = azureFileVolumeSource;
  */
 function binding(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "Binding",
         target: (options && options.target) || objectReference(),
     }).merge(options);
@@ -754,50 +1667,6 @@ function clientIPConfig(options) {
 }
 exports.clientIPConfig = clientIPConfig;
 /**
- * ClusterRole is a cluster level, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding or ClusterRoleBinding.
- */
-function clusterRole(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "ClusterRole",
-        rules: (options && options.rules) || [],
-    }).merge(options);
-}
-exports.clusterRole = clusterRole;
-/**
- * ClusterRoleBinding references a ClusterRole, but not contain it.  It can reference a ClusterRole in the global namespace, and adds who information via Subject.
- */
-function clusterRoleBinding(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "ClusterRoleBinding",
-        roleRef: (options && options.roleRef) || roleRef(),
-    }).merge(options);
-}
-exports.clusterRoleBinding = clusterRoleBinding;
-/**
- * ClusterRoleBindingList is a collection of ClusterRoleBindings
- */
-function clusterRoleBindingList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "ClusterRoleBindingList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.clusterRoleBindingList = clusterRoleBindingList;
-/**
- * ClusterRoleList is a collection of ClusterRoles
- */
-function clusterRoleList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "ClusterRoleList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.clusterRoleList = clusterRoleList;
-/**
  * Information about the condition of a component.
  */
 function componentCondition(options) {
@@ -812,7 +1681,7 @@ exports.componentCondition = componentCondition;
  */
 function componentStatus(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ComponentStatus",
     }).merge(options);
 }
@@ -822,7 +1691,7 @@ exports.componentStatus = componentStatus;
  */
 function componentStatusList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ComponentStatusList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -833,7 +1702,7 @@ exports.componentStatusList = componentStatusList;
  */
 function configMap(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ConfigMap",
     }).merge(options);
 }
@@ -861,7 +1730,7 @@ exports.configMapKeySelector = configMapKeySelector;
  */
 function configMapList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ConfigMapList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -967,39 +1836,6 @@ function containerStatus(options) {
 }
 exports.containerStatus = containerStatus;
 /**
- * ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this object is beta. However, it may be subject to name and representation changes in future releases, and clients should not depend on its stability. It is primarily for internal use by controllers.
- */
-function controllerRevision(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "ControllerRevision",
-        revision: (options && options.revision) || 0,
-    }).merge(options);
-}
-exports.controllerRevision = controllerRevision;
-/**
- * ControllerRevisionList is a resource containing a list of ControllerRevision objects.
- */
-function controllerRevisionList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "ControllerRevisionList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.controllerRevisionList = controllerRevisionList;
-/**
- * CrossVersionObjectReference contains enough information to let you identify the referred resource.
- */
-function crossVersionObjectReference(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "CrossVersionObjectReference",
-        name: (options && options.name) || null,
-    }).merge(options);
-}
-exports.crossVersionObjectReference = crossVersionObjectReference;
-/**
  * DaemonEndpoint contains information about a single Daemon endpoint.
  */
 function daemonEndpoint(options) {
@@ -1008,131 +1844,6 @@ function daemonEndpoint(options) {
     }).merge(options);
 }
 exports.daemonEndpoint = daemonEndpoint;
-/**
- * DaemonSet represents the configuration of a daemon set.
- */
-function daemonSet(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "DaemonSet",
-    }).merge(options);
-}
-exports.daemonSet = daemonSet;
-/**
- * DaemonSetCondition describes the state of a DaemonSet at a certain point.
- */
-function daemonSetCondition(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.daemonSetCondition = daemonSetCondition;
-/**
- * DaemonSetList is a collection of daemon sets.
- */
-function daemonSetList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "DaemonSetList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.daemonSetList = daemonSetList;
-/**
- * DaemonSetSpec is the specification of a daemon set.
- */
-function daemonSetSpec(options) {
-    return ({
-        selector: (options && options.selector) || labelSelector(),
-        template: (options && options.template) || podTemplateSpec(),
-    }).merge(options);
-}
-exports.daemonSetSpec = daemonSetSpec;
-/**
- * DaemonSetStatus represents the current status of a daemon set.
- */
-function daemonSetStatus(options) {
-    return ({
-        currentNumberScheduled: (options && options.currentNumberScheduled) || 0,
-        desiredNumberScheduled: (options && options.desiredNumberScheduled) || 0,
-        numberMisscheduled: (options && options.numberMisscheduled) || 0,
-        numberReady: (options && options.numberReady) || 0,
-    }).merge(options);
-}
-exports.daemonSetStatus = daemonSetStatus;
-/**
- * DaemonSetUpdateStrategy is a struct used to control the update strategy for a DaemonSet.
- */
-function daemonSetUpdateStrategy(options) {
-    return ({}).merge(options);
-}
-exports.daemonSetUpdateStrategy = daemonSetUpdateStrategy;
-/**
- * DeleteOptions may be provided when deleting an API object.
- */
-function deleteOptions(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "DeleteOptions",
-    }).merge(options);
-}
-exports.deleteOptions = deleteOptions;
-/**
- * Deployment enables declarative updates for Pods and ReplicaSets.
- */
-function deployment(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "Deployment",
-    }).merge(options);
-}
-exports.deployment = deployment;
-/**
- * DeploymentCondition describes the state of a deployment at a certain point.
- */
-function deploymentCondition(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.deploymentCondition = deploymentCondition;
-/**
- * DeploymentList is a list of Deployments.
- */
-function deploymentList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "DeploymentList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.deploymentList = deploymentList;
-/**
- * DeploymentSpec is the specification of the desired behavior of the Deployment.
- */
-function deploymentSpec(options) {
-    return ({
-        selector: (options && options.selector) || labelSelector(),
-        template: (options && options.template) || podTemplateSpec(),
-    }).merge(options);
-}
-exports.deploymentSpec = deploymentSpec;
-/**
- * DeploymentStatus is the most recently observed status of the Deployment.
- */
-function deploymentStatus(options) {
-    return ({}).merge(options);
-}
-exports.deploymentStatus = deploymentStatus;
-/**
- * DeploymentStrategy describes how to replace existing pods with new ones.
- */
-function deploymentStrategy(options) {
-    return ({}).merge(options);
-}
-exports.deploymentStrategy = deploymentStrategy;
 /**
  * Represents downward API info for projecting into a projected volume. Note that this is identical to a downwardAPI volume source without the default mode.
  */
@@ -1211,7 +1922,7 @@ exports.endpointSubset = endpointSubset;
  */
 function endpoints(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "Endpoints",
     }).merge(options);
 }
@@ -1221,7 +1932,7 @@ exports.endpoints = endpoints;
  */
 function endpointsList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "EndpointsList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -1255,10 +1966,10 @@ exports.envVarSource = envVarSource;
  */
 function event(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "Event",
         involvedObject: (options && options.involvedObject) || objectReference(),
-        metadata: (options && options.metadata) || objectMeta(),
+        metadata: (options && options.metadata) || objectMetaIoK8sApimachineryPkgApisMetaV1(),
     }).merge(options);
 }
 exports.event = event;
@@ -1267,7 +1978,7 @@ exports.event = event;
  */
 function eventList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "EventList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -1351,16 +2062,6 @@ exports.gitRepoVolumeSource = gitRepoVolumeSource;
 /**
  * Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
  */
-function glusterfsPersistentVolumeSource(options) {
-    return ({
-        endpoints: (options && options.endpoints) || null,
-        path: (options && options.path) || null,
-    }).merge(options);
-}
-exports.glusterfsPersistentVolumeSource = glusterfsPersistentVolumeSource;
-/**
- * Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
- */
 function glusterfsVolumeSource(options) {
     return ({
         endpoints: (options && options.endpoints) || null,
@@ -1369,21 +2070,11 @@ function glusterfsVolumeSource(options) {
 }
 exports.glusterfsVolumeSource = glusterfsVolumeSource;
 /**
- * GroupVersion contains the "group/version" and "version" string of a version. It is made a struct to keep extensibility.
- */
-function groupVersionForDiscovery(options) {
-    return ({
-        groupVersion: (options && options.groupVersion) || null,
-        version: (options && options.version) || null,
-    }).merge(options);
-}
-exports.groupVersionForDiscovery = groupVersionForDiscovery;
-/**
  * HTTPGetAction describes an action based on HTTP Get requests.
  */
 function hTTPGetAction(options) {
     return ({
-        port: (options && options.port) || null,
+        port: (options && options.port) || intOrStringIoK8sApimachineryPkgUtilIntstr(),
     }).merge(options);
 }
 exports.hTTPGetAction = hTTPGetAction;
@@ -1405,47 +2096,6 @@ function handler(options) {
 }
 exports.handler = handler;
 /**
- * configuration of a horizontal pod autoscaler.
- */
-function horizontalPodAutoscaler(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "HorizontalPodAutoscaler",
-    }).merge(options);
-}
-exports.horizontalPodAutoscaler = horizontalPodAutoscaler;
-/**
- * list of horizontal pod autoscaler objects.
- */
-function horizontalPodAutoscalerList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "HorizontalPodAutoscalerList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerList = horizontalPodAutoscalerList;
-/**
- * specification of a horizontal pod autoscaler.
- */
-function horizontalPodAutoscalerSpec(options) {
-    return ({
-        maxReplicas: (options && options.maxReplicas) || 0,
-        scaleTargetRef: (options && options.scaleTargetRef) || crossVersionObjectReference(),
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerSpec = horizontalPodAutoscalerSpec;
-/**
- * current status of a horizontal pod autoscaler
- */
-function horizontalPodAutoscalerStatus(options) {
-    return ({
-        currentReplicas: (options && options.currentReplicas) || 0,
-        desiredReplicas: (options && options.desiredReplicas) || 0,
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerStatus = horizontalPodAutoscalerStatus;
-/**
  * HostAlias holds the mapping between IP and hostnames that will be injected as an entry in the pod's hosts file.
  */
 function hostAlias(options) {
@@ -1461,15 +2111,6 @@ function hostPathVolumeSource(options) {
     }).merge(options);
 }
 exports.hostPathVolumeSource = hostPathVolumeSource;
-/**
- * IPBlock describes a particular CIDR (Ex. "192.168.1.1/24") that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The except entry describes CIDRs that should not be included within this rule.
- */
-function iPBlock(options) {
-    return ({
-        cidr: (options && options.cidr) || null,
-    }).merge(options);
-}
-exports.iPBlock = iPBlock;
 /**
  * ISCSIPersistentVolumeSource represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
  */
@@ -1493,71 +2134,6 @@ function iSCSIVolumeSource(options) {
 }
 exports.iSCSIVolumeSource = iSCSIVolumeSource;
 /**
- * Initializer is information about an initializer that has not yet completed.
- */
-function initializer(options) {
-    return ({
-        name: (options && options.name) || null,
-    }).merge(options);
-}
-exports.initializer = initializer;
-/**
- * Initializers tracks the progress of initialization.
- */
-function initializers(options) {
-    return ({
-        pending: (options && options.pending) || [],
-    }).merge(options);
-}
-exports.initializers = initializers;
-/**
- * Job represents the configuration of a single job.
- */
-function job(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "Job",
-    }).merge(options);
-}
-exports.job = job;
-/**
- * JobCondition describes current state of a job.
- */
-function jobCondition(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.jobCondition = jobCondition;
-/**
- * JobList is a collection of jobs.
- */
-function jobList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "JobList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.jobList = jobList;
-/**
- * JobSpec describes how the job execution will look like.
- */
-function jobSpec(options) {
-    return ({
-        template: (options && options.template) || podTemplateSpec(),
-    }).merge(options);
-}
-exports.jobSpec = jobSpec;
-/**
- * JobStatus represents the current state of a Job.
- */
-function jobStatus(options) {
-    return ({}).merge(options);
-}
-exports.jobStatus = jobStatus;
-/**
  * Maps a string key to a path within a volume.
  */
 function keyToPath(options) {
@@ -1567,23 +2143,6 @@ function keyToPath(options) {
     }).merge(options);
 }
 exports.keyToPath = keyToPath;
-/**
- * A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.
- */
-function labelSelector(options) {
-    return ({}).merge(options);
-}
-exports.labelSelector = labelSelector;
-/**
- * A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
- */
-function labelSelectorRequirement(options) {
-    return ({
-        key: (options && options.key) || null,
-        operator: (options && options.operator) || null,
-    }).merge(options);
-}
-exports.labelSelectorRequirement = labelSelectorRequirement;
 /**
  * Lifecycle describes actions that the management system should take in response to container lifecycle events. For the PostStart and PreStop lifecycle handlers, management of the container blocks until the action is complete, unless the container process fails, in which case the handler is aborted.
  */
@@ -1596,7 +2155,7 @@ exports.lifecycle = lifecycle;
  */
 function limitRange(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "LimitRange",
     }).merge(options);
 }
@@ -1613,7 +2172,7 @@ exports.limitRangeItem = limitRangeItem;
  */
 function limitRangeList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "LimitRangeList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -1628,13 +2187,6 @@ function limitRangeSpec(options) {
     }).merge(options);
 }
 exports.limitRangeSpec = limitRangeSpec;
-/**
- * ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
- */
-function listMeta(options) {
-    return ({}).merge(options);
-}
-exports.listMeta = listMeta;
 /**
  * LoadBalancerIngress represents the status of a load-balancer ingress point: traffic intended for the service should be sent to an ingress point.
  */
@@ -1656,17 +2208,6 @@ function localObjectReference(options) {
     return ({}).merge(options);
 }
 exports.localObjectReference = localObjectReference;
-/**
- * LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.
- */
-function localSubjectAccessReview(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "LocalSubjectAccessReview",
-        spec: (options && options.spec) || subjectAccessReviewSpec(),
-    }).merge(options);
-}
-exports.localSubjectAccessReview = localSubjectAccessReview;
 /**
  * Local represents directly-attached storage with node affinity (Beta feature)
  */
@@ -1691,7 +2232,7 @@ exports.nFSVolumeSource = nFSVolumeSource;
  */
 function namespace(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "Namespace",
     }).merge(options);
 }
@@ -1701,7 +2242,7 @@ exports.namespace = namespace;
  */
 function namespaceList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "NamespaceList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -1722,69 +2263,11 @@ function namespaceStatus(options) {
 }
 exports.namespaceStatus = namespaceStatus;
 /**
- * NetworkPolicy describes what network traffic is allowed for a set of Pods
- */
-function networkPolicy(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "NetworkPolicy",
-    }).merge(options);
-}
-exports.networkPolicy = networkPolicy;
-/**
- * NetworkPolicyEgressRule describes a particular set of traffic that is allowed out of pods matched by a NetworkPolicySpec's podSelector. The traffic must match both ports and to. This type is beta-level in 1.8
- */
-function networkPolicyEgressRule(options) {
-    return ({}).merge(options);
-}
-exports.networkPolicyEgressRule = networkPolicyEgressRule;
-/**
- * NetworkPolicyIngressRule describes a particular set of traffic that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The traffic must match both ports and from.
- */
-function networkPolicyIngressRule(options) {
-    return ({}).merge(options);
-}
-exports.networkPolicyIngressRule = networkPolicyIngressRule;
-/**
- * NetworkPolicyList is a list of NetworkPolicy objects.
- */
-function networkPolicyList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "NetworkPolicyList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.networkPolicyList = networkPolicyList;
-/**
- * NetworkPolicyPeer describes a peer to allow traffic from. Only certain combinations of fields are allowed
- */
-function networkPolicyPeer(options) {
-    return ({}).merge(options);
-}
-exports.networkPolicyPeer = networkPolicyPeer;
-/**
- * NetworkPolicyPort describes a port to allow traffic on
- */
-function networkPolicyPort(options) {
-    return ({}).merge(options);
-}
-exports.networkPolicyPort = networkPolicyPort;
-/**
- * NetworkPolicySpec provides the specification of a NetworkPolicy
- */
-function networkPolicySpec(options) {
-    return ({
-        podSelector: (options && options.podSelector) || labelSelector(),
-    }).merge(options);
-}
-exports.networkPolicySpec = networkPolicySpec;
-/**
  * Node is a worker node in Kubernetes. Each node will have a unique identifier in the cache (i.e. in etcd).
  */
 function node(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "Node",
     }).merge(options);
 }
@@ -1842,7 +2325,7 @@ exports.nodeDaemonEndpoints = nodeDaemonEndpoints;
  */
 function nodeList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "NodeList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -1907,66 +2390,31 @@ function nodeSystemInfo(options) {
 }
 exports.nodeSystemInfo = nodeSystemInfo;
 /**
- * NonResourceAttributes includes the authorization attributes available for non-resource requests to the Authorizer interface
- */
-function nonResourceAttributes(options) {
-    return ({}).merge(options);
-}
-exports.nonResourceAttributes = nonResourceAttributes;
-/**
- * NonResourceRule holds information that describes a rule for the non-resource
- */
-function nonResourceRule(options) {
-    return ({
-        verbs: (options && options.verbs) || [],
-    }).merge(options);
-}
-exports.nonResourceRule = nonResourceRule;
-/**
  * ObjectFieldSelector selects an APIVersioned field of an object.
  */
 function objectFieldSelector(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         fieldPath: (options && options.fieldPath) || null,
     }).merge(options);
 }
 exports.objectFieldSelector = objectFieldSelector;
 /**
- * ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
- */
-function objectMeta(options) {
-    return ({}).merge(options);
-}
-exports.objectMeta = objectMeta;
-/**
  * ObjectReference contains enough information to let you inspect or modify the referred object.
  */
 function objectReference(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ObjectReference",
     }).merge(options);
 }
 exports.objectReference = objectReference;
 /**
- * OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.
- */
-function ownerReference(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "OwnerReference",
-        name: (options && options.name) || null,
-        uid: (options && options.uid) || null,
-    }).merge(options);
-}
-exports.ownerReference = ownerReference;
-/**
  * PersistentVolume (PV) is a storage resource provisioned by an administrator. It is analogous to a node. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
  */
 function persistentVolume(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "PersistentVolume",
     }).merge(options);
 }
@@ -1976,7 +2424,7 @@ exports.persistentVolume = persistentVolume;
  */
 function persistentVolumeClaim(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "PersistentVolumeClaim",
     }).merge(options);
 }
@@ -1996,7 +2444,7 @@ exports.persistentVolumeClaimCondition = persistentVolumeClaimCondition;
  */
 function persistentVolumeClaimList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "PersistentVolumeClaimList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -2030,7 +2478,7 @@ exports.persistentVolumeClaimVolumeSource = persistentVolumeClaimVolumeSource;
  */
 function persistentVolumeList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "PersistentVolumeList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -2064,7 +2512,7 @@ exports.photonPersistentDiskVolumeSource = photonPersistentDiskVolumeSource;
  */
 function pod(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "Pod",
     }).merge(options);
 }
@@ -2121,7 +2569,7 @@ exports.podDNSConfigOption = podDNSConfigOption;
  */
 function podList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "PodList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -2164,7 +2612,7 @@ exports.podStatus = podStatus;
  */
 function podTemplate(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "PodTemplate",
     }).merge(options);
 }
@@ -2174,7 +2622,7 @@ exports.podTemplate = podTemplate;
  */
 function podTemplateList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "PodTemplateList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -2188,15 +2636,6 @@ function podTemplateSpec(options) {
 }
 exports.podTemplateSpec = podTemplateSpec;
 /**
- * PolicyRule holds information that describes a policy rule, but does not contain information about who the rule applies to or which namespace the rule applies to.
- */
-function policyRule(options) {
-    return ({
-        verbs: (options && options.verbs) || [],
-    }).merge(options);
-}
-exports.policyRule = policyRule;
-/**
  * PortworxVolumeSource represents a Portworx volume resource.
  */
 function portworxVolumeSource(options) {
@@ -2205,13 +2644,6 @@ function portworxVolumeSource(options) {
     }).merge(options);
 }
 exports.portworxVolumeSource = portworxVolumeSource;
-/**
- * Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
- */
-function preconditions(options) {
-    return ({}).merge(options);
-}
-exports.preconditions = preconditions;
 /**
  * An empty preferred scheduling term matches all objects with implicit weight 0 (i.e. it's a no-op). A null preferred scheduling term matches no objects (i.e. is also a no-op).
  */
@@ -2269,60 +2701,11 @@ function rBDVolumeSource(options) {
 }
 exports.rBDVolumeSource = rBDVolumeSource;
 /**
- * ReplicaSet ensures that a specified number of pod replicas are running at any given time.
- */
-function replicaSet(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "ReplicaSet",
-    }).merge(options);
-}
-exports.replicaSet = replicaSet;
-/**
- * ReplicaSetCondition describes the state of a replica set at a certain point.
- */
-function replicaSetCondition(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.replicaSetCondition = replicaSetCondition;
-/**
- * ReplicaSetList is a collection of ReplicaSets.
- */
-function replicaSetList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "ReplicaSetList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.replicaSetList = replicaSetList;
-/**
- * ReplicaSetSpec is the specification of a ReplicaSet.
- */
-function replicaSetSpec(options) {
-    return ({
-        selector: (options && options.selector) || labelSelector(),
-    }).merge(options);
-}
-exports.replicaSetSpec = replicaSetSpec;
-/**
- * ReplicaSetStatus represents the current status of a ReplicaSet.
- */
-function replicaSetStatus(options) {
-    return ({
-        replicas: (options && options.replicas) || 0,
-    }).merge(options);
-}
-exports.replicaSetStatus = replicaSetStatus;
-/**
  * ReplicationController represents the configuration of a replication controller.
  */
 function replicationController(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ReplicationController",
     }).merge(options);
 }
@@ -2342,7 +2725,7 @@ exports.replicationControllerCondition = replicationControllerCondition;
  */
 function replicationControllerList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ReplicationControllerList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -2365,13 +2748,6 @@ function replicationControllerStatus(options) {
 }
 exports.replicationControllerStatus = replicationControllerStatus;
 /**
- * ResourceAttributes includes the authorization attributes available for resource requests to the Authorizer interface
- */
-function resourceAttributes(options) {
-    return ({}).merge(options);
-}
-exports.resourceAttributes = resourceAttributes;
-/**
  * ResourceFieldSelector represents container resources (cpu, memory) and their output format
  */
 function resourceFieldSelector(options) {
@@ -2385,7 +2761,7 @@ exports.resourceFieldSelector = resourceFieldSelector;
  */
 function resourceQuota(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ResourceQuota",
     }).merge(options);
 }
@@ -2395,7 +2771,7 @@ exports.resourceQuota = resourceQuota;
  */
 function resourceQuotaList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ResourceQuotaList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -2423,107 +2799,12 @@ function resourceRequirements(options) {
 }
 exports.resourceRequirements = resourceRequirements;
 /**
- * ResourceRule is the list of actions the subject is allowed to perform on resources. The list ordering isn't significant, may contain duplicates, and possibly be incomplete.
- */
-function resourceRule(options) {
-    return ({
-        verbs: (options && options.verbs) || [],
-    }).merge(options);
-}
-exports.resourceRule = resourceRule;
-/**
- * Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding.
- */
-function role(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "Role",
-        rules: (options && options.rules) || [],
-    }).merge(options);
-}
-exports.role = role;
-/**
- * RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace.
- */
-function roleBinding(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "RoleBinding",
-        roleRef: (options && options.roleRef) || roleRef(),
-    }).merge(options);
-}
-exports.roleBinding = roleBinding;
-/**
- * RoleBindingList is a collection of RoleBindings
- */
-function roleBindingList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "RoleBindingList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.roleBindingList = roleBindingList;
-/**
- * RoleList is a collection of Roles
- */
-function roleList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "RoleList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.roleList = roleList;
-/**
- * RoleRef contains information that points to the role being used
- */
-function roleRef(options) {
-    return ({
-        kind: "RoleRef",
-        apiGroup: (options && options.apiGroup) || null,
-        name: (options && options.name) || null,
-    }).merge(options);
-}
-exports.roleRef = roleRef;
-/**
- * Spec to control the desired behavior of daemon set rolling update.
- */
-function rollingUpdateDaemonSet(options) {
-    return ({}).merge(options);
-}
-exports.rollingUpdateDaemonSet = rollingUpdateDaemonSet;
-/**
- * Spec to control the desired behavior of rolling update.
- */
-function rollingUpdateDeployment(options) {
-    return ({}).merge(options);
-}
-exports.rollingUpdateDeployment = rollingUpdateDeployment;
-/**
- * RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
- */
-function rollingUpdateStatefulSetStrategy(options) {
-    return ({}).merge(options);
-}
-exports.rollingUpdateStatefulSetStrategy = rollingUpdateStatefulSetStrategy;
-/**
  * SELinuxOptions are the labels to be applied to the container
  */
 function sELinuxOptions(options) {
     return ({}).merge(options);
 }
 exports.sELinuxOptions = sELinuxOptions;
-/**
- * Scale represents a scaling request for a resource.
- */
-function scale(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "Scale",
-    }).merge(options);
-}
-exports.scale = scale;
 /**
  * ScaleIOPersistentVolumeSource represents a persistent ScaleIO volume
  */
@@ -2547,22 +2828,6 @@ function scaleIOVolumeSource(options) {
 }
 exports.scaleIOVolumeSource = scaleIOVolumeSource;
 /**
- * ScaleSpec describes the attributes of a scale subresource.
- */
-function scaleSpec(options) {
-    return ({}).merge(options);
-}
-exports.scaleSpec = scaleSpec;
-/**
- * ScaleStatus represents the current status of a scale subresource.
- */
-function scaleStatus(options) {
-    return ({
-        replicas: (options && options.replicas) || 0,
-    }).merge(options);
-}
-exports.scaleStatus = scaleStatus;
-/**
  * A scope selector represents the AND of the selectors represented by the scoped-resource selector requirements.
  */
 function scopeSelector(options) {
@@ -2584,7 +2849,7 @@ exports.scopedResourceSelectorRequirement = scopedResourceSelectorRequirement;
  */
 function secret(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "Secret",
     }).merge(options);
 }
@@ -2612,7 +2877,7 @@ exports.secretKeySelector = secretKeySelector;
  */
 function secretList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "SecretList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -2651,54 +2916,11 @@ function securityContext(options) {
 }
 exports.securityContext = securityContext;
 /**
- * SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means "in all namespaces".  Self is a special case, because users should always be able to check whether they can perform an action
- */
-function selfSubjectAccessReview(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "SelfSubjectAccessReview",
-        spec: (options && options.spec) || selfSubjectAccessReviewSpec(),
-    }).merge(options);
-}
-exports.selfSubjectAccessReview = selfSubjectAccessReview;
-/**
- * SelfSubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
- */
-function selfSubjectAccessReviewSpec(options) {
-    return ({}).merge(options);
-}
-exports.selfSubjectAccessReviewSpec = selfSubjectAccessReviewSpec;
-/**
- * SelfSubjectRulesReview enumerates the set of actions the current user can perform within a namespace. The returned list of actions may be incomplete depending on the server's authorization mode, and any errors experienced during the evaluation. SelfSubjectRulesReview should be used by UIs to show/hide actions, or to quickly let an end user reason about their permissions. It should NOT Be used by external systems to drive authorization decisions as this raises confused deputy, cache lifetime/revocation, and correctness concerns. SubjectAccessReview, and LocalAccessReview are the correct way to defer authorization decisions to the API server.
- */
-function selfSubjectRulesReview(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "SelfSubjectRulesReview",
-        spec: (options && options.spec) || selfSubjectRulesReviewSpec(),
-    }).merge(options);
-}
-exports.selfSubjectRulesReview = selfSubjectRulesReview;
-function selfSubjectRulesReviewSpec(options) {
-    return ({}).merge(options);
-}
-exports.selfSubjectRulesReviewSpec = selfSubjectRulesReviewSpec;
-/**
- * ServerAddressByClientCIDR helps the client to determine the server address that they should use, depending on the clientCIDR that they match.
- */
-function serverAddressByClientCIDR(options) {
-    return ({
-        clientCIDR: (options && options.clientCIDR) || null,
-        serverAddress: (options && options.serverAddress) || null,
-    }).merge(options);
-}
-exports.serverAddressByClientCIDR = serverAddressByClientCIDR;
-/**
  * Service is a named abstraction of software service (for example, mysql) consisting of local port (for example 3306) that the proxy listens on, and the selector that determines which pods will answer requests sent through the proxy.
  */
 function service(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "Service",
     }).merge(options);
 }
@@ -2708,7 +2930,7 @@ exports.service = service;
  */
 function serviceAccount(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ServiceAccount",
     }).merge(options);
 }
@@ -2718,7 +2940,7 @@ exports.serviceAccount = serviceAccount;
  */
 function serviceAccountList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ServiceAccountList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -2738,7 +2960,7 @@ exports.serviceAccountTokenProjection = serviceAccountTokenProjection;
  */
 function serviceList(options) {
     return ({
-        apiVersion: "v1",
+        apiVersion: "io.k8s.api.core.v1",
         kind: "ServiceList",
         items: (options && options.items) || [],
     }).merge(options);
@@ -2753,13 +2975,6 @@ function servicePort(options) {
     }).merge(options);
 }
 exports.servicePort = servicePort;
-/**
- * ServiceReference holds a reference to Service.legacy.k8s.io
- */
-function serviceReference(options) {
-    return ({}).merge(options);
-}
-exports.serviceReference = serviceReference;
 /**
  * ServiceSpec describes the attributes that a user creates on a service.
  */
@@ -2782,117 +2997,6 @@ function sessionAffinityConfig(options) {
 }
 exports.sessionAffinityConfig = sessionAffinityConfig;
 /**
- * StatefulSet represents a set of pods with consistent identities. Identities are defined as:
- *  - Network: A single stable DNS and hostname.
- *  - Storage: As many VolumeClaims as requested.
- * The StatefulSet guarantees that a given network identity will always map to the same storage identity.
- */
-function statefulSet(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "StatefulSet",
-    }).merge(options);
-}
-exports.statefulSet = statefulSet;
-/**
- * StatefulSetCondition describes the state of a statefulset at a certain point.
- */
-function statefulSetCondition(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.statefulSetCondition = statefulSetCondition;
-/**
- * StatefulSetList is a collection of StatefulSets.
- */
-function statefulSetList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "StatefulSetList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.statefulSetList = statefulSetList;
-/**
- * A StatefulSetSpec is the specification of a StatefulSet.
- */
-function statefulSetSpec(options) {
-    return ({
-        selector: (options && options.selector) || labelSelector(),
-        serviceName: (options && options.serviceName) || null,
-        template: (options && options.template) || podTemplateSpec(),
-    }).merge(options);
-}
-exports.statefulSetSpec = statefulSetSpec;
-/**
- * StatefulSetStatus represents the current state of a StatefulSet.
- */
-function statefulSetStatus(options) {
-    return ({
-        replicas: (options && options.replicas) || 0,
-    }).merge(options);
-}
-exports.statefulSetStatus = statefulSetStatus;
-/**
- * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.
- */
-function statefulSetUpdateStrategy(options) {
-    return ({}).merge(options);
-}
-exports.statefulSetUpdateStrategy = statefulSetUpdateStrategy;
-/**
- * Status is a return value for calls that don't return other objects.
- */
-function status(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "Status",
-    }).merge(options);
-}
-exports.status = status;
-/**
- * StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.
- */
-function statusCause(options) {
-    return ({}).merge(options);
-}
-exports.statusCause = statusCause;
-/**
- * StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined.
- */
-function statusDetails(options) {
-    return ({
-        kind: "StatusDetails",
-    }).merge(options);
-}
-exports.statusDetails = statusDetails;
-/**
- * StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.
- *
- * StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.
- */
-function storageClass(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "StorageClass",
-        provisioner: (options && options.provisioner) || null,
-    }).merge(options);
-}
-exports.storageClass = storageClass;
-/**
- * StorageClassList is a collection of storage classes.
- */
-function storageClassList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "StorageClassList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.storageClassList = storageClassList;
-/**
  * Represents a StorageOS persistent volume resource.
  */
 function storageOSPersistentVolumeSource(options) {
@@ -2906,54 +3010,6 @@ function storageOSVolumeSource(options) {
     return ({}).merge(options);
 }
 exports.storageOSVolumeSource = storageOSVolumeSource;
-/**
- * Subject contains a reference to the object or user identities a role binding applies to.  This can either hold a direct API object reference, or a value for non-objects such as user and group names.
- */
-function subject(options) {
-    return ({
-        kind: "Subject",
-        name: (options && options.name) || null,
-    }).merge(options);
-}
-exports.subject = subject;
-/**
- * SubjectAccessReview checks whether or not a user or group can perform an action.
- */
-function subjectAccessReview(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "SubjectAccessReview",
-        spec: (options && options.spec) || subjectAccessReviewSpec(),
-    }).merge(options);
-}
-exports.subjectAccessReview = subjectAccessReview;
-/**
- * SubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
- */
-function subjectAccessReviewSpec(options) {
-    return ({}).merge(options);
-}
-exports.subjectAccessReviewSpec = subjectAccessReviewSpec;
-/**
- * SubjectAccessReviewStatus
- */
-function subjectAccessReviewStatus(options) {
-    return ({
-        allowed: (options && options.allowed) || false,
-    }).merge(options);
-}
-exports.subjectAccessReviewStatus = subjectAccessReviewStatus;
-/**
- * SubjectRulesReviewStatus contains the result of a rules check. This check can be incomplete depending on the set of authorizers the server is configured with and any errors experienced during evaluation. Because authorization rules are additive, if a rule appears in a list it's safe to assume the subject has that permission, even if that list is incomplete.
- */
-function subjectRulesReviewStatus(options) {
-    return ({
-        incomplete: (options && options.incomplete) || false,
-        nonResourceRules: (options && options.nonResourceRules) || [],
-        resourceRules: (options && options.resourceRules) || [],
-    }).merge(options);
-}
-exports.subjectRulesReviewStatus = subjectRulesReviewStatus;
 /**
  * Sysctl defines a kernel parameter to be set
  */
@@ -2969,7 +3025,7 @@ exports.sysctl = sysctl;
  */
 function tCPSocketAction(options) {
     return ({
-        port: (options && options.port) || null,
+        port: (options && options.port) || intOrStringIoK8sApimachineryPkgUtilIntstr(),
     }).merge(options);
 }
 exports.tCPSocketAction = tCPSocketAction;
@@ -2983,31 +3039,6 @@ function taint(options) {
     }).merge(options);
 }
 exports.taint = taint;
-/**
- * TokenReview attempts to authenticate a token to a known user. Note: TokenReview requests may be cached by the webhook token authenticator plugin in the kube-apiserver.
- */
-function tokenReview(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "TokenReview",
-        spec: (options && options.spec) || tokenReviewSpec(),
-    }).merge(options);
-}
-exports.tokenReview = tokenReview;
-/**
- * TokenReviewSpec is a description of the token authentication request.
- */
-function tokenReviewSpec(options) {
-    return ({}).merge(options);
-}
-exports.tokenReviewSpec = tokenReviewSpec;
-/**
- * TokenReviewStatus is the result of the token authentication request.
- */
-function tokenReviewStatus(options) {
-    return ({}).merge(options);
-}
-exports.tokenReviewStatus = tokenReviewStatus;
 /**
  * The pod this Toleration is attached to tolerates any taint that matches the triple <key,value,effect> using the matching operator <operator>.
  */
@@ -3043,13 +3074,6 @@ function typedLocalObjectReference(options) {
 }
 exports.typedLocalObjectReference = typedLocalObjectReference;
 /**
- * UserInfo holds the information about the user needed to implement the user.Info interface.
- */
-function userInfo(options) {
-    return ({}).merge(options);
-}
-exports.userInfo = userInfo;
-/**
  * Volume represents a named volume in a pod that may be accessed by any container in the pod.
  */
 function volume(options) {
@@ -3058,57 +3082,6 @@ function volume(options) {
     }).merge(options);
 }
 exports.volume = volume;
-/**
- * VolumeAttachment captures the intent to attach or detach the specified volume to/from the specified node.
- *
- * VolumeAttachment objects are non-namespaced.
- */
-function volumeAttachment(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "VolumeAttachment",
-        spec: (options && options.spec) || volumeAttachmentSpec(),
-    }).merge(options);
-}
-exports.volumeAttachment = volumeAttachment;
-/**
- * VolumeAttachmentList is a collection of VolumeAttachment objects.
- */
-function volumeAttachmentList(options) {
-    return ({
-        apiVersion: "v1",
-        kind: "VolumeAttachmentList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.volumeAttachmentList = volumeAttachmentList;
-/**
- * VolumeAttachmentSource represents a volume that should be attached. Right now only PersistenVolumes can be attached via external attacher, in future we may allow also inline volumes in pods. Exactly one member can be set.
- */
-function volumeAttachmentSource(options) {
-    return ({}).merge(options);
-}
-exports.volumeAttachmentSource = volumeAttachmentSource;
-/**
- * VolumeAttachmentSpec is the specification of a VolumeAttachment request.
- */
-function volumeAttachmentSpec(options) {
-    return ({
-        attacher: (options && options.attacher) || null,
-        nodeName: (options && options.nodeName) || null,
-        source: (options && options.source) || volumeAttachmentSource(),
-    }).merge(options);
-}
-exports.volumeAttachmentSpec = volumeAttachmentSpec;
-/**
- * VolumeAttachmentStatus is the status of a VolumeAttachment request.
- */
-function volumeAttachmentStatus(options) {
-    return ({
-        attached: (options && options.attached) || false,
-    }).merge(options);
-}
-exports.volumeAttachmentStatus = volumeAttachmentStatus;
 /**
  * volumeDevice describes a mapping of a raw block device within a container.
  */
@@ -3119,13 +3092,6 @@ function volumeDevice(options) {
     }).merge(options);
 }
 exports.volumeDevice = volumeDevice;
-/**
- * VolumeError captures an error encountered during a volume operation.
- */
-function volumeError(options) {
-    return ({}).merge(options);
-}
-exports.volumeError = volumeError;
 /**
  * VolumeMount describes a mounting of a Volume within a container.
  */
@@ -3160,16 +3126,6 @@ function vsphereVirtualDiskVolumeSource(options) {
 }
 exports.vsphereVirtualDiskVolumeSource = vsphereVirtualDiskVolumeSource;
 /**
- * Event represents a single event to a watched resource.
- */
-function watchEvent(options) {
-    return ({
-        object: (options && options.object) || rawExtensionRuntime(),
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.watchEvent = watchEvent;
-/**
  * The weights of all of the matched WeightedPodAffinityTerm fields are added per-node to find the most preferred node(s)
  */
 function weightedPodAffinityTerm(options) {
@@ -3180,706 +3136,65 @@ function weightedPodAffinityTerm(options) {
 }
 exports.weightedPodAffinityTerm = weightedPodAffinityTerm;
 /**
- * AggregationRule describes how to locate ClusterRoles to aggregate into the ClusterRole
+ * AllowedFlexVolume represents a single Flexvolume that is allowed to be used. Deprecated: use AllowedFlexVolume from policy API Group instead.
  */
-function aggregationRuleV1alpha1(options) {
+function allowedFlexVolumeIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        driver: (options && options.driver) || null,
+    }).merge(options);
+}
+exports.allowedFlexVolumeIoK8sApiExtensionsV1beta1 = allowedFlexVolumeIoK8sApiExtensionsV1beta1;
+/**
+ * AllowedHostPath defines the host volume conditions that will be enabled by a policy for pods to use. It requires the path prefix to be defined. Deprecated: use AllowedHostPath from policy API Group instead.
+ */
+function allowedHostPathIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.aggregationRuleV1alpha1 = aggregationRuleV1alpha1;
-/**
- * AuditSink represents a cluster level audit sink
- */
-function auditSinkV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "AuditSink",
-    }).merge(options);
-}
-exports.auditSinkV1alpha1 = auditSinkV1alpha1;
-/**
- * AuditSinkList is a list of AuditSink items.
- */
-function auditSinkListV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "AuditSinkList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.auditSinkListV1alpha1 = auditSinkListV1alpha1;
-/**
- * AuditSinkSpec holds the spec for the audit sink
- */
-function auditSinkSpecV1alpha1(options) {
-    return ({
-        policy: (options && options.policy) || policyV1alpha1(),
-        webhook: (options && options.webhook) || webhookV1alpha1(),
-    }).merge(options);
-}
-exports.auditSinkSpecV1alpha1 = auditSinkSpecV1alpha1;
-/**
- * ClusterRole is a cluster level, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding or ClusterRoleBinding.
- */
-function clusterRoleV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "ClusterRole",
-        rules: (options && options.rules) || [],
-    }).merge(options);
-}
-exports.clusterRoleV1alpha1 = clusterRoleV1alpha1;
-/**
- * ClusterRoleBinding references a ClusterRole, but not contain it.  It can reference a ClusterRole in the global namespace, and adds who information via Subject.
- */
-function clusterRoleBindingV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "ClusterRoleBinding",
-        roleRef: (options && options.roleRef) || roleRefV1alpha1(),
-    }).merge(options);
-}
-exports.clusterRoleBindingV1alpha1 = clusterRoleBindingV1alpha1;
-/**
- * ClusterRoleBindingList is a collection of ClusterRoleBindings
- */
-function clusterRoleBindingListV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "ClusterRoleBindingList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.clusterRoleBindingListV1alpha1 = clusterRoleBindingListV1alpha1;
-/**
- * ClusterRoleList is a collection of ClusterRoles
- */
-function clusterRoleListV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "ClusterRoleList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.clusterRoleListV1alpha1 = clusterRoleListV1alpha1;
-/**
- * Initializer describes the name and the failure policy of an initializer, and what resources it applies to.
- */
-function initializerV1alpha1(options) {
-    return ({
-        name: (options && options.name) || null,
-    }).merge(options);
-}
-exports.initializerV1alpha1 = initializerV1alpha1;
-/**
- * InitializerConfiguration describes the configuration of initializers.
- */
-function initializerConfigurationV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "InitializerConfiguration",
-    }).merge(options);
-}
-exports.initializerConfigurationV1alpha1 = initializerConfigurationV1alpha1;
-/**
- * InitializerConfigurationList is a list of InitializerConfiguration.
- */
-function initializerConfigurationListV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "InitializerConfigurationList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.initializerConfigurationListV1alpha1 = initializerConfigurationListV1alpha1;
-/**
- * PodPreset is a policy resource that defines additional runtime requirements for a Pod.
- */
-function podPresetV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "PodPreset",
-    }).merge(options);
-}
-exports.podPresetV1alpha1 = podPresetV1alpha1;
-/**
- * PodPresetList is a list of PodPreset objects.
- */
-function podPresetListV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "PodPresetList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.podPresetListV1alpha1 = podPresetListV1alpha1;
-/**
- * PodPresetSpec is a description of a pod preset.
- */
-function podPresetSpecV1alpha1(options) {
-    return ({}).merge(options);
-}
-exports.podPresetSpecV1alpha1 = podPresetSpecV1alpha1;
-/**
- * Policy defines the configuration of how audit events are logged
- */
-function policyV1alpha1(options) {
-    return ({
-        level: (options && options.level) || null,
-    }).merge(options);
-}
-exports.policyV1alpha1 = policyV1alpha1;
-/**
- * PolicyRule holds information that describes a policy rule, but does not contain information about who the rule applies to or which namespace the rule applies to.
- */
-function policyRuleV1alpha1(options) {
-    return ({
-        verbs: (options && options.verbs) || [],
-    }).merge(options);
-}
-exports.policyRuleV1alpha1 = policyRuleV1alpha1;
-/**
- * PriorityClass defines mapping from a priority class name to the priority integer value. The value can be any valid integer.
- */
-function priorityClassV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "PriorityClass",
-        value: (options && options.value) || 0,
-    }).merge(options);
-}
-exports.priorityClassV1alpha1 = priorityClassV1alpha1;
-/**
- * PriorityClassList is a collection of priority classes.
- */
-function priorityClassListV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "PriorityClassList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.priorityClassListV1alpha1 = priorityClassListV1alpha1;
-/**
- * Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding.
- */
-function roleV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "Role",
-        rules: (options && options.rules) || [],
-    }).merge(options);
-}
-exports.roleV1alpha1 = roleV1alpha1;
-/**
- * RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace.
- */
-function roleBindingV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "RoleBinding",
-        roleRef: (options && options.roleRef) || roleRefV1alpha1(),
-    }).merge(options);
-}
-exports.roleBindingV1alpha1 = roleBindingV1alpha1;
-/**
- * RoleBindingList is a collection of RoleBindings
- */
-function roleBindingListV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "RoleBindingList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.roleBindingListV1alpha1 = roleBindingListV1alpha1;
-/**
- * RoleList is a collection of Roles
- */
-function roleListV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "RoleList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.roleListV1alpha1 = roleListV1alpha1;
-/**
- * RoleRef contains information that points to the role being used
- */
-function roleRefV1alpha1(options) {
-    return ({
-        kind: "RoleRef",
-        apiGroup: (options && options.apiGroup) || null,
-        name: (options && options.name) || null,
-    }).merge(options);
-}
-exports.roleRefV1alpha1 = roleRefV1alpha1;
-/**
- * Rule is a tuple of APIGroups, APIVersion, and Resources.It is recommended to make sure that all the tuple expansions are valid.
- */
-function ruleV1alpha1(options) {
-    return ({}).merge(options);
-}
-exports.ruleV1alpha1 = ruleV1alpha1;
-/**
- * ServiceReference holds a reference to Service.legacy.k8s.io
- */
-function serviceReferenceV1alpha1(options) {
-    return ({
-        name: (options && options.name) || null,
-        namespace: (options && options.namespace) || null,
-    }).merge(options);
-}
-exports.serviceReferenceV1alpha1 = serviceReferenceV1alpha1;
-/**
- * Subject contains a reference to the object or user identities a role binding applies to.  This can either hold a direct API object reference, or a value for non-objects such as user and group names.
- */
-function subjectV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "Subject",
-        name: (options && options.name) || null,
-    }).merge(options);
-}
-exports.subjectV1alpha1 = subjectV1alpha1;
-/**
- * VolumeAttachment captures the intent to attach or detach the specified volume to/from the specified node.
- *
- * VolumeAttachment objects are non-namespaced.
- */
-function volumeAttachmentV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "VolumeAttachment",
-        spec: (options && options.spec) || volumeAttachmentSpecV1alpha1(),
-    }).merge(options);
-}
-exports.volumeAttachmentV1alpha1 = volumeAttachmentV1alpha1;
-/**
- * VolumeAttachmentList is a collection of VolumeAttachment objects.
- */
-function volumeAttachmentListV1alpha1(options) {
-    return ({
-        apiVersion: "v1alpha1",
-        kind: "VolumeAttachmentList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.volumeAttachmentListV1alpha1 = volumeAttachmentListV1alpha1;
-/**
- * VolumeAttachmentSource represents a volume that should be attached. Right now only PersistenVolumes can be attached via external attacher, in future we may allow also inline volumes in pods. Exactly one member can be set.
- */
-function volumeAttachmentSourceV1alpha1(options) {
-    return ({}).merge(options);
-}
-exports.volumeAttachmentSourceV1alpha1 = volumeAttachmentSourceV1alpha1;
-/**
- * VolumeAttachmentSpec is the specification of a VolumeAttachment request.
- */
-function volumeAttachmentSpecV1alpha1(options) {
-    return ({
-        attacher: (options && options.attacher) || null,
-        nodeName: (options && options.nodeName) || null,
-        source: (options && options.source) || volumeAttachmentSourceV1alpha1(),
-    }).merge(options);
-}
-exports.volumeAttachmentSpecV1alpha1 = volumeAttachmentSpecV1alpha1;
-/**
- * VolumeAttachmentStatus is the status of a VolumeAttachment request.
- */
-function volumeAttachmentStatusV1alpha1(options) {
-    return ({
-        attached: (options && options.attached) || false,
-    }).merge(options);
-}
-exports.volumeAttachmentStatusV1alpha1 = volumeAttachmentStatusV1alpha1;
-/**
- * VolumeError captures an error encountered during a volume operation.
- */
-function volumeErrorV1alpha1(options) {
-    return ({}).merge(options);
-}
-exports.volumeErrorV1alpha1 = volumeErrorV1alpha1;
-/**
- * Webhook holds the configuration of the webhook
- */
-function webhookV1alpha1(options) {
-    return ({
-        clientConfig: (options && options.clientConfig) || webhookClientConfigV1alpha1(),
-    }).merge(options);
-}
-exports.webhookV1alpha1 = webhookV1alpha1;
-/**
- * WebhookClientConfig contains the information to make a connection with the webhook
- */
-function webhookClientConfigV1alpha1(options) {
-    return ({}).merge(options);
-}
-exports.webhookClientConfigV1alpha1 = webhookClientConfigV1alpha1;
-/**
- * WebhookThrottleConfig holds the configuration for throttling events
- */
-function webhookThrottleConfigV1alpha1(options) {
-    return ({}).merge(options);
-}
-exports.webhookThrottleConfigV1alpha1 = webhookThrottleConfigV1alpha1;
-/**
- * APIService represents a server for a particular GroupVersion. Name must be "version.group".
- */
-function aPIServiceV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "APIService",
-    }).merge(options);
-}
-exports.aPIServiceV1beta1 = aPIServiceV1beta1;
-function aPIServiceConditionV1beta1(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.aPIServiceConditionV1beta1 = aPIServiceConditionV1beta1;
-/**
- * APIServiceList is a list of APIService objects.
- */
-function aPIServiceListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "APIServiceList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.aPIServiceListV1beta1 = aPIServiceListV1beta1;
-/**
- * APIServiceSpec contains information for locating and communicating with a server. Only https is supported, though you are able to disable certificate verification.
- */
-function aPIServiceSpecV1beta1(options) {
-    return ({
-        groupPriorityMinimum: (options && options.groupPriorityMinimum) || 0,
-        service: (options && options.service) || serviceReferenceApiregistrationV1beta1(),
-        versionPriority: (options && options.versionPriority) || 0,
-    }).merge(options);
-}
-exports.aPIServiceSpecV1beta1 = aPIServiceSpecV1beta1;
-/**
- * APIServiceStatus contains derived information about an API server
- */
-function aPIServiceStatusV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.aPIServiceStatusV1beta1 = aPIServiceStatusV1beta1;
-/**
- * AggregationRule describes how to locate ClusterRoles to aggregate into the ClusterRole
- */
-function aggregationRuleV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.aggregationRuleV1beta1 = aggregationRuleV1beta1;
-/**
- * Describes a certificate signing request
- */
-function certificateSigningRequestV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "CertificateSigningRequest",
-    }).merge(options);
-}
-exports.certificateSigningRequestV1beta1 = certificateSigningRequestV1beta1;
-function certificateSigningRequestConditionV1beta1(options) {
-    return ({
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.certificateSigningRequestConditionV1beta1 = certificateSigningRequestConditionV1beta1;
-function certificateSigningRequestListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "CertificateSigningRequestList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.certificateSigningRequestListV1beta1 = certificateSigningRequestListV1beta1;
-/**
- * This information is immutable after the request is created. Only the Request and Usages fields can be set on creation, other fields are derived by Kubernetes and cannot be modified by users.
- */
-function certificateSigningRequestSpecV1beta1(options) {
-    return ({
-        request: (options && options.request) || null,
-    }).merge(options);
-}
-exports.certificateSigningRequestSpecV1beta1 = certificateSigningRequestSpecV1beta1;
-function certificateSigningRequestStatusV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.certificateSigningRequestStatusV1beta1 = certificateSigningRequestStatusV1beta1;
-/**
- * ClusterRole is a cluster level, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding or ClusterRoleBinding.
- */
-function clusterRoleV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "ClusterRole",
-        rules: (options && options.rules) || [],
-    }).merge(options);
-}
-exports.clusterRoleV1beta1 = clusterRoleV1beta1;
-/**
- * ClusterRoleBinding references a ClusterRole, but not contain it.  It can reference a ClusterRole in the global namespace, and adds who information via Subject.
- */
-function clusterRoleBindingV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "ClusterRoleBinding",
-        roleRef: (options && options.roleRef) || roleRefV1beta1(),
-    }).merge(options);
-}
-exports.clusterRoleBindingV1beta1 = clusterRoleBindingV1beta1;
-/**
- * ClusterRoleBindingList is a collection of ClusterRoleBindings
- */
-function clusterRoleBindingListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "ClusterRoleBindingList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.clusterRoleBindingListV1beta1 = clusterRoleBindingListV1beta1;
-/**
- * ClusterRoleList is a collection of ClusterRoles
- */
-function clusterRoleListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "ClusterRoleList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.clusterRoleListV1beta1 = clusterRoleListV1beta1;
-/**
- * DEPRECATED - This group version of ControllerRevision is deprecated by apps/v1beta2/ControllerRevision. See the release notes for more information. ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this object is beta. However, it may be subject to name and representation changes in future releases, and clients should not depend on its stability. It is primarily for internal use by controllers.
- */
-function controllerRevisionV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "ControllerRevision",
-        revision: (options && options.revision) || 0,
-    }).merge(options);
-}
-exports.controllerRevisionV1beta1 = controllerRevisionV1beta1;
-/**
- * ControllerRevisionList is a resource containing a list of ControllerRevision objects.
- */
-function controllerRevisionListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "ControllerRevisionList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.controllerRevisionListV1beta1 = controllerRevisionListV1beta1;
-/**
- * CronJob represents the configuration of a single cron job.
- */
-function cronJobV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "CronJob",
-    }).merge(options);
-}
-exports.cronJobV1beta1 = cronJobV1beta1;
-/**
- * CronJobList is a collection of cron jobs.
- */
-function cronJobListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "CronJobList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.cronJobListV1beta1 = cronJobListV1beta1;
-/**
- * CronJobSpec describes how the job execution will look like and when it will actually run.
- */
-function cronJobSpecV1beta1(options) {
-    return ({
-        jobTemplate: (options && options.jobTemplate) || jobTemplateSpecV1beta1(),
-        schedule: (options && options.schedule) || null,
-    }).merge(options);
-}
-exports.cronJobSpecV1beta1 = cronJobSpecV1beta1;
-/**
- * CronJobStatus represents the current state of a cron job.
- */
-function cronJobStatusV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.cronJobStatusV1beta1 = cronJobStatusV1beta1;
-/**
- * CustomResourceColumnDefinition specifies a column for server side printing.
- */
-function customResourceColumnDefinitionV1beta1(options) {
-    return ({
-        JSONPath: (options && options.JSONPath) || null,
-        name: (options && options.name) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.customResourceColumnDefinitionV1beta1 = customResourceColumnDefinitionV1beta1;
-/**
- * CustomResourceConversion describes how to convert different versions of a CR.
- */
-function customResourceConversionV1beta1(options) {
-    return ({
-        strategy: (options && options.strategy) || null,
-    }).merge(options);
-}
-exports.customResourceConversionV1beta1 = customResourceConversionV1beta1;
-/**
- * CustomResourceDefinition represents a resource that should be exposed on the API server.  Its name MUST be in the format <.spec.name>.<.spec.group>.
- */
-function customResourceDefinitionV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "CustomResourceDefinition",
-        spec: (options && options.spec) || customResourceDefinitionSpecV1beta1(),
-    }).merge(options);
-}
-exports.customResourceDefinitionV1beta1 = customResourceDefinitionV1beta1;
-/**
- * CustomResourceDefinitionCondition contains details for the current condition of this pod.
- */
-function customResourceDefinitionConditionV1beta1(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.customResourceDefinitionConditionV1beta1 = customResourceDefinitionConditionV1beta1;
-/**
- * CustomResourceDefinitionList is a list of CustomResourceDefinition objects.
- */
-function customResourceDefinitionListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "CustomResourceDefinitionList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.customResourceDefinitionListV1beta1 = customResourceDefinitionListV1beta1;
-/**
- * CustomResourceDefinitionNames indicates the names to serve this CustomResourceDefinition
- */
-function customResourceDefinitionNamesV1beta1(options) {
-    return ({
-        kind: "CustomResourceDefinitionNames",
-        plural: (options && options.plural) || null,
-    }).merge(options);
-}
-exports.customResourceDefinitionNamesV1beta1 = customResourceDefinitionNamesV1beta1;
-/**
- * CustomResourceDefinitionSpec describes how a user wants their resource to appear
- */
-function customResourceDefinitionSpecV1beta1(options) {
-    return ({
-        group: (options && options.group) || null,
-        names: (options && options.names) || customResourceDefinitionNamesV1beta1(),
-        scope: (options && options.scope) || null,
-    }).merge(options);
-}
-exports.customResourceDefinitionSpecV1beta1 = customResourceDefinitionSpecV1beta1;
-/**
- * CustomResourceDefinitionStatus indicates the state of the CustomResourceDefinition
- */
-function customResourceDefinitionStatusV1beta1(options) {
-    return ({
-        acceptedNames: (options && options.acceptedNames) || customResourceDefinitionNamesV1beta1(),
-        conditions: (options && options.conditions) || [],
-        storedVersions: (options && options.storedVersions) || [],
-    }).merge(options);
-}
-exports.customResourceDefinitionStatusV1beta1 = customResourceDefinitionStatusV1beta1;
-/**
- * CustomResourceDefinitionVersion describes a version for CRD.
- */
-function customResourceDefinitionVersionV1beta1(options) {
-    return ({
-        name: (options && options.name) || null,
-        served: (options && options.served) || false,
-        storage: (options && options.storage) || false,
-    }).merge(options);
-}
-exports.customResourceDefinitionVersionV1beta1 = customResourceDefinitionVersionV1beta1;
-/**
- * CustomResourceSubresourceScale defines how to serve the scale subresource for CustomResources.
- */
-function customResourceSubresourceScaleV1beta1(options) {
-    return ({
-        specReplicasPath: (options && options.specReplicasPath) || null,
-        statusReplicasPath: (options && options.statusReplicasPath) || null,
-    }).merge(options);
-}
-exports.customResourceSubresourceScaleV1beta1 = customResourceSubresourceScaleV1beta1;
-/**
- * CustomResourceSubresources defines the status and scale subresources for CustomResources.
- */
-function customResourceSubresourcesV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.customResourceSubresourcesV1beta1 = customResourceSubresourcesV1beta1;
-/**
- * CustomResourceValidation is a list of validation methods for CustomResources.
- */
-function customResourceValidationV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.customResourceValidationV1beta1 = customResourceValidationV1beta1;
+exports.allowedHostPathIoK8sApiExtensionsV1beta1 = allowedHostPathIoK8sApiExtensionsV1beta1;
 /**
  * DEPRECATED - This group version of DaemonSet is deprecated by apps/v1beta2/DaemonSet. See the release notes for more information. DaemonSet represents the configuration of a daemon set.
  */
-function daemonSetV1beta1(options) {
+function daemonSetIoK8sApiExtensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.extensions.v1beta1",
         kind: "DaemonSet",
     }).merge(options);
 }
-exports.daemonSetV1beta1 = daemonSetV1beta1;
+exports.daemonSetIoK8sApiExtensionsV1beta1 = daemonSetIoK8sApiExtensionsV1beta1;
 /**
  * DaemonSetCondition describes the state of a DaemonSet at a certain point.
  */
-function daemonSetConditionV1beta1(options) {
+function daemonSetConditionIoK8sApiExtensionsV1beta1(options) {
     return ({
         status: (options && options.status) || null,
         type: (options && options.type) || null,
     }).merge(options);
 }
-exports.daemonSetConditionV1beta1 = daemonSetConditionV1beta1;
+exports.daemonSetConditionIoK8sApiExtensionsV1beta1 = daemonSetConditionIoK8sApiExtensionsV1beta1;
 /**
  * DaemonSetList is a collection of daemon sets.
  */
-function daemonSetListV1beta1(options) {
+function daemonSetListIoK8sApiExtensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.extensions.v1beta1",
         kind: "DaemonSetList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.daemonSetListV1beta1 = daemonSetListV1beta1;
+exports.daemonSetListIoK8sApiExtensionsV1beta1 = daemonSetListIoK8sApiExtensionsV1beta1;
 /**
  * DaemonSetSpec is the specification of a daemon set.
  */
-function daemonSetSpecV1beta1(options) {
+function daemonSetSpecIoK8sApiExtensionsV1beta1(options) {
     return ({
         template: (options && options.template) || podTemplateSpec(),
     }).merge(options);
 }
-exports.daemonSetSpecV1beta1 = daemonSetSpecV1beta1;
+exports.daemonSetSpecIoK8sApiExtensionsV1beta1 = daemonSetSpecIoK8sApiExtensionsV1beta1;
 /**
  * DaemonSetStatus represents the current status of a daemon set.
  */
-function daemonSetStatusV1beta1(options) {
+function daemonSetStatusIoK8sApiExtensionsV1beta1(options) {
     return ({
         currentNumberScheduled: (options && options.currentNumberScheduled) || 0,
         desiredNumberScheduled: (options && options.desiredNumberScheduled) || 0,
@@ -3887,327 +3202,552 @@ function daemonSetStatusV1beta1(options) {
         numberReady: (options && options.numberReady) || 0,
     }).merge(options);
 }
-exports.daemonSetStatusV1beta1 = daemonSetStatusV1beta1;
-function daemonSetUpdateStrategyV1beta1(options) {
+exports.daemonSetStatusIoK8sApiExtensionsV1beta1 = daemonSetStatusIoK8sApiExtensionsV1beta1;
+function daemonSetUpdateStrategyIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.daemonSetUpdateStrategyV1beta1 = daemonSetUpdateStrategyV1beta1;
+exports.daemonSetUpdateStrategyIoK8sApiExtensionsV1beta1 = daemonSetUpdateStrategyIoK8sApiExtensionsV1beta1;
 /**
- * Event is a report of an event somewhere in the cluster. It generally denotes some state change in the system.
+ * DEPRECATED - This group version of Deployment is deprecated by apps/v1beta2/Deployment. See the release notes for more information. Deployment enables declarative updates for Pods and ReplicaSets.
  */
-function eventV1beta1(options) {
+function deploymentIoK8sApiExtensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
-        kind: "Event",
-        eventTime: (options && options.eventTime) || null,
+        apiVersion: "io.k8s.api.extensions.v1beta1",
+        kind: "Deployment",
     }).merge(options);
 }
-exports.eventV1beta1 = eventV1beta1;
+exports.deploymentIoK8sApiExtensionsV1beta1 = deploymentIoK8sApiExtensionsV1beta1;
 /**
- * EventList is a list of Event objects.
+ * DeploymentCondition describes the state of a deployment at a certain point.
  */
-function eventListV1beta1(options) {
+function deploymentConditionIoK8sApiExtensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
-        kind: "EventList",
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.deploymentConditionIoK8sApiExtensionsV1beta1 = deploymentConditionIoK8sApiExtensionsV1beta1;
+/**
+ * DeploymentList is a list of Deployments.
+ */
+function deploymentListIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.extensions.v1beta1",
+        kind: "DeploymentList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.eventListV1beta1 = eventListV1beta1;
+exports.deploymentListIoK8sApiExtensionsV1beta1 = deploymentListIoK8sApiExtensionsV1beta1;
 /**
- * EventSeries contain information on series of events, i.e. thing that was/is happening continuously for some time.
+ * DEPRECATED. DeploymentRollback stores the information required to rollback a deployment.
  */
-function eventSeriesV1beta1(options) {
+function deploymentRollbackIoK8sApiExtensionsV1beta1(options) {
     return ({
-        count: (options && options.count) || 0,
-        lastObservedTime: (options && options.lastObservedTime) || null,
-        state: (options && options.state) || null,
+        apiVersion: "io.k8s.api.extensions.v1beta1",
+        kind: "DeploymentRollback",
+        name: (options && options.name) || null,
+        rollbackTo: (options && options.rollbackTo) || rollbackConfigIoK8sApiExtensionsV1beta1(),
     }).merge(options);
 }
-exports.eventSeriesV1beta1 = eventSeriesV1beta1;
+exports.deploymentRollbackIoK8sApiExtensionsV1beta1 = deploymentRollbackIoK8sApiExtensionsV1beta1;
 /**
- * Eviction evicts a pod from its node subject to certain policies and safety constraints. This is a subresource of Pod.  A request to cause such an eviction is created by POSTing to .../pods/<pod name>/evictions.
+ * DeploymentSpec is the specification of the desired behavior of the Deployment.
  */
-function evictionV1beta1(options) {
+function deploymentSpecIoK8sApiExtensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
-        kind: "Eviction",
+        template: (options && options.template) || podTemplateSpec(),
     }).merge(options);
 }
-exports.evictionV1beta1 = evictionV1beta1;
+exports.deploymentSpecIoK8sApiExtensionsV1beta1 = deploymentSpecIoK8sApiExtensionsV1beta1;
 /**
- * ExternalDocumentation allows referencing an external resource for extended documentation.
+ * DeploymentStatus is the most recently observed status of the Deployment.
  */
-function externalDocumentationV1beta1(options) {
+function deploymentStatusIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.externalDocumentationV1beta1 = externalDocumentationV1beta1;
+exports.deploymentStatusIoK8sApiExtensionsV1beta1 = deploymentStatusIoK8sApiExtensionsV1beta1;
+/**
+ * DeploymentStrategy describes how to replace existing pods with new ones.
+ */
+function deploymentStrategyIoK8sApiExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentStrategyIoK8sApiExtensionsV1beta1 = deploymentStrategyIoK8sApiExtensionsV1beta1;
+/**
+ * FSGroupStrategyOptions defines the strategy type and options used to create the strategy. Deprecated: use FSGroupStrategyOptions from policy API Group instead.
+ */
+function fSGroupStrategyOptionsIoK8sApiExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.fSGroupStrategyOptionsIoK8sApiExtensionsV1beta1 = fSGroupStrategyOptionsIoK8sApiExtensionsV1beta1;
 /**
  * HTTPIngressPath associates a path regex with a backend. Incoming urls matching the path are forwarded to the backend.
  */
-function hTTPIngressPathV1beta1(options) {
+function hTTPIngressPathIoK8sApiExtensionsV1beta1(options) {
     return ({
-        backend: (options && options.backend) || ingressBackendV1beta1(),
+        backend: (options && options.backend) || ingressBackendIoK8sApiExtensionsV1beta1(),
     }).merge(options);
 }
-exports.hTTPIngressPathV1beta1 = hTTPIngressPathV1beta1;
+exports.hTTPIngressPathIoK8sApiExtensionsV1beta1 = hTTPIngressPathIoK8sApiExtensionsV1beta1;
 /**
  * HTTPIngressRuleValue is a list of http selectors pointing to backends. In the example: http://<host>/<path>?<searchpart> -> backend where where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.
  */
-function hTTPIngressRuleValueV1beta1(options) {
+function hTTPIngressRuleValueIoK8sApiExtensionsV1beta1(options) {
     return ({
         paths: (options && options.paths) || [],
     }).merge(options);
 }
-exports.hTTPIngressRuleValueV1beta1 = hTTPIngressRuleValueV1beta1;
+exports.hTTPIngressRuleValueIoK8sApiExtensionsV1beta1 = hTTPIngressRuleValueIoK8sApiExtensionsV1beta1;
+/**
+ * HostPortRange defines a range of host ports that will be enabled by a policy for pods to use.  It requires both the start and end to be defined. Deprecated: use HostPortRange from policy API Group instead.
+ */
+function hostPortRangeIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        max: (options && options.max) || 0,
+        min: (options && options.min) || 0,
+    }).merge(options);
+}
+exports.hostPortRangeIoK8sApiExtensionsV1beta1 = hostPortRangeIoK8sApiExtensionsV1beta1;
+/**
+ * IDRange provides a min/max of an allowed range of IDs. Deprecated: use IDRange from policy API Group instead.
+ */
+function iDRangeIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        max: (options && options.max) || 0,
+        min: (options && options.min) || 0,
+    }).merge(options);
+}
+exports.iDRangeIoK8sApiExtensionsV1beta1 = iDRangeIoK8sApiExtensionsV1beta1;
 /**
  * DEPRECATED 1.9 - This group version of IPBlock is deprecated by networking/v1/IPBlock. IPBlock describes a particular CIDR (Ex. "192.168.1.1/24") that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The except entry describes CIDRs that should not be included within this rule.
  */
-function iPBlockV1beta1(options) {
+function iPBlockIoK8sApiExtensionsV1beta1(options) {
     return ({
         cidr: (options && options.cidr) || null,
     }).merge(options);
 }
-exports.iPBlockV1beta1 = iPBlockV1beta1;
+exports.iPBlockIoK8sApiExtensionsV1beta1 = iPBlockIoK8sApiExtensionsV1beta1;
 /**
  * Ingress is a collection of rules that allow inbound connections to reach the endpoints defined by a backend. An Ingress can be configured to give services externally-reachable urls, load balance traffic, terminate SSL, offer name based virtual hosting etc.
  */
-function ingressV1beta1(options) {
+function ingressIoK8sApiExtensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.extensions.v1beta1",
         kind: "Ingress",
     }).merge(options);
 }
-exports.ingressV1beta1 = ingressV1beta1;
+exports.ingressIoK8sApiExtensionsV1beta1 = ingressIoK8sApiExtensionsV1beta1;
 /**
  * IngressBackend describes all endpoints for a given service and port.
  */
-function ingressBackendV1beta1(options) {
+function ingressBackendIoK8sApiExtensionsV1beta1(options) {
     return ({
         serviceName: (options && options.serviceName) || null,
-        servicePort: (options && options.servicePort) || null,
+        servicePort: (options && options.servicePort) || intOrStringIoK8sApimachineryPkgUtilIntstr(),
     }).merge(options);
 }
-exports.ingressBackendV1beta1 = ingressBackendV1beta1;
+exports.ingressBackendIoK8sApiExtensionsV1beta1 = ingressBackendIoK8sApiExtensionsV1beta1;
 /**
  * IngressList is a collection of Ingress.
  */
-function ingressListV1beta1(options) {
+function ingressListIoK8sApiExtensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.extensions.v1beta1",
         kind: "IngressList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.ingressListV1beta1 = ingressListV1beta1;
+exports.ingressListIoK8sApiExtensionsV1beta1 = ingressListIoK8sApiExtensionsV1beta1;
 /**
  * IngressRule represents the rules mapping the paths under a specified host to the related backend services. Incoming requests are first evaluated for a host match, then routed to the backend associated with the matching IngressRuleValue.
  */
-function ingressRuleV1beta1(options) {
+function ingressRuleIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.ingressRuleV1beta1 = ingressRuleV1beta1;
+exports.ingressRuleIoK8sApiExtensionsV1beta1 = ingressRuleIoK8sApiExtensionsV1beta1;
 /**
  * IngressSpec describes the Ingress the user wishes to exist.
  */
-function ingressSpecV1beta1(options) {
+function ingressSpecIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.ingressSpecV1beta1 = ingressSpecV1beta1;
+exports.ingressSpecIoK8sApiExtensionsV1beta1 = ingressSpecIoK8sApiExtensionsV1beta1;
 /**
  * IngressStatus describe the current state of the Ingress.
  */
-function ingressStatusV1beta1(options) {
+function ingressStatusIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.ingressStatusV1beta1 = ingressStatusV1beta1;
+exports.ingressStatusIoK8sApiExtensionsV1beta1 = ingressStatusIoK8sApiExtensionsV1beta1;
 /**
  * IngressTLS describes the transport layer security associated with an Ingress.
  */
-function ingressTLSV1beta1(options) {
+function ingressTLSIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.ingressTLSV1beta1 = ingressTLSV1beta1;
-/**
- * JSONSchemaProps is a JSON-Schema following Specification Draft 4 (http://json-schema.org/).
- */
-function jSONSchemaPropsV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.jSONSchemaPropsV1beta1 = jSONSchemaPropsV1beta1;
-/**
- * JobTemplateSpec describes the data a Job should have when created from a template
- */
-function jobTemplateSpecV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.jobTemplateSpecV1beta1 = jobTemplateSpecV1beta1;
-/**
- * Lease defines a lease concept.
- */
-function leaseV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "Lease",
-    }).merge(options);
-}
-exports.leaseV1beta1 = leaseV1beta1;
-/**
- * LeaseList is a list of Lease objects.
- */
-function leaseListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "LeaseList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.leaseListV1beta1 = leaseListV1beta1;
-/**
- * LeaseSpec is a specification of a Lease.
- */
-function leaseSpecV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.leaseSpecV1beta1 = leaseSpecV1beta1;
-/**
- * LocalSubjectAccessReview checks whether or not a user or group can perform an action in a given namespace. Having a namespace scoped resource makes it much easier to grant namespace scoped policy that includes permissions checking.
- */
-function localSubjectAccessReviewV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "LocalSubjectAccessReview",
-        spec: (options && options.spec) || subjectAccessReviewSpecV1beta1(),
-    }).merge(options);
-}
-exports.localSubjectAccessReviewV1beta1 = localSubjectAccessReviewV1beta1;
-/**
- * MutatingWebhookConfiguration describes the configuration of and admission webhook that accept or reject and may change the object.
- */
-function mutatingWebhookConfigurationV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "MutatingWebhookConfiguration",
-    }).merge(options);
-}
-exports.mutatingWebhookConfigurationV1beta1 = mutatingWebhookConfigurationV1beta1;
-/**
- * MutatingWebhookConfigurationList is a list of MutatingWebhookConfiguration.
- */
-function mutatingWebhookConfigurationListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "MutatingWebhookConfigurationList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.mutatingWebhookConfigurationListV1beta1 = mutatingWebhookConfigurationListV1beta1;
+exports.ingressTLSIoK8sApiExtensionsV1beta1 = ingressTLSIoK8sApiExtensionsV1beta1;
 /**
  * DEPRECATED 1.9 - This group version of NetworkPolicy is deprecated by networking/v1/NetworkPolicy. NetworkPolicy describes what network traffic is allowed for a set of Pods
  */
-function networkPolicyV1beta1(options) {
+function networkPolicyIoK8sApiExtensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.extensions.v1beta1",
         kind: "NetworkPolicy",
     }).merge(options);
 }
-exports.networkPolicyV1beta1 = networkPolicyV1beta1;
+exports.networkPolicyIoK8sApiExtensionsV1beta1 = networkPolicyIoK8sApiExtensionsV1beta1;
 /**
  * DEPRECATED 1.9 - This group version of NetworkPolicyEgressRule is deprecated by networking/v1/NetworkPolicyEgressRule. NetworkPolicyEgressRule describes a particular set of traffic that is allowed out of pods matched by a NetworkPolicySpec's podSelector. The traffic must match both ports and to. This type is beta-level in 1.8
  */
-function networkPolicyEgressRuleV1beta1(options) {
+function networkPolicyEgressRuleIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.networkPolicyEgressRuleV1beta1 = networkPolicyEgressRuleV1beta1;
+exports.networkPolicyEgressRuleIoK8sApiExtensionsV1beta1 = networkPolicyEgressRuleIoK8sApiExtensionsV1beta1;
 /**
  * DEPRECATED 1.9 - This group version of NetworkPolicyIngressRule is deprecated by networking/v1/NetworkPolicyIngressRule. This NetworkPolicyIngressRule matches traffic if and only if the traffic matches both ports AND from.
  */
-function networkPolicyIngressRuleV1beta1(options) {
+function networkPolicyIngressRuleIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.networkPolicyIngressRuleV1beta1 = networkPolicyIngressRuleV1beta1;
+exports.networkPolicyIngressRuleIoK8sApiExtensionsV1beta1 = networkPolicyIngressRuleIoK8sApiExtensionsV1beta1;
 /**
  * DEPRECATED 1.9 - This group version of NetworkPolicyList is deprecated by networking/v1/NetworkPolicyList. Network Policy List is a list of NetworkPolicy objects.
  */
-function networkPolicyListV1beta1(options) {
+function networkPolicyListIoK8sApiExtensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.extensions.v1beta1",
         kind: "NetworkPolicyList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.networkPolicyListV1beta1 = networkPolicyListV1beta1;
+exports.networkPolicyListIoK8sApiExtensionsV1beta1 = networkPolicyListIoK8sApiExtensionsV1beta1;
 /**
  * DEPRECATED 1.9 - This group version of NetworkPolicyPeer is deprecated by networking/v1/NetworkPolicyPeer.
  */
-function networkPolicyPeerV1beta1(options) {
+function networkPolicyPeerIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.networkPolicyPeerV1beta1 = networkPolicyPeerV1beta1;
+exports.networkPolicyPeerIoK8sApiExtensionsV1beta1 = networkPolicyPeerIoK8sApiExtensionsV1beta1;
 /**
  * DEPRECATED 1.9 - This group version of NetworkPolicyPort is deprecated by networking/v1/NetworkPolicyPort.
  */
-function networkPolicyPortV1beta1(options) {
+function networkPolicyPortIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.networkPolicyPortV1beta1 = networkPolicyPortV1beta1;
+exports.networkPolicyPortIoK8sApiExtensionsV1beta1 = networkPolicyPortIoK8sApiExtensionsV1beta1;
 /**
  * DEPRECATED 1.9 - This group version of NetworkPolicySpec is deprecated by networking/v1/NetworkPolicySpec.
  */
-function networkPolicySpecV1beta1(options) {
+function networkPolicySpecIoK8sApiExtensionsV1beta1(options) {
     return ({
-        podSelector: (options && options.podSelector) || labelSelector(),
+        podSelector: (options && options.podSelector) || labelSelectorIoK8sApimachineryPkgApisMetaV1(),
     }).merge(options);
 }
-exports.networkPolicySpecV1beta1 = networkPolicySpecV1beta1;
+exports.networkPolicySpecIoK8sApiExtensionsV1beta1 = networkPolicySpecIoK8sApiExtensionsV1beta1;
 /**
- * NonResourceAttributes includes the authorization attributes available for non-resource requests to the Authorizer interface
+ * PodSecurityPolicy governs the ability to make requests that affect the Security Context that will be applied to a pod and container. Deprecated: use PodSecurityPolicy from policy API Group instead.
  */
-function nonResourceAttributesV1beta1(options) {
+function podSecurityPolicyIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.extensions.v1beta1",
+        kind: "PodSecurityPolicy",
+    }).merge(options);
+}
+exports.podSecurityPolicyIoK8sApiExtensionsV1beta1 = podSecurityPolicyIoK8sApiExtensionsV1beta1;
+/**
+ * PodSecurityPolicyList is a list of PodSecurityPolicy objects. Deprecated: use PodSecurityPolicyList from policy API Group instead.
+ */
+function podSecurityPolicyListIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.extensions.v1beta1",
+        kind: "PodSecurityPolicyList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.podSecurityPolicyListIoK8sApiExtensionsV1beta1 = podSecurityPolicyListIoK8sApiExtensionsV1beta1;
+/**
+ * PodSecurityPolicySpec defines the policy enforced. Deprecated: use PodSecurityPolicySpec from policy API Group instead.
+ */
+function podSecurityPolicySpecIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        fsGroup: (options && options.fsGroup) || fSGroupStrategyOptionsIoK8sApiExtensionsV1beta1(),
+        runAsUser: (options && options.runAsUser) || runAsUserStrategyOptionsIoK8sApiExtensionsV1beta1(),
+        seLinux: (options && options.seLinux) || sELinuxStrategyOptionsIoK8sApiExtensionsV1beta1(),
+        supplementalGroups: (options && options.supplementalGroups) || supplementalGroupsStrategyOptionsIoK8sApiExtensionsV1beta1(),
+    }).merge(options);
+}
+exports.podSecurityPolicySpecIoK8sApiExtensionsV1beta1 = podSecurityPolicySpecIoK8sApiExtensionsV1beta1;
+/**
+ * DEPRECATED - This group version of ReplicaSet is deprecated by apps/v1beta2/ReplicaSet. See the release notes for more information. ReplicaSet ensures that a specified number of pod replicas are running at any given time.
+ */
+function replicaSetIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.extensions.v1beta1",
+        kind: "ReplicaSet",
+    }).merge(options);
+}
+exports.replicaSetIoK8sApiExtensionsV1beta1 = replicaSetIoK8sApiExtensionsV1beta1;
+/**
+ * ReplicaSetCondition describes the state of a replica set at a certain point.
+ */
+function replicaSetConditionIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.replicaSetConditionIoK8sApiExtensionsV1beta1 = replicaSetConditionIoK8sApiExtensionsV1beta1;
+/**
+ * ReplicaSetList is a collection of ReplicaSets.
+ */
+function replicaSetListIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.extensions.v1beta1",
+        kind: "ReplicaSetList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.replicaSetListIoK8sApiExtensionsV1beta1 = replicaSetListIoK8sApiExtensionsV1beta1;
+/**
+ * ReplicaSetSpec is the specification of a ReplicaSet.
+ */
+function replicaSetSpecIoK8sApiExtensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.nonResourceAttributesV1beta1 = nonResourceAttributesV1beta1;
+exports.replicaSetSpecIoK8sApiExtensionsV1beta1 = replicaSetSpecIoK8sApiExtensionsV1beta1;
 /**
- * NonResourceRule holds information that describes a rule for the non-resource
+ * ReplicaSetStatus represents the current status of a ReplicaSet.
  */
-function nonResourceRuleV1beta1(options) {
+function replicaSetStatusIoK8sApiExtensionsV1beta1(options) {
     return ({
-        verbs: (options && options.verbs) || [],
+        replicas: (options && options.replicas) || 0,
     }).merge(options);
 }
-exports.nonResourceRuleV1beta1 = nonResourceRuleV1beta1;
+exports.replicaSetStatusIoK8sApiExtensionsV1beta1 = replicaSetStatusIoK8sApiExtensionsV1beta1;
+/**
+ * DEPRECATED.
+ */
+function rollbackConfigIoK8sApiExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.rollbackConfigIoK8sApiExtensionsV1beta1 = rollbackConfigIoK8sApiExtensionsV1beta1;
+/**
+ * Spec to control the desired behavior of daemon set rolling update.
+ */
+function rollingUpdateDaemonSetIoK8sApiExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateDaemonSetIoK8sApiExtensionsV1beta1 = rollingUpdateDaemonSetIoK8sApiExtensionsV1beta1;
+/**
+ * Spec to control the desired behavior of rolling update.
+ */
+function rollingUpdateDeploymentIoK8sApiExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateDeploymentIoK8sApiExtensionsV1beta1 = rollingUpdateDeploymentIoK8sApiExtensionsV1beta1;
+/**
+ * RunAsUserStrategyOptions defines the strategy type and any options used to create the strategy. Deprecated: use RunAsUserStrategyOptions from policy API Group instead.
+ */
+function runAsUserStrategyOptionsIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        rule: (options && options.rule) || null,
+    }).merge(options);
+}
+exports.runAsUserStrategyOptionsIoK8sApiExtensionsV1beta1 = runAsUserStrategyOptionsIoK8sApiExtensionsV1beta1;
+/**
+ * SELinuxStrategyOptions defines the strategy type and any options used to create the strategy. Deprecated: use SELinuxStrategyOptions from policy API Group instead.
+ */
+function sELinuxStrategyOptionsIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        rule: (options && options.rule) || null,
+    }).merge(options);
+}
+exports.sELinuxStrategyOptionsIoK8sApiExtensionsV1beta1 = sELinuxStrategyOptionsIoK8sApiExtensionsV1beta1;
+/**
+ * represents a scaling request for a resource.
+ */
+function scaleIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.extensions.v1beta1",
+        kind: "Scale",
+    }).merge(options);
+}
+exports.scaleIoK8sApiExtensionsV1beta1 = scaleIoK8sApiExtensionsV1beta1;
+/**
+ * describes the attributes of a scale subresource
+ */
+function scaleSpecIoK8sApiExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.scaleSpecIoK8sApiExtensionsV1beta1 = scaleSpecIoK8sApiExtensionsV1beta1;
+/**
+ * represents the current status of a scale subresource.
+ */
+function scaleStatusIoK8sApiExtensionsV1beta1(options) {
+    return ({
+        replicas: (options && options.replicas) || 0,
+    }).merge(options);
+}
+exports.scaleStatusIoK8sApiExtensionsV1beta1 = scaleStatusIoK8sApiExtensionsV1beta1;
+/**
+ * SupplementalGroupsStrategyOptions defines the strategy type and options used to create the strategy. Deprecated: use SupplementalGroupsStrategyOptions from policy API Group instead.
+ */
+function supplementalGroupsStrategyOptionsIoK8sApiExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.supplementalGroupsStrategyOptionsIoK8sApiExtensionsV1beta1 = supplementalGroupsStrategyOptionsIoK8sApiExtensionsV1beta1;
+/**
+ * IPBlock describes a particular CIDR (Ex. "192.168.1.1/24") that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The except entry describes CIDRs that should not be included within this rule.
+ */
+function iPBlockIoK8sApiNetworkingV1(options) {
+    return ({
+        cidr: (options && options.cidr) || null,
+    }).merge(options);
+}
+exports.iPBlockIoK8sApiNetworkingV1 = iPBlockIoK8sApiNetworkingV1;
+/**
+ * NetworkPolicy describes what network traffic is allowed for a set of Pods
+ */
+function networkPolicyIoK8sApiNetworkingV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.networking.v1",
+        kind: "NetworkPolicy",
+    }).merge(options);
+}
+exports.networkPolicyIoK8sApiNetworkingV1 = networkPolicyIoK8sApiNetworkingV1;
+/**
+ * NetworkPolicyEgressRule describes a particular set of traffic that is allowed out of pods matched by a NetworkPolicySpec's podSelector. The traffic must match both ports and to. This type is beta-level in 1.8
+ */
+function networkPolicyEgressRuleIoK8sApiNetworkingV1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyEgressRuleIoK8sApiNetworkingV1 = networkPolicyEgressRuleIoK8sApiNetworkingV1;
+/**
+ * NetworkPolicyIngressRule describes a particular set of traffic that is allowed to the pods matched by a NetworkPolicySpec's podSelector. The traffic must match both ports and from.
+ */
+function networkPolicyIngressRuleIoK8sApiNetworkingV1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyIngressRuleIoK8sApiNetworkingV1 = networkPolicyIngressRuleIoK8sApiNetworkingV1;
+/**
+ * NetworkPolicyList is a list of NetworkPolicy objects.
+ */
+function networkPolicyListIoK8sApiNetworkingV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.networking.v1",
+        kind: "NetworkPolicyList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.networkPolicyListIoK8sApiNetworkingV1 = networkPolicyListIoK8sApiNetworkingV1;
+/**
+ * NetworkPolicyPeer describes a peer to allow traffic from. Only certain combinations of fields are allowed
+ */
+function networkPolicyPeerIoK8sApiNetworkingV1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyPeerIoK8sApiNetworkingV1 = networkPolicyPeerIoK8sApiNetworkingV1;
+/**
+ * NetworkPolicyPort describes a port to allow traffic on
+ */
+function networkPolicyPortIoK8sApiNetworkingV1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyPortIoK8sApiNetworkingV1 = networkPolicyPortIoK8sApiNetworkingV1;
+/**
+ * NetworkPolicySpec provides the specification of a NetworkPolicy
+ */
+function networkPolicySpecIoK8sApiNetworkingV1(options) {
+    return ({
+        podSelector: (options && options.podSelector) || labelSelectorIoK8sApimachineryPkgApisMetaV1(),
+    }).merge(options);
+}
+exports.networkPolicySpecIoK8sApiNetworkingV1 = networkPolicySpecIoK8sApiNetworkingV1;
+/**
+ * AllowedFlexVolume represents a single Flexvolume that is allowed to be used.
+ */
+function allowedFlexVolumeIoK8sApiPolicyV1beta1(options) {
+    return ({
+        driver: (options && options.driver) || null,
+    }).merge(options);
+}
+exports.allowedFlexVolumeIoK8sApiPolicyV1beta1 = allowedFlexVolumeIoK8sApiPolicyV1beta1;
+/**
+ * AllowedHostPath defines the host volume conditions that will be enabled by a policy for pods to use. It requires the path prefix to be defined.
+ */
+function allowedHostPathIoK8sApiPolicyV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.allowedHostPathIoK8sApiPolicyV1beta1 = allowedHostPathIoK8sApiPolicyV1beta1;
+/**
+ * Eviction evicts a pod from its node subject to certain policies and safety constraints. This is a subresource of Pod.  A request to cause such an eviction is created by POSTing to .../pods/<pod name>/evictions.
+ */
+function evictionIoK8sApiPolicyV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.policy.v1beta1",
+        kind: "Eviction",
+    }).merge(options);
+}
+exports.evictionIoK8sApiPolicyV1beta1 = evictionIoK8sApiPolicyV1beta1;
+/**
+ * FSGroupStrategyOptions defines the strategy type and options used to create the strategy.
+ */
+function fSGroupStrategyOptionsIoK8sApiPolicyV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.fSGroupStrategyOptionsIoK8sApiPolicyV1beta1 = fSGroupStrategyOptionsIoK8sApiPolicyV1beta1;
+/**
+ * HostPortRange defines a range of host ports that will be enabled by a policy for pods to use.  It requires both the start and end to be defined.
+ */
+function hostPortRangeIoK8sApiPolicyV1beta1(options) {
+    return ({
+        max: (options && options.max) || 0,
+        min: (options && options.min) || 0,
+    }).merge(options);
+}
+exports.hostPortRangeIoK8sApiPolicyV1beta1 = hostPortRangeIoK8sApiPolicyV1beta1;
+/**
+ * IDRange provides a min/max of an allowed range of IDs.
+ */
+function iDRangeIoK8sApiPolicyV1beta1(options) {
+    return ({
+        max: (options && options.max) || 0,
+        min: (options && options.min) || 0,
+    }).merge(options);
+}
+exports.iDRangeIoK8sApiPolicyV1beta1 = iDRangeIoK8sApiPolicyV1beta1;
 /**
  * PodDisruptionBudget is an object to define the max disruption that can be caused to a collection of pods
  */
-function podDisruptionBudgetV1beta1(options) {
+function podDisruptionBudgetIoK8sApiPolicyV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.policy.v1beta1",
         kind: "PodDisruptionBudget",
     }).merge(options);
 }
-exports.podDisruptionBudgetV1beta1 = podDisruptionBudgetV1beta1;
+exports.podDisruptionBudgetIoK8sApiPolicyV1beta1 = podDisruptionBudgetIoK8sApiPolicyV1beta1;
 /**
  * PodDisruptionBudgetList is a collection of PodDisruptionBudgets.
  */
-function podDisruptionBudgetListV1beta1(options) {
+function podDisruptionBudgetListIoK8sApiPolicyV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.policy.v1beta1",
         kind: "PodDisruptionBudgetList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.podDisruptionBudgetListV1beta1 = podDisruptionBudgetListV1beta1;
+exports.podDisruptionBudgetListIoK8sApiPolicyV1beta1 = podDisruptionBudgetListIoK8sApiPolicyV1beta1;
 /**
  * PodDisruptionBudgetSpec is a description of a PodDisruptionBudget.
  */
-function podDisruptionBudgetSpecV1beta1(options) {
+function podDisruptionBudgetSpecIoK8sApiPolicyV1beta1(options) {
     return ({}).merge(options);
 }
-exports.podDisruptionBudgetSpecV1beta1 = podDisruptionBudgetSpecV1beta1;
+exports.podDisruptionBudgetSpecIoK8sApiPolicyV1beta1 = podDisruptionBudgetSpecIoK8sApiPolicyV1beta1;
 /**
  * PodDisruptionBudgetStatus represents information about the status of a PodDisruptionBudget. Status may trail the actual state of a system.
  */
-function podDisruptionBudgetStatusV1beta1(options) {
+function podDisruptionBudgetStatusIoK8sApiPolicyV1beta1(options) {
     return ({
         currentHealthy: (options && options.currentHealthy) || 0,
         desiredHealthy: (options && options.desiredHealthy) || 0,
@@ -4215,1155 +3755,955 @@ function podDisruptionBudgetStatusV1beta1(options) {
         expectedPods: (options && options.expectedPods) || 0,
     }).merge(options);
 }
-exports.podDisruptionBudgetStatusV1beta1 = podDisruptionBudgetStatusV1beta1;
+exports.podDisruptionBudgetStatusIoK8sApiPolicyV1beta1 = podDisruptionBudgetStatusIoK8sApiPolicyV1beta1;
+/**
+ * PodSecurityPolicy governs the ability to make requests that affect the Security Context that will be applied to a pod and container.
+ */
+function podSecurityPolicyIoK8sApiPolicyV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.policy.v1beta1",
+        kind: "PodSecurityPolicy",
+    }).merge(options);
+}
+exports.podSecurityPolicyIoK8sApiPolicyV1beta1 = podSecurityPolicyIoK8sApiPolicyV1beta1;
+/**
+ * PodSecurityPolicyList is a list of PodSecurityPolicy objects.
+ */
+function podSecurityPolicyListIoK8sApiPolicyV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.policy.v1beta1",
+        kind: "PodSecurityPolicyList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.podSecurityPolicyListIoK8sApiPolicyV1beta1 = podSecurityPolicyListIoK8sApiPolicyV1beta1;
+/**
+ * PodSecurityPolicySpec defines the policy enforced.
+ */
+function podSecurityPolicySpecIoK8sApiPolicyV1beta1(options) {
+    return ({
+        fsGroup: (options && options.fsGroup) || fSGroupStrategyOptionsIoK8sApiPolicyV1beta1(),
+        runAsUser: (options && options.runAsUser) || runAsUserStrategyOptionsIoK8sApiPolicyV1beta1(),
+        seLinux: (options && options.seLinux) || sELinuxStrategyOptionsIoK8sApiPolicyV1beta1(),
+        supplementalGroups: (options && options.supplementalGroups) || supplementalGroupsStrategyOptionsIoK8sApiPolicyV1beta1(),
+    }).merge(options);
+}
+exports.podSecurityPolicySpecIoK8sApiPolicyV1beta1 = podSecurityPolicySpecIoK8sApiPolicyV1beta1;
+/**
+ * RunAsUserStrategyOptions defines the strategy type and any options used to create the strategy.
+ */
+function runAsUserStrategyOptionsIoK8sApiPolicyV1beta1(options) {
+    return ({
+        rule: (options && options.rule) || null,
+    }).merge(options);
+}
+exports.runAsUserStrategyOptionsIoK8sApiPolicyV1beta1 = runAsUserStrategyOptionsIoK8sApiPolicyV1beta1;
+/**
+ * SELinuxStrategyOptions defines the strategy type and any options used to create the strategy.
+ */
+function sELinuxStrategyOptionsIoK8sApiPolicyV1beta1(options) {
+    return ({
+        rule: (options && options.rule) || null,
+    }).merge(options);
+}
+exports.sELinuxStrategyOptionsIoK8sApiPolicyV1beta1 = sELinuxStrategyOptionsIoK8sApiPolicyV1beta1;
+/**
+ * SupplementalGroupsStrategyOptions defines the strategy type and options used to create the strategy.
+ */
+function supplementalGroupsStrategyOptionsIoK8sApiPolicyV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.supplementalGroupsStrategyOptionsIoK8sApiPolicyV1beta1 = supplementalGroupsStrategyOptionsIoK8sApiPolicyV1beta1;
+/**
+ * AggregationRule describes how to locate ClusterRoles to aggregate into the ClusterRole
+ */
+function aggregationRuleIoK8sApiRbacV1(options) {
+    return ({}).merge(options);
+}
+exports.aggregationRuleIoK8sApiRbacV1 = aggregationRuleIoK8sApiRbacV1;
+/**
+ * ClusterRole is a cluster level, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding or ClusterRoleBinding.
+ */
+function clusterRoleIoK8sApiRbacV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.rbac.v1",
+        kind: "ClusterRole",
+        rules: (options && options.rules) || [],
+    }).merge(options);
+}
+exports.clusterRoleIoK8sApiRbacV1 = clusterRoleIoK8sApiRbacV1;
+/**
+ * ClusterRoleBinding references a ClusterRole, but not contain it.  It can reference a ClusterRole in the global namespace, and adds who information via Subject.
+ */
+function clusterRoleBindingIoK8sApiRbacV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.rbac.v1",
+        kind: "ClusterRoleBinding",
+        roleRef: (options && options.roleRef) || roleRefIoK8sApiRbacV1(),
+    }).merge(options);
+}
+exports.clusterRoleBindingIoK8sApiRbacV1 = clusterRoleBindingIoK8sApiRbacV1;
+/**
+ * ClusterRoleBindingList is a collection of ClusterRoleBindings
+ */
+function clusterRoleBindingListIoK8sApiRbacV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.rbac.v1",
+        kind: "ClusterRoleBindingList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.clusterRoleBindingListIoK8sApiRbacV1 = clusterRoleBindingListIoK8sApiRbacV1;
+/**
+ * ClusterRoleList is a collection of ClusterRoles
+ */
+function clusterRoleListIoK8sApiRbacV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.rbac.v1",
+        kind: "ClusterRoleList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.clusterRoleListIoK8sApiRbacV1 = clusterRoleListIoK8sApiRbacV1;
 /**
  * PolicyRule holds information that describes a policy rule, but does not contain information about who the rule applies to or which namespace the rule applies to.
  */
-function policyRuleV1beta1(options) {
+function policyRuleIoK8sApiRbacV1(options) {
     return ({
         verbs: (options && options.verbs) || [],
     }).merge(options);
 }
-exports.policyRuleV1beta1 = policyRuleV1beta1;
-/**
- * PriorityClass defines mapping from a priority class name to the priority integer value. The value can be any valid integer.
- */
-function priorityClassV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "PriorityClass",
-        value: (options && options.value) || 0,
-    }).merge(options);
-}
-exports.priorityClassV1beta1 = priorityClassV1beta1;
-/**
- * PriorityClassList is a collection of priority classes.
- */
-function priorityClassListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "PriorityClassList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.priorityClassListV1beta1 = priorityClassListV1beta1;
-/**
- * DEPRECATED - This group version of ReplicaSet is deprecated by apps/v1beta2/ReplicaSet. See the release notes for more information. ReplicaSet ensures that a specified number of pod replicas are running at any given time.
- */
-function replicaSetV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "ReplicaSet",
-    }).merge(options);
-}
-exports.replicaSetV1beta1 = replicaSetV1beta1;
-/**
- * ReplicaSetCondition describes the state of a replica set at a certain point.
- */
-function replicaSetConditionV1beta1(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.replicaSetConditionV1beta1 = replicaSetConditionV1beta1;
-/**
- * ReplicaSetList is a collection of ReplicaSets.
- */
-function replicaSetListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "ReplicaSetList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.replicaSetListV1beta1 = replicaSetListV1beta1;
-/**
- * ReplicaSetSpec is the specification of a ReplicaSet.
- */
-function replicaSetSpecV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.replicaSetSpecV1beta1 = replicaSetSpecV1beta1;
-/**
- * ReplicaSetStatus represents the current status of a ReplicaSet.
- */
-function replicaSetStatusV1beta1(options) {
-    return ({
-        replicas: (options && options.replicas) || 0,
-    }).merge(options);
-}
-exports.replicaSetStatusV1beta1 = replicaSetStatusV1beta1;
-/**
- * ResourceAttributes includes the authorization attributes available for resource requests to the Authorizer interface
- */
-function resourceAttributesV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.resourceAttributesV1beta1 = resourceAttributesV1beta1;
-/**
- * ResourceRule is the list of actions the subject is allowed to perform on resources. The list ordering isn't significant, may contain duplicates, and possibly be incomplete.
- */
-function resourceRuleV1beta1(options) {
-    return ({
-        verbs: (options && options.verbs) || [],
-    }).merge(options);
-}
-exports.resourceRuleV1beta1 = resourceRuleV1beta1;
+exports.policyRuleIoK8sApiRbacV1 = policyRuleIoK8sApiRbacV1;
 /**
  * Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding.
  */
-function roleV1beta1(options) {
+function roleIoK8sApiRbacV1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.rbac.v1",
         kind: "Role",
         rules: (options && options.rules) || [],
     }).merge(options);
 }
-exports.roleV1beta1 = roleV1beta1;
+exports.roleIoK8sApiRbacV1 = roleIoK8sApiRbacV1;
 /**
  * RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace.
  */
-function roleBindingV1beta1(options) {
+function roleBindingIoK8sApiRbacV1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.rbac.v1",
         kind: "RoleBinding",
-        roleRef: (options && options.roleRef) || roleRefV1beta1(),
+        roleRef: (options && options.roleRef) || roleRefIoK8sApiRbacV1(),
     }).merge(options);
 }
-exports.roleBindingV1beta1 = roleBindingV1beta1;
+exports.roleBindingIoK8sApiRbacV1 = roleBindingIoK8sApiRbacV1;
 /**
  * RoleBindingList is a collection of RoleBindings
  */
-function roleBindingListV1beta1(options) {
+function roleBindingListIoK8sApiRbacV1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.rbac.v1",
         kind: "RoleBindingList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.roleBindingListV1beta1 = roleBindingListV1beta1;
+exports.roleBindingListIoK8sApiRbacV1 = roleBindingListIoK8sApiRbacV1;
 /**
  * RoleList is a collection of Roles
  */
-function roleListV1beta1(options) {
+function roleListIoK8sApiRbacV1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.rbac.v1",
         kind: "RoleList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.roleListV1beta1 = roleListV1beta1;
+exports.roleListIoK8sApiRbacV1 = roleListIoK8sApiRbacV1;
 /**
  * RoleRef contains information that points to the role being used
  */
-function roleRefV1beta1(options) {
+function roleRefIoK8sApiRbacV1(options) {
     return ({
         kind: "RoleRef",
         apiGroup: (options && options.apiGroup) || null,
         name: (options && options.name) || null,
     }).merge(options);
 }
-exports.roleRefV1beta1 = roleRefV1beta1;
-/**
- * Spec to control the desired behavior of daemon set rolling update.
- */
-function rollingUpdateDaemonSetV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.rollingUpdateDaemonSetV1beta1 = rollingUpdateDaemonSetV1beta1;
-/**
- * RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
- */
-function rollingUpdateStatefulSetStrategyV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.rollingUpdateStatefulSetStrategyV1beta1 = rollingUpdateStatefulSetStrategyV1beta1;
-/**
- * RuleWithOperations is a tuple of Operations and Resources. It is recommended to make sure that all the tuple expansions are valid.
- */
-function ruleWithOperationsV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.ruleWithOperationsV1beta1 = ruleWithOperationsV1beta1;
-/**
- * SelfSubjectAccessReview checks whether or the current user can perform an action.  Not filling in a spec.namespace means "in all namespaces".  Self is a special case, because users should always be able to check whether they can perform an action
- */
-function selfSubjectAccessReviewV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "SelfSubjectAccessReview",
-        spec: (options && options.spec) || selfSubjectAccessReviewSpecV1beta1(),
-    }).merge(options);
-}
-exports.selfSubjectAccessReviewV1beta1 = selfSubjectAccessReviewV1beta1;
-/**
- * SelfSubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
- */
-function selfSubjectAccessReviewSpecV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.selfSubjectAccessReviewSpecV1beta1 = selfSubjectAccessReviewSpecV1beta1;
-/**
- * SelfSubjectRulesReview enumerates the set of actions the current user can perform within a namespace. The returned list of actions may be incomplete depending on the server's authorization mode, and any errors experienced during the evaluation. SelfSubjectRulesReview should be used by UIs to show/hide actions, or to quickly let an end user reason about their permissions. It should NOT Be used by external systems to drive authorization decisions as this raises confused deputy, cache lifetime/revocation, and correctness concerns. SubjectAccessReview, and LocalAccessReview are the correct way to defer authorization decisions to the API server.
- */
-function selfSubjectRulesReviewV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "SelfSubjectRulesReview",
-        spec: (options && options.spec) || selfSubjectRulesReviewSpecV1beta1(),
-    }).merge(options);
-}
-exports.selfSubjectRulesReviewV1beta1 = selfSubjectRulesReviewV1beta1;
-function selfSubjectRulesReviewSpecV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.selfSubjectRulesReviewSpecV1beta1 = selfSubjectRulesReviewSpecV1beta1;
-/**
- * DEPRECATED - This group version of StatefulSet is deprecated by apps/v1beta2/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:
- *  - Network: A single stable DNS and hostname.
- *  - Storage: As many VolumeClaims as requested.
- * The StatefulSet guarantees that a given network identity will always map to the same storage identity.
- */
-function statefulSetV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "StatefulSet",
-    }).merge(options);
-}
-exports.statefulSetV1beta1 = statefulSetV1beta1;
-/**
- * StatefulSetCondition describes the state of a statefulset at a certain point.
- */
-function statefulSetConditionV1beta1(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.statefulSetConditionV1beta1 = statefulSetConditionV1beta1;
-/**
- * StatefulSetList is a collection of StatefulSets.
- */
-function statefulSetListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "StatefulSetList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.statefulSetListV1beta1 = statefulSetListV1beta1;
-/**
- * A StatefulSetSpec is the specification of a StatefulSet.
- */
-function statefulSetSpecV1beta1(options) {
-    return ({
-        serviceName: (options && options.serviceName) || null,
-        template: (options && options.template) || podTemplateSpec(),
-    }).merge(options);
-}
-exports.statefulSetSpecV1beta1 = statefulSetSpecV1beta1;
-/**
- * StatefulSetStatus represents the current state of a StatefulSet.
- */
-function statefulSetStatusV1beta1(options) {
-    return ({
-        replicas: (options && options.replicas) || 0,
-    }).merge(options);
-}
-exports.statefulSetStatusV1beta1 = statefulSetStatusV1beta1;
-/**
- * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.
- */
-function statefulSetUpdateStrategyV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.statefulSetUpdateStrategyV1beta1 = statefulSetUpdateStrategyV1beta1;
-/**
- * StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.
- *
- * StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.
- */
-function storageClassV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "StorageClass",
-        provisioner: (options && options.provisioner) || null,
-    }).merge(options);
-}
-exports.storageClassV1beta1 = storageClassV1beta1;
-/**
- * StorageClassList is a collection of storage classes.
- */
-function storageClassListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "StorageClassList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.storageClassListV1beta1 = storageClassListV1beta1;
+exports.roleRefIoK8sApiRbacV1 = roleRefIoK8sApiRbacV1;
 /**
  * Subject contains a reference to the object or user identities a role binding applies to.  This can either hold a direct API object reference, or a value for non-objects such as user and group names.
  */
-function subjectV1beta1(options) {
+function subjectIoK8sApiRbacV1(options) {
     return ({
         kind: "Subject",
         name: (options && options.name) || null,
     }).merge(options);
 }
-exports.subjectV1beta1 = subjectV1beta1;
+exports.subjectIoK8sApiRbacV1 = subjectIoK8sApiRbacV1;
 /**
- * SubjectAccessReview checks whether or not a user or group can perform an action.
+ * AggregationRule describes how to locate ClusterRoles to aggregate into the ClusterRole
  */
-function subjectAccessReviewV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "SubjectAccessReview",
-        spec: (options && options.spec) || subjectAccessReviewSpecV1beta1(),
-    }).merge(options);
-}
-exports.subjectAccessReviewV1beta1 = subjectAccessReviewV1beta1;
-/**
- * SubjectAccessReviewSpec is a description of the access request.  Exactly one of ResourceAuthorizationAttributes and NonResourceAuthorizationAttributes must be set
- */
-function subjectAccessReviewSpecV1beta1(options) {
+function aggregationRuleIoK8sApiRbacV1beta1(options) {
     return ({}).merge(options);
 }
-exports.subjectAccessReviewSpecV1beta1 = subjectAccessReviewSpecV1beta1;
+exports.aggregationRuleIoK8sApiRbacV1beta1 = aggregationRuleIoK8sApiRbacV1beta1;
 /**
- * SubjectAccessReviewStatus
+ * ClusterRole is a cluster level, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding or ClusterRoleBinding.
  */
-function subjectAccessReviewStatusV1beta1(options) {
+function clusterRoleIoK8sApiRbacV1beta1(options) {
     return ({
-        allowed: (options && options.allowed) || false,
+        apiVersion: "io.k8s.api.rbac.v1beta1",
+        kind: "ClusterRole",
+        rules: (options && options.rules) || [],
     }).merge(options);
 }
-exports.subjectAccessReviewStatusV1beta1 = subjectAccessReviewStatusV1beta1;
+exports.clusterRoleIoK8sApiRbacV1beta1 = clusterRoleIoK8sApiRbacV1beta1;
 /**
- * SubjectRulesReviewStatus contains the result of a rules check. This check can be incomplete depending on the set of authorizers the server is configured with and any errors experienced during evaluation. Because authorization rules are additive, if a rule appears in a list it's safe to assume the subject has that permission, even if that list is incomplete.
+ * ClusterRoleBinding references a ClusterRole, but not contain it.  It can reference a ClusterRole in the global namespace, and adds who information via Subject.
  */
-function subjectRulesReviewStatusV1beta1(options) {
+function clusterRoleBindingIoK8sApiRbacV1beta1(options) {
     return ({
-        incomplete: (options && options.incomplete) || false,
-        nonResourceRules: (options && options.nonResourceRules) || [],
-        resourceRules: (options && options.resourceRules) || [],
+        apiVersion: "io.k8s.api.rbac.v1beta1",
+        kind: "ClusterRoleBinding",
+        roleRef: (options && options.roleRef) || roleRefIoK8sApiRbacV1beta1(),
     }).merge(options);
 }
-exports.subjectRulesReviewStatusV1beta1 = subjectRulesReviewStatusV1beta1;
+exports.clusterRoleBindingIoK8sApiRbacV1beta1 = clusterRoleBindingIoK8sApiRbacV1beta1;
 /**
- * TokenReview attempts to authenticate a token to a known user. Note: TokenReview requests may be cached by the webhook token authenticator plugin in the kube-apiserver.
+ * ClusterRoleBindingList is a collection of ClusterRoleBindings
  */
-function tokenReviewV1beta1(options) {
+function clusterRoleBindingListIoK8sApiRbacV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
-        kind: "TokenReview",
-        spec: (options && options.spec) || tokenReviewSpecV1beta1(),
-    }).merge(options);
-}
-exports.tokenReviewV1beta1 = tokenReviewV1beta1;
-/**
- * TokenReviewSpec is a description of the token authentication request.
- */
-function tokenReviewSpecV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.tokenReviewSpecV1beta1 = tokenReviewSpecV1beta1;
-/**
- * TokenReviewStatus is the result of the token authentication request.
- */
-function tokenReviewStatusV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.tokenReviewStatusV1beta1 = tokenReviewStatusV1beta1;
-/**
- * UserInfo holds the information about the user needed to implement the user.Info interface.
- */
-function userInfoV1beta1(options) {
-    return ({}).merge(options);
-}
-exports.userInfoV1beta1 = userInfoV1beta1;
-/**
- * ValidatingWebhookConfiguration describes the configuration of and admission webhook that accept or reject and object without changing it.
- */
-function validatingWebhookConfigurationV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "ValidatingWebhookConfiguration",
-    }).merge(options);
-}
-exports.validatingWebhookConfigurationV1beta1 = validatingWebhookConfigurationV1beta1;
-/**
- * ValidatingWebhookConfigurationList is a list of ValidatingWebhookConfiguration.
- */
-function validatingWebhookConfigurationListV1beta1(options) {
-    return ({
-        apiVersion: "v1beta1",
-        kind: "ValidatingWebhookConfigurationList",
+        apiVersion: "io.k8s.api.rbac.v1beta1",
+        kind: "ClusterRoleBindingList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.validatingWebhookConfigurationListV1beta1 = validatingWebhookConfigurationListV1beta1;
+exports.clusterRoleBindingListIoK8sApiRbacV1beta1 = clusterRoleBindingListIoK8sApiRbacV1beta1;
+/**
+ * ClusterRoleList is a collection of ClusterRoles
+ */
+function clusterRoleListIoK8sApiRbacV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.rbac.v1beta1",
+        kind: "ClusterRoleList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.clusterRoleListIoK8sApiRbacV1beta1 = clusterRoleListIoK8sApiRbacV1beta1;
+/**
+ * PolicyRule holds information that describes a policy rule, but does not contain information about who the rule applies to or which namespace the rule applies to.
+ */
+function policyRuleIoK8sApiRbacV1beta1(options) {
+    return ({
+        verbs: (options && options.verbs) || [],
+    }).merge(options);
+}
+exports.policyRuleIoK8sApiRbacV1beta1 = policyRuleIoK8sApiRbacV1beta1;
+/**
+ * Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding.
+ */
+function roleIoK8sApiRbacV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.rbac.v1beta1",
+        kind: "Role",
+        rules: (options && options.rules) || [],
+    }).merge(options);
+}
+exports.roleIoK8sApiRbacV1beta1 = roleIoK8sApiRbacV1beta1;
+/**
+ * RoleBinding references a role, but does not contain it.  It can reference a Role in the same namespace or a ClusterRole in the global namespace. It adds who information via Subjects and namespace information by which namespace it exists in.  RoleBindings in a given namespace only have effect in that namespace.
+ */
+function roleBindingIoK8sApiRbacV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.rbac.v1beta1",
+        kind: "RoleBinding",
+        roleRef: (options && options.roleRef) || roleRefIoK8sApiRbacV1beta1(),
+    }).merge(options);
+}
+exports.roleBindingIoK8sApiRbacV1beta1 = roleBindingIoK8sApiRbacV1beta1;
+/**
+ * RoleBindingList is a collection of RoleBindings
+ */
+function roleBindingListIoK8sApiRbacV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.rbac.v1beta1",
+        kind: "RoleBindingList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.roleBindingListIoK8sApiRbacV1beta1 = roleBindingListIoK8sApiRbacV1beta1;
+/**
+ * RoleList is a collection of Roles
+ */
+function roleListIoK8sApiRbacV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.rbac.v1beta1",
+        kind: "RoleList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.roleListIoK8sApiRbacV1beta1 = roleListIoK8sApiRbacV1beta1;
+/**
+ * RoleRef contains information that points to the role being used
+ */
+function roleRefIoK8sApiRbacV1beta1(options) {
+    return ({
+        kind: "RoleRef",
+        apiGroup: (options && options.apiGroup) || null,
+        name: (options && options.name) || null,
+    }).merge(options);
+}
+exports.roleRefIoK8sApiRbacV1beta1 = roleRefIoK8sApiRbacV1beta1;
+/**
+ * Subject contains a reference to the object or user identities a role binding applies to.  This can either hold a direct API object reference, or a value for non-objects such as user and group names.
+ */
+function subjectIoK8sApiRbacV1beta1(options) {
+    return ({
+        kind: "Subject",
+        name: (options && options.name) || null,
+    }).merge(options);
+}
+exports.subjectIoK8sApiRbacV1beta1 = subjectIoK8sApiRbacV1beta1;
+/**
+ * PriorityClass defines mapping from a priority class name to the priority integer value. The value can be any valid integer.
+ */
+function priorityClassIoK8sApiSchedulingV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.scheduling.v1beta1",
+        kind: "PriorityClass",
+        value: (options && options.value) || 0,
+    }).merge(options);
+}
+exports.priorityClassIoK8sApiSchedulingV1beta1 = priorityClassIoK8sApiSchedulingV1beta1;
+/**
+ * PriorityClassList is a collection of priority classes.
+ */
+function priorityClassListIoK8sApiSchedulingV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.scheduling.v1beta1",
+        kind: "PriorityClassList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.priorityClassListIoK8sApiSchedulingV1beta1 = priorityClassListIoK8sApiSchedulingV1beta1;
+/**
+ * StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.
+ *
+ * StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.
+ */
+function storageClassIoK8sApiStorageV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.storage.v1",
+        kind: "StorageClass",
+        provisioner: (options && options.provisioner) || null,
+    }).merge(options);
+}
+exports.storageClassIoK8sApiStorageV1 = storageClassIoK8sApiStorageV1;
+/**
+ * StorageClassList is a collection of storage classes.
+ */
+function storageClassListIoK8sApiStorageV1(options) {
+    return ({
+        apiVersion: "io.k8s.api.storage.v1",
+        kind: "StorageClassList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.storageClassListIoK8sApiStorageV1 = storageClassListIoK8sApiStorageV1;
+/**
+ * StorageClass describes the parameters for a class of storage for which PersistentVolumes can be dynamically provisioned.
+ *
+ * StorageClasses are non-namespaced; the name of the storage class according to etcd is in ObjectMeta.Name.
+ */
+function storageClassIoK8sApiStorageV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.storage.v1beta1",
+        kind: "StorageClass",
+        provisioner: (options && options.provisioner) || null,
+    }).merge(options);
+}
+exports.storageClassIoK8sApiStorageV1beta1 = storageClassIoK8sApiStorageV1beta1;
+/**
+ * StorageClassList is a collection of storage classes.
+ */
+function storageClassListIoK8sApiStorageV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.api.storage.v1beta1",
+        kind: "StorageClassList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.storageClassListIoK8sApiStorageV1beta1 = storageClassListIoK8sApiStorageV1beta1;
 /**
  * VolumeAttachment captures the intent to attach or detach the specified volume to/from the specified node.
  *
  * VolumeAttachment objects are non-namespaced.
  */
-function volumeAttachmentV1beta1(options) {
+function volumeAttachmentIoK8sApiStorageV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.storage.v1beta1",
         kind: "VolumeAttachment",
-        spec: (options && options.spec) || volumeAttachmentSpecV1beta1(),
+        spec: (options && options.spec) || volumeAttachmentSpecIoK8sApiStorageV1beta1(),
     }).merge(options);
 }
-exports.volumeAttachmentV1beta1 = volumeAttachmentV1beta1;
+exports.volumeAttachmentIoK8sApiStorageV1beta1 = volumeAttachmentIoK8sApiStorageV1beta1;
 /**
  * VolumeAttachmentList is a collection of VolumeAttachment objects.
  */
-function volumeAttachmentListV1beta1(options) {
+function volumeAttachmentListIoK8sApiStorageV1beta1(options) {
     return ({
-        apiVersion: "v1beta1",
+        apiVersion: "io.k8s.api.storage.v1beta1",
         kind: "VolumeAttachmentList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.volumeAttachmentListV1beta1 = volumeAttachmentListV1beta1;
+exports.volumeAttachmentListIoK8sApiStorageV1beta1 = volumeAttachmentListIoK8sApiStorageV1beta1;
 /**
  * VolumeAttachmentSource represents a volume that should be attached. Right now only PersistenVolumes can be attached via external attacher, in future we may allow also inline volumes in pods. Exactly one member can be set.
  */
-function volumeAttachmentSourceV1beta1(options) {
+function volumeAttachmentSourceIoK8sApiStorageV1beta1(options) {
     return ({}).merge(options);
 }
-exports.volumeAttachmentSourceV1beta1 = volumeAttachmentSourceV1beta1;
+exports.volumeAttachmentSourceIoK8sApiStorageV1beta1 = volumeAttachmentSourceIoK8sApiStorageV1beta1;
 /**
  * VolumeAttachmentSpec is the specification of a VolumeAttachment request.
  */
-function volumeAttachmentSpecV1beta1(options) {
+function volumeAttachmentSpecIoK8sApiStorageV1beta1(options) {
     return ({
         attacher: (options && options.attacher) || null,
         nodeName: (options && options.nodeName) || null,
-        source: (options && options.source) || volumeAttachmentSourceV1beta1(),
+        source: (options && options.source) || volumeAttachmentSourceIoK8sApiStorageV1beta1(),
     }).merge(options);
 }
-exports.volumeAttachmentSpecV1beta1 = volumeAttachmentSpecV1beta1;
+exports.volumeAttachmentSpecIoK8sApiStorageV1beta1 = volumeAttachmentSpecIoK8sApiStorageV1beta1;
 /**
  * VolumeAttachmentStatus is the status of a VolumeAttachment request.
  */
-function volumeAttachmentStatusV1beta1(options) {
+function volumeAttachmentStatusIoK8sApiStorageV1beta1(options) {
     return ({
         attached: (options && options.attached) || false,
     }).merge(options);
 }
-exports.volumeAttachmentStatusV1beta1 = volumeAttachmentStatusV1beta1;
+exports.volumeAttachmentStatusIoK8sApiStorageV1beta1 = volumeAttachmentStatusIoK8sApiStorageV1beta1;
 /**
  * VolumeError captures an error encountered during a volume operation.
  */
-function volumeErrorV1beta1(options) {
+function volumeErrorIoK8sApiStorageV1beta1(options) {
     return ({}).merge(options);
 }
-exports.volumeErrorV1beta1 = volumeErrorV1beta1;
+exports.volumeErrorIoK8sApiStorageV1beta1 = volumeErrorIoK8sApiStorageV1beta1;
 /**
- * Webhook describes an admission webhook and the resources and operations it applies to.
+ * CustomResourceColumnDefinition specifies a column for server side printing.
  */
-function webhookV1beta1(options) {
+function customResourceColumnDefinitionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
     return ({
-        clientConfig: (options && options.clientConfig) || webhookClientConfigAdmissionregistrationV1beta1(),
+        JSONPath: (options && options.JSONPath) || null,
         name: (options && options.name) || null,
+        type: (options && options.type) || null,
     }).merge(options);
 }
-exports.webhookV1beta1 = webhookV1beta1;
+exports.customResourceColumnDefinitionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceColumnDefinitionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
 /**
- * DEPRECATED - This group version of ControllerRevision is deprecated by apps/v1/ControllerRevision. See the release notes for more information. ControllerRevision implements an immutable snapshot of state data. Clients are responsible for serializing and deserializing the objects that contain their internal state. Once a ControllerRevision has been successfully created, it can not be updated. The API Server will fail validation of all requests that attempt to mutate the Data field. ControllerRevisions may, however, be deleted. Note that, due to its use by both the DaemonSet and StatefulSet controllers for update and rollback, this object is beta. However, it may be subject to name and representation changes in future releases, and clients should not depend on its stability. It is primarily for internal use by controllers.
+ * CustomResourceDefinition represents a resource that should be exposed on the API server.  Its name MUST be in the format <.spec.name>.<.spec.group>.
  */
-function controllerRevisionV1beta2(options) {
+function customResourceDefinitionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta2",
-        kind: "ControllerRevision",
-        revision: (options && options.revision) || 0,
+        apiVersion: "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1",
+        kind: "CustomResourceDefinition",
+        spec: (options && options.spec) || customResourceDefinitionSpecIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(),
     }).merge(options);
 }
-exports.controllerRevisionV1beta2 = controllerRevisionV1beta2;
+exports.customResourceDefinitionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceDefinitionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
 /**
- * ControllerRevisionList is a resource containing a list of ControllerRevision objects.
+ * CustomResourceDefinitionCondition contains details for the current condition of this pod.
  */
-function controllerRevisionListV1beta2(options) {
-    return ({
-        apiVersion: "v1beta2",
-        kind: "ControllerRevisionList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.controllerRevisionListV1beta2 = controllerRevisionListV1beta2;
-/**
- * DEPRECATED - This group version of DaemonSet is deprecated by apps/v1/DaemonSet. See the release notes for more information. DaemonSet represents the configuration of a daemon set.
- */
-function daemonSetV1beta2(options) {
-    return ({
-        apiVersion: "v1beta2",
-        kind: "DaemonSet",
-    }).merge(options);
-}
-exports.daemonSetV1beta2 = daemonSetV1beta2;
-/**
- * DaemonSetCondition describes the state of a DaemonSet at a certain point.
- */
-function daemonSetConditionV1beta2(options) {
+function customResourceDefinitionConditionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
     return ({
         status: (options && options.status) || null,
         type: (options && options.type) || null,
     }).merge(options);
 }
-exports.daemonSetConditionV1beta2 = daemonSetConditionV1beta2;
+exports.customResourceDefinitionConditionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceDefinitionConditionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
 /**
- * DaemonSetList is a collection of daemon sets.
+ * CustomResourceDefinitionList is a list of CustomResourceDefinition objects.
  */
-function daemonSetListV1beta2(options) {
+function customResourceDefinitionListIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta2",
-        kind: "DaemonSetList",
+        apiVersion: "io.k8s.apiextensions-apiserver.pkg.apis.apiextensions.v1beta1",
+        kind: "CustomResourceDefinitionList",
         items: (options && options.items) || [],
     }).merge(options);
 }
-exports.daemonSetListV1beta2 = daemonSetListV1beta2;
+exports.customResourceDefinitionListIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceDefinitionListIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
 /**
- * DaemonSetSpec is the specification of a daemon set.
+ * CustomResourceDefinitionNames indicates the names to serve this CustomResourceDefinition
  */
-function daemonSetSpecV1beta2(options) {
+function customResourceDefinitionNamesIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
     return ({
-        selector: (options && options.selector) || labelSelector(),
-        template: (options && options.template) || podTemplateSpec(),
+        kind: "CustomResourceDefinitionNames",
+        plural: (options && options.plural) || null,
     }).merge(options);
 }
-exports.daemonSetSpecV1beta2 = daemonSetSpecV1beta2;
+exports.customResourceDefinitionNamesIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceDefinitionNamesIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
 /**
- * DaemonSetStatus represents the current status of a daemon set.
+ * CustomResourceDefinitionSpec describes how a user wants their resource to appear
  */
-function daemonSetStatusV1beta2(options) {
+function customResourceDefinitionSpecIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
     return ({
-        currentNumberScheduled: (options && options.currentNumberScheduled) || 0,
-        desiredNumberScheduled: (options && options.desiredNumberScheduled) || 0,
-        numberMisscheduled: (options && options.numberMisscheduled) || 0,
-        numberReady: (options && options.numberReady) || 0,
+        group: (options && options.group) || null,
+        names: (options && options.names) || customResourceDefinitionNamesIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(),
+        scope: (options && options.scope) || null,
     }).merge(options);
 }
-exports.daemonSetStatusV1beta2 = daemonSetStatusV1beta2;
+exports.customResourceDefinitionSpecIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceDefinitionSpecIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
 /**
- * DaemonSetUpdateStrategy is a struct used to control the update strategy for a DaemonSet.
+ * CustomResourceDefinitionStatus indicates the state of the CustomResourceDefinition
  */
-function daemonSetUpdateStrategyV1beta2(options) {
-    return ({}).merge(options);
-}
-exports.daemonSetUpdateStrategyV1beta2 = daemonSetUpdateStrategyV1beta2;
-/**
- * DEPRECATED - This group version of Deployment is deprecated by apps/v1/Deployment. See the release notes for more information. Deployment enables declarative updates for Pods and ReplicaSets.
- */
-function deploymentV1beta2(options) {
+function customResourceDefinitionStatusIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
     return ({
-        apiVersion: "v1beta2",
-        kind: "Deployment",
-    }).merge(options);
-}
-exports.deploymentV1beta2 = deploymentV1beta2;
-/**
- * DeploymentCondition describes the state of a deployment at a certain point.
- */
-function deploymentConditionV1beta2(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.deploymentConditionV1beta2 = deploymentConditionV1beta2;
-/**
- * DeploymentList is a list of Deployments.
- */
-function deploymentListV1beta2(options) {
-    return ({
-        apiVersion: "v1beta2",
-        kind: "DeploymentList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.deploymentListV1beta2 = deploymentListV1beta2;
-/**
- * DeploymentSpec is the specification of the desired behavior of the Deployment.
- */
-function deploymentSpecV1beta2(options) {
-    return ({
-        selector: (options && options.selector) || labelSelector(),
-        template: (options && options.template) || podTemplateSpec(),
-    }).merge(options);
-}
-exports.deploymentSpecV1beta2 = deploymentSpecV1beta2;
-/**
- * DeploymentStatus is the most recently observed status of the Deployment.
- */
-function deploymentStatusV1beta2(options) {
-    return ({}).merge(options);
-}
-exports.deploymentStatusV1beta2 = deploymentStatusV1beta2;
-/**
- * DeploymentStrategy describes how to replace existing pods with new ones.
- */
-function deploymentStrategyV1beta2(options) {
-    return ({}).merge(options);
-}
-exports.deploymentStrategyV1beta2 = deploymentStrategyV1beta2;
-/**
- * DEPRECATED - This group version of ReplicaSet is deprecated by apps/v1/ReplicaSet. See the release notes for more information. ReplicaSet ensures that a specified number of pod replicas are running at any given time.
- */
-function replicaSetV1beta2(options) {
-    return ({
-        apiVersion: "v1beta2",
-        kind: "ReplicaSet",
-    }).merge(options);
-}
-exports.replicaSetV1beta2 = replicaSetV1beta2;
-/**
- * ReplicaSetCondition describes the state of a replica set at a certain point.
- */
-function replicaSetConditionV1beta2(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.replicaSetConditionV1beta2 = replicaSetConditionV1beta2;
-/**
- * ReplicaSetList is a collection of ReplicaSets.
- */
-function replicaSetListV1beta2(options) {
-    return ({
-        apiVersion: "v1beta2",
-        kind: "ReplicaSetList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.replicaSetListV1beta2 = replicaSetListV1beta2;
-/**
- * ReplicaSetSpec is the specification of a ReplicaSet.
- */
-function replicaSetSpecV1beta2(options) {
-    return ({
-        selector: (options && options.selector) || labelSelector(),
-    }).merge(options);
-}
-exports.replicaSetSpecV1beta2 = replicaSetSpecV1beta2;
-/**
- * ReplicaSetStatus represents the current status of a ReplicaSet.
- */
-function replicaSetStatusV1beta2(options) {
-    return ({
-        replicas: (options && options.replicas) || 0,
-    }).merge(options);
-}
-exports.replicaSetStatusV1beta2 = replicaSetStatusV1beta2;
-/**
- * Spec to control the desired behavior of daemon set rolling update.
- */
-function rollingUpdateDaemonSetV1beta2(options) {
-    return ({}).merge(options);
-}
-exports.rollingUpdateDaemonSetV1beta2 = rollingUpdateDaemonSetV1beta2;
-/**
- * Spec to control the desired behavior of rolling update.
- */
-function rollingUpdateDeploymentV1beta2(options) {
-    return ({}).merge(options);
-}
-exports.rollingUpdateDeploymentV1beta2 = rollingUpdateDeploymentV1beta2;
-/**
- * RollingUpdateStatefulSetStrategy is used to communicate parameter for RollingUpdateStatefulSetStrategyType.
- */
-function rollingUpdateStatefulSetStrategyV1beta2(options) {
-    return ({}).merge(options);
-}
-exports.rollingUpdateStatefulSetStrategyV1beta2 = rollingUpdateStatefulSetStrategyV1beta2;
-/**
- * Scale represents a scaling request for a resource.
- */
-function scaleV1beta2(options) {
-    return ({
-        apiVersion: "v1beta2",
-        kind: "Scale",
-    }).merge(options);
-}
-exports.scaleV1beta2 = scaleV1beta2;
-/**
- * ScaleSpec describes the attributes of a scale subresource
- */
-function scaleSpecV1beta2(options) {
-    return ({}).merge(options);
-}
-exports.scaleSpecV1beta2 = scaleSpecV1beta2;
-/**
- * ScaleStatus represents the current status of a scale subresource.
- */
-function scaleStatusV1beta2(options) {
-    return ({
-        replicas: (options && options.replicas) || 0,
-    }).merge(options);
-}
-exports.scaleStatusV1beta2 = scaleStatusV1beta2;
-/**
- * DEPRECATED - This group version of StatefulSet is deprecated by apps/v1/StatefulSet. See the release notes for more information. StatefulSet represents a set of pods with consistent identities. Identities are defined as:
- *  - Network: A single stable DNS and hostname.
- *  - Storage: As many VolumeClaims as requested.
- * The StatefulSet guarantees that a given network identity will always map to the same storage identity.
- */
-function statefulSetV1beta2(options) {
-    return ({
-        apiVersion: "v1beta2",
-        kind: "StatefulSet",
-    }).merge(options);
-}
-exports.statefulSetV1beta2 = statefulSetV1beta2;
-/**
- * StatefulSetCondition describes the state of a statefulset at a certain point.
- */
-function statefulSetConditionV1beta2(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.statefulSetConditionV1beta2 = statefulSetConditionV1beta2;
-/**
- * StatefulSetList is a collection of StatefulSets.
- */
-function statefulSetListV1beta2(options) {
-    return ({
-        apiVersion: "v1beta2",
-        kind: "StatefulSetList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.statefulSetListV1beta2 = statefulSetListV1beta2;
-/**
- * A StatefulSetSpec is the specification of a StatefulSet.
- */
-function statefulSetSpecV1beta2(options) {
-    return ({
-        selector: (options && options.selector) || labelSelector(),
-        serviceName: (options && options.serviceName) || null,
-        template: (options && options.template) || podTemplateSpec(),
-    }).merge(options);
-}
-exports.statefulSetSpecV1beta2 = statefulSetSpecV1beta2;
-/**
- * StatefulSetStatus represents the current state of a StatefulSet.
- */
-function statefulSetStatusV1beta2(options) {
-    return ({
-        replicas: (options && options.replicas) || 0,
-    }).merge(options);
-}
-exports.statefulSetStatusV1beta2 = statefulSetStatusV1beta2;
-/**
- * StatefulSetUpdateStrategy indicates the strategy that the StatefulSet controller will use to perform updates. It includes any additional parameters necessary to perform the update for the indicated strategy.
- */
-function statefulSetUpdateStrategyV1beta2(options) {
-    return ({}).merge(options);
-}
-exports.statefulSetUpdateStrategyV1beta2 = statefulSetUpdateStrategyV1beta2;
-/**
- * CronJob represents the configuration of a single cron job.
- */
-function cronJobV2alpha1(options) {
-    return ({
-        apiVersion: "v2alpha1",
-        kind: "CronJob",
-    }).merge(options);
-}
-exports.cronJobV2alpha1 = cronJobV2alpha1;
-/**
- * CronJobList is a collection of cron jobs.
- */
-function cronJobListV2alpha1(options) {
-    return ({
-        apiVersion: "v2alpha1",
-        kind: "CronJobList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.cronJobListV2alpha1 = cronJobListV2alpha1;
-/**
- * CronJobSpec describes how the job execution will look like and when it will actually run.
- */
-function cronJobSpecV2alpha1(options) {
-    return ({
-        jobTemplate: (options && options.jobTemplate) || jobTemplateSpecV2alpha1(),
-        schedule: (options && options.schedule) || null,
-    }).merge(options);
-}
-exports.cronJobSpecV2alpha1 = cronJobSpecV2alpha1;
-/**
- * CronJobStatus represents the current state of a cron job.
- */
-function cronJobStatusV2alpha1(options) {
-    return ({}).merge(options);
-}
-exports.cronJobStatusV2alpha1 = cronJobStatusV2alpha1;
-/**
- * JobTemplateSpec describes the data a Job should have when created from a template
- */
-function jobTemplateSpecV2alpha1(options) {
-    return ({}).merge(options);
-}
-exports.jobTemplateSpecV2alpha1 = jobTemplateSpecV2alpha1;
-/**
- * CrossVersionObjectReference contains enough information to let you identify the referred resource.
- */
-function crossVersionObjectReferenceV2beta1(options) {
-    return ({
-        apiVersion: "v2beta1",
-        kind: "CrossVersionObjectReference",
-        name: (options && options.name) || null,
-    }).merge(options);
-}
-exports.crossVersionObjectReferenceV2beta1 = crossVersionObjectReferenceV2beta1;
-/**
- * ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster). Exactly one "target" type should be set.
- */
-function externalMetricSourceV2beta1(options) {
-    return ({
-        metricName: (options && options.metricName) || null,
-    }).merge(options);
-}
-exports.externalMetricSourceV2beta1 = externalMetricSourceV2beta1;
-/**
- * ExternalMetricStatus indicates the current value of a global metric not associated with any Kubernetes object.
- */
-function externalMetricStatusV2beta1(options) {
-    return ({
-        currentValue: (options && options.currentValue) || null,
-        metricName: (options && options.metricName) || null,
-    }).merge(options);
-}
-exports.externalMetricStatusV2beta1 = externalMetricStatusV2beta1;
-/**
- * HorizontalPodAutoscaler is the configuration for a horizontal pod autoscaler, which automatically manages the replica count of any resource implementing the scale subresource based on the metrics specified.
- */
-function horizontalPodAutoscalerV2beta1(options) {
-    return ({
-        apiVersion: "v2beta1",
-        kind: "HorizontalPodAutoscaler",
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerV2beta1 = horizontalPodAutoscalerV2beta1;
-/**
- * HorizontalPodAutoscalerCondition describes the state of a HorizontalPodAutoscaler at a certain point.
- */
-function horizontalPodAutoscalerConditionV2beta1(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerConditionV2beta1 = horizontalPodAutoscalerConditionV2beta1;
-/**
- * HorizontalPodAutoscaler is a list of horizontal pod autoscaler objects.
- */
-function horizontalPodAutoscalerListV2beta1(options) {
-    return ({
-        apiVersion: "v2beta1",
-        kind: "HorizontalPodAutoscalerList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerListV2beta1 = horizontalPodAutoscalerListV2beta1;
-/**
- * HorizontalPodAutoscalerSpec describes the desired functionality of the HorizontalPodAutoscaler.
- */
-function horizontalPodAutoscalerSpecV2beta1(options) {
-    return ({
-        maxReplicas: (options && options.maxReplicas) || 0,
-        scaleTargetRef: (options && options.scaleTargetRef) || crossVersionObjectReferenceV2beta1(),
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerSpecV2beta1 = horizontalPodAutoscalerSpecV2beta1;
-/**
- * HorizontalPodAutoscalerStatus describes the current status of a horizontal pod autoscaler.
- */
-function horizontalPodAutoscalerStatusV2beta1(options) {
-    return ({
+        acceptedNames: (options && options.acceptedNames) || customResourceDefinitionNamesIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(),
         conditions: (options && options.conditions) || [],
-        currentReplicas: (options && options.currentReplicas) || 0,
-        desiredReplicas: (options && options.desiredReplicas) || 0,
+        storedVersions: (options && options.storedVersions) || [],
     }).merge(options);
 }
-exports.horizontalPodAutoscalerStatusV2beta1 = horizontalPodAutoscalerStatusV2beta1;
-/**
- * MetricSpec specifies how to scale based on a single metric (only `type` and one other matching field should be set at once).
- */
-function metricSpecV2beta1(options) {
-    return ({
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.metricSpecV2beta1 = metricSpecV2beta1;
-/**
- * MetricStatus describes the last-read state of a single metric.
- */
-function metricStatusV2beta1(options) {
-    return ({
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.metricStatusV2beta1 = metricStatusV2beta1;
-/**
- * ObjectMetricSource indicates how to scale on a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
- */
-function objectMetricSourceV2beta1(options) {
-    return ({
-        metricName: (options && options.metricName) || null,
-        target: (options && options.target) || crossVersionObjectReferenceV2beta1(),
-        targetValue: (options && options.targetValue) || null,
-    }).merge(options);
-}
-exports.objectMetricSourceV2beta1 = objectMetricSourceV2beta1;
-/**
- * ObjectMetricStatus indicates the current value of a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
- */
-function objectMetricStatusV2beta1(options) {
-    return ({
-        currentValue: (options && options.currentValue) || null,
-        metricName: (options && options.metricName) || null,
-        target: (options && options.target) || crossVersionObjectReferenceV2beta1(),
-    }).merge(options);
-}
-exports.objectMetricStatusV2beta1 = objectMetricStatusV2beta1;
-/**
- * PodsMetricSource indicates how to scale on a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value.
- */
-function podsMetricSourceV2beta1(options) {
-    return ({
-        metricName: (options && options.metricName) || null,
-        targetAverageValue: (options && options.targetAverageValue) || null,
-    }).merge(options);
-}
-exports.podsMetricSourceV2beta1 = podsMetricSourceV2beta1;
-/**
- * PodsMetricStatus indicates the current value of a metric describing each pod in the current scale target (for example, transactions-processed-per-second).
- */
-function podsMetricStatusV2beta1(options) {
-    return ({
-        currentAverageValue: (options && options.currentAverageValue) || null,
-        metricName: (options && options.metricName) || null,
-    }).merge(options);
-}
-exports.podsMetricStatusV2beta1 = podsMetricStatusV2beta1;
-/**
- * ResourceMetricSource indicates how to scale on a resource metric known to Kubernetes, as specified in requests and limits, describing each pod in the current scale target (e.g. CPU or memory).  The values will be averaged together before being compared to the target.  Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.  Only one "target" type should be set.
- */
-function resourceMetricSourceV2beta1(options) {
+exports.customResourceDefinitionStatusIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceDefinitionStatusIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
+function customResourceDefinitionVersionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
     return ({
         name: (options && options.name) || null,
+        served: (options && options.served) || false,
+        storage: (options && options.storage) || false,
     }).merge(options);
 }
-exports.resourceMetricSourceV2beta1 = resourceMetricSourceV2beta1;
+exports.customResourceDefinitionVersionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceDefinitionVersionIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
 /**
- * ResourceMetricStatus indicates the current value of a resource metric known to Kubernetes, as specified in requests and limits, describing each pod in the current scale target (e.g. CPU or memory).  Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.
+ * CustomResourceSubresourceScale defines how to serve the scale subresource for CustomResources.
  */
-function resourceMetricStatusV2beta1(options) {
+function customResourceSubresourceScaleIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
     return ({
-        currentAverageValue: (options && options.currentAverageValue) || null,
-        name: (options && options.name) || null,
+        specReplicasPath: (options && options.specReplicasPath) || null,
+        statusReplicasPath: (options && options.statusReplicasPath) || null,
     }).merge(options);
 }
-exports.resourceMetricStatusV2beta1 = resourceMetricStatusV2beta1;
+exports.customResourceSubresourceScaleIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceSubresourceScaleIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
 /**
- * CrossVersionObjectReference contains enough information to let you identify the referred resource.
+ * CustomResourceSubresourceStatus defines how to serve the status subresource for CustomResources. Status is represented by the `.status` JSON path inside of a CustomResource. When set, * exposes a /status subresource for the custom resource * PUT requests to the /status subresource take a custom resource object, and ignore changes to anything except the status stanza * PUT/POST/PATCH requests to the custom resource ignore changes to the status stanza
  */
-function crossVersionObjectReferenceV2beta2(options) {
-    return ({
-        apiVersion: "v2beta2",
-        kind: "CrossVersionObjectReference",
-        name: (options && options.name) || null,
-    }).merge(options);
-}
-exports.crossVersionObjectReferenceV2beta2 = crossVersionObjectReferenceV2beta2;
-/**
- * ExternalMetricSource indicates how to scale on a metric not associated with any Kubernetes object (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster).
- */
-function externalMetricSourceV2beta2(options) {
-    return ({
-        metric: (options && options.metric) || metricIdentifierV2beta2(),
-        target: (options && options.target) || metricTargetV2beta2(),
-    }).merge(options);
-}
-exports.externalMetricSourceV2beta2 = externalMetricSourceV2beta2;
-/**
- * ExternalMetricStatus indicates the current value of a global metric not associated with any Kubernetes object.
- */
-function externalMetricStatusV2beta2(options) {
-    return ({
-        current: (options && options.current) || metricValueStatusV2beta2(),
-        metric: (options && options.metric) || metricIdentifierV2beta2(),
-    }).merge(options);
-}
-exports.externalMetricStatusV2beta2 = externalMetricStatusV2beta2;
-/**
- * HorizontalPodAutoscaler is the configuration for a horizontal pod autoscaler, which automatically manages the replica count of any resource implementing the scale subresource based on the metrics specified.
- */
-function horizontalPodAutoscalerV2beta2(options) {
-    return ({
-        apiVersion: "v2beta2",
-        kind: "HorizontalPodAutoscaler",
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerV2beta2 = horizontalPodAutoscalerV2beta2;
-/**
- * HorizontalPodAutoscalerCondition describes the state of a HorizontalPodAutoscaler at a certain point.
- */
-function horizontalPodAutoscalerConditionV2beta2(options) {
-    return ({
-        status: (options && options.status) || null,
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerConditionV2beta2 = horizontalPodAutoscalerConditionV2beta2;
-/**
- * HorizontalPodAutoscalerList is a list of horizontal pod autoscaler objects.
- */
-function horizontalPodAutoscalerListV2beta2(options) {
-    return ({
-        apiVersion: "v2beta2",
-        kind: "HorizontalPodAutoscalerList",
-        items: (options && options.items) || [],
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerListV2beta2 = horizontalPodAutoscalerListV2beta2;
-/**
- * HorizontalPodAutoscalerSpec describes the desired functionality of the HorizontalPodAutoscaler.
- */
-function horizontalPodAutoscalerSpecV2beta2(options) {
-    return ({
-        maxReplicas: (options && options.maxReplicas) || 0,
-        scaleTargetRef: (options && options.scaleTargetRef) || crossVersionObjectReferenceV2beta2(),
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerSpecV2beta2 = horizontalPodAutoscalerSpecV2beta2;
-/**
- * HorizontalPodAutoscalerStatus describes the current status of a horizontal pod autoscaler.
- */
-function horizontalPodAutoscalerStatusV2beta2(options) {
-    return ({
-        conditions: (options && options.conditions) || [],
-        currentReplicas: (options && options.currentReplicas) || 0,
-        desiredReplicas: (options && options.desiredReplicas) || 0,
-    }).merge(options);
-}
-exports.horizontalPodAutoscalerStatusV2beta2 = horizontalPodAutoscalerStatusV2beta2;
-/**
- * MetricIdentifier defines the name and optionally selector for a metric
- */
-function metricIdentifierV2beta2(options) {
-    return ({
-        name: (options && options.name) || null,
-    }).merge(options);
-}
-exports.metricIdentifierV2beta2 = metricIdentifierV2beta2;
-/**
- * MetricSpec specifies how to scale based on a single metric (only `type` and one other matching field should be set at once).
- */
-function metricSpecV2beta2(options) {
-    return ({
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.metricSpecV2beta2 = metricSpecV2beta2;
-/**
- * MetricStatus describes the last-read state of a single metric.
- */
-function metricStatusV2beta2(options) {
-    return ({
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.metricStatusV2beta2 = metricStatusV2beta2;
-/**
- * MetricTarget defines the target value, average value, or average utilization of a specific metric
- */
-function metricTargetV2beta2(options) {
-    return ({
-        type: (options && options.type) || null,
-    }).merge(options);
-}
-exports.metricTargetV2beta2 = metricTargetV2beta2;
-/**
- * MetricValueStatus holds the current value for a metric
- */
-function metricValueStatusV2beta2(options) {
+function customResourceSubresourceStatusIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
     return ({}).merge(options);
 }
-exports.metricValueStatusV2beta2 = metricValueStatusV2beta2;
+exports.customResourceSubresourceStatusIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceSubresourceStatusIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
 /**
- * ObjectMetricSource indicates how to scale on a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
+ * CustomResourceSubresources defines the status and scale subresources for CustomResources.
  */
-function objectMetricSourceV2beta2(options) {
+function customResourceSubresourcesIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.customResourceSubresourcesIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceSubresourcesIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
+/**
+ * CustomResourceValidation is a list of validation methods for CustomResources.
+ */
+function customResourceValidationIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.customResourceValidationIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = customResourceValidationIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
+/**
+ * ExternalDocumentation allows referencing an external resource for extended documentation.
+ */
+function externalDocumentationIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.externalDocumentationIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = externalDocumentationIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
+/**
+ * JSON represents any valid JSON value. These types are supported: bool, int64, float64, string, []interface{}, map[string]interface{} and nil.
+ */
+function jSONIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.jSONIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = jSONIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
+/**
+ * JSONSchemaProps is a JSON-Schema following Specification Draft 4 (http://json-schema.org/).
+ */
+function jSONSchemaPropsIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.jSONSchemaPropsIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = jSONSchemaPropsIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
+/**
+ * JSONSchemaPropsOrArray represents a value that can either be a JSONSchemaProps or an array of JSONSchemaProps. Mainly here for serialization purposes.
+ */
+function jSONSchemaPropsOrArrayIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.jSONSchemaPropsOrArrayIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = jSONSchemaPropsOrArrayIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
+/**
+ * JSONSchemaPropsOrBool represents JSONSchemaProps or a boolean value. Defaults to true for the boolean property.
+ */
+function jSONSchemaPropsOrBoolIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.jSONSchemaPropsOrBoolIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = jSONSchemaPropsOrBoolIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
+/**
+ * JSONSchemaPropsOrStringArray represents a JSONSchemaProps or a string array.
+ */
+function jSONSchemaPropsOrStringArrayIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.jSONSchemaPropsOrStringArrayIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1 = jSONSchemaPropsOrStringArrayIoK8sApiextensionsapiserverPkgApisApiextensionsV1beta1;
+/**
+ * Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and Int64() accessors.
+ *
+ * The serialization format is:
+ *
+ * <quantity>        ::= <signedNumber><suffix>
+ *   (Note that <suffix> may be empty, from the "" case in <decimalSI>.)
+ * <digit>           ::= 0 | 1 | ... | 9 <digits>          ::= <digit> | <digit><digits> <number>          ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign>            ::= "+" | "-" <signedNumber>    ::= <number> | <sign><number> <suffix>          ::= <binarySI> | <decimalExponent> | <decimalSI> <binarySI>        ::= Ki | Mi | Gi | Ti | Pi | Ei
+ *   (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html)
+ * <decimalSI>       ::= m | "" | k | M | G | T | P | E
+ *   (Note that 1024 = 1Ki but 1000 = 1k; I didn't choose the capitalization.)
+ * <decimalExponent> ::= "e" <signedNumber> | "E" <signedNumber>
+ *
+ * No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities.
+ *
+ * When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized.
+ *
+ * Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that:
+ *   a. No precision is lost
+ *   b. No fractional digits will be emitted
+ *   c. The exponent (or suffix) is as large as possible.
+ * The sign will be omitted unless the number is negative.
+ *
+ * Examples:
+ *   1.5 will be serialized as "1500m"
+ *   1.5Gi will be serialized as "1536Mi"
+ *
+ * Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise.
+ *
+ * Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don't diff.)
+ *
+ * This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.
+ */
+function quantityIoK8sApimachineryPkgApiResource(options) {
+    return ({}).merge(options);
+}
+exports.quantityIoK8sApimachineryPkgApiResource = quantityIoK8sApimachineryPkgApiResource;
+/**
+ * Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and Int64() accessors.
+ *
+ * The serialization format is:
+ *
+ * <quantity>        ::= <signedNumber><suffix>
+ *   (Note that <suffix> may be empty, from the "" case in <decimalSI>.)
+ * <digit>           ::= 0 | 1 | ... | 9 <digits>          ::= <digit> | <digit><digits> <number>          ::= <digits> | <digits>.<digits> | <digits>. | .<digits> <sign>            ::= "+" | "-" <signedNumber>    ::= <number> | <sign><number> <suffix>          ::= <binarySI> | <decimalExponent> | <decimalSI> <binarySI>        ::= Ki | Mi | Gi | Ti | Pi | Ei
+ *   (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html)
+ * <decimalSI>       ::= m | "" | k | M | G | T | P | E
+ *   (Note that 1024 = 1Ki but 1000 = 1k; I didn't choose the capitalization.)
+ * <decimalExponent> ::= "e" <signedNumber> | "E" <signedNumber>
+ *
+ * No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities.
+ *
+ * When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized.
+ *
+ * Before serializing, Quantity will be put in "canonical form". This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that:
+ *   a. No precision is lost
+ *   b. No fractional digits will be emitted
+ *   c. The exponent (or suffix) is as large as possible.
+ * The sign will be omitted unless the number is negative.
+ *
+ * Examples:
+ *   1.5 will be serialized as "1500m"
+ *   1.5Gi will be serialized as "1536Mi"
+ *
+ * NOTE: We reserve the right to amend this canonical format, perhaps to
+ *   allow 1.5 to be canonical.
+ *   or after March 2015.
+ *
+ * Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise.
+ *
+ * Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don't diff.)
+ *
+ * This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation.
+ */
+function quantity_v2IoK8sApimachineryPkgApiResource(options) {
+    return ({}).merge(options);
+}
+exports.quantity_v2IoK8sApimachineryPkgApiResource = quantity_v2IoK8sApimachineryPkgApiResource;
+/**
+ * APIGroup contains the name, the supported versions, and the preferred version of a group.
+ */
+function aPIGroupIoK8sApimachineryPkgApisMetaV1(options) {
     return ({
-        describedObject: (options && options.describedObject) || crossVersionObjectReferenceV2beta2(),
-        metric: (options && options.metric) || metricIdentifierV2beta2(),
-        target: (options && options.target) || metricTargetV2beta2(),
+        apiVersion: "io.k8s.apimachinery.pkg.apis.meta.v1",
+        kind: "APIGroup",
+        name: (options && options.name) || null,
+        versions: (options && options.versions) || [],
     }).merge(options);
 }
-exports.objectMetricSourceV2beta2 = objectMetricSourceV2beta2;
+exports.aPIGroupIoK8sApimachineryPkgApisMetaV1 = aPIGroupIoK8sApimachineryPkgApisMetaV1;
 /**
- * ObjectMetricStatus indicates the current value of a metric describing a kubernetes object (for example, hits-per-second on an Ingress object).
+ * APIGroupList is a list of APIGroup, to allow clients to discover the API at /apis.
  */
-function objectMetricStatusV2beta2(options) {
+function aPIGroupListIoK8sApimachineryPkgApisMetaV1(options) {
     return ({
-        current: (options && options.current) || metricValueStatusV2beta2(),
-        describedObject: (options && options.describedObject) || crossVersionObjectReferenceV2beta2(),
-        metric: (options && options.metric) || metricIdentifierV2beta2(),
+        apiVersion: "io.k8s.apimachinery.pkg.apis.meta.v1",
+        kind: "APIGroupList",
+        groups: (options && options.groups) || [],
     }).merge(options);
 }
-exports.objectMetricStatusV2beta2 = objectMetricStatusV2beta2;
+exports.aPIGroupListIoK8sApimachineryPkgApisMetaV1 = aPIGroupListIoK8sApimachineryPkgApisMetaV1;
 /**
- * PodsMetricSource indicates how to scale on a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value.
+ * APIResource specifies the name of a resource and whether it is namespaced.
  */
-function podsMetricSourceV2beta2(options) {
+function aPIResourceIoK8sApimachineryPkgApisMetaV1(options) {
     return ({
-        metric: (options && options.metric) || metricIdentifierV2beta2(),
-        target: (options && options.target) || metricTargetV2beta2(),
+        kind: "APIResource",
+        name: (options && options.name) || null,
+        namespaced: (options && options.namespaced) || false,
+        singularName: (options && options.singularName) || null,
+        verbs: (options && options.verbs) || [],
     }).merge(options);
 }
-exports.podsMetricSourceV2beta2 = podsMetricSourceV2beta2;
+exports.aPIResourceIoK8sApimachineryPkgApisMetaV1 = aPIResourceIoK8sApimachineryPkgApisMetaV1;
 /**
- * PodsMetricStatus indicates the current value of a metric describing each pod in the current scale target (for example, transactions-processed-per-second).
+ * APIResourceList is a list of APIResource, it is used to expose the name of the resources supported in a specific group and version, and if the resource is namespaced.
  */
-function podsMetricStatusV2beta2(options) {
+function aPIResourceListIoK8sApimachineryPkgApisMetaV1(options) {
     return ({
-        current: (options && options.current) || metricValueStatusV2beta2(),
-        metric: (options && options.metric) || metricIdentifierV2beta2(),
+        apiVersion: "io.k8s.apimachinery.pkg.apis.meta.v1",
+        kind: "APIResourceList",
+        groupVersion: (options && options.groupVersion) || null,
+        resources: (options && options.resources) || [],
     }).merge(options);
 }
-exports.podsMetricStatusV2beta2 = podsMetricStatusV2beta2;
+exports.aPIResourceListIoK8sApimachineryPkgApisMetaV1 = aPIResourceListIoK8sApimachineryPkgApisMetaV1;
 /**
- * ResourceMetricSource indicates how to scale on a resource metric known to Kubernetes, as specified in requests and limits, describing each pod in the current scale target (e.g. CPU or memory).  The values will be averaged together before being compared to the target.  Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.  Only one "target" type should be set.
+ * APIVersions lists the versions that are available, to allow clients to discover the API at /api, which is the root path of the legacy v1 API.
  */
-function resourceMetricSourceV2beta2(options) {
+function aPIVersionsIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({
+        apiVersion: "io.k8s.apimachinery.pkg.apis.meta.v1",
+        kind: "APIVersions",
+        serverAddressByClientCIDRs: (options && options.serverAddressByClientCIDRs) || [],
+        versions: (options && options.versions) || [],
+    }).merge(options);
+}
+exports.aPIVersionsIoK8sApimachineryPkgApisMetaV1 = aPIVersionsIoK8sApimachineryPkgApisMetaV1;
+/**
+ * DeleteOptions may be provided when deleting an API object.
+ */
+function deleteOptionsIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({
+        apiVersion: "io.k8s.apimachinery.pkg.apis.meta.v1",
+        kind: "DeleteOptions",
+    }).merge(options);
+}
+exports.deleteOptionsIoK8sApimachineryPkgApisMetaV1 = deleteOptionsIoK8sApimachineryPkgApisMetaV1;
+/**
+ * Duration is a wrapper around time.Duration which supports correct marshaling to YAML and JSON. In particular, it marshals into strings, which can be used as map keys in json.
+ */
+function durationIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({
+        Duration: (options && options.Duration) || 0,
+    }).merge(options);
+}
+exports.durationIoK8sApimachineryPkgApisMetaV1 = durationIoK8sApimachineryPkgApisMetaV1;
+/**
+ * GroupVersion contains the "group/version" and "version" string of a version. It is made a struct to keep extensibility.
+ */
+function groupVersionForDiscoveryIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({
+        groupVersion: (options && options.groupVersion) || null,
+        version: (options && options.version) || null,
+    }).merge(options);
+}
+exports.groupVersionForDiscoveryIoK8sApimachineryPkgApisMetaV1 = groupVersionForDiscoveryIoK8sApimachineryPkgApisMetaV1;
+/**
+ * Initializer is information about an initializer that has not yet completed.
+ */
+function initializerIoK8sApimachineryPkgApisMetaV1(options) {
     return ({
         name: (options && options.name) || null,
-        target: (options && options.target) || metricTargetV2beta2(),
     }).merge(options);
 }
-exports.resourceMetricSourceV2beta2 = resourceMetricSourceV2beta2;
+exports.initializerIoK8sApimachineryPkgApisMetaV1 = initializerIoK8sApimachineryPkgApisMetaV1;
 /**
- * ResourceMetricStatus indicates the current value of a resource metric known to Kubernetes, as specified in requests and limits, describing each pod in the current scale target (e.g. CPU or memory).  Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the "pods" source.
+ * Initializers tracks the progress of initialization.
  */
-function resourceMetricStatusV2beta2(options) {
+function initializersIoK8sApimachineryPkgApisMetaV1(options) {
     return ({
-        current: (options && options.current) || metricValueStatusV2beta2(),
-        name: (options && options.name) || null,
+        pending: (options && options.pending) || [],
     }).merge(options);
 }
-exports.resourceMetricStatusV2beta2 = resourceMetricStatusV2beta2;
+exports.initializersIoK8sApimachineryPkgApisMetaV1 = initializersIoK8sApimachineryPkgApisMetaV1;
+/**
+ * A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.
+ */
+function labelSelectorIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({}).merge(options);
+}
+exports.labelSelectorIoK8sApimachineryPkgApisMetaV1 = labelSelectorIoK8sApimachineryPkgApisMetaV1;
+/**
+ * A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
+ */
+function labelSelectorRequirementIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({
+        key: (options && options.key) || null,
+        operator: (options && options.operator) || null,
+    }).merge(options);
+}
+exports.labelSelectorRequirementIoK8sApimachineryPkgApisMetaV1 = labelSelectorRequirementIoK8sApimachineryPkgApisMetaV1;
+/**
+ * ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
+ */
+function listMetaIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({}).merge(options);
+}
+exports.listMetaIoK8sApimachineryPkgApisMetaV1 = listMetaIoK8sApimachineryPkgApisMetaV1;
+/**
+ * ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
+ */
+function listMeta_v2IoK8sApimachineryPkgApisMetaV1(options) {
+    return ({}).merge(options);
+}
+exports.listMeta_v2IoK8sApimachineryPkgApisMetaV1 = listMeta_v2IoK8sApimachineryPkgApisMetaV1;
+/**
+ * MicroTime is version of Time with microsecond level precision.
+ */
+function microTimeIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({}).merge(options);
+}
+exports.microTimeIoK8sApimachineryPkgApisMetaV1 = microTimeIoK8sApimachineryPkgApisMetaV1;
+/**
+ * ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+ */
+function objectMetaIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({}).merge(options);
+}
+exports.objectMetaIoK8sApimachineryPkgApisMetaV1 = objectMetaIoK8sApimachineryPkgApisMetaV1;
+/**
+ * OwnerReference contains enough information to let you identify an owning object. Currently, an owning object must be in the same namespace, so there is no namespace field.
+ */
+function ownerReferenceIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({
+        apiVersion: "io.k8s.apimachinery.pkg.apis.meta.v1",
+        kind: "OwnerReference",
+        name: (options && options.name) || null,
+        uid: (options && options.uid) || null,
+    }).merge(options);
+}
+exports.ownerReferenceIoK8sApimachineryPkgApisMetaV1 = ownerReferenceIoK8sApimachineryPkgApisMetaV1;
+/**
+ * Patch is provided to give a concrete name and type to the Kubernetes PATCH request body.
+ */
+function patchIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({}).merge(options);
+}
+exports.patchIoK8sApimachineryPkgApisMetaV1 = patchIoK8sApimachineryPkgApisMetaV1;
+/**
+ * Preconditions must be fulfilled before an operation (update, delete, etc.) is carried out.
+ */
+function preconditionsIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({}).merge(options);
+}
+exports.preconditionsIoK8sApimachineryPkgApisMetaV1 = preconditionsIoK8sApimachineryPkgApisMetaV1;
+/**
+ * ServerAddressByClientCIDR helps the client to determine the server address that they should use, depending on the clientCIDR that they match.
+ */
+function serverAddressByClientCIDRIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({
+        clientCIDR: (options && options.clientCIDR) || null,
+        serverAddress: (options && options.serverAddress) || null,
+    }).merge(options);
+}
+exports.serverAddressByClientCIDRIoK8sApimachineryPkgApisMetaV1 = serverAddressByClientCIDRIoK8sApimachineryPkgApisMetaV1;
+/**
+ * Status is a return value for calls that don't return other objects.
+ */
+function statusIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({
+        apiVersion: "io.k8s.apimachinery.pkg.apis.meta.v1",
+        kind: "Status",
+    }).merge(options);
+}
+exports.statusIoK8sApimachineryPkgApisMetaV1 = statusIoK8sApimachineryPkgApisMetaV1;
+/**
+ * StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.
+ */
+function statusCauseIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({}).merge(options);
+}
+exports.statusCauseIoK8sApimachineryPkgApisMetaV1 = statusCauseIoK8sApimachineryPkgApisMetaV1;
+/**
+ * StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined.
+ */
+function statusDetailsIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({
+        kind: "StatusDetails",
+    }).merge(options);
+}
+exports.statusDetailsIoK8sApimachineryPkgApisMetaV1 = statusDetailsIoK8sApimachineryPkgApisMetaV1;
+/**
+ * Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+ */
+function timeIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({}).merge(options);
+}
+exports.timeIoK8sApimachineryPkgApisMetaV1 = timeIoK8sApimachineryPkgApisMetaV1;
+/**
+ * Event represents a single event to a watched resource.
+ */
+function watchEventIoK8sApimachineryPkgApisMetaV1(options) {
+    return ({
+        object: (options && options.object) || rawExtensionIoK8sApimachineryPkgRuntime(),
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.watchEventIoK8sApimachineryPkgApisMetaV1 = watchEventIoK8sApimachineryPkgApisMetaV1;
+/**
+ * RawExtension is used to hold extensions in external versions.
+ *
+ * To use this, make a field which has RawExtension as its type in your external, versioned struct, and Object in your internal struct. You also need to register your various plugin types.
+ *
+ * // Internal package: type MyAPIObject struct {
+ * 	runtime.TypeMeta `json:",inline"`
+ * 	MyPlugin runtime.Object `json:"myPlugin"`
+ * } type PluginA struct {
+ * 	AOption string `json:"aOption"`
+ * }
+ *
+ * // External package: type MyAPIObject struct {
+ * 	runtime.TypeMeta `json:",inline"`
+ * 	MyPlugin runtime.RawExtension `json:"myPlugin"`
+ * } type PluginA struct {
+ * 	AOption string `json:"aOption"`
+ * }
+ *
+ * // On the wire, the JSON will look something like this: {
+ * 	"kind":"MyAPIObject",
+ * 	"apiVersion":"v1",
+ * 	"myPlugin": {
+ * 		"kind":"PluginA",
+ * 		"aOption":"foo",
+ * 	},
+ * }
+ *
+ * So what happens? Decode first uses json or yaml to unmarshal the serialized data into your external MyAPIObject. That causes the raw JSON to be stored, but not unpacked. The next step is to copy (using pkg/conversion) into the internal struct. The runtime package's DefaultScheme has conversion functions installed which will unpack the JSON stored in RawExtension, turning it into the correct object type, and storing it in the Object. (TODO: In the case where the object is of an unknown type, a runtime.Unknown object will be created and stored.)
+ */
+function rawExtensionIoK8sApimachineryPkgRuntime(options) {
+    return ({
+        Raw: (options && options.Raw) || null,
+    }).merge(options);
+}
+exports.rawExtensionIoK8sApimachineryPkgRuntime = rawExtensionIoK8sApimachineryPkgRuntime;
+/**
+ * IntOrString is a type that can hold an int32 or a string.  When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type.  This allows you to have, for example, a JSON field that can accept a name or number.
+ */
+function intOrStringIoK8sApimachineryPkgUtilIntstr(options) {
+    return ({}).merge(options);
+}
+exports.intOrStringIoK8sApimachineryPkgUtilIntstr = intOrStringIoK8sApimachineryPkgUtilIntstr;
 /**
  * Info contains versioning information. how we'll want to distribute that information.
  */
-function infoVersion(options) {
+function infoIoK8sApimachineryPkgVersion(options) {
     return ({
         buildDate: (options && options.buildDate) || null,
         compiler: (options && options.compiler) || null,
@@ -5376,4 +4716,2156 @@ function infoVersion(options) {
         platform: (options && options.platform) || null,
     }).merge(options);
 }
-exports.infoVersion = infoVersion;
+exports.infoIoK8sApimachineryPkgVersion = infoIoK8sApimachineryPkgVersion;
+/**
+ * APIService represents a server for a particular GroupVersion. Name must be "version.group".
+ */
+function aPIServiceIoK8sKubeaggregatorPkgApisApiregistrationV1(options) {
+    return ({
+        apiVersion: "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1",
+        kind: "APIService",
+    }).merge(options);
+}
+exports.aPIServiceIoK8sKubeaggregatorPkgApisApiregistrationV1 = aPIServiceIoK8sKubeaggregatorPkgApisApiregistrationV1;
+function aPIServiceConditionIoK8sKubeaggregatorPkgApisApiregistrationV1(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.aPIServiceConditionIoK8sKubeaggregatorPkgApisApiregistrationV1 = aPIServiceConditionIoK8sKubeaggregatorPkgApisApiregistrationV1;
+/**
+ * APIServiceList is a list of APIService objects.
+ */
+function aPIServiceListIoK8sKubeaggregatorPkgApisApiregistrationV1(options) {
+    return ({
+        apiVersion: "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1",
+        kind: "APIServiceList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.aPIServiceListIoK8sKubeaggregatorPkgApisApiregistrationV1 = aPIServiceListIoK8sKubeaggregatorPkgApisApiregistrationV1;
+/**
+ * APIServiceSpec contains information for locating and communicating with a server. Only https is supported, though you are able to disable certificate verification.
+ */
+function aPIServiceSpecIoK8sKubeaggregatorPkgApisApiregistrationV1(options) {
+    return ({
+        groupPriorityMinimum: (options && options.groupPriorityMinimum) || 0,
+        service: (options && options.service) || serviceReferenceIoK8sKubeaggregatorPkgApisApiregistrationV1(),
+        versionPriority: (options && options.versionPriority) || 0,
+    }).merge(options);
+}
+exports.aPIServiceSpecIoK8sKubeaggregatorPkgApisApiregistrationV1 = aPIServiceSpecIoK8sKubeaggregatorPkgApisApiregistrationV1;
+/**
+ * APIServiceStatus contains derived information about an API server
+ */
+function aPIServiceStatusIoK8sKubeaggregatorPkgApisApiregistrationV1(options) {
+    return ({}).merge(options);
+}
+exports.aPIServiceStatusIoK8sKubeaggregatorPkgApisApiregistrationV1 = aPIServiceStatusIoK8sKubeaggregatorPkgApisApiregistrationV1;
+/**
+ * ServiceReference holds a reference to Service.legacy.k8s.io
+ */
+function serviceReferenceIoK8sKubeaggregatorPkgApisApiregistrationV1(options) {
+    return ({}).merge(options);
+}
+exports.serviceReferenceIoK8sKubeaggregatorPkgApisApiregistrationV1 = serviceReferenceIoK8sKubeaggregatorPkgApisApiregistrationV1;
+/**
+ * APIService represents a server for a particular GroupVersion. Name must be "version.group".
+ */
+function aPIServiceIoK8sKubeaggregatorPkgApisApiregistrationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1",
+        kind: "APIService",
+    }).merge(options);
+}
+exports.aPIServiceIoK8sKubeaggregatorPkgApisApiregistrationV1beta1 = aPIServiceIoK8sKubeaggregatorPkgApisApiregistrationV1beta1;
+function aPIServiceConditionIoK8sKubeaggregatorPkgApisApiregistrationV1beta1(options) {
+    return ({
+        status: (options && options.status) || null,
+        type: (options && options.type) || null,
+    }).merge(options);
+}
+exports.aPIServiceConditionIoK8sKubeaggregatorPkgApisApiregistrationV1beta1 = aPIServiceConditionIoK8sKubeaggregatorPkgApisApiregistrationV1beta1;
+/**
+ * APIServiceList is a list of APIService objects.
+ */
+function aPIServiceListIoK8sKubeaggregatorPkgApisApiregistrationV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.kube-aggregator.pkg.apis.apiregistration.v1beta1",
+        kind: "APIServiceList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.aPIServiceListIoK8sKubeaggregatorPkgApisApiregistrationV1beta1 = aPIServiceListIoK8sKubeaggregatorPkgApisApiregistrationV1beta1;
+/**
+ * APIServiceSpec contains information for locating and communicating with a server. Only https is supported, though you are able to disable certificate verification.
+ */
+function aPIServiceSpecIoK8sKubeaggregatorPkgApisApiregistrationV1beta1(options) {
+    return ({
+        groupPriorityMinimum: (options && options.groupPriorityMinimum) || 0,
+        service: (options && options.service) || serviceReferenceIoK8sKubeaggregatorPkgApisApiregistrationV1beta1(),
+        versionPriority: (options && options.versionPriority) || 0,
+    }).merge(options);
+}
+exports.aPIServiceSpecIoK8sKubeaggregatorPkgApisApiregistrationV1beta1 = aPIServiceSpecIoK8sKubeaggregatorPkgApisApiregistrationV1beta1;
+/**
+ * APIServiceStatus contains derived information about an API server
+ */
+function aPIServiceStatusIoK8sKubeaggregatorPkgApisApiregistrationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.aPIServiceStatusIoK8sKubeaggregatorPkgApisApiregistrationV1beta1 = aPIServiceStatusIoK8sKubeaggregatorPkgApisApiregistrationV1beta1;
+/**
+ * ServiceReference holds a reference to Service.legacy.k8s.io
+ */
+function serviceReferenceIoK8sKubeaggregatorPkgApisApiregistrationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.serviceReferenceIoK8sKubeaggregatorPkgApisApiregistrationV1beta1 = serviceReferenceIoK8sKubeaggregatorPkgApisApiregistrationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.AWSElasticBlockStoreVolumeSource instead.
+ */
+function aWSElasticBlockStoreVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.aWSElasticBlockStoreVolumeSourceIoK8sKubernetesPkgApiV1 = aWSElasticBlockStoreVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Affinity instead.
+ */
+function affinityIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.affinityIoK8sKubernetesPkgApiV1 = affinityIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.AttachedVolume instead.
+ */
+function attachedVolumeIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.attachedVolumeIoK8sKubernetesPkgApiV1 = attachedVolumeIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.AzureDiskVolumeSource instead.
+ */
+function azureDiskVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.azureDiskVolumeSourceIoK8sKubernetesPkgApiV1 = azureDiskVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.AzureFileVolumeSource instead.
+ */
+function azureFileVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.azureFileVolumeSourceIoK8sKubernetesPkgApiV1 = azureFileVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Binding instead.
+ */
+function bindingIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.bindingIoK8sKubernetesPkgApiV1 = bindingIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Capabilities instead.
+ */
+function capabilitiesIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.capabilitiesIoK8sKubernetesPkgApiV1 = capabilitiesIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.CephFSVolumeSource instead.
+ */
+function cephFSVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.cephFSVolumeSourceIoK8sKubernetesPkgApiV1 = cephFSVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.CinderVolumeSource instead.
+ */
+function cinderVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.cinderVolumeSourceIoK8sKubernetesPkgApiV1 = cinderVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ComponentCondition instead.
+ */
+function componentConditionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.componentConditionIoK8sKubernetesPkgApiV1 = componentConditionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ComponentStatus instead.
+ */
+function componentStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.componentStatusIoK8sKubernetesPkgApiV1 = componentStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ComponentStatusList instead.
+ */
+function componentStatusListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.componentStatusListIoK8sKubernetesPkgApiV1 = componentStatusListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ConfigMap instead.
+ */
+function configMapIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.configMapIoK8sKubernetesPkgApiV1 = configMapIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ConfigMapEnvSource instead.
+ */
+function configMapEnvSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.configMapEnvSourceIoK8sKubernetesPkgApiV1 = configMapEnvSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ConfigMapKeySelector instead.
+ */
+function configMapKeySelectorIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.configMapKeySelectorIoK8sKubernetesPkgApiV1 = configMapKeySelectorIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ConfigMapList instead.
+ */
+function configMapListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.configMapListIoK8sKubernetesPkgApiV1 = configMapListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ConfigMapProjection instead.
+ */
+function configMapProjectionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.configMapProjectionIoK8sKubernetesPkgApiV1 = configMapProjectionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ConfigMapVolumeSource instead.
+ */
+function configMapVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.configMapVolumeSourceIoK8sKubernetesPkgApiV1 = configMapVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Container instead.
+ */
+function containerIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.containerIoK8sKubernetesPkgApiV1 = containerIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ContainerImage instead.
+ */
+function containerImageIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.containerImageIoK8sKubernetesPkgApiV1 = containerImageIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ContainerPort instead.
+ */
+function containerPortIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.containerPortIoK8sKubernetesPkgApiV1 = containerPortIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ContainerState instead.
+ */
+function containerStateIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.containerStateIoK8sKubernetesPkgApiV1 = containerStateIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ContainerStateRunning instead.
+ */
+function containerStateRunningIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.containerStateRunningIoK8sKubernetesPkgApiV1 = containerStateRunningIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ContainerStateTerminated instead.
+ */
+function containerStateTerminatedIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.containerStateTerminatedIoK8sKubernetesPkgApiV1 = containerStateTerminatedIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ContainerStateWaiting instead.
+ */
+function containerStateWaitingIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.containerStateWaitingIoK8sKubernetesPkgApiV1 = containerStateWaitingIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ContainerStatus instead.
+ */
+function containerStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.containerStatusIoK8sKubernetesPkgApiV1 = containerStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.DaemonEndpoint instead.
+ */
+function daemonEndpointIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.daemonEndpointIoK8sKubernetesPkgApiV1 = daemonEndpointIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.DownwardAPIProjection instead.
+ */
+function downwardAPIProjectionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.downwardAPIProjectionIoK8sKubernetesPkgApiV1 = downwardAPIProjectionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.DownwardAPIVolumeFile instead.
+ */
+function downwardAPIVolumeFileIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.downwardAPIVolumeFileIoK8sKubernetesPkgApiV1 = downwardAPIVolumeFileIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.DownwardAPIVolumeSource instead.
+ */
+function downwardAPIVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.downwardAPIVolumeSourceIoK8sKubernetesPkgApiV1 = downwardAPIVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.EmptyDirVolumeSource instead.
+ */
+function emptyDirVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.emptyDirVolumeSourceIoK8sKubernetesPkgApiV1 = emptyDirVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.EndpointAddress instead.
+ */
+function endpointAddressIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.endpointAddressIoK8sKubernetesPkgApiV1 = endpointAddressIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.EndpointPort instead.
+ */
+function endpointPortIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.endpointPortIoK8sKubernetesPkgApiV1 = endpointPortIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.EndpointSubset instead.
+ */
+function endpointSubsetIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.endpointSubsetIoK8sKubernetesPkgApiV1 = endpointSubsetIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Endpoints instead.
+ */
+function endpointsIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.endpointsIoK8sKubernetesPkgApiV1 = endpointsIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.EndpointsList instead.
+ */
+function endpointsListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.endpointsListIoK8sKubernetesPkgApiV1 = endpointsListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.EnvFromSource instead.
+ */
+function envFromSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.envFromSourceIoK8sKubernetesPkgApiV1 = envFromSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.EnvVar instead.
+ */
+function envVarIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.envVarIoK8sKubernetesPkgApiV1 = envVarIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.EnvVarSource instead.
+ */
+function envVarSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.envVarSourceIoK8sKubernetesPkgApiV1 = envVarSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Event instead.
+ */
+function eventIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.eventIoK8sKubernetesPkgApiV1 = eventIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.EventList instead.
+ */
+function eventListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.eventListIoK8sKubernetesPkgApiV1 = eventListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.EventSource instead.
+ */
+function eventSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.eventSourceIoK8sKubernetesPkgApiV1 = eventSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ExecAction instead.
+ */
+function execActionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.execActionIoK8sKubernetesPkgApiV1 = execActionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.FCVolumeSource instead.
+ */
+function fCVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.fCVolumeSourceIoK8sKubernetesPkgApiV1 = fCVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.FlexVolumeSource instead.
+ */
+function flexVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.flexVolumeSourceIoK8sKubernetesPkgApiV1 = flexVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.FlockerVolumeSource instead.
+ */
+function flockerVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.flockerVolumeSourceIoK8sKubernetesPkgApiV1 = flockerVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.GCEPersistentDiskVolumeSource instead.
+ */
+function gCEPersistentDiskVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.gCEPersistentDiskVolumeSourceIoK8sKubernetesPkgApiV1 = gCEPersistentDiskVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.GitRepoVolumeSource instead.
+ */
+function gitRepoVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.gitRepoVolumeSourceIoK8sKubernetesPkgApiV1 = gitRepoVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.GlusterfsVolumeSource instead.
+ */
+function glusterfsVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.glusterfsVolumeSourceIoK8sKubernetesPkgApiV1 = glusterfsVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.HTTPGetAction instead.
+ */
+function hTTPGetActionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.hTTPGetActionIoK8sKubernetesPkgApiV1 = hTTPGetActionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.HTTPHeader instead.
+ */
+function hTTPHeaderIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.hTTPHeaderIoK8sKubernetesPkgApiV1 = hTTPHeaderIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Handler instead.
+ */
+function handlerIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.handlerIoK8sKubernetesPkgApiV1 = handlerIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.HostAlias instead.
+ */
+function hostAliasIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.hostAliasIoK8sKubernetesPkgApiV1 = hostAliasIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.HostPathVolumeSource instead.
+ */
+function hostPathVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.hostPathVolumeSourceIoK8sKubernetesPkgApiV1 = hostPathVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ISCSIVolumeSource instead.
+ */
+function iSCSIVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.iSCSIVolumeSourceIoK8sKubernetesPkgApiV1 = iSCSIVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.KeyToPath instead.
+ */
+function keyToPathIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.keyToPathIoK8sKubernetesPkgApiV1 = keyToPathIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Lifecycle instead.
+ */
+function lifecycleIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.lifecycleIoK8sKubernetesPkgApiV1 = lifecycleIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.LimitRange instead.
+ */
+function limitRangeIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.limitRangeIoK8sKubernetesPkgApiV1 = limitRangeIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.LimitRangeItem instead.
+ */
+function limitRangeItemIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.limitRangeItemIoK8sKubernetesPkgApiV1 = limitRangeItemIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.LimitRangeList instead.
+ */
+function limitRangeListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.limitRangeListIoK8sKubernetesPkgApiV1 = limitRangeListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.LimitRangeSpec instead.
+ */
+function limitRangeSpecIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.limitRangeSpecIoK8sKubernetesPkgApiV1 = limitRangeSpecIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.LoadBalancerIngress instead.
+ */
+function loadBalancerIngressIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.loadBalancerIngressIoK8sKubernetesPkgApiV1 = loadBalancerIngressIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.LoadBalancerStatus instead.
+ */
+function loadBalancerStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.loadBalancerStatusIoK8sKubernetesPkgApiV1 = loadBalancerStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.LocalObjectReference instead.
+ */
+function localObjectReferenceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.localObjectReferenceIoK8sKubernetesPkgApiV1 = localObjectReferenceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.LocalVolumeSource instead.
+ */
+function localVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.localVolumeSourceIoK8sKubernetesPkgApiV1 = localVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NFSVolumeSource instead.
+ */
+function nFSVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nFSVolumeSourceIoK8sKubernetesPkgApiV1 = nFSVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Namespace instead.
+ */
+function namespaceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.namespaceIoK8sKubernetesPkgApiV1 = namespaceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NamespaceList instead.
+ */
+function namespaceListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.namespaceListIoK8sKubernetesPkgApiV1 = namespaceListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NamespaceSpec instead.
+ */
+function namespaceSpecIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.namespaceSpecIoK8sKubernetesPkgApiV1 = namespaceSpecIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NamespaceStatus instead.
+ */
+function namespaceStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.namespaceStatusIoK8sKubernetesPkgApiV1 = namespaceStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Node instead.
+ */
+function nodeIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeIoK8sKubernetesPkgApiV1 = nodeIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeAddress instead.
+ */
+function nodeAddressIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeAddressIoK8sKubernetesPkgApiV1 = nodeAddressIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeAffinity instead.
+ */
+function nodeAffinityIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeAffinityIoK8sKubernetesPkgApiV1 = nodeAffinityIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeCondition instead.
+ */
+function nodeConditionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeConditionIoK8sKubernetesPkgApiV1 = nodeConditionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeDaemonEndpoints instead.
+ */
+function nodeDaemonEndpointsIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeDaemonEndpointsIoK8sKubernetesPkgApiV1 = nodeDaemonEndpointsIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeList instead.
+ */
+function nodeListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeListIoK8sKubernetesPkgApiV1 = nodeListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeSelector instead.
+ */
+function nodeSelectorIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeSelectorIoK8sKubernetesPkgApiV1 = nodeSelectorIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeSelectorRequirement instead.
+ */
+function nodeSelectorRequirementIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeSelectorRequirementIoK8sKubernetesPkgApiV1 = nodeSelectorRequirementIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeSelectorTerm instead.
+ */
+function nodeSelectorTermIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeSelectorTermIoK8sKubernetesPkgApiV1 = nodeSelectorTermIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeSpec instead.
+ */
+function nodeSpecIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeSpecIoK8sKubernetesPkgApiV1 = nodeSpecIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeStatus instead.
+ */
+function nodeStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeStatusIoK8sKubernetesPkgApiV1 = nodeStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.NodeSystemInfo instead.
+ */
+function nodeSystemInfoIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.nodeSystemInfoIoK8sKubernetesPkgApiV1 = nodeSystemInfoIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ObjectFieldSelector instead.
+ */
+function objectFieldSelectorIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.objectFieldSelectorIoK8sKubernetesPkgApiV1 = objectFieldSelectorIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ObjectReference instead.
+ */
+function objectReferenceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.objectReferenceIoK8sKubernetesPkgApiV1 = objectReferenceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PersistentVolume instead.
+ */
+function persistentVolumeIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.persistentVolumeIoK8sKubernetesPkgApiV1 = persistentVolumeIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PersistentVolumeClaim instead.
+ */
+function persistentVolumeClaimIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.persistentVolumeClaimIoK8sKubernetesPkgApiV1 = persistentVolumeClaimIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PersistentVolumeClaimList instead.
+ */
+function persistentVolumeClaimListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.persistentVolumeClaimListIoK8sKubernetesPkgApiV1 = persistentVolumeClaimListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PersistentVolumeClaimSpec instead.
+ */
+function persistentVolumeClaimSpecIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.persistentVolumeClaimSpecIoK8sKubernetesPkgApiV1 = persistentVolumeClaimSpecIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PersistentVolumeClaimStatus instead.
+ */
+function persistentVolumeClaimStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.persistentVolumeClaimStatusIoK8sKubernetesPkgApiV1 = persistentVolumeClaimStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PersistentVolumeClaimVolumeSource instead.
+ */
+function persistentVolumeClaimVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.persistentVolumeClaimVolumeSourceIoK8sKubernetesPkgApiV1 = persistentVolumeClaimVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PersistentVolumeList instead.
+ */
+function persistentVolumeListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.persistentVolumeListIoK8sKubernetesPkgApiV1 = persistentVolumeListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PersistentVolumeSpec instead.
+ */
+function persistentVolumeSpecIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.persistentVolumeSpecIoK8sKubernetesPkgApiV1 = persistentVolumeSpecIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PersistentVolumeStatus instead.
+ */
+function persistentVolumeStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.persistentVolumeStatusIoK8sKubernetesPkgApiV1 = persistentVolumeStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PhotonPersistentDiskVolumeSource instead.
+ */
+function photonPersistentDiskVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.photonPersistentDiskVolumeSourceIoK8sKubernetesPkgApiV1 = photonPersistentDiskVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Pod instead.
+ */
+function podIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podIoK8sKubernetesPkgApiV1 = podIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodAffinity instead.
+ */
+function podAffinityIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podAffinityIoK8sKubernetesPkgApiV1 = podAffinityIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodAffinityTerm instead.
+ */
+function podAffinityTermIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podAffinityTermIoK8sKubernetesPkgApiV1 = podAffinityTermIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodAntiAffinity instead.
+ */
+function podAntiAffinityIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podAntiAffinityIoK8sKubernetesPkgApiV1 = podAntiAffinityIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodCondition instead.
+ */
+function podConditionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podConditionIoK8sKubernetesPkgApiV1 = podConditionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodList instead.
+ */
+function podListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podListIoK8sKubernetesPkgApiV1 = podListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodSecurityContext instead.
+ */
+function podSecurityContextIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podSecurityContextIoK8sKubernetesPkgApiV1 = podSecurityContextIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodSpec instead.
+ */
+function podSpecIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podSpecIoK8sKubernetesPkgApiV1 = podSpecIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodStatus instead.
+ */
+function podStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podStatusIoK8sKubernetesPkgApiV1 = podStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodTemplate instead.
+ */
+function podTemplateIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podTemplateIoK8sKubernetesPkgApiV1 = podTemplateIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodTemplateList instead.
+ */
+function podTemplateListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podTemplateListIoK8sKubernetesPkgApiV1 = podTemplateListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PodTemplateSpec instead.
+ */
+function podTemplateSpecIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.podTemplateSpecIoK8sKubernetesPkgApiV1 = podTemplateSpecIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PortworxVolumeSource instead.
+ */
+function portworxVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.portworxVolumeSourceIoK8sKubernetesPkgApiV1 = portworxVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.PreferredSchedulingTerm instead.
+ */
+function preferredSchedulingTermIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.preferredSchedulingTermIoK8sKubernetesPkgApiV1 = preferredSchedulingTermIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Probe instead.
+ */
+function probeIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.probeIoK8sKubernetesPkgApiV1 = probeIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ProjectedVolumeSource instead.
+ */
+function projectedVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.projectedVolumeSourceIoK8sKubernetesPkgApiV1 = projectedVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.QuobyteVolumeSource instead.
+ */
+function quobyteVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.quobyteVolumeSourceIoK8sKubernetesPkgApiV1 = quobyteVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.RBDVolumeSource instead.
+ */
+function rBDVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.rBDVolumeSourceIoK8sKubernetesPkgApiV1 = rBDVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ReplicationController instead.
+ */
+function replicationControllerIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.replicationControllerIoK8sKubernetesPkgApiV1 = replicationControllerIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ReplicationControllerCondition instead.
+ */
+function replicationControllerConditionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.replicationControllerConditionIoK8sKubernetesPkgApiV1 = replicationControllerConditionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ReplicationControllerList instead.
+ */
+function replicationControllerListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.replicationControllerListIoK8sKubernetesPkgApiV1 = replicationControllerListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ReplicationControllerSpec instead.
+ */
+function replicationControllerSpecIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.replicationControllerSpecIoK8sKubernetesPkgApiV1 = replicationControllerSpecIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ReplicationControllerStatus instead.
+ */
+function replicationControllerStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.replicationControllerStatusIoK8sKubernetesPkgApiV1 = replicationControllerStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ResourceFieldSelector instead.
+ */
+function resourceFieldSelectorIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.resourceFieldSelectorIoK8sKubernetesPkgApiV1 = resourceFieldSelectorIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ResourceQuota instead.
+ */
+function resourceQuotaIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.resourceQuotaIoK8sKubernetesPkgApiV1 = resourceQuotaIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ResourceQuotaList instead.
+ */
+function resourceQuotaListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.resourceQuotaListIoK8sKubernetesPkgApiV1 = resourceQuotaListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ResourceQuotaSpec instead.
+ */
+function resourceQuotaSpecIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.resourceQuotaSpecIoK8sKubernetesPkgApiV1 = resourceQuotaSpecIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ResourceQuotaStatus instead.
+ */
+function resourceQuotaStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.resourceQuotaStatusIoK8sKubernetesPkgApiV1 = resourceQuotaStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ResourceRequirements instead.
+ */
+function resourceRequirementsIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.resourceRequirementsIoK8sKubernetesPkgApiV1 = resourceRequirementsIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.SELinuxOptions instead.
+ */
+function sELinuxOptionsIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.sELinuxOptionsIoK8sKubernetesPkgApiV1 = sELinuxOptionsIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ScaleIOVolumeSource instead.
+ */
+function scaleIOVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.scaleIOVolumeSourceIoK8sKubernetesPkgApiV1 = scaleIOVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Secret instead.
+ */
+function secretIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.secretIoK8sKubernetesPkgApiV1 = secretIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.SecretEnvSource instead.
+ */
+function secretEnvSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.secretEnvSourceIoK8sKubernetesPkgApiV1 = secretEnvSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.SecretKeySelector instead.
+ */
+function secretKeySelectorIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.secretKeySelectorIoK8sKubernetesPkgApiV1 = secretKeySelectorIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.SecretList instead.
+ */
+function secretListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.secretListIoK8sKubernetesPkgApiV1 = secretListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.SecretProjection instead.
+ */
+function secretProjectionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.secretProjectionIoK8sKubernetesPkgApiV1 = secretProjectionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.SecretVolumeSource instead.
+ */
+function secretVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.secretVolumeSourceIoK8sKubernetesPkgApiV1 = secretVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.SecurityContext instead.
+ */
+function securityContextIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.securityContextIoK8sKubernetesPkgApiV1 = securityContextIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Service instead.
+ */
+function serviceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.serviceIoK8sKubernetesPkgApiV1 = serviceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ServiceAccount instead.
+ */
+function serviceAccountIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.serviceAccountIoK8sKubernetesPkgApiV1 = serviceAccountIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ServiceAccountList instead.
+ */
+function serviceAccountListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.serviceAccountListIoK8sKubernetesPkgApiV1 = serviceAccountListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ServiceList instead.
+ */
+function serviceListIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.serviceListIoK8sKubernetesPkgApiV1 = serviceListIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ServicePort instead.
+ */
+function servicePortIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.servicePortIoK8sKubernetesPkgApiV1 = servicePortIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ServiceSpec instead.
+ */
+function serviceSpecIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.serviceSpecIoK8sKubernetesPkgApiV1 = serviceSpecIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.ServiceStatus instead.
+ */
+function serviceStatusIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.serviceStatusIoK8sKubernetesPkgApiV1 = serviceStatusIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.StorageOSPersistentVolumeSource instead.
+ */
+function storageOSPersistentVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.storageOSPersistentVolumeSourceIoK8sKubernetesPkgApiV1 = storageOSPersistentVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.StorageOSVolumeSource instead.
+ */
+function storageOSVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.storageOSVolumeSourceIoK8sKubernetesPkgApiV1 = storageOSVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.TCPSocketAction instead.
+ */
+function tCPSocketActionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.tCPSocketActionIoK8sKubernetesPkgApiV1 = tCPSocketActionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Taint instead.
+ */
+function taintIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.taintIoK8sKubernetesPkgApiV1 = taintIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Toleration instead.
+ */
+function tolerationIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.tolerationIoK8sKubernetesPkgApiV1 = tolerationIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.Volume instead.
+ */
+function volumeIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.volumeIoK8sKubernetesPkgApiV1 = volumeIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.VolumeMount instead.
+ */
+function volumeMountIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.volumeMountIoK8sKubernetesPkgApiV1 = volumeMountIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.VolumeProjection instead.
+ */
+function volumeProjectionIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.volumeProjectionIoK8sKubernetesPkgApiV1 = volumeProjectionIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.VsphereVirtualDiskVolumeSource instead.
+ */
+function vsphereVirtualDiskVolumeSourceIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.vsphereVirtualDiskVolumeSourceIoK8sKubernetesPkgApiV1 = vsphereVirtualDiskVolumeSourceIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.core.v1.WeightedPodAffinityTerm instead.
+ */
+function weightedPodAffinityTermIoK8sKubernetesPkgApiV1(options) {
+    return ({}).merge(options);
+}
+exports.weightedPodAffinityTermIoK8sKubernetesPkgApiV1 = weightedPodAffinityTermIoK8sKubernetesPkgApiV1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.ControllerRevision instead.
+ */
+function controllerRevisionIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.controllerRevisionIoK8sKubernetesPkgApisAppsV1beta1 = controllerRevisionIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.ControllerRevisionList instead.
+ */
+function controllerRevisionListIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.controllerRevisionListIoK8sKubernetesPkgApisAppsV1beta1 = controllerRevisionListIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.Deployment instead.
+ */
+function deploymentIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentIoK8sKubernetesPkgApisAppsV1beta1 = deploymentIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.DeploymentCondition instead.
+ */
+function deploymentConditionIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentConditionIoK8sKubernetesPkgApisAppsV1beta1 = deploymentConditionIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.DeploymentList instead.
+ */
+function deploymentListIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentListIoK8sKubernetesPkgApisAppsV1beta1 = deploymentListIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.DeploymentRollback instead.
+ */
+function deploymentRollbackIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentRollbackIoK8sKubernetesPkgApisAppsV1beta1 = deploymentRollbackIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.DeploymentSpec instead.
+ */
+function deploymentSpecIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentSpecIoK8sKubernetesPkgApisAppsV1beta1 = deploymentSpecIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.DeploymentStatus instead.
+ */
+function deploymentStatusIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentStatusIoK8sKubernetesPkgApisAppsV1beta1 = deploymentStatusIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.DeploymentStrategy instead.
+ */
+function deploymentStrategyIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentStrategyIoK8sKubernetesPkgApisAppsV1beta1 = deploymentStrategyIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.RollbackConfig instead.
+ */
+function rollbackConfigIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.rollbackConfigIoK8sKubernetesPkgApisAppsV1beta1 = rollbackConfigIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.RollingUpdateDeployment instead.
+ */
+function rollingUpdateDeploymentIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateDeploymentIoK8sKubernetesPkgApisAppsV1beta1 = rollingUpdateDeploymentIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.RollingUpdateStatefulSetStrategy instead.
+ */
+function rollingUpdateStatefulSetStrategyIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateStatefulSetStrategyIoK8sKubernetesPkgApisAppsV1beta1 = rollingUpdateStatefulSetStrategyIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.Scale instead.
+ */
+function scaleIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.scaleIoK8sKubernetesPkgApisAppsV1beta1 = scaleIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.ScaleSpec instead.
+ */
+function scaleSpecIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.scaleSpecIoK8sKubernetesPkgApisAppsV1beta1 = scaleSpecIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.ScaleStatus instead.
+ */
+function scaleStatusIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.scaleStatusIoK8sKubernetesPkgApisAppsV1beta1 = scaleStatusIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.StatefulSet instead.
+ */
+function statefulSetIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.statefulSetIoK8sKubernetesPkgApisAppsV1beta1 = statefulSetIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.StatefulSetList instead.
+ */
+function statefulSetListIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.statefulSetListIoK8sKubernetesPkgApisAppsV1beta1 = statefulSetListIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.StatefulSetSpec instead.
+ */
+function statefulSetSpecIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.statefulSetSpecIoK8sKubernetesPkgApisAppsV1beta1 = statefulSetSpecIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.StatefulSetStatus instead.
+ */
+function statefulSetStatusIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.statefulSetStatusIoK8sKubernetesPkgApisAppsV1beta1 = statefulSetStatusIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.apps.v1beta1.StatefulSetUpdateStrategy instead.
+ */
+function statefulSetUpdateStrategyIoK8sKubernetesPkgApisAppsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.statefulSetUpdateStrategyIoK8sKubernetesPkgApisAppsV1beta1 = statefulSetUpdateStrategyIoK8sKubernetesPkgApisAppsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authentication.v1.TokenReview instead.
+ */
+function tokenReviewIoK8sKubernetesPkgApisAuthenticationV1(options) {
+    return ({}).merge(options);
+}
+exports.tokenReviewIoK8sKubernetesPkgApisAuthenticationV1 = tokenReviewIoK8sKubernetesPkgApisAuthenticationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authentication.v1.TokenReviewSpec instead.
+ */
+function tokenReviewSpecIoK8sKubernetesPkgApisAuthenticationV1(options) {
+    return ({}).merge(options);
+}
+exports.tokenReviewSpecIoK8sKubernetesPkgApisAuthenticationV1 = tokenReviewSpecIoK8sKubernetesPkgApisAuthenticationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authentication.v1.TokenReviewStatus instead.
+ */
+function tokenReviewStatusIoK8sKubernetesPkgApisAuthenticationV1(options) {
+    return ({}).merge(options);
+}
+exports.tokenReviewStatusIoK8sKubernetesPkgApisAuthenticationV1 = tokenReviewStatusIoK8sKubernetesPkgApisAuthenticationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authentication.v1.UserInfo instead.
+ */
+function userInfoIoK8sKubernetesPkgApisAuthenticationV1(options) {
+    return ({}).merge(options);
+}
+exports.userInfoIoK8sKubernetesPkgApisAuthenticationV1 = userInfoIoK8sKubernetesPkgApisAuthenticationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authentication.v1beta1.TokenReview instead.
+ */
+function tokenReviewIoK8sKubernetesPkgApisAuthenticationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.tokenReviewIoK8sKubernetesPkgApisAuthenticationV1beta1 = tokenReviewIoK8sKubernetesPkgApisAuthenticationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authentication.v1beta1.TokenReviewSpec instead.
+ */
+function tokenReviewSpecIoK8sKubernetesPkgApisAuthenticationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.tokenReviewSpecIoK8sKubernetesPkgApisAuthenticationV1beta1 = tokenReviewSpecIoK8sKubernetesPkgApisAuthenticationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authentication.v1beta1.TokenReviewStatus instead.
+ */
+function tokenReviewStatusIoK8sKubernetesPkgApisAuthenticationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.tokenReviewStatusIoK8sKubernetesPkgApisAuthenticationV1beta1 = tokenReviewStatusIoK8sKubernetesPkgApisAuthenticationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authentication.v1beta1.UserInfo instead.
+ */
+function userInfoIoK8sKubernetesPkgApisAuthenticationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.userInfoIoK8sKubernetesPkgApisAuthenticationV1beta1 = userInfoIoK8sKubernetesPkgApisAuthenticationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1.LocalSubjectAccessReview instead.
+ */
+function localSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.localSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1 = localSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1.NonResourceAttributes instead.
+ */
+function nonResourceAttributesIoK8sKubernetesPkgApisAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.nonResourceAttributesIoK8sKubernetesPkgApisAuthorizationV1 = nonResourceAttributesIoK8sKubernetesPkgApisAuthorizationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1.ResourceAttributes instead.
+ */
+function resourceAttributesIoK8sKubernetesPkgApisAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.resourceAttributesIoK8sKubernetesPkgApisAuthorizationV1 = resourceAttributesIoK8sKubernetesPkgApisAuthorizationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1.SelfSubjectAccessReview instead.
+ */
+function selfSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.selfSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1 = selfSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1.SelfSubjectAccessReviewSpec instead.
+ */
+function selfSubjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.selfSubjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1 = selfSubjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1.SubjectAccessReview instead.
+ */
+function subjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.subjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1 = subjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1.SubjectAccessReviewSpec instead.
+ */
+function subjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.subjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1 = subjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1.SubjectAccessReviewStatus instead.
+ */
+function subjectAccessReviewStatusIoK8sKubernetesPkgApisAuthorizationV1(options) {
+    return ({}).merge(options);
+}
+exports.subjectAccessReviewStatusIoK8sKubernetesPkgApisAuthorizationV1 = subjectAccessReviewStatusIoK8sKubernetesPkgApisAuthorizationV1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1beta1.LocalSubjectAccessReview instead.
+ */
+function localSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.localSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1beta1 = localSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1beta1.NonResourceAttributes instead.
+ */
+function nonResourceAttributesIoK8sKubernetesPkgApisAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.nonResourceAttributesIoK8sKubernetesPkgApisAuthorizationV1beta1 = nonResourceAttributesIoK8sKubernetesPkgApisAuthorizationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1beta1.ResourceAttributes instead.
+ */
+function resourceAttributesIoK8sKubernetesPkgApisAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.resourceAttributesIoK8sKubernetesPkgApisAuthorizationV1beta1 = resourceAttributesIoK8sKubernetesPkgApisAuthorizationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1beta1.SelfSubjectAccessReview instead.
+ */
+function selfSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.selfSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1beta1 = selfSubjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1beta1.SelfSubjectAccessReviewSpec instead.
+ */
+function selfSubjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.selfSubjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1beta1 = selfSubjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1beta1.SubjectAccessReview instead.
+ */
+function subjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.subjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1beta1 = subjectAccessReviewIoK8sKubernetesPkgApisAuthorizationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1beta1.SubjectAccessReviewSpec instead.
+ */
+function subjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.subjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1beta1 = subjectAccessReviewSpecIoK8sKubernetesPkgApisAuthorizationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.authorization.v1beta1.SubjectAccessReviewStatus instead.
+ */
+function subjectAccessReviewStatusIoK8sKubernetesPkgApisAuthorizationV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.subjectAccessReviewStatusIoK8sKubernetesPkgApisAuthorizationV1beta1 = subjectAccessReviewStatusIoK8sKubernetesPkgApisAuthorizationV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.autoscaling.v1.CrossVersionObjectReference instead.
+ */
+function crossVersionObjectReferenceIoK8sKubernetesPkgApisAutoscalingV1(options) {
+    return ({}).merge(options);
+}
+exports.crossVersionObjectReferenceIoK8sKubernetesPkgApisAutoscalingV1 = crossVersionObjectReferenceIoK8sKubernetesPkgApisAutoscalingV1;
+/**
+ * Deprecated. Please use io.k8s.api.autoscaling.v1.HorizontalPodAutoscaler instead.
+ */
+function horizontalPodAutoscalerIoK8sKubernetesPkgApisAutoscalingV1(options) {
+    return ({}).merge(options);
+}
+exports.horizontalPodAutoscalerIoK8sKubernetesPkgApisAutoscalingV1 = horizontalPodAutoscalerIoK8sKubernetesPkgApisAutoscalingV1;
+/**
+ * Deprecated. Please use io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerList instead.
+ */
+function horizontalPodAutoscalerListIoK8sKubernetesPkgApisAutoscalingV1(options) {
+    return ({}).merge(options);
+}
+exports.horizontalPodAutoscalerListIoK8sKubernetesPkgApisAutoscalingV1 = horizontalPodAutoscalerListIoK8sKubernetesPkgApisAutoscalingV1;
+/**
+ * Deprecated. Please use io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerSpec instead.
+ */
+function horizontalPodAutoscalerSpecIoK8sKubernetesPkgApisAutoscalingV1(options) {
+    return ({}).merge(options);
+}
+exports.horizontalPodAutoscalerSpecIoK8sKubernetesPkgApisAutoscalingV1 = horizontalPodAutoscalerSpecIoK8sKubernetesPkgApisAutoscalingV1;
+/**
+ * Deprecated. Please use io.k8s.api.autoscaling.v1.HorizontalPodAutoscalerStatus instead.
+ */
+function horizontalPodAutoscalerStatusIoK8sKubernetesPkgApisAutoscalingV1(options) {
+    return ({}).merge(options);
+}
+exports.horizontalPodAutoscalerStatusIoK8sKubernetesPkgApisAutoscalingV1 = horizontalPodAutoscalerStatusIoK8sKubernetesPkgApisAutoscalingV1;
+/**
+ * Deprecated. Please use io.k8s.api.autoscaling.v1.Scale instead.
+ */
+function scaleIoK8sKubernetesPkgApisAutoscalingV1(options) {
+    return ({}).merge(options);
+}
+exports.scaleIoK8sKubernetesPkgApisAutoscalingV1 = scaleIoK8sKubernetesPkgApisAutoscalingV1;
+/**
+ * Deprecated. Please use io.k8s.api.autoscaling.v1.ScaleSpec instead.
+ */
+function scaleSpecIoK8sKubernetesPkgApisAutoscalingV1(options) {
+    return ({}).merge(options);
+}
+exports.scaleSpecIoK8sKubernetesPkgApisAutoscalingV1 = scaleSpecIoK8sKubernetesPkgApisAutoscalingV1;
+/**
+ * Deprecated. Please use io.k8s.api.autoscaling.v1.ScaleStatus instead.
+ */
+function scaleStatusIoK8sKubernetesPkgApisAutoscalingV1(options) {
+    return ({}).merge(options);
+}
+exports.scaleStatusIoK8sKubernetesPkgApisAutoscalingV1 = scaleStatusIoK8sKubernetesPkgApisAutoscalingV1;
+/**
+ * Deprecated. Please use io.k8s.api.batch.v1.Job instead.
+ */
+function jobIoK8sKubernetesPkgApisBatchV1(options) {
+    return ({}).merge(options);
+}
+exports.jobIoK8sKubernetesPkgApisBatchV1 = jobIoK8sKubernetesPkgApisBatchV1;
+/**
+ * Deprecated. Please use io.k8s.api.batch.v1.JobCondition instead.
+ */
+function jobConditionIoK8sKubernetesPkgApisBatchV1(options) {
+    return ({}).merge(options);
+}
+exports.jobConditionIoK8sKubernetesPkgApisBatchV1 = jobConditionIoK8sKubernetesPkgApisBatchV1;
+/**
+ * Deprecated. Please use io.k8s.api.batch.v1.JobList instead.
+ */
+function jobListIoK8sKubernetesPkgApisBatchV1(options) {
+    return ({}).merge(options);
+}
+exports.jobListIoK8sKubernetesPkgApisBatchV1 = jobListIoK8sKubernetesPkgApisBatchV1;
+/**
+ * Deprecated. Please use io.k8s.api.batch.v1.JobSpec instead.
+ */
+function jobSpecIoK8sKubernetesPkgApisBatchV1(options) {
+    return ({}).merge(options);
+}
+exports.jobSpecIoK8sKubernetesPkgApisBatchV1 = jobSpecIoK8sKubernetesPkgApisBatchV1;
+/**
+ * Deprecated. Please use io.k8s.api.batch.v1.JobStatus instead.
+ */
+function jobStatusIoK8sKubernetesPkgApisBatchV1(options) {
+    return ({}).merge(options);
+}
+exports.jobStatusIoK8sKubernetesPkgApisBatchV1 = jobStatusIoK8sKubernetesPkgApisBatchV1;
+/**
+ * Deprecated. Please use io.k8s.api.certificates.v1beta1.CertificateSigningRequest instead.
+ */
+function certificateSigningRequestIoK8sKubernetesPkgApisCertificatesV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.certificateSigningRequestIoK8sKubernetesPkgApisCertificatesV1beta1 = certificateSigningRequestIoK8sKubernetesPkgApisCertificatesV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.certificates.v1beta1.CertificateSigningRequestCondition instead.
+ */
+function certificateSigningRequestConditionIoK8sKubernetesPkgApisCertificatesV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.certificateSigningRequestConditionIoK8sKubernetesPkgApisCertificatesV1beta1 = certificateSigningRequestConditionIoK8sKubernetesPkgApisCertificatesV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.certificates.v1beta1.CertificateSigningRequestList instead.
+ */
+function certificateSigningRequestListIoK8sKubernetesPkgApisCertificatesV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.certificateSigningRequestListIoK8sKubernetesPkgApisCertificatesV1beta1 = certificateSigningRequestListIoK8sKubernetesPkgApisCertificatesV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.certificates.v1beta1.CertificateSigningRequestSpec instead.
+ */
+function certificateSigningRequestSpecIoK8sKubernetesPkgApisCertificatesV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.certificateSigningRequestSpecIoK8sKubernetesPkgApisCertificatesV1beta1 = certificateSigningRequestSpecIoK8sKubernetesPkgApisCertificatesV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.certificates.v1beta1.CertificateSigningRequestStatus instead.
+ */
+function certificateSigningRequestStatusIoK8sKubernetesPkgApisCertificatesV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.certificateSigningRequestStatusIoK8sKubernetesPkgApisCertificatesV1beta1 = certificateSigningRequestStatusIoK8sKubernetesPkgApisCertificatesV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DaemonSet instead.
+ */
+function daemonSetIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.daemonSetIoK8sKubernetesPkgApisExtensionsV1beta1 = daemonSetIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DaemonSetList instead.
+ */
+function daemonSetListIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.daemonSetListIoK8sKubernetesPkgApisExtensionsV1beta1 = daemonSetListIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DaemonSetSpec instead.
+ */
+function daemonSetSpecIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.daemonSetSpecIoK8sKubernetesPkgApisExtensionsV1beta1 = daemonSetSpecIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DaemonSetStatus instead.
+ */
+function daemonSetStatusIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.daemonSetStatusIoK8sKubernetesPkgApisExtensionsV1beta1 = daemonSetStatusIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DaemonSetUpdateStrategy instead.
+ */
+function daemonSetUpdateStrategyIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.daemonSetUpdateStrategyIoK8sKubernetesPkgApisExtensionsV1beta1 = daemonSetUpdateStrategyIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.Deployment instead.
+ */
+function deploymentIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentIoK8sKubernetesPkgApisExtensionsV1beta1 = deploymentIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DeploymentCondition instead.
+ */
+function deploymentConditionIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentConditionIoK8sKubernetesPkgApisExtensionsV1beta1 = deploymentConditionIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DeploymentList instead.
+ */
+function deploymentListIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentListIoK8sKubernetesPkgApisExtensionsV1beta1 = deploymentListIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DeploymentRollback instead.
+ */
+function deploymentRollbackIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentRollbackIoK8sKubernetesPkgApisExtensionsV1beta1 = deploymentRollbackIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DeploymentSpec instead.
+ */
+function deploymentSpecIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentSpecIoK8sKubernetesPkgApisExtensionsV1beta1 = deploymentSpecIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DeploymentStatus instead.
+ */
+function deploymentStatusIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentStatusIoK8sKubernetesPkgApisExtensionsV1beta1 = deploymentStatusIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.DeploymentStrategy instead.
+ */
+function deploymentStrategyIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.deploymentStrategyIoK8sKubernetesPkgApisExtensionsV1beta1 = deploymentStrategyIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.FSGroupStrategyOptions instead.
+ */
+function fSGroupStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.fSGroupStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1 = fSGroupStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.HTTPIngressPath instead.
+ */
+function hTTPIngressPathIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.hTTPIngressPathIoK8sKubernetesPkgApisExtensionsV1beta1 = hTTPIngressPathIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.HTTPIngressRuleValue instead.
+ */
+function hTTPIngressRuleValueIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.hTTPIngressRuleValueIoK8sKubernetesPkgApisExtensionsV1beta1 = hTTPIngressRuleValueIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.HostPortRange instead.
+ */
+function hostPortRangeIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.hostPortRangeIoK8sKubernetesPkgApisExtensionsV1beta1 = hostPortRangeIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.IDRange instead.
+ */
+function iDRangeIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.iDRangeIoK8sKubernetesPkgApisExtensionsV1beta1 = iDRangeIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.Ingress instead.
+ */
+function ingressIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.ingressIoK8sKubernetesPkgApisExtensionsV1beta1 = ingressIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.IngressBackend instead.
+ */
+function ingressBackendIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.ingressBackendIoK8sKubernetesPkgApisExtensionsV1beta1 = ingressBackendIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.IngressList instead.
+ */
+function ingressListIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.ingressListIoK8sKubernetesPkgApisExtensionsV1beta1 = ingressListIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.IngressRule instead.
+ */
+function ingressRuleIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.ingressRuleIoK8sKubernetesPkgApisExtensionsV1beta1 = ingressRuleIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.IngressSpec instead.
+ */
+function ingressSpecIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.ingressSpecIoK8sKubernetesPkgApisExtensionsV1beta1 = ingressSpecIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.IngressStatus instead.
+ */
+function ingressStatusIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.ingressStatusIoK8sKubernetesPkgApisExtensionsV1beta1 = ingressStatusIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.IngressTLS instead.
+ */
+function ingressTLSIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.ingressTLSIoK8sKubernetesPkgApisExtensionsV1beta1 = ingressTLSIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.NetworkPolicy instead.
+ */
+function networkPolicyIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyIoK8sKubernetesPkgApisExtensionsV1beta1 = networkPolicyIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.NetworkPolicyIngressRule instead.
+ */
+function networkPolicyIngressRuleIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyIngressRuleIoK8sKubernetesPkgApisExtensionsV1beta1 = networkPolicyIngressRuleIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.NetworkPolicyList instead.
+ */
+function networkPolicyListIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyListIoK8sKubernetesPkgApisExtensionsV1beta1 = networkPolicyListIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.NetworkPolicyPeer instead.
+ */
+function networkPolicyPeerIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyPeerIoK8sKubernetesPkgApisExtensionsV1beta1 = networkPolicyPeerIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.NetworkPolicyPort instead.
+ */
+function networkPolicyPortIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyPortIoK8sKubernetesPkgApisExtensionsV1beta1 = networkPolicyPortIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.NetworkPolicySpec instead.
+ */
+function networkPolicySpecIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicySpecIoK8sKubernetesPkgApisExtensionsV1beta1 = networkPolicySpecIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.PodSecurityPolicy instead.
+ */
+function podSecurityPolicyIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.podSecurityPolicyIoK8sKubernetesPkgApisExtensionsV1beta1 = podSecurityPolicyIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.PodSecurityPolicyList instead.
+ */
+function podSecurityPolicyListIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.podSecurityPolicyListIoK8sKubernetesPkgApisExtensionsV1beta1 = podSecurityPolicyListIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.PodSecurityPolicySpec instead.
+ */
+function podSecurityPolicySpecIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.podSecurityPolicySpecIoK8sKubernetesPkgApisExtensionsV1beta1 = podSecurityPolicySpecIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.ReplicaSet instead.
+ */
+function replicaSetIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.replicaSetIoK8sKubernetesPkgApisExtensionsV1beta1 = replicaSetIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.ReplicaSetCondition instead.
+ */
+function replicaSetConditionIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.replicaSetConditionIoK8sKubernetesPkgApisExtensionsV1beta1 = replicaSetConditionIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.ReplicaSetList instead.
+ */
+function replicaSetListIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.replicaSetListIoK8sKubernetesPkgApisExtensionsV1beta1 = replicaSetListIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.ReplicaSetSpec instead.
+ */
+function replicaSetSpecIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.replicaSetSpecIoK8sKubernetesPkgApisExtensionsV1beta1 = replicaSetSpecIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.ReplicaSetStatus instead.
+ */
+function replicaSetStatusIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.replicaSetStatusIoK8sKubernetesPkgApisExtensionsV1beta1 = replicaSetStatusIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.RollbackConfig instead.
+ */
+function rollbackConfigIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.rollbackConfigIoK8sKubernetesPkgApisExtensionsV1beta1 = rollbackConfigIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.RollingUpdateDaemonSet instead.
+ */
+function rollingUpdateDaemonSetIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateDaemonSetIoK8sKubernetesPkgApisExtensionsV1beta1 = rollingUpdateDaemonSetIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.RollingUpdateDeployment instead.
+ */
+function rollingUpdateDeploymentIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.rollingUpdateDeploymentIoK8sKubernetesPkgApisExtensionsV1beta1 = rollingUpdateDeploymentIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.RunAsUserStrategyOptions instead.
+ */
+function runAsUserStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.runAsUserStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1 = runAsUserStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.SELinuxStrategyOptions instead.
+ */
+function sELinuxStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.sELinuxStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1 = sELinuxStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.Scale instead.
+ */
+function scaleIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.scaleIoK8sKubernetesPkgApisExtensionsV1beta1 = scaleIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.ScaleSpec instead.
+ */
+function scaleSpecIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.scaleSpecIoK8sKubernetesPkgApisExtensionsV1beta1 = scaleSpecIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.ScaleStatus instead.
+ */
+function scaleStatusIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.scaleStatusIoK8sKubernetesPkgApisExtensionsV1beta1 = scaleStatusIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.extensions.v1beta1.SupplementalGroupsStrategyOptions instead.
+ */
+function supplementalGroupsStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.supplementalGroupsStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1 = supplementalGroupsStrategyOptionsIoK8sKubernetesPkgApisExtensionsV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.networking.v1.NetworkPolicy instead.
+ */
+function networkPolicyIoK8sKubernetesPkgApisNetworkingV1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyIoK8sKubernetesPkgApisNetworkingV1 = networkPolicyIoK8sKubernetesPkgApisNetworkingV1;
+/**
+ * Deprecated. Please use io.k8s.api.networking.v1.NetworkPolicyIngressRule instead.
+ */
+function networkPolicyIngressRuleIoK8sKubernetesPkgApisNetworkingV1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyIngressRuleIoK8sKubernetesPkgApisNetworkingV1 = networkPolicyIngressRuleIoK8sKubernetesPkgApisNetworkingV1;
+/**
+ * Deprecated. Please use io.k8s.api.networking.v1.NetworkPolicyList instead.
+ */
+function networkPolicyListIoK8sKubernetesPkgApisNetworkingV1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyListIoK8sKubernetesPkgApisNetworkingV1 = networkPolicyListIoK8sKubernetesPkgApisNetworkingV1;
+/**
+ * Deprecated. Please use io.k8s.api.networking.v1.NetworkPolicyPeer instead.
+ */
+function networkPolicyPeerIoK8sKubernetesPkgApisNetworkingV1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyPeerIoK8sKubernetesPkgApisNetworkingV1 = networkPolicyPeerIoK8sKubernetesPkgApisNetworkingV1;
+/**
+ * Deprecated. Please use io.k8s.api.networking.v1.NetworkPolicyPort instead.
+ */
+function networkPolicyPortIoK8sKubernetesPkgApisNetworkingV1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicyPortIoK8sKubernetesPkgApisNetworkingV1 = networkPolicyPortIoK8sKubernetesPkgApisNetworkingV1;
+/**
+ * Deprecated. Please use io.k8s.api.networking.v1.NetworkPolicySpec instead.
+ */
+function networkPolicySpecIoK8sKubernetesPkgApisNetworkingV1(options) {
+    return ({}).merge(options);
+}
+exports.networkPolicySpecIoK8sKubernetesPkgApisNetworkingV1 = networkPolicySpecIoK8sKubernetesPkgApisNetworkingV1;
+/**
+ * Deprecated. Please use io.k8s.api.policy.v1beta1.Eviction instead.
+ */
+function evictionIoK8sKubernetesPkgApisPolicyV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.evictionIoK8sKubernetesPkgApisPolicyV1beta1 = evictionIoK8sKubernetesPkgApisPolicyV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.policy.v1beta1.PodDisruptionBudget instead.
+ */
+function podDisruptionBudgetIoK8sKubernetesPkgApisPolicyV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.podDisruptionBudgetIoK8sKubernetesPkgApisPolicyV1beta1 = podDisruptionBudgetIoK8sKubernetesPkgApisPolicyV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.policy.v1beta1.PodDisruptionBudgetList instead.
+ */
+function podDisruptionBudgetListIoK8sKubernetesPkgApisPolicyV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.podDisruptionBudgetListIoK8sKubernetesPkgApisPolicyV1beta1 = podDisruptionBudgetListIoK8sKubernetesPkgApisPolicyV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.policy.v1beta1.PodDisruptionBudgetSpec instead.
+ */
+function podDisruptionBudgetSpecIoK8sKubernetesPkgApisPolicyV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.podDisruptionBudgetSpecIoK8sKubernetesPkgApisPolicyV1beta1 = podDisruptionBudgetSpecIoK8sKubernetesPkgApisPolicyV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.policy.v1beta1.PodDisruptionBudgetStatus instead.
+ */
+function podDisruptionBudgetStatusIoK8sKubernetesPkgApisPolicyV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.podDisruptionBudgetStatusIoK8sKubernetesPkgApisPolicyV1beta1 = podDisruptionBudgetStatusIoK8sKubernetesPkgApisPolicyV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.ClusterRole instead.
+ */
+function clusterRoleIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.clusterRoleIoK8sKubernetesPkgApisRbacV1beta1 = clusterRoleIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.ClusterRoleBinding instead.
+ */
+function clusterRoleBindingIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.clusterRoleBindingIoK8sKubernetesPkgApisRbacV1beta1 = clusterRoleBindingIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.ClusterRoleBindingList instead.
+ */
+function clusterRoleBindingListIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.clusterRoleBindingListIoK8sKubernetesPkgApisRbacV1beta1 = clusterRoleBindingListIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.ClusterRoleList instead.
+ */
+function clusterRoleListIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.clusterRoleListIoK8sKubernetesPkgApisRbacV1beta1 = clusterRoleListIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.PolicyRule instead.
+ */
+function policyRuleIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.policyRuleIoK8sKubernetesPkgApisRbacV1beta1 = policyRuleIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.Role instead.
+ */
+function roleIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.roleIoK8sKubernetesPkgApisRbacV1beta1 = roleIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.RoleBinding instead.
+ */
+function roleBindingIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.roleBindingIoK8sKubernetesPkgApisRbacV1beta1 = roleBindingIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.RoleBindingList instead.
+ */
+function roleBindingListIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.roleBindingListIoK8sKubernetesPkgApisRbacV1beta1 = roleBindingListIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.RoleList instead.
+ */
+function roleListIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.roleListIoK8sKubernetesPkgApisRbacV1beta1 = roleListIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.RoleRef instead.
+ */
+function roleRefIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.roleRefIoK8sKubernetesPkgApisRbacV1beta1 = roleRefIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.rbac.v1beta1.Subject instead.
+ */
+function subjectIoK8sKubernetesPkgApisRbacV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.subjectIoK8sKubernetesPkgApisRbacV1beta1 = subjectIoK8sKubernetesPkgApisRbacV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.storage.v1.StorageClass instead.
+ */
+function storageClassIoK8sKubernetesPkgApisStorageV1(options) {
+    return ({}).merge(options);
+}
+exports.storageClassIoK8sKubernetesPkgApisStorageV1 = storageClassIoK8sKubernetesPkgApisStorageV1;
+/**
+ * Deprecated. Please use io.k8s.api.storage.v1.StorageClassList instead.
+ */
+function storageClassListIoK8sKubernetesPkgApisStorageV1(options) {
+    return ({}).merge(options);
+}
+exports.storageClassListIoK8sKubernetesPkgApisStorageV1 = storageClassListIoK8sKubernetesPkgApisStorageV1;
+/**
+ * Deprecated. Please use io.k8s.api.storage.v1beta1.StorageClass instead.
+ */
+function storageClassIoK8sKubernetesPkgApisStorageV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.storageClassIoK8sKubernetesPkgApisStorageV1beta1 = storageClassIoK8sKubernetesPkgApisStorageV1beta1;
+/**
+ * Deprecated. Please use io.k8s.api.storage.v1beta1.StorageClassList instead.
+ */
+function storageClassListIoK8sKubernetesPkgApisStorageV1beta1(options) {
+    return ({}).merge(options);
+}
+exports.storageClassListIoK8sKubernetesPkgApisStorageV1beta1 = storageClassListIoK8sKubernetesPkgApisStorageV1beta1;
+/**
+ * resource usage metrics of a container.
+ */
+function containerMetricsIoK8sMetricsPkgApisMetricsV1beta1(options) {
+    return ({
+        name: (options && options.name) || null,
+        usage: (options && options.usage) || null,
+    }).merge(options);
+}
+exports.containerMetricsIoK8sMetricsPkgApisMetricsV1beta1 = containerMetricsIoK8sMetricsPkgApisMetricsV1beta1;
+/**
+ * resource usage metrics of a node.
+ */
+function nodeMetricsIoK8sMetricsPkgApisMetricsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.metrics.pkg.apis.metrics.v1beta1",
+        kind: "NodeMetrics",
+        timestamp: (options && options.timestamp) || timeIoK8sApimachineryPkgApisMetaV1(),
+        usage: (options && options.usage) || null,
+        window: (options && options.window) || durationIoK8sApimachineryPkgApisMetaV1(),
+    }).merge(options);
+}
+exports.nodeMetricsIoK8sMetricsPkgApisMetricsV1beta1 = nodeMetricsIoK8sMetricsPkgApisMetricsV1beta1;
+/**
+ * NodeMetricsList is a list of NodeMetrics.
+ */
+function nodeMetricsListIoK8sMetricsPkgApisMetricsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.metrics.pkg.apis.metrics.v1beta1",
+        kind: "NodeMetricsList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.nodeMetricsListIoK8sMetricsPkgApisMetricsV1beta1 = nodeMetricsListIoK8sMetricsPkgApisMetricsV1beta1;
+/**
+ * resource usage metrics of a pod.
+ */
+function podMetricsIoK8sMetricsPkgApisMetricsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.metrics.pkg.apis.metrics.v1beta1",
+        kind: "PodMetrics",
+        containers: (options && options.containers) || [],
+        timestamp: (options && options.timestamp) || timeIoK8sApimachineryPkgApisMetaV1(),
+        window: (options && options.window) || durationIoK8sApimachineryPkgApisMetaV1(),
+    }).merge(options);
+}
+exports.podMetricsIoK8sMetricsPkgApisMetricsV1beta1 = podMetricsIoK8sMetricsPkgApisMetricsV1beta1;
+/**
+ * PodMetricsList is a list of PodMetrics.
+ */
+function podMetricsListIoK8sMetricsPkgApisMetricsV1beta1(options) {
+    return ({
+        apiVersion: "io.k8s.metrics.pkg.apis.metrics.v1beta1",
+        kind: "PodMetricsList",
+        items: (options && options.items) || [],
+    }).merge(options);
+}
+exports.podMetricsListIoK8sMetricsPkgApisMetricsV1beta1 = podMetricsListIoK8sMetricsPkgApisMetricsV1beta1;

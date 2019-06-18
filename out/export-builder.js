@@ -47,14 +47,16 @@ Object.getOwnPropertyNames(swagger.definitions)
     log("export function " + getBuilderName(name) + "(options?: Optional<k8s." + ApiTools.getTypescriptResourceName(name) + ">) : k8s." + ApiTools.getTypescriptResourceName(name) + " {");
     log("  return <k8s." + ApiTools.getTypescriptResourceName(name) + ">({");
     var required = def.required || [];
-    if (Object.getOwnPropertyNames(def.properties).includes('apiVersion'))
-        log("    apiVersion: \"" + name.substr(0, name.lastIndexOf('.')) + "\",");
-    if (Object.getOwnPropertyNames(def.properties).includes('kind'))
-        log("    kind: \"" + name.substr(name.lastIndexOf('.') + 1) + "\",");
-    for (var _i = 0, _a = Object.getOwnPropertyNames(def.properties).sort(); _i < _a.length; _i++) {
-        var propertyName = _a[_i];
-        if (propertyName != "apiVersion" && propertyName != "kind" && required.includes(propertyName)) {
-            log("    " + propertyName + ": (options && options." + propertyName + ") || " + getTypescriptBuilder(def.properties[propertyName]) + ",");
+    if (def.properties) {
+        if (Object.getOwnPropertyNames(def.properties).includes('apiVersion'))
+            log("    apiVersion: \"" + name.substr(0, name.lastIndexOf('.')) + "\",");
+        if (Object.getOwnPropertyNames(def.properties).includes('kind'))
+            log("    kind: \"" + name.substr(name.lastIndexOf('.') + 1) + "\",");
+        for (var _i = 0, _a = Object.getOwnPropertyNames(def.properties).sort(); _i < _a.length; _i++) {
+            var propertyName = _a[_i];
+            if (propertyName != "apiVersion" && propertyName != "kind" && required.includes(propertyName)) {
+                log("    " + propertyName + ": (options && options." + propertyName + ") || " + getTypescriptBuilder(def.properties[propertyName]) + ",");
+            }
         }
     }
     log("  }).merge(options)");

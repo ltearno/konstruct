@@ -12,16 +12,18 @@ Object.getOwnPropertyNames(swagger.definitions)
         ApiTools.dumpComment(def.description, '', log)
         log(`export interface ${ApiTools.getTypescriptResourceName(name)} {`)
         let required = def.required || []
-        for (let propertyName of Object.getOwnPropertyNames(def.properties).sort()) {
-            ApiTools.dumpComment(def.properties[propertyName].description, '  ', log)
-            if (propertyName == "apiVersion") {
-                log(`  ${propertyName}: "${name.substr(0, name.lastIndexOf('.'))}"`)
-            }
-            else if (propertyName == "kind") {
-                log(`  ${propertyName}: "${name.substr(name.lastIndexOf('.') + 1)}"`)
-            }
-            else {
-                log(`  ${propertyName}${!required.includes(propertyName) ? '?' : ''}: ${ApiTools.getTypescriptType(def.properties[propertyName])}`)
+        if (def.properties) {
+            for (let propertyName of Object.getOwnPropertyNames(def.properties).sort()) {
+                ApiTools.dumpComment(def.properties[propertyName].description, '  ', log)
+                if (propertyName == "apiVersion") {
+                    log(`  ${propertyName}: "${name.substr(0, name.lastIndexOf('.'))}"`)
+                }
+                else if (propertyName == "kind") {
+                    log(`  ${propertyName}: "${name.substr(name.lastIndexOf('.') + 1)}"`)
+                }
+                else {
+                    log(`  ${propertyName}${!required.includes(propertyName) ? '?' : ''}: ${ApiTools.getTypescriptType(def.properties[propertyName])}`)
+                }
             }
         }
         log(`}`)
