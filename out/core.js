@@ -101,26 +101,6 @@ installPlugin(function (o, path, value) {
     o[parts[parts.length - 1]] = mergeObjects(o[parts[parts.length - 1]], value);
     return init;
 }, 'mergeAt');
-installPlugin(function addDeploymentDefaultNameAndLabels(object, name) {
-    return object.merge({
-        metadata: {
-            name: name,
-            labels: {
-                app: name
-            }
-        },
-        spec: {
-            template: {
-                metadata: {
-                    labels: {
-                        name: name,
-                        app: name
-                    }
-                },
-            }
-        }
-    });
-});
 function preparseYaml(input) {
     var i = 0;
     while (input[i] == ' ')

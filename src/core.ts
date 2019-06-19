@@ -73,13 +73,16 @@ export function setObjectProperty<T>(o: T, path: string, value): T {
     return init
 }
 
+type Optional<T> = {
+    [P in keyof T]?: T[P] extends boolean ? boolean : T[P] extends string ? string : T[P] extends number ? number : T[P] extends (infer I)[] ? Optional<I>[] : Optional<T[P]>
+}
+
 declare global {
     interface Object {
         copy<T>(this: T): T
         set<T>(this: T, path: string, value: any): T
-        merge<T, U>(this: T, other: U): T | U
+        merge<T, U extends Optional<T>>(this: T, other: U): T
         mergeAt<T>(this: T, path: string, value: any): T
-        addDeploymentDefaultNameAndLabels<T>(this: T, name: string): T
     }
 }
 
@@ -108,27 +111,6 @@ installPlugin(function (o, path, value) {
     o[parts[parts.length - 1]] = mergeObjects(o[parts[parts.length - 1]], value)
     return init
 }, 'mergeAt')
-
-installPlugin(function addDeploymentDefaultNameAndLabels(object, name) {
-    return object.merge({
-        metadata: {
-            name: name,
-            labels: {
-                app: name
-            }
-        },
-        spec: {
-            template: {
-                metadata: {
-                    labels: {
-                        name: name,
-                        app: name
-                    }
-                },
-            }
-        }
-    })
-})
 
 export function preparseYaml(input) {
     let i = 0

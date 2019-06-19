@@ -1,4 +1,42 @@
 import * as k from './konstruct'
+import * as k8s from './kubernetes-api'
+
+/**
+ * Copy of common-helpers.ts don't know why does a runtime error on module loading if imported instead...
+ */
+declare global {
+    interface Object {
+        addDeploymentDefaultNameAndLabels<T>(this: T, name: string): T
+    }
+}
+
+export function nameMetadata(name: string): k8s.ObjectMetaIoK8sApimachineryPkgApisMetaV1 {
+    return {
+        name,
+        labels: {
+            app: name
+        }
+    }
+}
+
+k.installPlugin(function addDeploymentDefaultNameAndLabels(object, name) {
+    return object.merge({
+        metadata: nameMetadata(name),
+        spec: {
+            template: {
+                metadata: {
+                    labels: {
+                        name: name,
+                        app: name
+                    }
+                },
+            }
+        }
+    })
+})
+
+
+
 
 const build = k.build
 const log = console.log.bind(console)
@@ -33,6 +71,9 @@ docs.push(
         .timestamp()
 )
 
+build.deployment({
+}).merge({})
+
 docs.push(
     build.deployment()
         .addDeploymentDefaultNameAndLabels(NAME)
@@ -50,5 +91,38 @@ docs.push(
         })
         .timestamp()
 )
+
+let deploy = build.deployment({
+    metadata: {
+        name: 'toto',
+        labels: {
+            app: 'toto'
+        }
+    },
+    spec: build.deploymentSpec({
+        template: build.podTemplateSpec({
+            spec: build.podSpec({
+                containers: [
+                    build.container({
+                        image: 'i-am-a-test'
+                    })
+                ]
+            })
+        })
+    })
+})
+
+let service = build.service({
+    spec: build.deploymentSpec({
+        selector: build.labelSelectorIoK8sApimachineryPkgApisMetaV1({
+            matchLabels: {
+                name: deploy.metadata.name
+            }
+        })
+    })
+})
+
+docs.push(service)
+docs.push(deploy)
 
 log(k.yamlifyAll(docs))
