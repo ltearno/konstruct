@@ -6,3 +6,8 @@
 
 ## Steps to reproduce
 
+Ceci **est un** markdown
+
+```bash
+echo ${TOTO}
+```
