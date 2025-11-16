@@ -14,7 +14,7 @@
     "url": "https://github.com/ltearno/konstruct"
   },
   "dependencies": {
-    "js-yaml": "^3.12.1"
+    "js-yaml": "^4.1.1"
   },
   "devDependencies": {
     "@types/node": "^11.9.4",
